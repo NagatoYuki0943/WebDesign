@@ -1,0 +1,31 @@
+1 行内绑定,动态绑定,事件监听
+
+2 区别
+    (1) this 关键字
+        行内绑定时,事件处理程序中的this指向window对象(就是html文件)
+        动态绑定和事件监听中,事件处理程序中的this指向当前对象
+
+            <body>
+                <div id="d">
+                    dddd
+                </div>
+                <p id="p" onclick="f()">ppppppp</p>
+            </body>
+            <script>
+                var d = document.getElementById("d");
+                d.onclick = function() {
+                    //动态绑定和事件监听中,事件处理程序中的this指向当前对象
+                    var v = this.innerHTML; //d.innerHTML 获取内部元素 innerText 和 innerHTML 类似
+                    alert(v);
+                }
+
+                //行内绑定时,事件处理程序中的this指向window对象(就是html文件)
+                function f() {
+                    //alert(this.innerHTML); //undefined  对象有,但是对象属性未定义,innerHTML只存在在Element元素对象中,不存在DOM和Window对象中
+                    console.log(this); //Window file:///D:/WebDesign/3%20JS/2-02%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/02.2.html  this是文件
+                }
+            </script>
+
+    (2) 行内绑定和动态绑定如果为同一个元素绑定相同事件时前面的会被后面覆盖,事件监听不会覆盖
+        
+    

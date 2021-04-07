@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="05.2.php" method="POST" enctype="multipart/form-data" id='form1'>
+        <!--php文件上传需要使用 enctype="multipart/form-data" -->
+        <input type="file" name="img"><br>
+        <input type="submit" value="上传">
+        <input type="button" value="ajax上传" id="btu">
+    </form>
+</body>
+<script>
+    var btu = document.getElementById('btu');
+    btu.addEventListener('click', function() {
+        var xhr = new XMLHttpRequest();
+        //FormData表单的数据,将整个form表单打包
+        var fd = new FormData(document.getElementById('form1'));
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.responseText == 1) {
+                    alert('success');
+                } else {
+                    alert('failed');
+                }
+            }
+        }
+        xhr.open('post', '05.2.php');
+        //这里没有设置请求头setRequestHeader,因为上面的 enctype="multipart/form-data" 就是请求头
+        //直接将FormData传过去就可以了
+        xhr.send(fd);
+    })
+</script>
+
+</html>

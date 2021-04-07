@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="获取xml" id="inp">
+</body>
+<script>
+    var inp = document.getElementById('inp');
+    inp.addEventListener('click', function() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                //返回dom对象,可以像正常的html一样操作,使用document getElement...等
+                var d = xhr.responseXML;
+                console.log(d); //用chrome查看
+                console.log('----------------------------------------');
+
+
+                //获取标签为name的第一个中的内容
+                console.log(d.getElementsByTagName('name')[0].innerHTML); //赵一
+                console.log('----------------------------------------');
+
+                //返回一个集合
+                var n = d.getElementsByTagName('name');
+                for (var i = 0; i < n.length; i++) {
+                    //标准方法
+                    console.log(n[i].childNodes[0].nodeValue);
+                    //非标准方法
+                    console.log(n[i].innerHTML);
+                    /**
+                     * 赵一
+                     * 赵一
+                     * 钱二
+                     * 钱二
+                     * 孙三
+                     * 孙三
+                     */
+                }
+                console.log('----------------------------------------');
+
+            }
+        }
+        xhr.open('get', '06.1php生成xml.php');
+        xhr.send();
+
+    })
+</script>
+
+
+</html>

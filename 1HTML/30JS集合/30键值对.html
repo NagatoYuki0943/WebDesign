@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var kv = {};
+        kv["a"] = "AA";
+        kv["b"] = "BB";
+        kv.c = "CC";
+        kv.d = "DD";
+        console.log(kv);
+        var kv1 = {
+            a: "ad", //js格式对象,在键上没有引号
+            b: "bd",
+            c: "cd"
+        };
+        var kv2 = {
+            "aa": "ad", //json格式对象,在键上有引号
+            "bb": "bd",
+            "cc": "cd"
+        };
+        console.log(kv1);
+        var kv3;
+        kv3 = kv1;
+        console.log(kv3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

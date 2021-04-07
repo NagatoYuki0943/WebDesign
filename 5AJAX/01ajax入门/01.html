@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="01.php" method="get">
+        <input type="text" name="name" value="" id="input1"><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+<script>
+    var input_e = document.getElementById('input1');
+    input_e.onblur = function() {
+        var v = this.value;
+        //创建ajax对象
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                alert(xhr.responseText);
+            }
+        }
+        xhr.open('get', '01.php?name=' + v);
+        xhr.send();
+
+    }
+</script>
+
+</html>

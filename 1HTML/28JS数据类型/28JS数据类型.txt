@@ -1,0 +1,27 @@
+1.因为JS为弱类型语言,故声明变量只要使用 var 关键字即可声明任何类型
+2.虽然 var 关键字即可声明任何类型,但是JS仍有数据类型
+    boolean   布尔
+    number    数字
+    string    字符串
+    Object    对象类型
+    Undefined 未定义
+    Null      空对象
+    Undefined 类型和 Null 类型都是只有一个值的数据类型,值分别undefined与null
+3.查看变量类型可以使用 typeof 方法
+    //测试字符串变量的类型
+    var srt = "Hello World!";
+    var Type = typeof(srt);
+    alert(Type); //弹出窗口
+    console.log(Type); //在控制台输出: "string"    
+
+    //测试数字变量的类型
+    var numValue = 123;
+    var Type = typeof(numValue);
+    alert(Type); //弹出窗口
+    console.log(Type); //在控制台输出: "number"
+
+    //测试boolean变量的类型
+    var boolValue = true;
+    var Type = typeof(boolValue);
+    alert(Type); //弹出窗口
+    console.log(Type); //在控制台输出: "boolean"

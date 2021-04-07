@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d">
+        dddd
+    </div>
+
+</body>
+<script>
+    var d = document.getElementById("d");
+
+    function f1() {
+        console.log(this.innerHTML); // dddd
+    }
+    d.addEventListener('click', f1);
+    d.addEventListener('click', function() {
+        console.log(2); //2
+    })
+
+    //第二个参数要写函数的名字,所以要将函数移出来
+    d.removeEventListener('click', f1); //不会打印dddd了
+</script>
+
+</html>

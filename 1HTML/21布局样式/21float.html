@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 250px;
+            height: 100px;
+            background-color: coral;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>布局样式</h1>
+    <ul type="circle">
+        <li>文档流</li>
+        <ul type="square">
+            <li>要说到布局,有一个永远无法避开的话题叫做文档流</li>
+            <li>文档流即文档的排列方式:在同一个平面中从左往右,从上往下排列</li>
+            <li>脱离文档流简单理解为盒子脱离原有的文档排列方式,从同一平面浮起来,根据一定的要求排列</li>
+        </ul>
+
+        <li>浮动</li>
+        <p>float : left | right</p>
+        <ul type="square">
+            <li>使用float之后会往上浮动一格,位置或左或右</li>
+            <li>单个div的浮动效果</li>
+            <li>多个div的浮动效果</li>
+            <li>取消浮动的方法</li>
+            <li>拓展--菜单栏于电商选择物品的实现机制</li>
+            <li>div style="clear: both;" clear让div不受浮动影响</li>
+            <li>对ul中的li使用float效果可以让它们横向排列</li>
+        </ul>
+
+    </ul>
+    <hr>
+
+    <div></div>
+    <div></div>
+    <div style="background-color: deeppink;float: left;margin-right: 10px;"></div>
+    <div style="float: left;margin-right: 10px;"></div>
+    <div style="float: left;margin-right: 10px;"></div>
+    <div style="clear: both;">style="clear: both;"清除浮动影响</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test1 div {
+            border-width: 1px;
+            border-color: blueviolet;
+            color: cyan;
+            border-style: solid;
+        }
+        
+        .test2>div {
+            border-width: 1px;
+            border-color: blueviolet;
+            color: cyan;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <p>对父节(多级)点下的子节点赋值 方法1: 父类,子类(id 子类也可以)</p>
+    <pre>
+        可以在css中设置div的边框
+        {
+        border-width: 1px;        宽度
+        border-color: blueviolet; 颜色
+        border-style: solid;      实线
+        }
+    </pre>
+    <p>.test1 div 意思是吧test1下所有叫 div 的样式进行渲染</p>
+    <div class="test1">
+        <div>你好
+            <div>你好</div>
+        </div>
+    </div>
+    <p>使用 .test2>div 是把test2的紧邻的一级 div进行渲染,孙子类的就不渲染了</p>
+    <div class="test2">
+        <div>你好
+            <div>你好</div>
+        </div>
+    </div>
+</body>
+
+</html>

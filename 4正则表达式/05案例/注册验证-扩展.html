@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            height: 20px;
+            width: 350px;
+            border: grey 1px solid;
+        }
+        
+        .yc {
+            display: none;
+        }
+        
+        .inp_red {
+            border: red 1px solid;
+        }
+        
+        .inp_green {
+            border: green 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    用户名:<br>
+    <input type="text" id='inp_name' value="" placeholder="大于3位"><br>
+    <span class="yc"></span><br> 邮箱:<br>
+    <input type="text" id='inp_email' value=""><br>
+    <span class="yc"></span><br> 密码:<br>
+    <input type="password" id='inp_pwd' value="" placeholder="大于6位"><br>
+    <span class="yc"></span><br> 重复密码:<br>
+    <input type="password" id='inp_re' value="" placeholder="大于6位"><br>
+    <span class="yc"></span><br>
+    <button>提交</button>
+</body>
+<script>
+    var input_element = document.getElementsByTagName('input');
+    var span_element = document.getElementsByTagName('span');
+    for (var i = 0; i < input_element.length; i++) {
+        input_element[i].addEventListener('blur', function() {
+            if (this.id == 'inp_name') {
+                if (this.value == '') {
+                    changeColor(0, 'red', '用户名不能为空');
+                } else if (this.value.length < 3) {
+                    changeColor(0, 'red', '用户名长度不能小于3');
+                } else {
+                    changeColor(0, 'green', '√');
+                }
+            } else if (this.id == 'inp_email') {
+                //邮箱验证
+                var reg = /^\w+@\w+\.\w{2,6}$/;
+                if (this.value == '') {
+                    changeColor(1, 'red', '邮箱不能为空');
+                } else if (!reg.test(this.value)) { //要取反
+                    changeColor(1, 'red', '邮箱格式不对');
+                } else {
+                    changeColor(1, 'green', '√');
+                }
+            } else if (this.id == 'inp_pwd') {
+                //密码验证
+                if (this.value == '') {
+                    changeColor(2, 'red', '密码不能为空');
+                } else if (this.value.length < 6) { //要取反
+                    changeColor(2, 'red', '密码长度不够');
+                } else {
+                    changeColor(2, 'green', '√');
+                }
+            } else if (this.id == 'inp_re') {
+                //密码验证
+                if (this.value == '') {
+                    changeColor(3, 'red', '密码不能为空');
+                } else if (this.value.length < 6) { //要取反
+                    changeColor(3, 'red', '密码长度不够');
+                } else if (this.value != input_element[2].value) { //要取反
+                    changeColor(3, 'red', '两次密码不一致');
+                } else {
+                    changeColor(3, 'green', '√');
+                }
+            }
+        });
+    }
+
+    //改变颜色的函数
+    function changeColor(id, color, text) {
+        input_element[id].className = 'inp_' + color;
+        span_element[id].className = '';
+        span_element[id].style.color = color;
+        span_element[id].innerHTML = text;
+    }
+</script>
+
+</html>

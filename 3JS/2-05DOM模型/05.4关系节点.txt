@@ -1,0 +1,21 @@
+1 关系节点
+    nextElementSibling
+        返回紧跟在当前节点后面的第一个同级Element节点,如果当前节点后面没有节点,返回null
+
+    previousElementSibling
+        返回紧跟在当前节点前面的第一个同级Element节点,如果当前节点前面没有节点,返回null
+
+    parentElement parentNode
+        返回当前节点的父级Element节点
+        一般情况parentNode可以取代parentElement的所有功能
+        parentElement匹配的是parent为element的情况，而parentNode匹配的则是parent为node的情况。element是包含在node里的，它的nodeType是1
+
+    childNodes
+        返回一个NodeList集合,成员包括当前节点的所有子节点(注意空格回车也算)
+
+        childNodes[下标]    注意空格和回车也算节点
+        childNodes[下标].nodeValue  获取孩子节点的内容
+        
+    childElementCount
+        孩子节点个数
+ 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv1">
+        <span>Hello</span>
+        <span>world</span>
+    </div>
+    <input type="button" name="" id="" value="变" onclick="change()">
+</body>
+<script>
+    function change() {
+        //获取内容
+        var content = document.getElementById("dv1").innerText;
+        console.log(content); //Hello world
+
+        //赋值内容
+        document.getElementById("dv1").innerText = "<b>nihao,zaima</b>"; //原本内容会被替换
+        var content = document.getElementById("dv1").innerHTML;
+        console.log(content); //&lt;b&gt;nihao,zaima&lt;/b&gt;
+    }
+</script>
+
+</html>

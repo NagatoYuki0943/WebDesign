@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <suibianxie>aaaaaaaaaa</suibianxie>
+    <suibian>bbbbbbbbbb</suibian>
+    <a>cccccc</a>
+    <!--<b>这里错误了,但是注释就可以了</c>-->
+    <msg>如果46 &lt; 47,那么求证,小明很帅</msg>
+    <msg>如果46 &gt; 47,那么求证,小明很帅</msg>
+
+</root>
+
+<!--必须有根节点包裹着其他所有元素-->
+<!--XML 头声明可有可无,但是建议写 -->
+<!--所有xml元素都必须是成对标签-->
+<!--标签名大小写敏感(区分大小写)-->

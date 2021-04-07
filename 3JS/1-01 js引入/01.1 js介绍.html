@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="蓝色" id="blue">
+    <input type="button" value="红色" id="red">
+    <hr>
+    <p id="p">test!!!</p>
+</body>
+<script>
+    var b = document.getElementById('blue');
+    var r = document.getElementById('red');
+    var p = document.getElementById('p');
+    b.onclick = function() {
+        p.style.color = 'blue';
+    }
+    r.onclick = function() {
+        p.style.color = 'red';
+    }
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //concat()    连接两个或者更多的数组,并返回新数组,不会影响原有数组
+        var arr1 = [3, 2, 1, 4];
+        var arr2 = [6, 8, 7, 9];
+        //concat()    连接两个或者更多的数组,并返回新数组,不会影响原有数组
+        var arr3 = arr1.concat(arr2);
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr3);
+        console.log("------------------------------------------------------");
+
+        //join()      把数组的所有元素放入一个字符串.元素通过指定的分隔符进行分割,不会影响原数组
+        var arr2Str = arr3.join(":"); //使用 : 分隔
+        console.log(arr2Str);
+        console.log("------------------------------------------------------");
+
+        //push()      向数组的末尾添加一个或者更多元素,并返回新的长度
+        var arr3Len = arr3.push(9);
+        console.log(arr3Len);
+        console.log(arr3);
+        console.log("------------------------------------------------------");
+
+        //reverse()   颠倒数组中元素的顺序,会改变原数组
+        arr3.reverse();
+        console.log(arr3);
+        console.log("------------------------------------------------------");
+
+        //sort()      对数组元素进行排序,会改变原数组,默认升序
+        arr3.sort(); //默认升序
+        console.log(arr3);
+        console.log("------------------------------------------------------");
+    </script>
+</body>
+
+</html>

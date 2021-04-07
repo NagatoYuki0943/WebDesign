@@ -1,0 +1,31 @@
+1 顺序
+
+2 分支
+    var a = 4;
+    if (a > 5) {
+        console.log(6);
+    } else if (a < 5) { //else if中间必须有空格
+        console.log(4);
+    } else {
+        console.log(5);
+    }
+
+    switch (a) {
+    case 3:
+        console.log(3);
+        break;
+    case 4:
+        console.log(4); //4
+        break;
+    case 5:
+        console.log(5);
+    default:
+        console.log('xxx');
+    }
+
+3 循环
+    for
+    while
+    do while
+    continue    跳出本次循环
+    break       终止循环

@@ -1,0 +1,7 @@
+<!--所有的xml必须有一个根节点,什么名字都行,包裹着所有的xml内容-->
+<!--标签必须自定义-->
+<root>
+    <user>小明</user>
+    <msg>帅哥</msg>
+    <explain></explain>
+</root>

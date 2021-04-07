@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Man() {
+        //公有属性
+        this.name = "黛玉";
+        //私有属性
+        var age = 15;
+        //静态属性
+        Man.sex = "男";
+        this.f = function() {
+            console.log(this.name, age);
+        }
+    }
+
+    var m = new Man();
+    console.log(m.name); //黛玉         公有属性可以访问
+    console.log(m.age); //undefined     私有属性外部不能访问
+    console.log(Man.age); //undefined   这样也不能访问,因为没法直接访问函数内部的值
+    m.f(); //黛玉 15                    函数内部的方法是可以访问私有属性的
+    console.log(m.sex); //undefined     静态属性对象不能访问
+    console.log(Man.sex); //男          静态属性只有构造函数能访问
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="停止setInterval方法" onclick=" cleartime() ">
+    <input type="button " value="apple " onclick="apple() ">
+
+
+</body>
+<script>
+    //window可以不写,直接alert
+    //window.alert("asd ");
+
+    //confirm的使用
+    // var bool = confirm("您确定关闭浏览器吗? ");
+    // if (bool) {
+    //     //close关闭网页
+    //     window.close();
+    // } else {
+    //     alert("还可以继续和主人相处 ");
+    // }
+
+    //prompt的使用    
+    // var text = prompt("您要输入什么 ");
+    // alert(text);
+
+    //setInterval的使用 不停地调用
+    //setInterval("alert() ", 1000);  //一秒弹一次
+    //一般使用匿名函数
+    var i = 0;
+    var setIntervalId = setInterval(function() {
+        console.log(++i); //一秒钟打一次数字
+    }, 1000);
+
+    //取消循环 按下按钮会调用这个函数,取消循环
+    function cleartime() {
+        clearInterval(setIntervalId);
+    }
+
+    //setTimeout的使用 调用一次
+    var j = 0;
+    setTimeout(function() {
+        alert(++j);
+    }, 1000);
+    //clearTimeout(); //清除setTimeout方法
+
+    //locaton方法的使用
+    //alert(location.href); //这样打印网页地址
+    function apple() {
+        //让地址去那个地址
+        location.href = "https://www.apple.com.cn "; //这样会直接跳转到相关网址
+    }
+
+    //onload方法调用
+    onload = function() {
+        alert("页面加载完成 ");
+    }
+</script>
+
+</html>

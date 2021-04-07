@@ -1,0 +1,8 @@
+1 PHP解析XML
+
+    (1) simplexml_load_file('');
+    参数接收xml文件,参数是文件地址,保存到字符串中
+  
+    (2) simplexml_load_string('');
+    参数接收xml内容,参数不是文件地址,是字符串,保存到字符串中
+  

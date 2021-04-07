@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Person() {}
+
+    var p = new Person();
+    p.name = '妮可妮可妮';
+    p.age = 16;
+    p.email = 'nikou@gmail.com';
+    p.f = function() {
+        alert(1);
+    }
+
+    //遍历对象,当做数组来遍历,属性和方法都可以
+    for (var key in p) {
+        //当做数组来用
+        console.log(p[key]);
+    }
+    /**
+     * 妮可妮可妮 06.1遍历属性.html:24:17
+     * 16 06.1遍历属性.html:24:17
+     * nikou@gmail.com
+     * function f()  方法也能遍历
+     */
+
+    //删除对象中的属性
+    delete p.email;
+
+
+    function Woman() {
+        //内部方法
+        this.f1 = function() {
+            console.log('Woman.f1');
+        }
+
+        //内部属性
+        this.f2 = 2333;
+    }
+
+    var w = new Woman();
+    w.f1(); //Woman.f1
+    console.log(w.f2); //2333
+</script>
+
+</html>

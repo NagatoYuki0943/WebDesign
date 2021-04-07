@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="0001.jpg" style="position: absolute; height: 115px; width: 204px;" id="img">
+</body>
+<script>
+    var img = document.getElementById("img");
+    var x = 50,
+        y = 50;
+
+    document.onkeydown = function(e) {
+        //console.log(e); //keydown { target: body, key: "ArrowUp", charCode: 0, keyCode: 38 }
+        var code = e.keyCode;
+        if (code == 37) {
+            x--;
+        } else if (code == 38) {
+            y--;
+        } else if (code == 39) {
+            x++;
+        } else if (code == 40) {
+            y++;
+        }
+        img.style.left = x + 'px';
+        img.style.top = y + 'px';
+    }
+
+    img.onclick = function() {
+        document.onmousemove = function(e) {
+            //console.log(e); //mousemove { target: html, buttons: 0, clientX: 1585, clientY: 98, layerX: 1585, layerY: 98 }
+            img.style.left = e.clientX + 'px';
+            img.style.top = e.clientY + 'px';
+        }
+    }
+</script>
+
+</html>

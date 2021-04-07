@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Ps() {
+
+    }
+
+    var ps = new Ps();
+    //constructor   返回对象的构造函数
+    console.log(ps.constructor); //function Ps()
+    var s = 23;
+    console.log(s.constructor); //function Number()
+
+    //instanceof    判断某个对象是否为某个构造函数的实例
+    console.log(ps instanceof Ps); //true
+    console.log(ps instanceof Object); //true
+    console.log(ps instanceof String); //false
+</script>
+
+</html>

@@ -1,0 +1,9 @@
+typeof        判断变量数据类型
+
+
+constructor   返回对象的构造函数
+    每个对象都有构造函数,null没有,undefined没有
+    
+
+instanceof    判断某个对象是否为某个构造函数的实例,返回 true false
+    ps instanceof Ps 判断ps是不是Ps的实例

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="获取json" id="inp">
+</body>
+<script>
+    var inp = document.getElementById('inp');
+    inp.addEventListener('click', function() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                var str = xhr.responseText;
+                //console.log(str); //是一个字符串
+                //parse解析字符串
+                var json = JSON.parse(str);
+                console.log(json); //成了数组了(有多条数据),每一条数据都是对象 0: Object { id: "1", name: "赵一", sex: "male", … }
+                //遍历数组
+                for (var i = 0; i < json.length; i++) {
+                    console.log(json[i].name);
+                }
+                /**
+                 * 赵一
+                 * 钱二
+                 * 孙三
+                 */
+            }
+        }
+        xhr.open('get', '08.1.php');
+        xhr.send();
+
+    })
+</script>
+
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont {
+            width: 400px;
+            height: 520px;
+            position: relative;
+            /* border: 1px solid red; */
+            overflow: hidden;
+        }
+        
+        #main {
+            position: relative;
+            top: -100px;
+        }
+        
+        .row {
+            width: 400px;
+            height: 100px;
+        }
+        
+        .row div {
+            width: 98px;
+            height: 98px;
+            border: 1px solid gray;
+            float: left;
+        }
+        
+        .black {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!--显示分数-->
+    <h3 id='score'>0</h3>
+    <div id='cont'>
+        <div id='main'></div>
+    </div>
+    <hr>
+</body>
+<script>
+    //获取main
+    var main = document.getElementById('main');
+    var clock;
+    //设置全局变量判断是否能点击,防止停止后可以继续点击黑色加分
+    var state = true;
+    //移动的速度
+    var sp = 2;
+
+    //动态创建div
+    function cdiv(className) {
+        //创建div
+        var div = document.createElement('div');
+        if (className) {
+            //传值了,就添加属性
+            div.setAttribute('class', className);
+        }
+        return div;
+    }
+
+    function crow() {
+        //创建一行
+        var row = cdiv('row');
+
+        //随机数
+        var index = Math.floor(Math.random() * 4);
+
+        //为这一行创建小div
+        for (var i = 0; i < 4; i++) {
+            if (i == index) {
+                //创建类名为黑色的,就是黑色的方块
+                row.appendChild(cdiv('black'));
+            } else {
+                //创建普通小块
+                row.appendChild(cdiv());
+            }
+        }
+
+        if (main.firstChild) {
+            //如果有第一个元素,说明初始化过
+            //main.firstChild在之前插入row
+            main.insertBefore(row, main.firstChild);
+        } else {
+            //没初始化过,随便摆
+            main.appendChild(row);
+        }
+    }
+
+    //初始化函数
+    function init() {
+        //循环调用crow创建游戏界面
+        for (var i = 0; i < 4; i++) {
+            crow();
+        }
+
+
+        main.onclick = function(ev) {
+            //使用事件委托获取内部事件
+            var dj = ev.target;
+            if (state == false) {
+                alert('洗洗睡吧');
+            } else if (dj.className == '') {
+                //点击白色停止移动  
+                clearInterval(clock);
+                state = false;
+                alert('洗洗睡吧');
+            } else {
+                //点击黑色,先变为白色
+                dj.className = '';
+                //给这点击黑色的行增加通行证
+                dj.parentNode.pass = true;
+
+                //再加分
+                var score = document.getElementById('score');
+                var s = parseInt(score.innerHTML) + 1;
+                score.innerHTML = s;
+                //根据分值实现速度
+                if (s % 5 == 0) {
+                    //涨了5分
+                    sp += 2;
+                }
+            }
+        }
+
+        //设置定时器,反复调用move函数
+        clock = setInterval('move()', 50);
+
+    }
+
+    //移动,修改mian的top值向下移动
+    function move() {
+        //获取top
+        var top = parseInt(getComputedStyle(main).top); //-100px
+        top += sp;
+        //送回去
+        main.style.top = top + 'px';
+        //
+        if (top >= 0) {
+            crow();
+            //创建之后立刻将main的top重置为-100px,防止新的蹦出来
+            main.style.top = '-100px';
+
+            //最后一行没有点击黑色的,游戏结束
+            if (main.lastChild.pass == undefined) {
+                //注意,空格回车也算是子元素,所以上面的div要<div id='main'></div>这样写
+                console.log(main.lastChild.pass);
+                clearInterval(clock);
+                state = false;
+                alert('洗洗睡吧');
+            }
+
+            //行数大于5,就删除最后一行
+            if (main.children.length > 5) {
+                main.removeChild(main.lastChild);
+            }
+        }
+    }
+    //调用init函数初始化
+    init();
+</script>
+
+</html>

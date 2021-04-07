@@ -1,0 +1,42 @@
+    var s = 'Golang';
+    
+1 length 
+    长度(属性)
+    var len = s.length;
+
+
+2 indexOf('查找的字符串')
+    返回第一次出现的位置(方法),从0开始计数,找不到返回 -1
+    var i = s.indexOf('o');
+
+
+3 toUpperCase 转换成大写
+    var i = s.toUpperCase();
+
+
+4 toLowerCase 转换成小写
+    var i = s.toLowerCase();
+
+
+5 substr(起始位置,长度)
+    字符串截取 ,起始位置从0开始算
+    var i = s.substr(1, 2);
+
+
+6 replace(被替换,替换)      //可以接受正则表达式
+    字符串替换,只匹配第一次
+    var i = s.replace('g', 'guage');
+
+注: reg指的是正则表达式,详情请看正则表达式/02/02.4string对象提供的方法.txt
+
+7 split(reg)
+    以指定模式分隔字符串,返回结果为数组
+    将正则表达式作为分隔符,分隔字符串,有多少个分隔符,就分几次,结果数组中不要分隔符
+
+
+8 search(reg) 
+    与indexOf类似,返回指定模式的字串在字符串中首次出现的位置,从0开始数
+
+
+9 match(reg)
+    以数组的形式返回指定模式的字符串,返回第一个出现的字串

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <man>
+        <name>数学题</name>
+        <![CDATA[不解析的内容]]>
+        <msg><![CDATA[ <> * / = -  ]]> </msg>
+    </man>
+</root>

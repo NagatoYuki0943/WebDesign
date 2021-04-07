@@ -1,0 +1,5 @@
+类型转换
+    var srt="456";
+    console.log(typeof(srt));
+    var num=parseInt(srt);
+    console.log(typeof(num));   //转换成int或者float都是number

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //生成JSON
+    //(1) JS数组转JSON数组形式JSON
+    var arr = ['a', 'b', 'c', 'd'];
+    var j = JSON.stringify(arr);
+    console.log(j); //["a","b","c","d"]
+
+    //(2) JS对象转JSON对象形式JSON
+    var ob = {
+        name: 123,
+        age: 456,
+        sex: 789
+    }
+    var j = JSON.stringify(ob);
+    console.log(j); //{"name":123,"age":456,"sex":789}
+</script>
+
+</html>

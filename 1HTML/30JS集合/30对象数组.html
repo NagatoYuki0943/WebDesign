@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var kv1 = {
+            a: "ad", //js格式对象,在键上没有引号
+            b: "bd",
+            c: "cd"
+        };
+        var kv2 = {
+            "aa": "ad",
+            "bb": "bd",
+            "cc": "cd"
+        };
+        var kv3 = {
+            "aaa": "ad",
+            "bb": { //里面可以再嵌套一层对象
+                "ba": "BA",
+                "bb": "BB"
+            },
+            "cc": "cd"
+        };
+        //json格式的对象数组
+        var varrayKey1 = [{
+                "aa": "ad", //每个大括号算是一个对象
+                "bb": "bd",
+            }, {
+                "aa": "a",
+                "bb": "bd"
+            }, {
+                "aa": "ad",
+                "bb": "bd"
+            }]
+            //console.log(varrayKey1);
+        var arrayKey2 = [{
+                "aaa": "AA",
+                "bbb": {
+                    "bba": "BBA", //里面可以再嵌套一层对象
+                    "bbb": "BBB"
+                }
+            }, {
+                "ccc": "CC",
+                "ddd": {
+                    "dda": "DDA", //里面可以再嵌套一层对象
+                    "ddb": "DDB"
+                }
+            }]
+            //console.log(arrayKey2);
+            // for (var index = 0; index < arrayKey2.length; index++) {
+            //     console.log(arrayKey2[index]);
+            // }
+        console.log("------------------------------------------------------");
+        //和上面的for循环结果一样,不过下面的for of循环不需要定义长度
+        for (const kv of arrayKey2) { //for of 从数组直接获取元素,for in 获取数组的索引
+            console.log(kv); //直接输出kv即可
+        }
+        console.log("------------------------------------------------------");
+
+        //for in循环专门针对键值对
+        for (const key in kv2) {
+            if (kv2.hasOwnProperty(key)) { //判断键值
+                console.log(key);
+                console.log(kv2[key]);
+            }
+        }
+        console.log("------------------------------------------------------");
+
+        for (const key in [1, 2, 3, 4, 5]) { //for of 从数组直接获取元素,for in 获取数组的索引
+            console.log(key); //这样输出的是数组的下标,不是内容
+        }
+        console.log("------------------------------------------------------");
+
+        //for of 从数组直接获取元素,for in 获取数组的索引
+        for (const kv of arrayKey2) {
+            for (const key in kv) {
+                console.log(kv[key]);
+            }
+        }
+        console.log("------------------------------------------------------");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

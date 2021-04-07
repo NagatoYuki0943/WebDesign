@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h2>(2)对象注册法</h2>
+<input type="text" name="" id="txt1" value="阿猫">
+
+<body>
+
+</body>
+<script>
+    var changeMe = function() {
+        alert(event.target.value); //弹出改变的内容
+    }
+    document.getElementById("txt1").onchange = changeMe; //匿名函数changeMe注册到事件后面不能加()
+</script>
+
+</html>

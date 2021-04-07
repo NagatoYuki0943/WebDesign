@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<h2>(1)元素注册法 </h2>
+<p>onclick="方法" 点击对话框就出现了</p>
+<input type="text" name="" id="txt1" value="阿猫" onchange="changeMe()">
+<input type="button" value="按钮" onclick="clickMe()">
+
+<script>
+    //(1)元素注册法
+    //改变时的反应
+    function changeMe() {
+        alert(event.target.value); //弹出改变的内容
+    }
+    //点击时的反应
+    function clickMe() {
+        //获取标签对象
+        var txt = document.getElementById("txt1");
+        //弹出对象中的属性
+        alert(txt.value); //弹出阿猫
+        //鼠标点击是event(事件),target是点击的目标,获取的是这个对象
+        alert(event.target.value); //弹出按钮
+    }
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+1.  检测null弹出object
+    null属于独立类型,但是在检测上输出object
+    检测undefined弹出undefined
+    本质上null和undefined都表示空,只是null由于历史遗留原因显示为null
+    true,说明内容一样,不过如果使用 === 就不行了,因为类型不同
+    
+
+2 注意:
+    (1) null和undefined在宽松比较时,都表示空,没有,无 等含义
+    (2) undefined出现情况
+        a.声明一个变量但是没有赋值
+        b.函数没有return时,返回undefined
+        c.函数调用需要传值,但是没有传值时,函数返回值为undefined
+        d.获取对象中不存在的属性时,返回undefined
+    (3) 获取不存在的对象时返回null
+    (4) null的数据类型是object
+        undefined数据类型是undefined
+    (5) null是表示 "无" 的对象,数据类型转换转为数值型是 0 
+        undefined是表示 "无" 的原始值,转为数值时是 NaN
+
+
+3
+<script>
+    /**
+     * 出现undefined情况
+     */
+    //a.声明一个变量但是没有赋值
+    var $b;
+    console.log(typeof($b)); //undefined
+
+
+    //b.函数没有return时,返回undefined
+    function f1() {}
+    var g = f1();
+    console.log(g); //undefined
+
+
+    //c.函数调用需要传值,但是没有传值时,函数返回值为undefined
+    function f(x) {
+        return x;
+    }
+    var s = f();
+    console.log(typeof(s)); //undefined
+
+
+    //d.获取对象中不存在的属性时,返回undefined
+    var o = {}; //0是对象
+    console.log(o.p); //undefined
+
+    /**
+     * 返回值为null的情况
+     */
+    $id = document.getElementById('xx');
+    console.log($id); //null
+
+    console.log('----------------------------------');
+    //null是表示 "无" 的对象,数据类型转换转为数值型是 0 
+    //undefined是表示 "无" 的原始值,转为数值时是 NaN
+    var n = Number(null);
+    console.log(n); //0
+    var u = Number(undefined);
+    console.log(u); //NaN
+</script>

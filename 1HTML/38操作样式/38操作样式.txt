@@ -1,0 +1,45 @@
+操作样式
+(1)操作style属性
+    style属性可以设置或返回样式
+    style设置css特征值时,需要把特制的 "短横线命名法" 改成 "驼峰命名法" 后使用
+                                        font-size   --->   fontSize
+                                        font-family --->   fontFamily
+
+    <p id="p1">hello world!</p>
+    <p id="p2">hello world!</p>
+
+    <script>
+        document.getElementById("p2").style.backgroundColor = "red";
+        document.getElementById("p2").style.color = "blue";
+        document.getElementById("p2").style.fontFamily = "微软雅黑";
+        document.getElementById("p1").style.fontSize = "larger";
+
+        var backColor = document.getElementById("p2").style.color;
+        console.log(backColor); //blue
+    </script>
+
+注意: float是js保留字,故给元素设置float属性时,要写作HTMLElementObject.style.cssFloat
+        document.getElementById("p2").style.cssFloat = "right";
+
+
+ (2)操作className属性
+    className属性设置或者返回元素的class属性
+        获取属性值: HTMLElementObject.className
+        设置属性值: HTMlElementObject.className=classname   
+
+         //给p3加上 ppt 类
+        document.getElementById("p3").className = "ppp";
+        console.log(document.getElementById("p3").className); //ppp
+
+
+        //给所有tag进行赋值,会报错
+        //document.getElementsByTagName("p").style.backgroundColor = "aqua";
+        //这样给全体tag赋值也是错误的
+        //document.querySelectorAll("p").style.backgroundColor = "red";
+        
+        //正确写法
+        var els = document.getElementsByTagName("p");
+        for (let i = 0; i < els.length; i++) {
+            //分开进行赋值
+            els[i].style.backgroundColor = "aqua";
+        }

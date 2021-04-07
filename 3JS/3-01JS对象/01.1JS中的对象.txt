@@ -1,0 +1,59 @@
+1 JS中的对象不通过class来实现,通过function来实现
+
+    实例化对象 两种方式
+    (1)
+        function Man(){
+
+        }
+        new Man();
+    (2)
+        var s = {
+            a: 'sdf',
+            'name': 'SSSS',
+            f: function() {
+                console.log('哈哈哈');
+            },
+            //调用外部方法,不要有括号,不然就是调用了
+            P: Person,
+        }
+        s.age = 15; //在外面还可以继续添加属性方法
+
+
+2 JS语言的对象体系,不是基于类的,而是基于构造函数(constructor)和原型链(prototype),JS语言使用构造函数作为对象的模板.
+    所谓"构造函数",就是专门用来生成对象的函数,类似于PHP中class的作用,它提供模板,描述对象的基本结构
+
+    一个构造函数可以生成多个对象,这些对象都有相同的结构
+
+
+3 如果函数首字母大写,一般用来作为构造函数
+    自定义构造函数得到的对象叫自定义对象
+
+
+4 使用new新建对象,对于同一个函数,直接调用是函数,使用new就是对象
+    使用 对象名.名字 来添加属性和方法,后面是function的是方法,其余是属性
+
+
+5
+    <script>
+        //如果函数首字母大写,一般用来作为构造函数
+        function Man() {
+
+        }
+        //实例化对象
+        var m = new Man();
+        alert(typeof(m)); //object 是对象
+
+        //添加属性和方法,具体是属性还是方法,只有是function才是方法,其余的是属性
+        m.name = '刘德华';
+        m.eat = function() {
+            console.log('吃红烧肉');
+        }
+
+        //调用方法
+        console.log(m.name); //刘德华
+        m.eat(); //吃红烧肉
+
+        function ff() {}
+        ff(); //普通函数,只能使用new来区分
+        new ff(); //构造函数
+    </script>

@@ -1,0 +1,28 @@
+动态操作元素(动态添加删除元素)
+    1.document.createElement(): 创建元素
+
+        document.CreateElement("input");
+
+    2.document.appendChild()" 添加子元素
+    先创建再添加才能用
+
+        var dv1 = document.getElementById("dv1");
+        var appendNode = document.createElement("input");
+        dv1.appendChild(appendNode);
+
+    3.document.insertBefore(newE1,orgE1);  在某元素之前添加元素
+        var dv1 = document.getElementById("dv1");
+        var appendNode = document.createElement("input");
+        document.body.insertBefore(appendNode,dv1);
+
+    4.document.firstChild: 获取第一个元素
+
+    5.document.childNodes: 获取所有子节点元素
+
+    6.document.removeChild(): 报错,必须指定元素
+
+    7.
+    //这样写可以再新的div中输出内容
+        var newTag = document.createElement("div");
+        newTag.innerHTML = "你好啊";
+        document.body.appendChild(newTag);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var str = 'hello, when i am working,do not coming';
+
+    //需求,把字符串里面的ing结尾的词根部分找出来 ing去掉去掉ing的部分
+
+    //1.预查询(正向预查,正预测,前瞻,先行断言)   (?=ing\b) 是ing就不查了,到ing停止
+    var reg = /\b\w+(?=ing\b)/g;
+    var m = str.match(reg);
+    console.log(m); //Array [ "work", "com" ]
+
+
+    //需求:把不是ing结尾的单词找出来     
+
+    //2 负向预查(负预测,前瞻,现行否定)   (?!ing)\w{3}\b  \w{3}\b 后边3位  (?!ing) 不是ing
+    var reg = /\b\w+(?!ing)\w{3}\b/g;
+    var m = str.match(reg);
+    console.log(m); //Array [ "hello", "when" ]
+</script>
+
+</html>

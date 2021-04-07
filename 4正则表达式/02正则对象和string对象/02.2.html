@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var t = 'abcdefg8iS426';
+    // i 忽略大小写
+    var reg = /is/i;
+    var a = reg.test(t);
+    alert(a); //true
+
+    var reg1 = new RegExp('is', 'i'); //new的使用使用第二个参数
+    var a1 = reg1.test(t);
+    alert(a1); //true
+</script>
+
+</html>

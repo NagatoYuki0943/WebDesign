@@ -1,0 +1,59 @@
+1.因为JS为弱类型语言,故声明变量只要使用 var 关键字即可声明任何类型
+    JS中变量一切皆对象
+
+2.4.JS可以使用 $符号开头命名变量
+    数字,字母,下划线,数字不能开头
+    汉字可以当做变量名,但是不要用,因为太low了
+
+
+3.虽然 var 关键字即可声明任何类型,但是JS仍有数据类型
+    boolean   布尔
+    number    数字
+    string    字符串
+    Object    对象类型
+    Undefined 未定义
+    Null      空对象
+        Undefined 类型和 Null 类型都是只有一个值的数据类型,值分别undefined与null
+        JS中数组被归为了对象类型
+
+
+4. PHP的8中变量类型: 
+    4种标量数据类型
+        boolean布尔型       :   只有两个值  true 和  flase
+        integer整形         :   包括正整数和负整数,无小数位
+        float/double 浮点型 :   用于储存数字,有小数位
+        string 字符串类型   :   可以储存一切字符的集合
+
+    2种符合类型
+        array数组   :   一切类型相同的变量组合
+        object对象  :   对象是对象的事例,使用"new 类()"构造函数复制类,类的克隆品称为类的事例
+
+    2种特殊类型:
+        resource资源类型    :   一种特殊的变量,又称为句柄,保存在内存中的一个资源地址,具体来讲就是存放在内存中文件的或者虚拟表的mySQL服务器连接对象的地址
+        null类型            :   表示变量没有值,唯一的值就是null,null和NULL是一样的
+
+
+5.查看变量类型可以使用 typeof 方法
+    //测试字符串变量的类型
+    var srt = "Hello World!";
+    var Type = typeof(srt);
+    alert(Type); //弹出窗口
+    console.log(Type); //在控制台输出: "string"    
+
+    //测试数字变量的类型
+    var numValue = 123;
+    var Type = typeof(numValue);
+    alert(Type); //弹出窗口
+    console.log(Type); //在控制台输出: "number"
+
+    //测试boolean变量的类型
+    var boolValue = true;
+    var Type = typeof(boolValue);
+    alert(Type); //弹出窗口
+    console.log(Type); //在控制台输出: "boolean"
+
+
+6.js中单引号字符串
+    var str = '=486aea13\\agr540-/=1,as;-af.;'; //JS中即使是单引号包裹的字符串里面的\也是转义,和php不同
+    alert(str); // =486aea13\agr540-/=1,as;-af.;   \\ -> \ 被转义了
+    

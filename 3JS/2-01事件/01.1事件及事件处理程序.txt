@@ -1,0 +1,15 @@
+1 两种方法 
+    (1) 直接写在标签中 
+    (2) 在标签中写上js函数名,在其他地方写函数
+
+<body>
+    <!--行内绑定,元素属性绑定,违背js代码与html代码分离原则-->
+    <input type="button" name="" value="点击1" onclick="console.log('哈哈哈')">
+    <!--一般这样写,html和js分离-->
+    <input type="button" name="" value="点击2" onclick="f()">
+</body>
+<script>
+    function f() {
+        console.log("呼呼呼");
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <p>2222</p>
+    <p>2222</p>
+    <p>2222</p>
+</body>
+<script>
+    //添加自定义函数
+    Number.prototype.scf = function() {
+        //this是调用它的对象
+        return this * this * this;
+    }
+    Object.prototype.red = function() {
+        for (var i = 0; i < this.length; i++) {
+            this[i].style.color = 'red';
+        }
+    }
+
+    var n = 3;
+    //计算三次方
+    var i = n.scf();
+    console.log(i); //27
+
+    //根据标签获取结果集
+    var p = document.getElementsByTagName('p');
+    p.red();
+</script>
+
+</html>

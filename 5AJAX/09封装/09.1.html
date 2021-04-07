@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+</head>
+
+<body>
+    <div id="d">div</div>
+</body>
+<script>
+    var d = $('d');
+    d.style.background = "red";
+
+    //创建回调函数(JS中,函数的作用域在于声明的地方,而不是调用的地方)
+    var callback = function(msg) {
+        console.log(msg); //Object { name: "tom", age: 15 }
+    }
+
+    //将回调函数名当做参数传入进去
+    var g = $.get("09.php", callback, 'json');
+    //console.log(g);
+</script>
+
+</html>

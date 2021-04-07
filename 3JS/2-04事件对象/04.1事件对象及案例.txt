@@ -1,0 +1,58 @@
+1 事件对象是事件发生时的一切信息
+
+2 
+  触发事件之后会给方法返回一个对象,可以获取事件的信息,如点击页面,点击鼠标都会产生对象
+
+    <body>
+        <div id="d">
+            ddddd
+        </div>
+    </body>
+    <script>
+        var d = document.getElementById("d");
+        //点击之后会给function传递一个对象,下面用e保存了起来
+        d.addEventListener('click', function(e) {
+            //e是形参,可以获取到对象
+            console.log(e); //click { target: div#d, buttons: 0, clientX: 35, clientY: 19, layerX: 35, layerY: 19 }
+        })
+
+        //整个页面添加事件监听,键盘按下就可以传递对象
+        document.addEventListener('keydown', function(e) {
+            console.log(e); //keydown { target: body, key: "s", charCode: 0, keyCode: 83 }
+        })
+    </script>
+
+
+
+    <body>
+    <img src="0001.jpg" style="position: absolute; height: 115px; width: 204px;" id="img">
+    </body>
+    <script>
+    var img = document.getElementById("img");
+    var x = 50,
+        y = 50;
+
+    document.onkeydown = function(e) {
+        //console.log(e); //keydown { target: body, key: "ArrowUp", charCode: 0, keyCode: 38 }
+        var code = e.keyCode;
+        if (code == 37) {
+            x--;
+        } else if (code == 38) {
+            y--;
+        } else if (code == 39) {
+            x++;
+        } else if (code == 40) {
+            y++;
+        }
+        img.style.left = x + 'px';
+        img.style.top = y + 'px';
+    }
+
+    img.onclick = function() {
+        document.onmousemove = function(e) {
+            //console.log(e); //mousemove { target: html, buttons: 0, clientX: 1585, clientY: 98, layerX: 1585, layerY: 98 }
+            img.style.left = e.clientX + 'px';
+            img.style.top = e.clientY + 'px';
+        }
+    }
+</script>

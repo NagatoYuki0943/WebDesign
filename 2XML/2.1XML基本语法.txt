@@ -1,0 +1,45 @@
+1 XML必须有根节点
+    所有的xml必须有一个根节点,什么名字都行,包裹着所有的xml内容
+    <root>      <root></toot> 就是跟节点
+    <user>小明</user>
+    <msg>帅哥</msg>
+    <explain></explain>
+    </root>
+
+
+2 XML 头声明可有可无,但是建议写 
+            版本            编码
+    <?xml version="1.0" encoding="utf-8" ?> 
+    <root>
+        <suibianxie>aaaaaaaaaa</suibianxie>
+        <suibian>bbbbbbbbbb</suibian>
+    </root>
+
+
+3 所有xml元素都必须是成对标签
+
+
+4 标签名大小写敏感(区分大小写)
+
+
+5 标签不能交叉
+
+
+6 注释代码
+    <!--<b>这里错误了,但是注释就可以了</c>-->
+
+
+7 标签中间有"<",">"就会出错,比如下面这一行,要使用实体字符替换 <>
+    <msg>如果46<47,那么求证,小明很帅</msg>
+
+    <msg>如果46 &lt; 47,那么求证,小明很帅</msg> 这一行会打印上面一行
+
+    XML中需要转义的字符
+
+    在 XML 中，有 5 个预定义的实体引用：
+    实体引用 	字符 	字符名称
+    &lt; 	     < 	     小于
+    &gt; 	     > 	     大于
+    &amp; 	     & 	     和号
+    &apos; 	     ' 	     单引号
+    &quot; 	     " 	     双引号

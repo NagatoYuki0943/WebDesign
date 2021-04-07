@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1" class="ppp">hello world! p1</p>
+    <p id="p2">hello world! p2</p>
+    <p id="p3">hello world! p1</p>
+    <input type="button" value="变变变" onclick="change()">
+</body>
+<script>
+    function change() {
+        document.getElementById("p2").style.backgroundColor = "red";
+        document.getElementById("p2").style.color = "blue";
+        document.getElementById("p2").style.fontFamily = "微软雅黑";
+        document.getElementById("p2").style.fontSize = "20px";
+        document.getElementById("p2").style.cssFloat = "right";
+
+        var backColor = document.getElementById("p2").style.color;
+        console.log(backColor); //blue
+
+        //给p3加上 ppt 类
+        document.getElementById("p3").className = "ppp";
+        console.log(document.getElementById("p3").className); //ppp
+
+        //给所有tag进行赋值,会报错
+        //document.getElementsByTagName("p").style.backgroundColor = "aqua";
+        //正确写法
+        var els = document.getElementsByTagName("p");
+        for (let i = 0; i < els.length; i++) {
+            //分开进行赋值
+            els[i].style.backgroundColor = "aqua";
+        }
+
+        //这样给全体tag赋值也是错误的
+        //document.querySelectorAll("p").style.backgroundColor = "red";
+    }
+</script>
+<style>
+    .ppt {
+        background-color: aqua;
+        color: coral;
+    }
+</style>
+
+</html>

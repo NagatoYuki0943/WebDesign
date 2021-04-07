@@ -1,0 +1,65 @@
+1 运算
+    + 
+    - 
+    * 
+    / 
+    % 
+    ++ 
+    --
+
+2 比较
+    <
+    > 
+    ==  等于 (数值等于)
+    === 全等 (数值和类型)
+    >= 
+    <= 
+    != 
+    !==
+
+3 逻辑
+    !
+    &&
+    ||
+    ? : 
+
+    && 的运算优先级高于 ||
+
+    在js中逻辑或逻辑与的返回值取决于整个表达式的子表达式的值
+        var a = 0;
+        var b = 3;
+        var o = a || b; //为真,找真的值
+        console.log(o); //3 
+
+        var k = a && b; //为假,找假的值
+        console.log(k); //0
+        
+        var v = 0;
+        var f = true;
+        var p = v || f;
+        console.log(p); //true
+        var e = v && f;
+        console.log(e); //0
+
+        //两个都为真
+        var a = 1;
+        var b = 3;
+        var c = a && b;
+        console.log(c); //3  &&找到最后一个才是真,就取这个值,选择3
+        var c = a || b;
+        console.log(c); //1  ||找到第一个为真的就取这个值,选择1
+
+        //两个都为假
+        var a = 0;
+        var b = false;
+        var c = a && b;
+        console.log(c); //0  &&找到第一个为假就为假,选0
+        var c = a || b;
+        console.log(c); //false ||找到最后一个为假的就取这个值,选false
+
+        //三个数
+        var a = 1;
+        var v = 0;
+        var f = false;
+        var t = a || v && f;
+        console.log(t); //1  && 的运算优先级高于 ||,先算右边为 false,再和a进行或运算,结果为1

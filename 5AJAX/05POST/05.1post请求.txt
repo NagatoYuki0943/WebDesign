@@ -1,0 +1,40 @@
+1   (1) open(method,url,async): 初始化ajax对象
+        method: http请求方式:post,get
+        url: 请求的服务器地址
+        async: 布尔值,true代表异步请求,false代表同步请求,默认是异步
+        
+    (2) setRequestHeader(header,value): 设置请求头信息
+        header: 请求头名称
+        value:  请求头的值
+        post提交要设置请求头
+
+    (3) send(content): 发送ajax请求
+        content: 如果是get请求时,此参数为null,如果是post请求时,此参数就是要传递的数据
+
+
+2
+
+    设置post请求方式,地址栏写上参数也没用
+        xhr.open('post', '05.1.php');
+    post要设置请求头
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    发送请求
+        xhr.send('name=' + v);
+
+
+3 Ajax中get和post请求区别
+    (1) 传参方式不同
+        Get在地址尾部使用 ? 拼接,多个参数使用 & 连接
+
+        Post在send方法中传参,多个参数使用 & 连接
+
+    (2) 请求头不同
+        Get不需要设置
+
+        Post必须设置请求头
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    (3) 参数类型
+        Get方式只能传输简单类型: 数字,字符串
+
+        Post除了数字和字符串以外,还可以传输二进制数据

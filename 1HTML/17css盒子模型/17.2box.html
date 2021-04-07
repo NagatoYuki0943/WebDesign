@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .dv1 {
+            border: 5px solid red;
+            margin: 100px auto;
+        }
+        
+        .dv2 {
+            border-top: 5px dashed red;
+            border-left: 8px solid rgb(35, 10, 175);
+            border-bottom: 5px ridge rgb(72, 255, 0);
+            border-right: 10px double rgb(9, 145, 187);
+            margin: 100px 50px 25px 10px;
+            padding: 100px 50px 25px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>盒子样式说明</h2>
+    <ul type="disk">
+        <li>border样式(边框)</li>
+        <ul type="circle">
+            <li>border: 粗细 颜色 线条类型(顺序可以改变),只写这一个上下左右都一样</li>
+            <li>border-top: 粗细 颜色 线条类型</li>
+            <li>border-buttom:粗细 颜色 线条类型</li>
+            <li>border-left: 粗细 颜色 线条类型</li>
+            <li>border-right: 粗细 颜色 线条类型</li>
+        </ul>
+        <li>margin样式(外边距)</li>
+        <ul>
+            <li>margin:上 右 下 左 (顺时针,从上开始,一般使用像素做单位),只写这一个上下左右都一样(如果只有两个值,那么第一个指上下,第二个指左右)</li>
+            <li>margin-top: 10px</li>
+            <li>margin-right: 10px</li>
+            <li>margin-bottom: 10px</li>
+            <li>margin-left: 10px</li>
+        </ul>
+
+        <li>padding样式(内边距)</li>
+        <ul>
+            <li>padding:上 右 下 左 (顺时针,从上开始,一般使用像素做单位),只写这一个上下左右都一样</li>
+            <li>padding-top: 10px</li>
+            <li>padding-right: 10px</li>
+            <li>padding-bottom: 10px</li>
+            <li>padding-left: 10px</li>
+        </ul>
+
+        <li>width样式(宽,一般使用像素做单位)</li>
+
+        <li>height样式(高,一般使用像素做单位)</li>
+
+        <li>注意设置居中时,除了左右边框(margin)需要设置auto,同时必须要设置元素宽度</li>
+
+    </ul>
+
+    <div class="dv1"></div>
+    <div class="dv2">aaaaaa</div>
+</body>
+
+</html>

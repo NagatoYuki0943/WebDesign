@@ -1,0 +1,53 @@
+1  JSON格式
+    是一种用于数据交换的文本格式
+    是JavaScript对象表示法(JavaScript Object Notation)
+    JSON是轻量级的文本数据交换格式
+    JSON独立于语言
+    JSON具有自我描述性,便于理解
+
+    
+    注意:
+    JSON使用JavaScript语法来描述数据对象,但是JSON任然独立于语言和平台
+    JSON解析器和JSON库支持许多不同的编程语言
+    JSON其实就是长得和JSON对象几乎一样的字符串,目的取代繁琐笨重的XML格式
+
+    和XML相比JSON的优势
+        (1) 书写简单,一目了然
+        (2) 复合JS原生语法,可以由解释引擎直接处理,不用添加解析代码
+
+
+2  JSON和XML一样有严格的格式
+    (1) 复合类型的值只能是数组或者对象,不能是函数,正则表达式对象,日期对象
+    (2) 简单类型的值只有四种: boolean,数值(必须是10进制),字符串,null(不能使用NaN,Infinity,undefined)
+    (3) 字符串必须使用 "" 表示,不能使用单引号
+    (4) 对象的键名必须放在双引号里面
+    (5) 数组或对象最后一个成员后面不能加逗号
+
+    注意:空数组和空对象都是合格的JSON值,null本身可以一个合格的JSON值
+
+    json字符串
+        var json = '{"name":"list","age":16}';
+
+
+3  js专门为json准备了json对象
+
+        JSON.stringify(js数据);   将一个js数据转换为json字符串
+          stringify()可以将不标准格式转换成JSON标准格式
+            
+            var json = JSON.stringify(arr);
+
+        JSON.parse(JSON字符串);   将一个json字符串转换成js数据     
+
+            var j = JSON.parse(json); 
+
+
+4 
+    json字符串
+    {"name":"mike","age":"15","sex":"male"}
+    
+    json数组
+    {
+        {"name":"mike","age":"15","sex":"male"},
+        {"name":"mike","age":"15","sex":"male"},
+        {"name":"mike","age":"15","sex":"male"},
+    }

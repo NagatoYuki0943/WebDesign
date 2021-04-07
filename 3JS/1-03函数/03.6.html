@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var a = 1;
+
+    function x() {
+        console.log(a);
+    }
+
+    function x2() {
+        var a = 2; //这里修改的x=2对x()函数无效,x()函数去找定义a的地方
+        x(); //调用x()函数
+    }
+    x2(); //1
+    //在js中,函数的作用域在于声明的地方,而不是调用的地方,所以上面输出1
+    console.log("-----------------------------");
+
+    function foo() {
+        var x = 1; //新的定义
+
+        function br() {
+            console.log(x);
+        }
+        return br; //返回函数
+    }
+    var x = 2; //外面定义无效
+    var f = foo(); //f接收函数,
+    f(); //1   f调用consol.log(x), x找自己声明的地方,而不是执行的地方
+</script>
+
+</html>

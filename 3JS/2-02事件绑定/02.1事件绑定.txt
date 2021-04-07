@@ -1,0 +1,52 @@
+1 行内绑定,元素属性绑定
+    <body>
+        <!--行内绑定,元素属性绑定,违背js代码与html代码分离原则-->
+        <div onclick="alert(1)" onmousedown="f">
+            <!--f 不能执行 f()才能执行-->
+            111
+        </div>
+    </body>
+    <script>
+        function f() {
+            alert(222);
+        }
+    </script>
+
+
+2 动态绑定
+    (1) 获取元素对象
+    (2) 为获取的对象添加属性,绑定事件(匿名不匿名都可以)
+
+    注意: 同一元素绑定同一事件时,后一个覆盖前一个
+        <body>
+        <div id="d">
+            dddd
+        </div>
+        </body>
+        <script>
+            //动态绑定
+            //(1) 获取元素对象
+            var d = document.getElementById('d');
+
+            //(2) 为获取的对象添加属性,绑定事件(匿名不匿名都可以)
+            d.onclick = function f() {
+                alert("d.onclick");
+            }
+      
+            //同一元素绑定同一事件时,后一个覆盖前一个
+            d.onclick = function f() {
+                alert("d.onclick2");
+            }
+        </script>
+
+
+以上绑定同一个元素绑定多个同一个事件后面的会覆盖前面的
+3 事件监听,最常用
+    (1) 获取元素对象
+    (2) 为对象添加事件监听(是一个方法)
+    d.addEventListener(事件名称, 事件处理程序, 决定事件的传播形式(true / false));
+        事件名称是 click mouseenter mouseout 等
+        事件处理程序是 匿名方法(非匿名方法也可以)
+
+
+事件监听不会覆盖相同对象的同名事件

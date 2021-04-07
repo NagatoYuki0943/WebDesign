@@ -1,0 +1,38 @@
+1 遍历对象,和遍历数组方式一样,可以获取属性和对象
+    for (var key in p) {
+        //当做数组来用
+        console.log(p[key]);
+    }
+
+
+2 delete 对象.属性;     删除对象中的属性
+  对象 = null;          删除对象
+
+
+3 对象的方法
+    属性: 对某类事务特征的描述 
+    方法: 对某类事务行为的描述 
+    在js中,对象的属性值可以使字符串,数组,对象等任意数据类型,
+        但是,当属性值是一个函数时,称为函数的方法
+
+
+    function Woman() {
+        //内部方法
+        this.f1 = function() {
+            console.log('Woman.f1');
+        }
+
+        //内部属性
+        this.f2 = 2333;
+    }
+
+    var s = {
+        a: 'sdf',
+        'name': 'SSSS',
+        //方法
+        f: function() {
+            console.log('哈哈哈');
+        },
+        //调用外部方法,不要有括号,不然就是调用了
+        P: Person,
+    }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //想要全部匹配的话,要在reg 后面加 g ,使用全局匹配
+
+    var t = 'abcdefg4is65fe3ais4fe8is426';
+    var reg = 'is';
+    var reg1 = /isa/;
+
+    //1 indexOf()  返回第一次出现的位置(方法),从0开始计数 不能使用正则
+    i = t.indexOf(reg1);
+    console.log(i); //-1
+
+    //2 search(reg)  与indexOf类似,返回指定模式的字串在字符串中首次出现的位置,从0开始数
+    t.search
+    var s = t.search(reg);
+    console.log(s); //8
+
+    //3 match(reg)  以数组的形式返回指定模式的字符串,返回一个
+    var m = t.match(reg);
+    console.log(m); //Array [ "is" ]
+
+
+    //4 replace(reg,'替换后的字符串')  把指定模式的子串进行替换操作  只替换第一个
+    var r = t.replace(reg, '**');
+    console.log(r); //abcdefg4**65fe3ais4fe8is426
+
+    //5 split(reg)  以指定模式分隔字符串,返回结果为数组
+    var s = t.split(reg);
+    console.log(s); //Array(4) [ "abcdefg4", "65fe3a", "4fe8", "426" ]
+</script>
+
+</html>

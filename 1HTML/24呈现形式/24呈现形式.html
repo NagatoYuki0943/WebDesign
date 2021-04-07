@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        
+        span {
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>呈现形式:display:none(不显示) | block | inline | inline-block</h3>
+    <ul type="square">
+        <li>block: 块级标签,可设置宽,高,元素独占一行</li>
+        <li>inline:行级标签,不可设置宽,高,元素自适应内部内容(没有内容就不显示)</li>
+        <li>inline-block: 介于block和inline之间,可以设置宽,高,但是不会独占一行</li>
+    </ul>
+    <hr>
+    <div style="background-color: tomato;">aaaaa</div>
+    <div style="background-color: teal;">bbbbb</div>
+    <span style="background-color:yellow">span标签在上面设置了宽度,但是它是行级标签,空余的内容用margin填充</span>
+</body>
+
+</html>

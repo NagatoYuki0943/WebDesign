@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>form 表单侧重于向后端发送数据</p>
+    <p>主要是以 input 文本标签为主,附以 name 属性,通过form表单向后端发送数据</p>
+    <p>除了 input 标签还有大文本标签 textrea;下拉菜单标签 select</p>
+    <pre>
+        1.type: text,password,count,date,botton,radio(单选),checkbox(多选),hidden,submit(提交),reset(重置)等
+        2.name: name 设置的值必须要和后端接受数据的参数名称一致
+        3.value: 显示在页面上的值(保存输入的数据),除了 type="hidden" 的除外,因为它为隐藏标签
+        4.autocomplete="off" 是否自动补全
+        form action="后端地址" method="提交方式"
+        input没有闭标签 
+    </pre>
+    <form action="后端地址" method="提交方式,分为POST:不会显示在地址栏,可以传输密码,也没有限制数据;GET:添加在URL后面,用?和&分隔">
+        <input type="text" name="与后端参数名称一致" value="">
+        <br>
+        <input type="password" name="与后端参数名称一致" value="">密码
+        <br>
+        <input type="count" name="与后端参数名称一致" value="">
+        <br>
+        <input type="date" name="与后端参数名称一致" value="">
+        <br>
+        <input type="radio" name="sex" value="">男
+        <input type="radio" name="sex" value="">女
+        <br>
+        <input type="chechbox" name="interset" value="football" checked> 足球
+        <input type="chechbox" name="interset" value="basketball"> 篮球
+        <br>
+        <input type="hidden" name="与后端参数名称一致" value="">
+        <select name="class">
+            <option>一班</option>
+            <option>二班</option>
+        </select>
+        <br>
+        <input type="button" value="按钮">
+        <br>
+        <input type="submit" value="提交" />
+        <input type="reset" value="重置" />
+        <br>
+        <textarea name="" id="" cols="30" rows="10">大小可以拉</textarea>
+
+
+    </form>
+
+
+
+</body>
+
+</html>

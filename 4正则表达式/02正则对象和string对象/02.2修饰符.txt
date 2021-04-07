@@ -1,0 +1,27 @@
+1 匹配模式也叫修饰符
+    表示正则匹配的附加规则,放在正则模式的最尾部(new的方式使用第二个参数传递,使用引号包裹)
+    修饰符可以单个使用,也可以多个一起使用
+
+
+2 在正则表达式中,匹配模式常用的有两种方式: 
+    g global缩写
+        代表全局匹配,匹配出所有的满足条件的结果,不加g第一次匹配成功后,正则对象就停止向下匹配.
+        var reg = /\bi(pad)|(phone)|(watch)|(mac)|(pod)\b/g;
+
+    i ignore缩写
+        代表忽略大小写,匹配好,会自动忽略字符串的大小写
+        var reg = /is/i;
+
+
+3
+    <script>
+        var t = 'abcdefg8iS426';
+        // i 忽略大小写
+        var reg = /is/i;
+        var a = reg.test(t);
+        alert(a); //true
+
+        var reg1 = new RegExp('is', 'i'); //new的使用使用第二个参数
+        var a1 = reg1.test(t);
+        alert(a1); //true
+    </script>

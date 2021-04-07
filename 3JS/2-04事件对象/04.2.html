@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="0001.jpg" style="position: absolute; height: 115px; width: 204px;" id="img">
+</body>
+<script>
+    var img = document.getElementById("img");
+    img.onclick = function(e) {
+        console.log(e.bubbles); //true
+        console.log(e.eventPhase); //2 事件到达目标节点
+        console.log(e.type); //click
+        console.log(e.timeStamp); //4246
+    }
+</script>
+
+</html>

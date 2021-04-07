@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        <p id="p1">11111</p>
+        <p id="p2">22222</p>
+        <p id="p3">33333</p>
+        <p id="p4">44444</p>
+    </div>
+    <div id="d2">
+        <p id="p5">55555</p>
+        <p id="p6">66666</p>
+    </div>
+</body>
+<script>
+    var p2 = document.getElementById('p2');
+    p2.nextElementSibling.style.background = 'red';
+    p2.previousElementSibling.style.background = 'pink';
+    p2.parentElement.style.background = 'blue';
+
+    var d2 = document.querySelector('#d2');
+    //childNodes[下标],空格和回车也算节点
+    d2.childNodes[3].style.background = "yellow";
+
+    //这种方式改变行内的style,也能改变css中的样式,不过改的是行内的style,不是css中的样式
+    //document.querySelector("#d1").style.width = "500px";
+
+    //这种方式获取不到css中的样式
+    var d1 = document.querySelector("#d1");
+    alert(d1.style.width); //没任何东西
+    //这种方式可以获取到css中的样式
+    alert(getComputedStyle(d1).width); //200px
+</script>
+
+</html>

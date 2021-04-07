@@ -1,0 +1,35 @@
+1 JS解析JSON字符串
+    JSON.parse()
+
+    (1) 数组形式JSON转JS数组
+        var json = '["a", "b", "c", "d"]';
+        var arr = JSON.parse(json);
+        console.log(arr);   //Array(4) [ "a", "b", "c", "d" ]
+
+    (2) 对象形式JSON转JS对象
+        var json = '{"name":123,"age":456,"sex":789}';
+        var ob = JSON.parse(json);
+        console.log(ob);    //Object { name: 123, age: 456, sex: 789 }
+
+
+2 PHP解析JSON字符串
+    json_decode($str, true) 第二个参数true返回数组,否则返回对象
+
+    (1) 数组形式JSON转PHP索引数组
+        $str = '["1","2","3","4","5"]';
+        $arr = json_decode($str);
+        print_r($arr);  //Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 ) 
+        $arr = json_decode($str, true); //没有键值对,第二个参数写了true也没用
+        print_r($arr);  //Array ( [0] => 1 [1] => 2 [2] => 3 [3] => 4 [4] => 5 )
+
+
+    (2) 对象形式JSON转PHP关联数组(第二个参数true)   json_decode($str,true)
+        $str = '{"name":"tom","age":"male"}';
+        $arr = json_decode($str, true);
+        print_r($arr);  // Array ( [name] => tom [age] => male ) 
+
+
+    (3) 对象形式JSON转PHP关联数组                   json_decode($str)
+        $str = '{"name":"jerry","sex":"male","age":"15"}';
+        $arr = json_decode($str);
+        print_r($arr);  //stdClass Object ( [name] => jerry [sex] => male [age] => 15 ) 

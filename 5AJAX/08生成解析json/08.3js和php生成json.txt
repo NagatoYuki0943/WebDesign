@@ -1,0 +1,53 @@
+1 JS生成JSON字符串
+    JSON.stringify(arr)
+    JSON.stringify(ob)
+
+    (1) JS数组转JSON数组形式JSON(两边是[],没有下标)  
+        var arr = ['a', 'b', 'c', 'd'];
+        var j = JSON.stringify(arr);
+        console.log(j); //["a","b","c","d"] 
+
+
+    (2) JS对象转JSON对象形式JSON
+        var ob = {
+            name: 123,
+            age: 456,
+            sex: 789
+        }
+        var j = JSON.stringify(ob);
+        console.log(j); //{"name":123,"age":456,"sex":789}
+
+
+2 PHP生成JSON字符串
+    json_encode($arr) 
+    json_encode($ob)
+
+    (1) PHP索引数组转为JSON数组形式JSON(两边是[],没有下标)
+        $arr = array('1', '2', '3', '4', '5');
+        $j = json_encode($arr);
+        echo $j . "<br>";   //["1","2","3","4","5"]
+
+
+    (2) PHP关联数组转为JSON对象形式JSON (键值对形式存在的就是对象形式,否则是数组形式)
+        $arr = array('name' => 'tom', 'age' => 'male');
+        $j = json_encode($arr);
+        echo $j . "<br>";   //{"name":"tom","age":"male"}
+
+
+    (3) PHP对象转为JSON对象形式JSON     (键值对形式存在的就是对象形式,否则是数组形式)
+        class CA
+        {
+            public $name;
+            public $sex;
+            public $age;
+            public function __construct($name, $sex, $age)
+            {
+                $this->name = $name;
+                $this->sex = $sex;
+                $this->age = $age;
+            }
+        }
+        $ca = new CA('jerry', 'male', '15');
+        $j = json_encode($ca);
+        echo $j . "<br>";     //{"name":"jerry","sex":"male","age":"15"}
+

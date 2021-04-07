@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 出现undefined情况
+     */
+    //a.声明一个变量但是没有赋值
+    var $b;
+    console.log(typeof($b)); //undefined
+
+
+    //b.函数没有return时,返回undefined
+    function f1() {}
+    var g = f1();
+    console.log(g); //undefined
+
+
+    //c.函数调用需要传值,但是没有传值时,函数返回值为undefined
+    function f(x) {
+        return x;
+    }
+    var s = f();
+    console.log(typeof(s)); //undefined
+
+
+    //d.获取对象中不存在的属性时,返回undefined
+    var o = {}; //0是对象
+    console.log(o.p); //undefined
+
+    /**
+     * 返回值为null的情况
+     */
+    $id = document.getElementById('xx');
+    console.log($id); //null
+
+    console.log('----------------------------------');
+    //null是表示 "无" 的对象,数据类型转换转为数值型是 0 
+    //undefined是表示 "无" 的原始值,转为数值时是 NaN
+    var n = Number(null);
+    console.log(n); //0
+    var u = Number(undefined);
+    console.log(u); //NaN
+</script>
+
+</html>

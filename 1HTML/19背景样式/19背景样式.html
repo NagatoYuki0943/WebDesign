@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 1600px;
+            height: 900px;
+            border: 1px solid red;
+            background-color: #107fe7;
+            background-image: url('16.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>背景样式</h2>
+    <ul type="disk">
+        <li>background: 背景色 背景图片 背景坐标 背景尺寸(h5) 图片重复方式(可以一行全设置,也可以用下面分开设置)</li>
+        <ul>
+            <li>background-color: #ffffff 两两一组代表一个255(6个字母相同可以使用3个字母代替)| rgb(255,255,255) | white</li>
+            <li>background-image:url('图片地址')</li>
+            <li>background-position:x% y% | xpos ypos | top center</li>
+            <li>background-size:length(长度) | percentage(百分比) | cover(覆盖背景,保持横纵比) | contain(是图片不超出标签范围的情况下变成最大,且保持横纵比)</li>
+            <li>background-repeat:repeat | repeate-x(横向重复) | repeat-y(纵向重复) | no-repeat</li>
+        </ul>
+    </ul>
+    <hr>
+    <div></div>
+</body>
+
+</html>

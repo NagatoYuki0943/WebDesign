@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d">
+        dddd
+    </div>
+</body>
+<script>
+    //动态绑定
+    //(1) 获取元素对象
+    var d = document.getElementById('d');
+
+    //(2) 为获取的对象添加属性,绑定事件(匿名不匿名都可以)
+    d.onclick = function f() {
+        alert("d.onclick");
+    }
+</script>
+
+</html>

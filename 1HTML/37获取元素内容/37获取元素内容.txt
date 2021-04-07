@@ -1,0 +1,43 @@
+获取元素内容
+(1)innerHTML
+    innerHTML用于获取与赋值拥有开闭标签的元素中完整的内容
+
+获取内容
+    innerHTML可以获取到指定开闭标签内的全部内容
+     <div id="dv1">
+        <span>Hello</span>
+        <span>world</span>
+    </div>
+
+    <script>
+        var content = document.getElementById("dv1").innerHTML;
+        console.log(content);
+        //控制台输出的是
+        //<span>Hello</span>
+        //<span>world</span>
+    </script>
+赋值内容
+    innerHTML赋值可以识别并添加HTML标签
+     <div id="dv1">
+        <span>Hello</span>
+        <span>world</span>
+    </div>
+
+    <script>
+        document.getElementById("dv1").innerHTML = "<b>nihao,zaima</b>";  //原本内容会被替换
+        var content = document.getElementById("dv1").innerHTML;
+        console.log(content); //<b>nihao,zaima</b>
+    </script>
+
+(2)innerText  
+    innerText用于获取与赋值拥有开闭标签的元素中文字部分的内容
+    innerText不会识别标签,会直接输出标签
+
+获取内容
+    var content = document.getElementById("dv1").innerText;
+    console.log(content);   //Hello world
+
+赋值内容
+    document.getElementById("dv1").innerText = "<b>nihao,zaima</b>"; //原本内容会被替换
+    var content = document.getElementById("dv1").innerHTML;
+    console.log(content); //&lt;b&gt;nihao,zaima&lt;/b&gt;

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Man() {
+        //使用this可以再构造函数中将属性和方法定义好
+        this.sex = '男';
+        this.height = 40;
+    }
+
+    var zhaosi = new Man();
+    console.log(zhaosi.height); //40
+    zhaosi.height = 39;
+
+    var liuneng = new Man();
+    console.log(liuneng.height); //40
+    console.log('----------------');
+
+
+    //构造函数初始化可以传递值
+    function Woman(a, b) {
+        this.name = a;
+        this.age = b;
+    }
+
+    var xiaohong = new Woman('小红', 15);
+    console.log(xiaohong.name); //小红
+    console.log(xiaohong.age); //15
+</script>
+
+</html>

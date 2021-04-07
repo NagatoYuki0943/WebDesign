@@ -1,0 +1,35 @@
+BOM(Browser Object Model)
+DOM用于操作浏览器行为
+操作DOM对象,一般使用window关键字调用
+
+常用方法
+    1. alert():弹出提示对话框
+
+    2. confirm():弹出确认对话框,返回bool值类型
+
+    3. prompt():弹出用户输入对话框,返回输入的内容,如果取消则返回null
+
+    4. setInterval(code,milliseconds):计时器 方法可按照指定的周期(按毫秒计)来调用函数或计算表达式
+        code:需要执行的代码
+        milliseconds:执行代码的周期
+        方法会不停调用函数,直到clearInterval()被调用或者窗口被关闭.
+        由setInterval()返回计时器ID值可用作clearInterval()方法的参数
+        
+        提示:1000毫秒=1秒.如果只想执行一次可以使用setTimeout()方法
+
+    5. setTimeout(code,milliseconds):一次性计时器 方法用于在指定的毫秒数后调用函数或者计算表达式
+        code:需要执行的代码
+        milliseconds:执行代码的周期
+        clearInterval()方法来阻止函数的执行.由setTimeout()返回计时器ID值可用作clearTimeout()方法的参数
+
+    6. location 浏览器地址栏对象
+        hash:       返回一个url的锚部分
+        host:       返回一个url的主机名和端口
+        hostname:   返回url的主机名
+        ※href:       返回完整的url
+        pathname:   返回url路径名
+        ※port:       返回一个url服务器使用的端口号
+        protocol:   返回一个url协议
+        search:     返回一个url的查询部分
+
+    7. onload 页面加载完成后调用

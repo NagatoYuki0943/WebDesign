@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var str = '=486ae我a13\\agr540-/=1,as;-af.;'; //JS中即使是单引号包裹的字符串里面的\也是转义,和php不同
+    console.log(str); // =486aea13\agr540-/=1,as;-af.;   \\ -> \ 被转义了
+
+
+    //\w  包扩下划线的任何数字字母下划线的一个字符 和[0-9a-zA-Z]等价  (数字字母下划线)
+    var reg = /\w/;
+    //match匹配第一次,返回查到的结果
+    var m = str.match(reg);
+    console.log(m); //Array [ "4" ]
+
+
+    var reg = /[1-3]/;
+    var m = str.match(reg);
+    console.log(m); //Array [ "1" ]
+
+
+    //.   除了换行\n 之外的任意单个字符
+    var reg = /./;
+    var m = str.match(reg);
+    console.log(m); //Array [ "=" ]
+
+
+    //.*  除了换行\n 之外的任意全部字符
+    var reg = /.*/;
+    var m = str.match(reg);
+    console.log(m); //Array [ "=486ae我a13agr540-/=1,as;-a'f.;" ] 少了\ 当成转义字符了
+
+
+    // \/ 转义 /
+    var reg = /\//;
+    var m = str.match(reg);
+    console.log(m); //Array [ "/" ]
+
+
+    // \\ 转义 /
+    var reg = /\\/;
+    var m = str.match(reg);
+    console.log(m); //Array [ "\\" ]
+
+
+    //范围匹配中文
+    var reg = /[\u4e00-\u9fa5]/;
+    var m = str.match(reg);
+    console.log(m); //Array [ "我" ]
+
+    //匹配单个中文,只在js中可用,php不行
+    var reg = /我/;
+    var m = str.match(reg);
+    console.log(m); //Array [ "我" ]
+</script>
+
+</html>

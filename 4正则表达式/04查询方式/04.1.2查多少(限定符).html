@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var str = '我的QQ是350623619,另一个QQ是208699213,我的手机号是17600806267,我的身份证号是:370125199008024937';
+    //查找qq号,没有0开头的
+    var reg = /[1-9]\d{4,9}/g;
+    var m = str.match(reg);
+    console.log(m); //Array(5) [ "350623619", "208699213", "1760080626", "3701251990", "8024937" ]  后面的是从手机号和身份证号中截取出来的
+
+    //+匹配1次或者多册
+    var reg = /[1-9]\d+/g;
+    var m = str.match(reg);
+    console.log(m); //Array(4) [ "350623619", "208699213", "17600806267", "370125199008024937" ]
+</script>
+
+</html>

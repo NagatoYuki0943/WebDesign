@@ -1,0 +1,26 @@
+1   构造函数.prototype.自定义方法名=function(){
+        this.
+    }
+
+    里面的this指的是调用它的对象
+
+2
+    //添加自定义函数
+    Number.prototype.scf = function() {
+        //this是调用它的对象
+        return this * this * this;
+    }
+    Object.prototype.red = function() {
+        for (var i = 0; i < this.length; i++) {
+            this[i].style.color = 'red';
+        }
+    }
+
+    var n = 3;
+    //计算三次方
+    var i = n.scf();
+    console.log(i); //27
+
+    //根据标签获取结果集
+    var p = document.getElementsByTagName('p');
+    p.red();

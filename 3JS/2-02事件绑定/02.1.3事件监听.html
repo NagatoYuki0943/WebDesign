@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d">
+        dddd
+    </div>
+</body>
+<script>
+    //事件监听
+    //(1) 获取元素对象
+    var d = document.getElementById("d");
+    //(2) 为对象添加事件监听(是一个方法)
+    //d.addEventListener(事件名称, 事件处理程序, 决定事件的传播形式(true/false));
+    d.addEventListener('click', function() { //click 不是 onclick
+        alert(1);
+    });
+
+    //1和2都会弹出,不会覆盖
+    d.addEventListener('click', function() {
+        alert(2);
+    })
+
+    //这样写也行,第二个参数数方法名
+    d.addEventListener('click', f1);
+
+    function f1() {
+        console.log(this.innerHTML); // dddd
+    }
+</script>
+
+</html>

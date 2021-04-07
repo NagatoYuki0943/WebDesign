@@ -1,0 +1,20 @@
+1 字面量写法 以斜杠开始和结束       var regex=/xyz/;    使用最多的是这种方式
+
+2 构造函数生成 通过实例化得到对象   var regex=new RegExp("xyz"); 不需要//,用""
+
+3 一种是在编译是建立正则表达式,第二种是在运行时建立正则表达式
+
+4
+    <script>
+        var t = 'abcdefg8426';
+        //1 字面量写法 以斜杠开始和结束
+        var reg = /8/;
+        var a = reg.test(t);
+        alert(a); //true
+
+
+        //2 构造函数生成 通过实例化得到对象
+        var reg2 = new RegExp('8');
+        var a1 = reg2.test(t);
+        alert(a1); //true
+    </script>

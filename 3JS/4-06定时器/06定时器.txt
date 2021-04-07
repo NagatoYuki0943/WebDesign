@@ -1,0 +1,38 @@
+1 JS提供了定时执行代码的功能,叫做定时器
+    setTimeout(函数名/代码段,时间)
+        用来指定某个函数或某段代码,在多少毫秒后执行
+    
+    setInterval(函数名/代码段,时间)
+        指定某个任务间隔一段时间执行一次,无限次执行
+
+    注意: 函数名不包含 ()
+            这两种写法效果相同
+            setTimeout('s()', '1000')
+            setTimeout( s, '1000')
+
+    清除上面两个
+    clearTimeout(),clearInterval()
+
+    setTimeout(),setInterval()都会返回一个来表示计数器编号的整数值,
+    将该整数值传入clearTimeout(),clearInterval()函数,就可以取消定时器
+
+2
+    <script>
+        function f() {
+            var n = 1;
+            //闭包
+            return function() {
+                console.log(++n);
+            }
+        }
+
+        var s = f();
+        //添加倒计时
+        setTimeout('s()', '1000'); //2
+        //添加定时器
+        var i = setInterval(s, '1000'); //3 4 5 6
+        //清除定时器
+        document.querySelector("#stop").onclick = function() {
+            clearInterval(i);
+        }
+    </script>

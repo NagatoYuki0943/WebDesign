@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //匹配url地址
+    var url = 'http://xiling.me';
+    var reg = /\w+:\/\/\w+\.\w+/;
+    var m = url.match(reg);
+    console.log(m); //Array [ "http://xiling.me" ]
+
+    //验证邮箱
+    var str = '2487575080@qq.com';
+    var reg1 = /\w+@\w+\.\w{2,6}/;
+    var m = str.match(reg1);
+    console.log(m); //Array [ "2487575080@qq.com" ]
+</script>
+
+</html>

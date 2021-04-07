@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="name" value="" id="names">
+    <span id="tip"></span><br>
+    <input type="button" value="注册">
+</body>
+<script>
+    //目的:判断name是否可用
+    //获取文本框
+    var inp = document.getElementById('names');
+    //绑定事件
+    inp.addEventListener('blur', function() {
+        //获取文本内容
+        var v = this.value; //value是innerHTML
+        console.log(this.value); //A
+        console.log(inp.value); //A
+
+        //建立ajax对象
+        var xhr = new XMLHttpRequest();
+        //创建回调函数,监听状态变化事件
+        xhr.onreadystatechange = function() {
+            //获取全部数据完成
+            if (xhr.readyState == 4) {
+                //获取返回值
+                var zhi = xhr.responseText;
+
+                if (zhi == 1) {
+                    //有重复的名字
+                    var h = '<font color="red">用户名已被占用</font>';
+                } else {
+                    var h = '<font color="green">恭喜您,用户名可用</font>';
+                }
+                //添加提示
+                document.getElementById('tip').innerHTML = h;
+
+            }
+        }
+
+        //设置post请求方式,地址栏写上参数也没用
+        xhr.open('post', '05.1.php');
+        //post要设置请求头
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        //发送post请求,send里面需要参数
+        xhr.send('name=' + v);
+    })
+</script>
+
+</html>

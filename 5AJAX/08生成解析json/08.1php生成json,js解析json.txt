@@ -1,0 +1,39 @@
+1 json
+    JavaScript Object Notation
+    JSON是轻量级的文本数据交换格式
+    JSON独立于语言
+    JSON具有自我描述性,便于理解
+    注意:
+        JSON使用JavaScript语法来描述数据对象,但是JSON任然独立于语言和平台
+        JSON解析器和JSON库支持许多不同的编程语言
+        JSON其实就是长得和JSON对象几乎一样的字符串
+
+
+    json字符串
+    {"name":"mike","age":"15","sex":"male"}
+    
+    json数组
+    {
+        {"name":"mike","age":"15","sex":"male"},
+        {"name":"mike","age":"15","sex":"male"},
+        {"name":"mike","age":"15","sex":"male"},
+    }
+
+
+2 php生成json
+    json_encode($data); 生成json 
+    参数是数据,返回值是json字符串
+
+
+3
+    php生成json字符串
+    echo json_encode($data);
+    [{"id":"1","name":"\u8d75\u4e00","sex":"male","age":"15","class":"1","score":"58"},
+    {"id":"2","name":"\u94b1\u4e8c","sex":"female","age":"16","class":"2","score":"55"},
+    {"id":"3","name":"\u5b59\u4e09","sex":"male","age":"16","class":"2","score":"88"}]
+
+
+4 php解析json
+    json_decode($json,true/false);      解析json
+    参数是json字符串,返回值是对象
+    第二个参数是生成对象或者数组,默认false生成对象,true生成数组

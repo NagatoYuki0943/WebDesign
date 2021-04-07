@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        padding: 40px;
+    }
+    
+    #div3 {
+        width: 300px;
+        height: 300px;
+        background-color: red
+    }
+    
+    #div2 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow
+    }
+    
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background-color: blue
+    }
+    
+    #div0 {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(21, 255, 0)
+    }
+</style>
+</head>
+
+<body>
+    <div id="div3">3
+        <div id="div2">2
+            <div id="div1">1
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var d = document.getElementById('div3');
+    d.onclick = function(e) {
+        //事件委托或事件代理,事件绑定到父级元素
+        //target代表具体是哪个元素触发的,通过它可以控制子元素的属性
+        e.target.style.background = 'pink';
+        console.log(e.target);
+        /**
+         *  <div id="div3" style="background: pink none repeat scroll 0% 0%;">      点击不同的div可以获取不同的div
+         *  <div id="div2" style="background: pink none repeat scroll 0% 0%;">
+         *  <div id="div1" style="background: pink none repeat scroll 0% 0%;">
+         */
+    }
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d" style="width: 200px; height: 200px; border: 1px solid pink; ">
+        来啊
+    </div>
+</body>
+<script>
+    var d = document.getElementById('d');
+
+    //鼠标悬浮 over和enter一样
+    d.onmouseover = function() {
+        console.log("来了,老弟");
+    }
+
+    //鼠标离开 out和leave一样
+    d.onmouseout = function() {
+        console.log("拜拜,老弟");
+    }
+
+    //鼠标按下
+    d.onmousedown = function() {
+        console.log("好厉害");
+    }
+
+    //鼠标抬起
+    d.onmouseup = function() {
+        console.log("这就完了???");
+    }
+
+    //鼠标移动
+    d.onmousemove = function() {
+        console.log("不要动");
+    }
+</script>
+
+</html>

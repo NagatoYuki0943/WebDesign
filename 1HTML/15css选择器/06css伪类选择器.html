@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ul-test1 li:hover {
+            background-color: blueviolet;
+        }
+        
+        .ul-test2 li:active {
+            background-color: blueviolet;
+        }
+        
+        a :visited {
+            background-color: cadetblue;
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>伪类选择器</h2>
+
+    <p> :hover 鼠标经过时设置其样式</p>
+    <p>style中写法 .ul-test li:hover{} </p>
+    <ul class="ul-test1">
+        <li>哈哈哈哈</li>
+        <li>哈哈哈哈</li>
+        <li>哈哈哈哈</li>
+    </ul>
+    <p> :active 鼠标按下时设置其样式</p>
+    <p>style中写法 .ul-test li:active{} </p>
+    <ul class="ul-test2">
+        <li>哈哈哈哈</li>
+        <li>哈哈哈哈</li>
+        <li>哈哈哈哈</li>
+    </ul>
+
+
+
+    <p> :visited 选择已访问的链接,并设置其样式,只针对a标签,点击之后颜色就不一样了 </p>
+    <a href="http://www.ithome.com">ithome</a>
+
+</body>
+
+</html>

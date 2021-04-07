@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv1" class="dv">我是dv1</div>
+    <div id="dv2" class="dv">我是dv2</div>
+    <div id="dv3" class="dv">我是dv3</div>
+    <div id="dv4" class="dv">我是dv4</div>
+
+    <input id="txt1" class="txt" type="text" name="text" value="">
+    <input id="txt2" class="txt" type="text" name="text1" value="">
+    <input id="txt3" class="txt" type="text" name="text" value="">
+
+</body>
+<script>
+    console.log(document.getElementById("dv1")); //获取一个
+    console.log(document.getElementsByName("text")); //获取2个
+    console.log(document.getElementsByTagName("div")); //获取4个
+
+    //h5中的新方法,id前面要加#,class之前要加 . ,和css类似
+    console.log(document.querySelector("#dv1"));
+    console.log(document.querySelector(".dv")); //只获取第一个
+    console.log(document.querySelectorAll(".dv")); //获取全部
+</script>
+
+</html>

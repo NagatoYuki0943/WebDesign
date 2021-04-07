@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1 先new
+    var time = new Date();
+
+    //时间戳
+    var i = time.getTime();
+    console.log(i); //1606744248738
+
+    //小时
+    var i = time.getHours();
+    console.log(i); //21 
+
+    //分钟
+    var i = time.getMinutes()
+    console.log(i); //50
+
+    //秒
+    var i = time.getSeconds();
+    console.log(i); //30
+
+    //毫秒
+    var i = time.getMilliseconds();
+    console.log(i);
+
+    //年
+    var i = time.getYear();
+    console.log(i); //120 代表1900年到现在多少年
+    var i = time.getFullYear();
+    console.log(i); //2020   真正的年份
+
+    //月
+    var i = time.getMonth();
+    console.log(i); //10
+
+    //日
+    var i = time.getDate();
+    console.log(i); //30
+
+
+    //用户登录时判断时间
+    var hour = time.getHours();
+    if (hour > 6 && hour < 12) {
+        alert('GoodMorning');
+    } else if (hour > 12 && hour < 18) {
+        alert('GoodAfternoon');
+    } else {
+        alert('Keep Safe');
+    }
+</script>
+
+</html>

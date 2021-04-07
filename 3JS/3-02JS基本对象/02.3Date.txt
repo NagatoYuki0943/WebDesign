@@ -1,0 +1,21 @@
+1 先要new
+    var time=new Time();
+    Date() 可以表示 1970年1月1日00:00:00 前后一亿天(单位是毫秒)
+
+
+2 常用
+    getTime()   返回时间戳,距离1970年1月1日00:00:00的毫秒数,等同于valueOf()方法
+
+    getDay()        返回星期几,星期天为0,星期一为1,以此类推
+    getDate()       返回对象对应的每个月的几号(从1开始)
+    getMonth()      返回月份(0表示1月,11表示12月)
+    getYear()       返回距离1900年的年数
+    getFullYear()   返回四位的年份
+
+    getHour()       返回小时(0~23)
+    getMinutes()    返回分钟(0~59)
+    getSeconds()    返回秒数(0~59)
+    getMilliseconds() 返回毫秒(0~999)
+
+    getTimezoneOffset() 返回当前时间与UTC的时区差异,返回结果考虑到了夏令时因素
+    

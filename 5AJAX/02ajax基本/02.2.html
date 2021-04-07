@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="cxhr.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+    var xhr = cXHR();
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+    }
+    xhr.open('get', '02.php');
+    xhr.send();
+    //1 2 3 4
+</script>
+
+</html>

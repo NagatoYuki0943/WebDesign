@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgb(46, 231, 0);
+            /* border-collapse: collapse; */
+            border-spacing: 10px 20px;
+        }
+        
+        td {
+            border: 1px solid rgb(46, 231, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>补充:表格线框</h3>
+    <ul type="square">
+        <li>border-collapse: separate | collapse </li>
+        <ul>
+            <li>separate: 默认值.边框会被分开(有缝隙).不会忽略border-spacing和empty-cells属性</li>
+            <li>如果可能,边框会合并为一个单一的边框.会忽略border-spacing和empty-cells属性</li>
+        </ul>
+        <li>border-spacing: [length] 和collapse不能同时使用,同时用会显示collapse的样式</li>
+        <ul>
+            <li>规定相邻单元的边框之间的距离.使用px,cm等单位,不允许使用负值</li>
+            <li>如果定义一个length参数,那么定义的是水平和垂直间距</li>
+            <li>如果定义两个length参数,那么第一个设置水平间距,第二个设置垂直间距</li>
+        </ul>
+    </ul>
+
+    <table> 默认没有边框,border="1"代表有边框
+        <tr>
+            <td>AA</td>
+            <td>BB</td>
+            <td>CC</td>
+        </tr>
+        <tr>
+            <td>DD</td>
+            <td>EE</td>
+            <td>FF</td>
+        </tr>
+        <tr>`
+            <td>GG</td>
+            <td>HH</td>
+            <td>II</td>
+        </tr>
+    </table>
+</body>
+
+</html>

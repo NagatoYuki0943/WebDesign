@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Cat(name) {
+        this.name = name;
+    }
+    var ob = {
+        name: '波斯'
+    };
+    var cat1 = new Cat('老虎');
+    console.log(cat1.constructor); //function Cat(name)
+    //修改cat1的原型为ob
+    var s = Object.setPrototypeOf(cat1, ob); //ob即使是一个普通对象也可以,只要是对象就行
+    var proto1 = Object.getPrototypeOf(cat1);
+    console.log(proto1); //Object { name: "波斯" }
+
+    //修改原型之后,构造函数也会被修改
+    console.log(cat1.constructor); //function Object()  和上面的function不一样了
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+1 异步: 不用同时处理
+
+2 决定同步还是异步 open第三个参数
+    open(method,url,async): 初始化ajax对象
+    method: http请求方式:post,get
+    url: 请求的服务器地址
+    async: 布尔值,true代表异步请求,false代表同步请求,默认是异步
+
+3   
+    <script>
+        function f1() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                    //readyState == 4代表接收完所有数据
+                    if (xhr.readyState == 4) {
+                        alert(xhr.responseText);
+                    }
+                }
+                //true代表异步请求,false代表同步请求
+            xhr.open('get', '02.3.php', false);
+            xhr.send();
+        }
+
+        function f2() {
+            alert(2); //为true时 弹出 2 1 不用顺序执行; 为false是, 弹出 1 2  要顺序执行
+        }
+
+        f1();
+        f2();
+    </script>

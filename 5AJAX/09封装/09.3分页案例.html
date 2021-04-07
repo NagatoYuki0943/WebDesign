@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#" onclick="s()">上一页</a>
+    <a href="#" onclick="x()">下一页</a>
+    <div>
+        <table id="tb">
+        </table>
+    </div>
+
+</body>
+<script src="ajax.js "></script>
+<script>
+    function P(p) {
+        $.get('09.3.php?page=' + p, function(msg) {
+            //先添加表头显示
+            $('tb').innerHTML = '<tr><td>id</td><td>姓名</td><td>性别</td><td>年龄</td><td>班级</td><td>分数</td></tr>';
+
+            console.log(msg);
+            //解决最后分页为空的问题
+            if (msg.length == 0) {
+                //获取localSotrage中的p并让其减一
+                var p = localStorage.getItem('p');
+                localStorage.setItem('p', p - 1);
+
+                $.get('09.3.php?page=' + (p - 1), function(msg) {
+                    msg.forEach(element => {
+                        var h = "<tr>";
+                        //msg是一个js对象,所以使用 . 而不是使用 []
+                        h += '<td>' + element.id + '</td>';
+                        h += '<td>' + element.name + '</td>';
+                        h += '<td>' + element.sex + '</td>';
+                        h += '<td>' + element.age + '</td>';
+                        h += '<td>' + element.class + '</td>';
+                        h += '<td>' + element.score + '</td>';
+                        h += '</tr>';
+                        //使用 += ,不然会覆盖数据
+                        $('tb').innerHTML += h;
+                    });
+                }, 'json');
+
+            } else {
+                //最后分页不为空
+                msg.forEach(element => {
+                    var h = "<tr>";
+                    //msg是一个js对象,所以使用 . 而不是使用 []
+                    h += '<td>' + element.id + '</td>';
+                    h += '<td>' + element.name + '</td>';
+                    h += '<td>' + element.sex + '</td>';
+                    h += '<td>' + element.age + '</td>';
+                    h += '<td>' + element.class + '</td>';
+                    h += '<td>' + element.score + '</td>';
+                    h += '</tr>';
+                    //使用 += ,不然会覆盖数据
+                    $('tb').innerHTML += h;
+                });
+            }
+
+        }, 'json');
+    }
+
+
+    //初次加载或者刷新
+    window.onload = function() {
+        if (localStorage.getItem('p')) {
+            //localStorage有数据
+            var p = localStorage.getItem('p');
+            P(p);
+        } else {
+            //第一次使用,没有localStorage,要手动设定
+            localStorage.setItem('p', 1);
+            p(1);
+        }
+    }
+
+    //上一页
+    function s() {
+        //参数是当前页 - 1
+        var p = parseInt(localStorage.getItem('p'));
+        if (p == 1) {
+            //当前页数为1,就不向前换页
+        } else {
+            localStorage.setItem('p', p - 1);
+            P(p - 1);
+        }
+
+    }
+
+    //下一页
+    //有bug,一直点击最后就找不到数据
+    function x() {
+        //参数是当前页 + 1
+        var p = parseInt(localStorage.getItem('p'));
+        localStorage.setItem('p', p + 1);
+        P(p + 1);
+    }
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+1 属性
+    (1) readyState: Ajax状态码
+        0: 表示对象已经建立,但是没有初始化,只是new成功获取了对象,但是未调用open方法
+        1: 表示对象已经初始化,但未发送,调用了open方法,但是没有调用send方法
+        2: 已调用send方法进行请求
+        3: 正在接受数据(接收到一部分),客户端已经收到了一部分返回的数据
+        4: 接收完成,客户端已经接收到了所有数据
+
+    (2) status: http响应状态码
+        1** 	信息，服务器收到请求，需要请求者继续执行操作
+        2** 	成功，操作被成功接收并处理
+        3** 	重定向，需要进一步的操作以完成请求
+        4** 	客户端错误，请求包含语法错误或无法完成请求
+        5** 	服务器错误，服务器在处理请求的过程中发生了错误
+        
+        200 - OK 请求成功
+        301 - Moved Permanently 资源（网页等）被永久转移到其它URL
+        403 - Forbidden 服务器理解请求客户端的请求，但是拒绝执行此请求
+        404 - Not Found 请求的资源（网页等）不存在
+        500 - Internal Server Error 内部服务器错误
+        502 - Bad Gateway 作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应
+
+    (3) statusText: http响应状态文本
+        200 - OK
+        301 - Moved Permanently
+        403 - Forbidden   
+        404 - Not Found  
+        500 - Internal Server Error
+        502 - Bad Gateway
+
+    (4) responseText: 如果服务器端返回字符串,使用responseText进行接收
+        json放在这里面
+
+    (5) responseXML: 如果服务器端返回XML,使用responseXML进行接收
+        返回dom对象,可以像正常的网页一样获取,使用document getElement...等
+
+    (6) onreadystatechange: 当readState 状态码发生改变时触发的回调函数
+        是一个属性
+
+
+2 方法
+    (1) open(method,url,async): 初始化ajax对象
+        method: http请求方式:post,get
+        url: 请求的服务器地址
+        async: 布尔值,true代表异步请求,false代表同步请求,默认是异步
+
+    (2) setRequestHeader(header,value): 设置请求头信息
+        header: 请求头名称
+        value:  请求头的值
+            post提交要设置请求头
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            如果传输文件的表单写了 enctype="multipart/form-data" ,就不用写上面那一行了,enctype就是请求头
+
+    (3) send(content): 发送ajax请求
+        content: 如果是get请求时,此参数为null,如果是post请求时,此参数就是要传递的数据
+
+    
+    注意: 所有的相关事件绑定必须在调用send()方法之前进行

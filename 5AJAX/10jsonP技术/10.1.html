@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btu" value="点击">
+</body>
+<script src="ajax.js"></script>
+<script>
+    function cb(msg) {
+        console.log(msg);
+    }
+    $('btu').onclick = function() {
+        //创建script节点
+        var sc = document.createElement('script');
+        //给script节点添加 src 
+        //假设src是其他域名的,ajax没法获取其他域名下的信息
+        sc.src = "10.php?callback=cb";
+        //将sc添加到head中
+        document.getElementsByTagName('head')[0].appendChild(sc);
+    }
+</script>
+
+</html>

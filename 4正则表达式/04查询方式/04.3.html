@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var str = '我的QQ是350623619,另一个QQ是208699213,我的手机号是17600806267,我的身份证号是:370125199008024937';
+    //? 惰性匹配
+    var reg = /[1-9]\d{4,9}?/g;
+    var m = str.match(reg);
+    console.log(m); //Array(7) [ "35062", "20869", "17600", "80626", "37012", "51990", "80249" ]    结果全是5位的,最短是5位
+</script>
+
+</html>

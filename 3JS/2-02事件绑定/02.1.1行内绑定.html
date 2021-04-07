@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--行内绑定,元素属性绑定,违背js代码与html代码分离原则-->
+    <div onclick="alert(1)" onmousedown="f">
+        <!--f 不能执行 f()才能执行-->
+        111
+    </div>
+</body>
+<script>
+    function f() {
+        alert(222);
+    }
+</script>
+
+</html>

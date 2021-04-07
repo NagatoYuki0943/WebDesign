@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+姓名: <input type="text" name="" value=""><br> 性别: <input type="text" name="" value=""><br> 年龄: <input type="text" name="" value=""><br>班级: <input type="text" name="" value=""><br>分数: <input type="text" name="" value=""><br>
+<input type="button" value="添加一条数据" id="btn">
+
+
+<body>
+
+</body>
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function() {
+        var inp = document.getElementsByTagName('input');
+
+        //将数据放入对象或者数组中
+        var ob = {
+            name: inp[0].value,
+            sex: inp[1].value,
+            age: inp[2].value,
+            class: inp[3].value,
+            score: inp[4].value,
+        };
+        //console.log(ob); //Object { name: "喜洋洋", sex: "male", age: "18", class: "3", score: "100" }
+        //生成json字符串
+        var json_str = JSON.stringify(ob);
+        //生成ajax对象
+        var xhr = new XMLHttpRequest();
+        //回调函数
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.responseText == 1) { //{"name":"喜洋洋","sex":"male","age":"18"}
+                    for (var i = 0; i < inp.length; i++) {
+                        inp[i].value = '';
+                    }
+
+                    alert('success');
+                } else {
+                    alert('failed');
+                }
+            }
+        }
+
+        //get方式提交数据
+        xhr.open('get', '08.2.php?d=' + json_str);
+        //发送
+        xhr.send();
+
+    }
+</script>
+
+</html>

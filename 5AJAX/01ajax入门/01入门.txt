@@ -1,0 +1,10 @@
+1 AJAX
+    Asynchronous:   异步的
+    JavaScript:     JS
+    And:            和
+    XML:            数据传输格式
+
+
+2 使用客户端通过HTTP向服务器发送请求
+    客户端语言: 能够在用户设备上运行的语言 html css JS 安卓 ios
+    服务端语言: 在服务器上运行的语言    PHP JSP Python C#

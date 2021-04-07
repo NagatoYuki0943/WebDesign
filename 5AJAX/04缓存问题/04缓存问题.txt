@@ -1,0 +1,35 @@
+1 缓存的产生
+    当使用ie浏览器时,使用同一个url(地址,参数一样)发送多次请求时,会产生缓存问题
+
+    缓存设计的初衷是为了加快网站的响应速度;
+
+
+2 客户单解决缓存问题
+    改变url参数,解决相同url产生的缓存问题
+    无意义变量名一般用 _ 下划线
+
+    (1) 使用随机数产生不同的url地址
+
+        '&_='+Math.random 用来解决参数问题
+        &是url变量拼接字符,值是随机数
+        xhr.open('get', '04.php?name=' + v +'&_='+Math.random()); 
+
+        04.php?name=admin&_=0.5461030260938583
+        04.php?name=admin&_=0.36499529944917164
+
+
+    (2) 使用时间戳的方式
+
+        var time = new Date();
+        //time.getTime() 获取时间戳
+        xhr.open('get', '04.php?name=' + v + '&_=' + time.getTime());
+
+        04.php?name=admin&_=1607090840056
+        04.php?name=admin&_=1607090870923
+
+
+    (3) 设置响应头禁用客户端缓存(在服务器端写)
+        <?php
+        //(3) 设置响应头禁用客户端缓存
+        header("Cache-Control:no-cache");
+

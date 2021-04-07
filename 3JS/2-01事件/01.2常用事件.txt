@@ -1,0 +1,37 @@
+注意: on后面的才是方法名,onclick是行内绑定和动态绑定的写法
+
+1 页面事件
+    onload 页面加载完,不管额外资源有没有,只要标签读取完就触发
+
+
+2 焦点事件
+    onfocus 当获得焦点时触发    当鼠标点击一下具体标签
+    onblur  当失去焦点时触发    当鼠标点击具体标签外的位置
+
+
+3 鼠标事件
+    onmouseover  onmouseout     鼠标经过时自身触发事件,经过其子元素时也触发该事件
+    onmouseenter onmouseleave   鼠标经过时自身触发事件,经过其子元素时不触发该事件.(父亲的东西就是父亲的，不归儿子所有)
+    onmousedown                 鼠标按下
+    onmouseup                   鼠标弹起
+    onmousemove                 鼠标移动
+
+    onclick                     鼠标点击
+
+
+4 键盘事件
+    onkeypress  键盘按下又抬起,输入了字符,不输入字符的功能键不算
+    onkeydown   键盘按下
+    onkeyup     键盘抬起
+
+
+5 form表单事件
+    onsubmit    提交表单
+    onreset     重置表单
+
+    获取表单对象,要绑定到form表单上,不能绑定上submit按钮上
+
+
+6 内容变化事件
+    onchange    内容变化且失去焦点
+    oninput     内容改变    (此事件仅支持h5)

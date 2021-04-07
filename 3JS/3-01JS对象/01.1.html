@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //如果函数首字母大写,一般用来作为构造函数
+    function Man() {
+
+    }
+    //实例化对象
+    var m = new Man();
+    alert(typeof(m)); //object 是对象
+
+    //添加属性和方法,具体是属性还是方法,只有是function才是方法,其余的是属性
+    m.name = '刘德华';
+    m.eat = function() {
+        console.log('吃红烧肉');
+    }
+
+    //调用方法
+    console.log(m.name); //刘德华
+    m.eat(); //吃红烧肉
+
+    function ff() {}
+    ff(); //普通函数,只能使用new来区分
+    new ff(); //构造函数
+</script>
+
+</html>

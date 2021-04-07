@@ -1,0 +1,19 @@
+注册事件
+    注册事件常用的方法有很多种,此处先介绍两种最常用的方法.
+    一种为直接在元素上注册事件,另一种为在获取的对象上注册触发事件
+
+(1)元素注册法 
+    onclick="方法" 点击对话框就出现了
+    <input type="text" name="" id="txt1" value="阿猫" onchange="changeMe()">
+    <input type="button" value="按钮" onclick="clickMe()">
+
+(2)对象注册法
+    <input type="text" name="" id="txt1" value="阿猫">
+    <script>
+    var changeMe = function() {
+        alert(event.target.value); //弹出改变的内容
+    }
+    document.getElementById("txt1").onchange = changeMe; //匿名函数changeMe注册到事件后面不能加()
+    </script>
+
+    这种方法实现了html与js的分离,更符合现在的编程思想

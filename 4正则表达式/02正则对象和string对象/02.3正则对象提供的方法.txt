@@ -1,0 +1,19 @@
+1 正则对象提供的方法
+
+    reg.test(str)  判断字符串中是否具有指定的字符串,返回boolean
+
+    reg.exec(str)  返回字符中指定模式的子串一次只能获取一个与之匹配的结果
+        找不到返回null
+
+2 
+    <script>
+        var t = 'abcdefg465fe3ais4fe8iS426';
+        var reg = /isa/;
+        //test 判断字符串中是否有字符串
+        var a = reg.test(t);
+        alert(a);
+
+        //exec 返回查找到的字符串
+        var b = reg.exec(t);
+        alert(b); //null
+    </script>

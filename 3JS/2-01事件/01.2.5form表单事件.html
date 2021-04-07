@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="" id="f">
+        姓名 <input type="text"><br>
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+    </form>
+</body>
+<script>
+    //获取表单对象,要绑定到form表单上,不能绑定上submit按钮上
+    var f = document.getElementById("f");
+
+    //提交
+    f.onsubmit = function() {
+        alert("1");
+    }
+
+    //重置
+    f.onreset = function() {
+        alert("2");
+    }
+</script>
+
+</html>

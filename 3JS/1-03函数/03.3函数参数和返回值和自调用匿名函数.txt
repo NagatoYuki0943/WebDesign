@@ -1,0 +1,20 @@
+1 argument 形参列表
+    argument是函数中的对象,这个对象中包含所有实参,实参列表,以数组形式存在 Arguments { 0: 1, 1: 2, 2: 3, 3: 4, 4: 5, … }
+    可以不定义形参列表,直接使用argument获取
+
+2 自调用匿名函数
+    (1) 匿名函数
+        (function() {
+            console.log(3);
+        })(); //3   后面加上() 代表自己调用自己
+
+
+    (2) 匿名自调用函数递归
+        var a = (function(n) {
+            if (n > 1) {
+                return n + arguments.callee(n - 1); //arguments.callee代表这个函数自己,通过它来递归调用自己
+            } else {
+                return 1;
+            }
+        })(100);
+        console.log(a); //5050

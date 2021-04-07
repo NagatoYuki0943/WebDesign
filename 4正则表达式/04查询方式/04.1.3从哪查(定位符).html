@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //手机号
+    var str1 = '5adhao8iuafk15028655204jaehfajkffadfkl;apf';
+    var str2 = '15028655204';
+    var reg = /^1[34578]\d{9}$/;
+    var z = reg.test(str1);
+    console.log(z); //false
+    var z = reg.test(str2);
+    console.log(z); //true
+
+    var str3 = "Iam 赵四"; //am开头是I,不行
+    var reg = /\bam\b/;
+    var z = reg.test(str3);
+    console.log(z); //false
+</script>
+
+</html>

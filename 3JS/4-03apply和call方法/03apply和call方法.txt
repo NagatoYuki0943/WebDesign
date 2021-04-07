@@ -1,0 +1,29 @@
+1 call方法
+    函数名称.call(obj,arg1,arg2,arg3);
+    参数说明:
+        obj : 函数内this要指向的对象
+        arg1,arg2,arg3 : 参数列表,参数与参数之间使用一个逗号隔开
+
+        var man = {
+        'name': 'kaiqi',
+        }
+
+        function f(age) {
+            //函数内部this默认指向window
+            console.log(this.name, age);
+        }
+        //call方法可以改变函数内部的this指向
+        //f();    //<empty string>
+        f.call(man, 45); //kaiqi 45
+
+
+2 apply方法
+    函数名称.apply(obj,[arg1,arg2,arg3]);
+    参数说明:
+        obj : 函数内this要指向的对象
+        [arg1,arg2,arg3] : 参数列表,格式为数组
+
+
+3 两者功能完全一致,都是为了改变函数内部this指向,唯一的区别在于参数传递方式不同
+    call方法可能有多个参数,第一个为要指向的对象,其他参数为函数的参数
+    apply方法最多只能有两个参数,第一个为要指向的对象,第二个为数组,数组内容为函数实参

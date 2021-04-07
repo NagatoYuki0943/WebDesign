@@ -1,0 +1,26 @@
+1 操作节点属性的标准方法
+    getAttribute('元素名') 
+        必须指定元素名
+        返回当前元素节点的指定属性,如果指定属性不存在,则返回null
+        getAttribute('value')似乎无法使用,无法获取元素的值
+        
+    setAttribute('元素名','元素值')
+        为当前元素节点新增属性,如果同名属性已经存在
+
+    hasAttribute('元素名')
+        必须指定元素名
+        返回一个bool值,参数是属性名,表示是否有指定的属性
+
+    removeAttribute('元素名')
+        必须指定元素名
+        从当前元素删除属性
+
+
+2 属性
+    id获取方式
+        d.id    
+        d.getAttribute('id')
+
+    class获取方式
+        d.class     无法获取    undefined
+        d.getAttribute('class') dd

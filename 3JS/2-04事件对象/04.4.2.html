@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 40px;
+        }
+        
+        #div3 {
+            width: 300px;
+            height: 300px;
+            background-color: red
+        }
+        
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow
+        }
+        
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: blue
+        }
+        
+        #div0 {
+            width: 10px;
+            height: 10px;
+            background-color: rgb(21, 255, 0)
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div3">3
+        <div id="div2">2
+            <div id="div1">1
+                <div id="div0">0
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    var d3 = document.getElementById("div3");
+    var d2 = document.getElementById("div2");
+    var d1 = document.getElementById("div1");
+    var d0 = document.getElementById("div0");
+
+    //true代表捕获阶段触发,从外到内
+    //false代表冒泡阶段触发,从内到外 (默认是false)
+
+    d3.addEventListener('click', function() {
+        alert(3);
+    }, true)
+
+    //阻止默认传播
+    d2.addEventListener('click', function(e) {
+        alert(2);
+        //阻止事件默认传播(包括冒泡和捕获),直接停止传播,后面的不执行
+        e.stopPropagation();
+    }, true)
+
+    d1.addEventListener('click', function() {
+        alert(1);
+    }, true)
+
+    d0.addEventListener('click', function() {
+        alert(0);
+    }, true)
+</script>
+
+</html>

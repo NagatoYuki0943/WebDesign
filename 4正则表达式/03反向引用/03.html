@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //反向引用
+    var s = 'af1ea19234j55559831alsf9opq4j8afjl5a90uw4lk3344c2089asujil45';
+    //1 子表达式
+    //发生捕获行为 1:0  2:9  3:2
+    var reg = /(\d)\d/; //必须是两个连续的数字
+    var m = s.match(reg);
+    console.log(m); //Array [ "09", "0" ]
+
+
+    var reg = /(\d)\d2/; //必须是3个连续的数字,结尾是2
+    var m = s.match(reg);
+    console.log(m); //Array [ "092", "0" ]
+
+
+    var reg = /(\d)\1\1/; //获取缓存区中第一个字符,比如是5,用5匹配相邻的数字,再用5匹配下一个数字
+    var m = s.match(reg);
+    console.log(m); //Array [ "555", "5" ]
+
+
+    var reg = /\dj(\d)\1\1/; //先匹配一个数字和j,再...获取缓存区中第一个,比如是5,用5匹配相邻的数字,再用5匹配下一个数字
+    var m = s.match(reg);
+    console.log(m); //Array [ "4j555", "5" ]
+
+
+    var reg = /(\d)ea\1/; //先匹配一个数字,在匹配 ea ,获取缓存区中第一个匹配ea后面的数字
+    var m = s.match(reg);
+    console.log(m); //Array [ "1ea1", "1" ]
+
+
+    var reg = /(\d)\1(\d)\2/; //先匹配一个数字,获取缓存区中第一个匹配第2个数字;再匹配一个数字,获取缓存区中第2个匹配第4个数字
+    var m = s.match(reg);
+    console.log(m); //Array(3) [ "3344", "3", "4" ]
+</script>
+
+</html>

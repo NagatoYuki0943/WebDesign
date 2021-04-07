@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+        }
+        
+        .class1 {
+            background-color: royalblue;
+        }
+        
+        #div1 {
+            background-color: crimson;
+        }
+    </style>
+    <link rel="stylesheet" href="02.css">
+</head>
+
+<body>
+    <p>上面style中的div{}中的效果对所有的div都生效,下面div中自定义的颜色会覆盖上面的</p>
+    <p>llnk的引入会会本文件有效果,写法和style中一样</p>
+    <div style="width: 100px;height: 100px;background-color: chartreuse;">div1</div>
+    <div>div2</div>
+    <div>div3</div>
+
+    <hr>
+    <p>class(类,不唯一) 在style中使用class名字前面加 . 选择</p>
+    <div class="class1">class_test1</div>
+    <div class="class1">class_test2</div>
+
+    <hr>
+    <p>id和name可以同时使用</p>
+    <p>id(唯一)选择器 在style中使用id #div选择,这个div会继承全局的div设定</p>
+    <div id="div1">div id</div>
+
+    <hr>
+    <p>优先级从高到低: id > class > div标签</p>
+
+</body>
+
+</html>

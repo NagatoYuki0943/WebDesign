@@ -1,0 +1,29 @@
+1 ajax文件上传要把form打包,然后用send发送,后台提取方式和普通的post提交一样  
+
+    FormData表单的数据,将整个form表单打包
+    var fd = new FormData(document.getElementById('form1'));
+    xhr.send(fd);
+
+
+2 
+    <script>
+        var btu = document.getElementById('btu');
+        btu.addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            //FormData表单的数据,将整个form表单打包
+            var fd = new FormData(document.getElementById('form1'));
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    if (xhr.responseText == 1) {
+                        alert('success');
+                    } else {
+                        alert('failed');
+                    }
+                }
+            }
+            xhr.open('post', '05.2.php');
+            //这里没有设置请求头setRequestHeader,因为上面的 enctype="multipart/form-data" 就是请求头
+            //直接将FormData传过去就可以了
+            xhr.send(fd);
+        })
+    </script>

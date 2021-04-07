@@ -1,0 +1,9 @@
+1 原始类型在特殊情况下会被包装成对象 叫做原始类型的自动转换
+    原始类型 : boolean  数字  字符串
+    复杂类型 : object
+    特殊类型 : null undefined
+
+    JS中几乎所有对象能被当做对象操作,null undefined除外(没有使用的必要)
+
+2 
+    var i1=new Number(4);这样也可以声明,但是没人这样用

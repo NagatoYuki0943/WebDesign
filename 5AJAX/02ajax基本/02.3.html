@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function f1() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+                //readyState == 4代表接收完所有数据
+                if (xhr.readyState == 4) {
+                    alert(xhr.responseText);
+                }
+            }
+            //true代表异步请求,false代表同步请求
+        xhr.open('get', '02.3.php', false);
+        xhr.send();
+    }
+
+    function f2() {
+        alert(2); //为true时 弹出 2 1 不用顺序执行; 为false是, 弹出 1 2  要顺序执行
+    }
+
+    f1();
+    f2();
+</script>
+
+</html>

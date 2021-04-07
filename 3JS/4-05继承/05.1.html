@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Run() {
+        this.p = function() {
+            console.log('PPPP');
+        }
+    }
+
+    function Man() {}
+
+    //方式1 修改构造函数的prototype属性实现继承
+    Man.prototype = new Run();
+    var m = new Man();
+    m.p(); //PPPP
+    console.log(Object.getPrototypeOf(m)); //Object { p: p() }
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //使用try解决浏览器兼容性问题
+    try {
+        //1 w3c标准方式 (ie6及以下不支持)
+        var xhr1 = new XMLHttpRequest();
+        console.log(xhr1); //XMLHttpRequest
+    } catch (e) {}
+
+    try {
+        //2 IE浏览器方式 (其他浏览器不认识)
+        var xhr2 = new ActiveXObject('Microsoft.XMLHTTP');
+        console.log(xhr2);
+    } catch (e) {}
+</script>
+
+</html>

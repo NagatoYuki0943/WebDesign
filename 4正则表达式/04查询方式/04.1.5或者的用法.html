@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var str = 'ipad,iphone,iwatch,imac,ipod,i2afa,i21d,igtd3,isafae';
+    var reg = /\bi(pad)|(phone)|(watch)|(mac)|(pod)\b/g;
+    var m = str.match(reg);
+    console.log(m); //Array(5) [ "ipad", "phone", "watch", "mac", "pod" ]
+</script>
+
+</html>

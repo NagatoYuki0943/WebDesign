@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="text" name="" id="key">
+    <div id="re"></div>
+</body>
+<script src="ajax.js"></script>
+<script>
+    var key = $('key');
+    //console.log(key); //<input id="key" type="text" name="">
+    key.oninput = function() {
+        if (key.value != "") {
+            $.get('09.2.php?key=' + key.value, function(msg) {
+                console.log(msg); //Array(17) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, … ] 对象数组
+                //清空之前的数据
+                $('re').innerHTML = "";
+
+                //添加新数据
+                msg.forEach(element => {
+                    $('re').innerHTML += element.name + '<br>';
+                });
+
+            }, 'json')
+        } else {
+            //删除文字之后,提示会被清空
+            $('re').innerHTML = "";
+        }
+
+
+    }
+</script>
+
+</html>

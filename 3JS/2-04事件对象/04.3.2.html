@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+</head>
+
+<body>
+    <table id="t" border="1" width="500" rules="all">
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+        </tr>
+        <tr>
+            <td>刘强东</td>
+            <td>男</td>
+            <td>46</td>
+        </tr>
+        <tr>
+            <td>马云</td>
+            <td>男</td>
+            <td>52</td>
+        </tr>
+        <tr>
+            <td>马化腾</td>
+            <td>男</td>
+            <td>49</td>
+        </tr>
+    </table>
+</body>
+<script>
+    var t = document.getElementById("t");
+    //事件绑定到父元素上,使用子元素触发
+    t.onmouseover = function(e) {
+
+        e.target.parentNode.style.background = 'pink';
+        console.log(e.target);
+    }
+    t.onmouseout = function(e) {
+        e.target.parentNode.style.background = '';
+    }
+</script>
+
+</html>
