@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="t" value="请输入用户名">
+</body>
+
+
+<script>
+    var t = document.getElementById("t");
+
+    //内容变化且失去焦点
+    t.onchange = function() {
+        console.log("onchange 内容变化了,输入内容且失去焦点才调用");
+    }
+
+
+    //内容变化  此事件仅支持h5
+    t.oninput = function() {
+        console.log("oninput 内容变化了,内容变化就调用");
+    }
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+1 添加节点和创建节点
+    document.crateElement()
+        用来生成网页元素节点,参数为元素的标签名.如p,div等
+
+    document.createTextNode()
+        用来生成文本节点,参数为要生成的文本节点的内容   上面的节点通过appendChild()添加文本
+
+    appendChild()
+        接受一个节点对象作为参数,将其作为最后一个子节点,插入当前节点
+
+    hasChildNodes()
+        参数是要找的标签的名(p,div,span),参数可以没有,返回一个布尔值,表示当前节点是否有子节点
+
+    removeChild()
+        接受一个子节点对象(要先找到对象)作为参数,用于从当前节点移除子节点
+        会影响下面的克隆,删除的不会被克隆
+
+    cloneNode()
+        用于克隆一个选中的节点
+        它接受一个布尔值作为参数,表示是否同时克隆子节点,默认是false,即不克隆子节点
+        注意:不会克隆绑定到元素上的事件
+
+    innerHTML
+        返回元素包含的HTML代码,该属性可读写,常用来设置某个节点的内容
+        只显示设置的节点的内部的内容,不显示自己
+
+        可读可写
+            d.innerHTML = "www.baidu.com";
+
+    innerText
+        返回元素包含的Text内容
+
+        可读可写
+            d.innerText = "www.ithome.com"; 
+            
+    

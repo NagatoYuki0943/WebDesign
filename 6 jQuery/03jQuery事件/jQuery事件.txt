@@ -1,0 +1,128 @@
+1. jQuery 事件注册      01
+    单个事件注册
+    element.事件(function(){})       
+    $(“div”).click(function(){  事件处理程序 })   
+
+    其他事件和原生基本一致。
+    比如mouseover、mouseout、blur、focus、change、keydown、keyup、resize、scroll 等
+
+
+
+2. 事件处理 on() 绑定事件
+    on() 方法在匹配元素上绑定一个或多个事件的事件处理函数
+
+    语法：
+    element.on(events,[selector],fn)       
+
+    a. events:一个或多个用空格分隔的事件类型，如"click"或"keydown" 。
+    b. selector: 元素的子元素选择器 。
+    c. fn:回调函数 即绑定在元素身上的侦听函数。 
+
+    on写一个事件的时候不用对象也可以
+    $('#on0').on('click', function() {
+        alert('on0');
+    });
+
+
+    on() 方法优势1：
+        可以绑定多个事件，多个处理事件处理程序。 
+            $('div').on({
+                mouseenter: function() {
+                    $(this).css('background', 'skyblue');
+                },
+                mouseleave: function() {
+                    $(this).css('background', 'pink');
+                },
+                click: function() {
+                    $(this).css('background', 'purple');
+                },
+            });
+    
+
+        如果事件处理程序相同 
+            $('div').on("mouseenter mouseleave", function() {
+                $(this).toggleClass('current');
+            });
+
+
+
+    on() 方法优势2：
+        可以事件委派操作 。事件委派的定义就是，把原来加给子元素身上的事件绑定在父元素身上，就是把事件委派给父元素。
+
+                        参数分别是事件,子对象,方法.  click是绑定在ul身上的,不过触发的是里面的li
+            $('ul').on('click', 'li', function() {
+                alert('hello world!');
+            });       
+        在此之前有bind(), live() delegate()等方法来处理事件绑定或者事件委派，最新版本的请用on替代他们。
+
+
+
+    on() 方法优势3：
+        动态创建的元素，click() 在添加之前没有办法绑定事件， on() 可以在添加之前给动态生成的元素绑定事件 
+            $(“div").on("click",”p”, function(){
+                alert("俺可以给动态生成的元素绑定事件")
+            });       
+                $("div").append($("<p>我是动态创建的p</p>"));
+
+
+
+3. 微博注册案例     02
+
+
+
+4. 事件处理 off() 解绑事件          03
+    off() 方法可以移除通过 on() 方法添加的事件处理程序。
+
+        $("p").off()                //解绑p元素所有事件处理程序
+
+        $("p").off("click")         //解绑p元素上面的点击事件 后面的 foo 是侦听函数名
+
+        $("ul").off("click", "li"); //解绑事件委托
+
+
+
+5. 如果有的事件只想触发一次， 可以使用 one() 来绑定事件。       03
+    对象写法和普通写法都可以
+        $('p').one({
+            click: function() {
+                alert('one');
+            }
+        });
+        $('p').one(
+            'click',
+            function() {
+                alert('one');
+            }
+        );
+
+
+
+6. 自动触发事件 trigger()       04
+    有些事件希望自动触发, 比如轮播图自动播放功能跟点击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。
+    
+    element.click()                 //第一种简写形式
+    $('div').click();               //页面刷新自动触发
+
+    element.trigger("type")         //第二种自动触发模式
+    $('div').trigger('click');
+
+    element.triggerHandler(type)    //第三种自动触发模式
+    $('div').triggerHandler('click');
+
+
+    triggerHandler模式不会触发元素的默认行为，这是和前面两种的区别。 比如表单只要获得了焦点,就会有光标闪烁,这就是默认行为
+
+
+
+7.  jQuery 事件对象         05
+    事件被触发，就会有事件对象的产生。
+        element.on(events,[selector],function(event) {
+            //阻止默认行为
+            event.preventDefault();
+            //阻止冒泡
+            event.stopPropagation(); 
+        })       
+
+        阻止默认行为：event.preventDefault()   或者 return  false 
+        阻止冒泡： event.stopPropagation()      
+

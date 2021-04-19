@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Cat(name, color) {
+        this.name = name;
+        this.color = color;
+        this.f = function() {
+            console.log(this.name, this.color, 'miao~miao~miao');
+        }
+    }
+    var cat1 = new Cat('波斯猫', '黑色');
+    var cat2 = new Cat('土家猫', '黑色');
+    console.log(cat1.name); //波斯猫
+    console.log(cat1.color); //波斯猫
+    cat1.f(); //波斯猫 黑色 miao~miao~miao
+    cat2.f(); //土家猫 黑色 miao~miao~miao
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+</body>
+<script src="jquery.min.js"></script>
+<script>
+    $(function() {
+        //给所有按钮都绑定了事件
+        $('button').click(function() {
+            //当前元素变化背景颜色
+            $(this).css('background', 'pink');
+            //兄弟去掉背景颜色
+            $(this).siblings('button').css('background', '');
+        })
+    })
+</script>
+
+</html>

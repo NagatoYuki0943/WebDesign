@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    $(function() {
+        //情况1,目标对象为空
+        console.log('情况1,目标对象为空');
+        //目标对象
+        var targetObj1 = {};
+        //源对象
+        var obj1 = {
+            id: 1,
+            name: 'andy'
+        };
+
+        //合并对象  参数1:目标; 参数2:源
+        $.extend(targetObj1, obj1);
+
+
+        console.log(targetObj1);
+        //Object { id: 1, name: "andy" }
+        console.log('=========================================');
+
+
+
+        //情况2,目标对象不为空
+        console.log('情况2,目标对象不为空');
+        //目标对象
+        var targetObj2 = {
+            id: 0,
+
+        };
+        //源对象
+        var obj2 = {
+            id: 1,
+            sex: 'male'
+        };
+
+        //合并对象  参数1:目标; 参数2:源
+        $.extend(targetObj2, obj2);
+
+        console.log(targetObj2);
+        //Object { id: 1, name: "andy" }  
+        console.log('=========================================');
+
+
+
+        //情况3,目标对象不为空
+        console.log('情况3,目标对象不为空');
+        //目标对象
+        var targetObj3 = {
+            id: 0,
+            sex: 'male'
+        };
+        //源对象
+        var obj3 = {
+            id: 1,
+            name: 'andy'
+        };
+
+        //合并对象  参数1:目标; 参数2:源
+        $.extend(targetObj3, obj3);
+
+        console.log(targetObj3);
+        //Object { id: 1, sex: "male", name: "andy" }   id改为了1,其他数据合并了
+        console.log('=========================================');
+
+
+
+        //情况4,浅拷贝  浅拷贝是把被拷贝的对象复杂数据类型中的地址拷贝给目标对象，修改目标对象会影响被拷贝对象。
+        console.log('情况4,浅拷贝');
+        //目标对象
+        var targetObj4 = {
+            id: 0,
+            name: 'lily',
+            msg: {
+                'sex': 'aaa'
+            }
+        };
+        //源对象
+        var obj4 = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                'sex': '111'
+            }
+        };
+
+        //合并对象  参数1:目标; 参数2:源
+        $.extend(targetObj4, obj4);
+
+        targetObj4.mame = 'cactus';
+        targetObj4.msg.sex = 'female';
+        console.log(obj4); //Object { id: 1, name: "andy", msg: Object { sex: "female" } }  id没变,sex变了,浅拷贝复杂类型地址相同
+
+        console.log('=========================================');
+
+
+
+        //情况5,浅拷贝 ,目标也有相同名字的复杂数据类型
+        console.log('情况5,浅拷贝 ,目标也有相同名字的复杂数据类型');
+        //目标对象
+        var targetObj5 = {
+            id: 0,
+            sex: 'male',
+            msg: {
+                'age': 11,
+            }
+        };
+        //源对象
+        var obj5 = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                'sex': '111'
+            }
+        };
+
+        //合并对象  参数1:目标; 参数2:源
+        $.extend(targetObj5, obj5);
+
+        console.log(targetObj5); //Object { id: 1, sex: "male", msg: Object { sex: "111" }, name: "andy" }    msg里面的age被替换了,因为是浅拷贝
+
+        console.log('=========================================');
+
+
+        //情况6,深拷贝
+        console.log('情况6,深拷贝');
+        //目标对象
+        var targetObj6 = {
+            id: 0,
+            sex: 'male',
+            msg: {
+                'age': 11,
+            }
+        };
+        //源对象
+        var obj6 = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                'sex': '111'
+            }
+        };
+
+        //合并对象  参数1:目标; 参数2:源
+        $.extend(true, targetObj6, obj6);
+        console.log(targetObj6); //Object { id: 1, sex: "male", msg: Object { age: 11, sex: "111" }, name: "andy" }   msg中数据不会被替换
+
+
+        console.log('=========================================');
+    })
+</script>
+
+</html>

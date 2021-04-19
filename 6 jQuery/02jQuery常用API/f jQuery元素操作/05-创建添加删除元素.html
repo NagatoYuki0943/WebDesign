@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>原先的li</li>
+    </ul>
+
+    <div class="test">我是原先的div</div>
+
+    <ol id="remove">
+        <li>原先的li1</li>
+        <li>原先的li2</li>
+        <li>原先的li3</li>
+    </ol>
+    <ol id="empty">
+        <li>原先的li1</li>
+        <li>原先的li2</li>
+        <li>原先的li3</li>
+    </ol>
+    <ol id="html">
+        <li>原先的li1</li>
+        <li>原先的li2</li>
+        <li>原先的li3</li>
+    </ol>
+
+
+</body>
+<script>
+    $(function() {
+        // 1. 创建元素
+        var li1 = $("<li>我是后来的li1</li>");
+        var li2 = $("<li>我是后来的li2</li>");
+
+        // 2. 添加元素
+
+        // (1) 内部添加
+        $("ul").append(li1); //内部添加并且放到内容的最后面 
+        $("ul").prepend(li2); //内部添加并且放到内容的最前面
+
+
+        // (2) 外部添加
+        var div1 = $("<div>我是后妈生的div1</div>");
+        var div2 = $("<div>我是后妈生的div2</div>");
+        $(".test").after(div1);
+        $(".test").before(div2);
+
+
+        // 3. 删除元素
+        $("#remove li").eq(0).remove(); //可以删除匹配的元素 自杀
+        $("#empty").empty(); //可以删除匹配的元素里面的子节点 孩子      直接看不见了
+        $("#html").html(""); //直接将里面的内容替换为一个空的字符串     直接看不见了
+
+    })
+</script>
+
+</html>

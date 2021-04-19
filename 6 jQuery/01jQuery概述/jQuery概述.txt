@@ -1,0 +1,63 @@
+1. jQuery 概述
+
+    1.1 常见的JavaScript 库
+
+    jQuery  Prototype   YUI Dojo    Ext JS  移动端的zepto
+
+
+    1.2 jQuery 的概念
+        j 就是 JavaScript；   Query 查询； 意思就是查询js，把js中的DOM操作做了封装，我们可以快速的查询使用里面的功能
+
+
+2. jQuery 的基本使用
+    2.1  jQuery 的下载
+        https://jquery.com/
+
+        点击下载,production是生产版本,是压缩过的,development是未压缩的,直接赋值粘贴即可
+
+
+    2.2  jQuery 的使用步骤
+        a. 引入 jQuery 文件
+        b. 使用即可
+
+
+    2.3  jQuery 的入口函数
+        $(function () {   
+            ...  // 此处是页面 DOM 加载完成的入口
+        }) ;         
+        $(document).ready(function(){
+        ...  //  此处是页面DOM加载完成的入口
+        });       
+
+        a. 等着 DOM 结构渲染完毕即可执行内部代码，不必等到所有外部资源加载完成，jQuery 帮我们完成了封装。
+        b. 相当于原生 js 中的 DOMContentLoaded。
+        d. 不同于原生 js 中的 load 事件是等页面文档、外部的 js 文件、css文件、图片加载完毕才执行内部代码。
+        d. 更推荐使用第一种方式。
+
+
+    2.4  jQuery 的顶级对象 $
+        a. $ 是 jQuery 的别称，在代码中可以使用 jQuery 代替 $，但一般为了方便，通常都直接使用 $ 。
+        b. $ 是jQuery 的顶级对象， 相当于原生JavaScript中的 window。把元素利用$包装成jQuery对象，就可以调用jQuery 的方法。
+
+
+    2.5  jQuery 对象和 DOM 对象
+        a. 用原生 JS 获取来的对象就是 DOM 对象
+        b. jQuery 方法获取的元素就是 jQuery 对象。
+        c. jQuery 对象本质是： 利用$对DOM 对象包装后产生的对象（伪数组形式存储）。
+
+        注意: 只有 jQuery 对象才能使用 jQuery 方法，DOM 对象则使用原生的 JavaScirpt 方法。
+
+
+
+        DOM 对象与 jQuery 对象之间是可以相互转换的。
+        因为原生js 比 jQuery 更大，原生的一些属性和方法 jQuery没有给我们封装. 
+        要想使用这些属性和方法需要把jQuery对象转换为DOM对象才能使用。
+
+        a. DOM 对象转换为 jQuery 对象： $(DOM对象)  不用引号
+            let MyVideo = document.getElementsByTagName('video');
+            let JVideo = $(MyVideo); 
+
+        b. jQuery 对象转换为 DOM 对象（两种方式）
+            $('div') [index]       index 是索引号,是0,1,2                     
+            $('div') .get(index)    index 是索引号,是0,1,2      
+

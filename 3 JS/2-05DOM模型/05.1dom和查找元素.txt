@@ -1,0 +1,72 @@
+1 文档对象模型（Document Object Model，简称DOM）
+    是W3C组织推荐的处理可扩展置标语言的标准编程接口。它是一种与平台和语言无关的应用程序接口(API),
+    它可以动态地访问程序和脚本,更新其内容、结构和www文档的风格(目前,HTML和XML文档是通过说明部分定义的)。
+    文档可以进一步被处理，处理的结果可以加入到当前的页面。DOM是一种基于树的API文档，它要求在处理过程
+    中整个文档都表示在存储器中。
+
+
+2 作用
+    将网页转换为一个js对象,可以用脚本进行各种操作
+    浏览器会根据dom模型,将结构化文档(HTML和XML)解析成一系列节点,
+    再由这些节点组成一个树状结构,所有节点和最终的树状结构,都有规范的对外接口
+
+
+3 节点的概念
+    DOM最小组成单位是节点node,文档的树形结构,就是由各种不同类型的节点组成,每个节点都可以看做是文档树的一片叶子.
+    最顶层的节点是document节点,它代表了整个文档,是文档的根节点.每个网页都有自己的document节点,window document就
+    指向这个节点,.只要浏览器开始载入html文档,这个节点就存在了,可以直接调用.每一个html标签元素,在dom树上都会转换成
+    一个element节点对象,文档里面最高层一般是html标签,其他标签都是它的下级
+
+
+4 节点关系
+    除根节点外,其他节点对于周围的节点都存在三种关系:
+        (1) 父节点关系   : 直接的上级节点
+        (2) 子节点关系   : 直接的下级节点
+        (3) 同级节点关系 : 拥有同级的上级节点
+
+4 document和window关系
+    (1) document就是根节点,document是window的子对象,因为window是定义,document是下一级,所以不写window可以自动往上找
+        window.document
+
+    
+5 查找节点
+    (1) getElement
+        document.getElementById;            //通过id属性查找元素元素对象
+        document.getElementsByName;         //通过name属性查找元素对象,Elements      通过集合形式返回
+        document.getElementsByClassName;    //通过class属性查找元素对象,Elements     通过集合形式返回
+        document.getElementsByTagName;      //通过tag标签名属性查找元素对象,Elements  通过集合形式返回 就是 p,div 这些
+
+
+    (2) QuerySelector[All],通过css选择器找,参数是css选择器形式  
+        *   对整个页面生效
+        div 会对所有div生效
+        #name   查找名字
+        .class  查找类
+
+        querySelector   获取第一个
+        querySelectAll  获取全部
+
+
+    <script>  
+        var p = document.querySelector("#p"); //通过id属性查找元素元素对象
+        p.onclick = function() {
+            alert("p.onclick");
+        }
+        document.querySelector(".p"); //通过class属性查找元素对象
+        var p2 = document.querySelector('p'); //获取以这个标签名命名所有元素;Selector如果有多个元素符合规则,只获取第一个
+        p2.onclick = function() {
+            alert("p.onclick");
+        }
+
+        //SelectAll获取全部,Selector获取第一个
+        var pa = document.querySelectorAll('p');
+        //console.log(pa); //NodeList(4) [ p#p1, p#p2.p1, p, p ] 获取了全部4个
+        //为所有元素绑定事件
+        for (var i in pa) {
+            //i 中有下标
+            console.log(i);
+            pa[i].onclick = function() {
+                alert(6);
+            }
+        }
+    </script>

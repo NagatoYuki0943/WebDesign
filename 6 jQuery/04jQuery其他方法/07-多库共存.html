@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function() {
+            //创建一个名字叫 $ 的函数
+            function $(ele) {
+                //返回这个对象
+                return document.querySelector(ele);
+            }
+
+            console.log($('div')); //<div>...
+
+            //报错,因为名字 $ 和上面重复了
+            //.$.each();
+
+            //解决方案1: 使用 jQuery 代替 $
+            jQuery.each();
+
+
+            //解决方案2: 自己定义关键字
+            //var jj = $.noConflict();  //上面用了 $ 了,这里要用jQuery
+            var jj = jQuery.noConflict();
+
+            console.log(jj('span')); //Object { 0: span, length: 1, prevObject: {…} }
+
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+</body>
+
+</html>

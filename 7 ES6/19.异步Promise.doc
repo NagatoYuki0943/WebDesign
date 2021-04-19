@@ -1,0 +1,214 @@
+{\rtf \ansi\ansicpg1252\deff0
+{\fonttbl{\f11\fswiss\fcharset0 Arial Narrow;}{\f10\fswiss\fcharset0 Arial;}{\f12\fswiss\fcharset0 Franklin Gothic;}{\f13\fswiss\fcharset0 Verdana;}{\f20\froman\fcharset0 Times New Roman;}{\f21\froman\fcharset0 Garamond;}{\f22\froman\fcharset0 Palatino Linotype;}{\f30\fmodern\fcharset0 Courier New;}{\f31\fmodern\fcharset0 Lucida Console;}{\f40\ftech\fcharset2 Symbol;}{\f50\fscript\fcharset0 Garamond;}{\f60 Haettenschweiler;}}
+\jexpand\viewkind1\paperw11906\paperh16838
+{\colortbl;\red0\green0\blue0;\red0\green0\blue50;\red0\green0\blue100;\red0\green0\blue150;\red0\green0\blue200;\red0\green0\blue250;\red0\green50\blue0;\red0\green50\blue50;\red0\green50\blue100;\red0\green50\blue150;\red0\green50\blue200;\red0\green50\blue250;\red0\green100\blue0;\red0\green100\blue50;\red0\green100\blue100;\red0\green100\blue150;\red0\green100\blue200;\red0\green100\blue250;\red0\green150\blue0;\red0\green150\blue50;\red0\green150\blue100;\red0\green150\blue150;\red0\green150\blue200;\red0\green150\blue250;\red0\green200\blue0;\red0\green200\blue50;\red0\green200\blue100;\red0\green200\blue150;\red0\green200\blue200;\red0\green200\blue250;\red0\green250\blue0;\red0\green250\blue50;\red0\green250\blue100;\red0\green250\blue150;\red0\green250\blue200;\red0\green250\blue250;\red50\green0\blue0;\red50\green0\blue50;\red50\green0\blue100;\red50\green0\blue150;\red50\green0\blue200;\red50\green0\blue250;\red50\green50\blue0;\red50\green50\blue50;\red50\green50\blue100;\red50\green50\blue150;\red50\green50\blue200;\red50\green50\blue250;\red50\green100\blue0;\red50\green100\blue50;\red50\green100\blue100;\red50\green100\blue150;\red50\green100\blue200;\red50\green100\blue250;\red50\green150\blue0;\red50\green150\blue50;\red50\green150\blue100;\red50\green150\blue150;\red50\green150\blue200;\red50\green150\blue250;\red50\green200\blue0;\red50\green200\blue50;\red50\green200\blue100;\red50\green200\blue150;\red50\green200\blue200;\red50\green200\blue250;\red50\green250\blue0;\red50\green250\blue50;\red50\green250\blue100;\red50\green250\blue150;\red50\green250\blue200;\red50\green250\blue250;\red100\green0\blue0;\red100\green0\blue50;\red100\green0\blue100;\red100\green0\blue150;\red100\green0\blue200;\red100\green0\blue250;\red100\green50\blue0;\red100\green50\blue50;\red100\green50\blue100;\red100\green50\blue150;\red100\green50\blue200;\red100\green50\blue250;\red100\green100\blue0;\red100\green100\blue50;\red100\green100\blue100;\red100\green100\blue150;\red100\green100\blue200;\red100\green100\blue250;\red100\green150\blue0;\red100\green150\blue50;\red100\green150\blue100;\red100\green150\blue150;\red100\green150\blue200;\red100\green150\blue250;\red100\green200\blue0;\red100\green200\blue50;\red100\green200\blue100;\red100\green200\blue150;\red100\green200\blue200;\red100\green200\blue250;\red100\green250\blue0;\red100\green250\blue50;\red100\green250\blue100;\red100\green250\blue150;\red100\green250\blue200;\red100\green250\blue250;\red150\green0\blue0;\red150\green0\blue50;\red150\green0\blue100;\red150\green0\blue150;\red150\green0\blue200;\red150\green0\blue250;\red150\green50\blue0;\red150\green50\blue50;\red150\green50\blue100;\red150\green50\blue150;\red150\green50\blue200;\red150\green50\blue250;\red150\green100\blue0;\red150\green100\blue50;\red150\green100\blue100;\red150\green100\blue150;\red150\green100\blue200;\red150\green100\blue250;\red150\green150\blue0;\red150\green150\blue50;\red150\green150\blue100;\red150\green150\blue150;\red150\green150\blue200;\red150\green150\blue250;\red150\green200\blue0;\red150\green200\blue50;\red150\green200\blue100;\red150\green200\blue150;\red150\green200\blue200;\red150\green200\blue250;\red150\green250\blue0;\red150\green250\blue50;\red150\green250\blue100;\red150\green250\blue150;\red150\green250\blue200;\red150\green250\blue250;\red200\green0\blue0;\red200\green0\blue50;\red200\green0\blue100;\red200\green0\blue150;\red200\green0\blue200;\red200\green0\blue250;\red200\green50\blue0;\red200\green50\blue50;\red200\green50\blue100;\red200\green50\blue150;\red200\green50\blue200;\red200\green50\blue250;\red200\green100\blue0;\red200\green100\blue50;\red200\green100\blue100;\red200\green100\blue150;\red200\green100\blue200;\red200\green100\blue250;\red200\green150\blue0;\red200\green150\blue50;\red200\green150\blue100;\red200\green150\blue150;\red200\green150\blue200;\red200\green150\blue250;\red200\green200\blue0;\red200\green200\blue50;\red200\green200\blue100;\red200\green200\blue150;\red200\green200\blue200;\red200\green200\blue250;\red200\green250\blue0;\red200\green250\blue50;\red200\green250\blue100;\red200\green250\blue150;\red200\green250\blue200;\red200\green250\blue250;\red250\green0\blue0;\red250\green0\blue50;\red250\green0\blue100;\red250\green0\blue150;\red250\green0\blue200;\red250\green0\blue250;\red250\green50\blue0;\red250\green50\blue50;\red250\green50\blue100;\red250\green50\blue150;\red250\green50\blue200;\red250\green50\blue250;\red250\green100\blue0;\red250\green100\blue50;\red250\green100\blue100;\red250\green100\blue150;\red250\green100\blue200;\red250\green100\blue250;\red250\green150\blue0;\red250\green150\blue50;\red250\green150\blue100;\red250\green150\blue150;\red250\green150\blue200;\red250\green150\blue250;\red250\green200\blue0;\red250\green200\blue50;\red250\green200\blue100;\red250\green200\blue150;\red250\green200\blue200;\red250\green200\blue250;\red250\green250\blue0;\red250\green250\blue50;\red250\green250\blue100;\red250\green250\blue150;\red250\green250\blue200;\red250\green250\blue250;}
+\margt840\margb300\margr1780\margl1800
+\plain\pard\sl-218 \li0 \ri45 \expndtw-17 \f10 \fs18 \cf80 {\f63 \u12304\'3f}{\f63 \u21313\'3f}{\f63 \u22825\'3f}{\f63 \u31934\'3f}{\f63 \u21697\'3f}{\f63 \u35838\'3f}{\f63 \u22530\'3f}{\f63 \u31995\'3f}{\f63 \u21015\'3f}{\f63 \u12305\'3f} 
+\plain\tx7182 \tab \expndtw-19 \f10 \fs18 \cf80 {\f63 \u20027\'3f}{\f63 \u35762\'3f}{\f63 \u65306\'3f}{\f63 \u26446\'3f}{\f63 \u28814\'3f}{\f63 \u24674\'3f} 
+\plain\par
+\sl-152\fs15\par\sl-240\fs24\par\par\par\pard\pard\sl-403 \li0 \ri2637 \fi2916 \expndtw-39 \b \f30 \fs31 \cf75 19.\b0 \f10  {\f63 \u24322\'3f} {\f63 \u27493\'3f}\b \f30  Prom ise 
+\plain\par
+\sl-225\fs22\par\sl-240\fs24\par\pard\pard\sl-209 \li0 \ri7277 \expndtw-23 \f10 \fs20 \cf73 {\f63 \u23398\'3f}{\f63 \u20064\'3f}{\f63 \u35201\'3f}{\f63 \u28857\'3f}{\f63 \u65306\'3f} 
+\plain\par
+\pard\sl-345 \li420 \ri6398 \expndtw-17 \f30 \fs20 \cf73 1.Promise\f10  {\f63 \u20171\'3f}{\f63 \u32461\'3f} 
+\plain\par
+\pard\sl-311 \li420 \ri6837 \expndtw-22 \f30 \fs20 \cf73 2.\f10 {\f63 \u23454\'3f}{\f63 \u20363\'3f}{\f63 \u27979\'3f}{\f63 \u35797\'3f} 
+
+\par
+\plain\sl-141\fs14\par\sl-240\fs24\par\pard\pard\sl-209 \li0 \ri1819 \fi420 \expndtw-15 \f10 \fs20 \cf44 {\f63 \u26412\'3f}{\f63 \u33410\'3f}{\f63 \u35838\'3f}{\f63 \u25105\'3f}{\f63 \u20204\'3f}{\f63 \u26469\'3f}{\f63 \u24320\'3f}{\f63 \u22987\'3f}{\f63 \u23398\'3f}{\f63 \u20064\'3f} ES6 {\f63 \u26032\'3f}{\f63 \u22686\'3f}{\f63 \u30340\'3f} Promise {\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u26041\'3f}{\f63 \u26696\'3f}{\f63 \u30340\'3f}{\f63 \u21151\'3f}{\f63 \u33021\'3f}{\f63 \u12290\'3f} 
+\plain\par
+\sl-102\fs10\par\sl-240\fs24\par\pard\pard\sl-313 \li0 \ri6624 \expndtw-17 \f10 \fs20 \cf1 {\f63 \u19968\'3f}{\f63 \u65294\'3f}\b \f30 Promise\b0 \f10  {\f63 \u20171\'3f}{\f63 \u32461\'3f} 
+\plain\par
+\pard\sl-313 \li420 \ri588 \expndtw-14 \f30 \fs20 \cf1 1. Promise\f10 {\f63 \u65306\'3f}{\f63 \u21363\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u32534\'3f}{\f63 \u31243\'3f}{\f63 \u30340\'3f}{\f63 \u19968\'3f}{\f63 \u31181\'3f}{\f63 \u35299\'3f}{\f63 \u20915\'3f}{\f63 \u26041\'3f}{\f63 \u26696\'3f}{\f63 \u65292\'3f}{\f63 \u23427\'3f}{\f63 \u27604\'3f}{\f63 \u20256\'3f}{\f63 \u32479\'3f}{\f63 \u22238\'3f}{\f63 \u35843\'3f}{\f63 \u24335\'3f}{\f63 \u26356\'3f}{\f63 \u21152\'3f}{\f63 \u30340\'3f}{\f63 \u24378\'3f}{\f63 \u22823\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-312 \li420 \ri1209 \expndtw-13 \f30 \fs20 \cf1 2. ES6\f10  {\f63 \u20043\'3f}{\f63 \u21069\'3f}{\f63 \u38750\'3f}{\f63 \u24120\'3f}{\f63 \u22810\'3f}{\f63 \u23618\'3f}{\f63 \u27425\'3f}{\f63 \u23884\'3f}{\f63 \u22871\'3f}{\f63 \u30340\'3f}{\f63 \u21516\'3f}{\f63 \u27493\'3f}{\f63 \u12289\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u65292\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u39034\'3f}{\f63 \u24207\'3f}{\f63 \u28151\'3f}{\f63 \u20081\'3f}{\f63 \u19988\'3f}{\f63 \u19981\'3f}{\f63 \u22909\'3f}{\f63 \u32500\'3f}{\f63 \u25252\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-312 \li420 \ri1589 \expndtw-13 \f30 \fs20 \cf1 3. Promise\f10  {\f63 \u23601\'3f}{\f63 \u24456\'3f}{\f63 \u22909\'3f}{\f63 \u30340\'3f}{\f63 \u35299\'3f}{\f63 \u20915\'3f}{\f63 \u20102\'3f}{\f63 \u36825\'3f}{\f63 \u20123\'3f}{\f63 \u38382\'3f}{\f63 \u39064\'3f}{\f63 \u65292\'3f}{\f63 \u25105\'3f}{\f63 \u20204\'3f}{\f63 \u20808\'3f}{\f63 \u20102\'3f}{\f63 \u35299\'3f}{\f63 \u19968\'3f}{\f63 \u19979\'3f}{\f63 \u23427\'3f}{\f63 \u30340\'3f}{\f63 \u35821\'3f}{\f63 \u27861\'3f}{\f63 \u65306\'3f} 
+\plain\par
+\pard\sl-312 \li840 \ri5426 \expndtw-21 \f30 \fs18 \cf50 //{\f63 \u21019\'3f}{\f63 \u24314\'3f}{\f63 \u19968\'3f}{\f63 \u20010\'3f} Promise {\f63 \u23454\'3f}{\f63 \u20363\'3f} 
+\plain\par
+\pard\sl-300 \li840 \ri2998 \expndtw-14 \f30 \fs18 \cf6 let\b\i \cf75  p\b0\i0 \cf52  =\cf6  new\b\i \cf75  Promise\b0\i0 \cf44 ((resolve,\cf1  reject)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1200 \ri3869 \expndtw-17 \f30 \fs18 \cf50 //{\f63 \u19968\'3f}{\f63 \u39039\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u25805\'3f}{\f63 \u20316\'3f}{\f63 \u21518\'3f}{\f63 \u65292\'3f}{\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u25104\'3f}{\f63 \u21151\'3f}{\f63 \u25110\'3f}{\f63 \u22833\'3f}{\f63 \u36133\'3f} 
+\plain\par
+\pard\sl-300 \li1200 \ri3168 \expndtw-19 \f30 \fs18 \cf50 //{\f63 \u28982\'3f}{\f63 \u21518\'3f}{\f63 \u21028\'3f}{\f63 \u26029\'3f}{\f63 \u25104\'3f}{\f63 \u21151\'3f}{\f63 \u25110\'3f}{\f63 \u22833\'3f}{\f63 \u36133\'3f}{\f63 \u21435\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f} resolve {\f63 \u25110\'3f} reject 
+\plain\par
+\pard\sl-300 \li1200 \ri5345 \expndtw-19 \f30 \fs18 \cf6 if\cf44  (false) \{ 
+\plain\par
+\pard\sl-300 \li1560 \ri3367 \expndtw-16 \f30 \fs18 \cf50 //console.log('{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u25104\'3f}{\f63 \u21151\'3f}{\f63 \u65281\'3f}'); 
+\plain\par
+\pard\sl-300 \li1560 \ri4679 \expndtw-17 \f30 \fs18 \cf1 resolve('\cf87 {\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u25104\'3f}{\f63 \u21151\'3f}{\f63 \u65281\'3f}'); 
+\plain\par
+\pard\sl-300 \li0 \ri5702 \fi1200 \expndtw-21 \f30 \fs18 \cf44 \}\cf6  else\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1560 \ri3367 \expndtw-16 \f30 \fs18 \cf50 //console.log('{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u22833\'3f}{\f63 \u36133\'3f}{\f63 \u65281\'3f}'); 
+\plain\par
+\pard\sl-300 \li1560 \ri4778 \expndtw-17 \f30 \fs18 \cf1 reject('\cf87 {\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u22833\'3f}{\f63 \u36133\'3f}{\f63 \u65281\'3f}'); 
+\plain\par
+\pard\sl-300 \li840 \ri6324 \fi360 \expndtw-11 \f30 \fs18 \cf44 \}
+\plain\par
+\pard\sl-300 \li840 \ri6471 \expndtw-12 \f30 \fs18 \cf44 \}); 
+\plain\par
+\sl-120\fs12\par\sl-240\fs24\par\pard\pard\sl-239 \li840 \ri4265 \expndtw-20 \f30 \fs18 \cf50 //then {\f63 \u26041\'3f}{\f63 \u27861\'3f}{\f63 \u21487\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f} resolve {\f63 \u30340\'3f}{\f63 \u22238\'3f}{\f63 \u35843\'3f}{\f63 \u20989\'3f}{\f63 \u25968\'3f} 
+\plain\par
+\pard\sl-299 \li840 \ri4265 \expndtw-20 \f30 \fs18 \cf50 //catch {\f63 \u26041\'3f}{\f63 \u27861\'3f}{\f63 \u21487\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f} reject {\f63 \u30340\'3f}{\f63 \u22238\'3f}{\f63 \u35843\'3f}{\f63 \u20989\'3f}{\f63 \u25968\'3f} 
+\plain\par
+\pard\sl-300 \li840 \ri5045 \expndtw-17 \b\i \f30 \fs18 \cf75 p\b0\i0 \cf44 .then((value)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li840 \ri4721 \fi360 \expndtw-17 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log(value); 
+\plain\par
+\pard\sl-300 \li0 \ri4777 \fi840 \expndtw-16 \f30 \fs18 \cf44 \}).catch((reason)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li840 \ri4633 \fi360 \expndtw-17 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log(reason); 
+\plain\par
+\pard\sl-300 \li840 \ri6471 \expndtw-12 \f30 \fs18 \cf44 \}); 
+\plain\par
+\sl-116\fs12\par\sl-240\fs24\par\pard\pard\sl-236 \li840 \ri989 \expndtw-14 \f30 \fs18 \cf1 PS\f10 {\f63 \u65306\'3f}{\f63 \u22914\'3f}{\f63 \u26524\'3f}{\f63 \u20320\'3f}{\f63 \u26377\'3f}{\f63 \u36807\'3f}{\f63 \u24456\'3f}{\f63 \u22810\'3f}{\f63 \u23618\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u23454\'3f}{\f63 \u25112\'3f}{\f63 \u22522\'3f}{\f63 \u30784\'3f}{\f63 \u65292\'3f}{\f63 \u19978\'3f}{\f63 \u38754\'3f}{\f63 \u25552\'3f}{\f63 \u20379\'3f}{\f63 \u30340\'3f}{\f63 \u26041\'3f}{\f63 \u27861\'3f}{\f63 \u20250\'3f}{\f63 \u31361\'3f}{\f63 \u28982\'3f}{\f63 \u24863\'3f}{\f63 \u35273\'3f}{\f63 \u28165\'3f}{\f63 \u26224\'3f}{\f63 \u24456\'3f}{\f63 \u22810\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-312 \li840 \ri1358 \expndtw-15 \f30 \fs18 \cf1 PS\f10 {\f63 \u65306\'3f}{\f63 \u22240\'3f}{\f63 \u20026\'3f}{\f63 \u23427\'3f}{\f63 \u25226\'3f}{\f63 \u22810\'3f}{\f63 \u23618\'3f}{\f63 \u23884\'3f}{\f63 \u22871\'3f}{\f63 \u30340\'3f}{\f63 \u22238\'3f}{\f63 \u35843\'3f}{\f63 \u20989\'3f}{\f63 \u25968\'3f}{\f63 \u32473\'3f}{\f63 \u20998\'3f}{\f63 \u31163\'3f}{\f63 \u20986\'3f}{\f63 \u26469\'3f}{\f63 \u65292\'3f}{\f63 \u36890\'3f}{\f63 \u36807\'3f}\f30  then\f10  {\f63 \u21644\'3f}\f30  catch\f10  {\f63 \u26469\'3f}{\f63 \u23454\'3f}{\f63 \u29616\'3f}{\f63 \u65307\'3f} 
+
+\par
+\sect\sectd\sbknone\cols2\colno1\colw649\colsr187\colno2\colw7488
+\plain\sl-90\fs9\par\sl-240\fs24\par\pard\pard\sl-311 \li420 \ri0 \expndtw-12 \f30 \fs20 \cf1 4. 
+\plain\expndtw-12 \f30 \fs20 \cf1 5. 
+\plain\expndtw-12 \f30 \fs20 \cf1 6. 
+\plain\expndtw-12 \f30 \fs20 \cf1 7. 
+
+\par
+\column
+\plain\sl-90\fs9\par\sl-240\fs24\par\pard\pard\sl-311 \li2 \ri55 \expndtw-18 \f10 \fs20 \cf1 {\f63 \u36890\'3f}{\f63 \u36807\'3f}{\f63 \u19978\'3f}{\f63 \u38754\'3f}{\f63 \u20363\'3f}{\f63 \u23376\'3f}{\f63 \u30340\'3f}{\f63 \u35821\'3f}{\f63 \u27861\'3f}{\f63 \u65292\'3f}{\f63 \u25105\'3f}{\f63 \u20204\'3f}{\f63 \u21457\'3f}{\f63 \u29616\'3f}\f30  p\f10  {\f63 \u20316\'3f}{\f63 \u20026\'3f}\f30  Promise\f10  {\f63 \u23454\'3f}{\f63 \u20363\'3f}{\f63 \u65292\'3f}{\f63 \u21487\'3f}{\f63 \u20197\'3f}{\f63 \u36827\'3f}{\f63 \u34892\'3f}{\f63 \u36830\'3f}{\f63 \u32512\'3f}{\f63 \u38142\'3f}{\f63 \u24335\'3f}{\f63 \u25805\'3f}{\f63 \u20316\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-311 \li2 \ri547 \expndtw-18 \f10 \fs20 \cf1 {\f63 \u24403\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u20102\'3f}\f30  then\f10  {\f63 \u26041\'3f}{\f63 \u27861\'3f}{\f63 \u21518\'3f}{\f63 \u65292\'3f}{\f63 \u26412\'3f}{\f63 \u36523\'3f}{\f63 \u20381\'3f}{\f63 \u26087\'3f}{\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u20102\'3f}{\f63 \u24403\'3f}{\f63 \u21069\'3f}{\f63 \u30340\'3f}\f30  Promise\f10  {\f63 \u23454\'3f}{\f63 \u20363\'3f}{\f63 \u65292\'3f}{\f63 \u26041\'3f}{\f63 \u20415\'3f}{\f63 \u38142\'3f}{\f63 \u24335\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-278 \li2 \ri557 \expndtw-16 \f10 \fs20 \cf1 {\f63 \u27880\'3f}{\f63 \u37322\'3f}{\f63 \u20013\'3f}{\f63 \u20063\'3f}{\f63 \u35828\'3f}{\f63 \u26126\'3f}{\f63 \u20102\'3f}{\f63 \u65292\'3f}{\f63 \u36890\'3f}{\f63 \u36807\'3f}{\f63 \u26500\'3f}{\f63 \u36896\'3f}{\f63 \u26041\'3f}{\f63 \u27861\'3f}{\f63 \u30340\'3f}{\f63 \u20004\'3f}{\f63 \u20010\'3f}{\f63 \u21442\'3f}{\f63 \u25968\'3f}{\f63 \u21435\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u22238\'3f}{\f63 \u35843\'3f}{\f63 \u20989\'3f}{\f63 \u25968\'3f}{\f63 \u65292\'3f}{\f63 \u24182\'3f}{\f63 \u20256\'3f}{\f63 \u36882\'3f}{\f63 \u21442\'3f}{\f63 \u25968\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-345 \li2 \ri444 \expndtw-17 \f10 \fs20 \cf1 {\f63 \u20107\'3f}{\f63 \u23454\'3f}{\f63 \u19978\'3f}{\f63 \u65292\'3f}\f30 catch()\f10 {\f63 \u26041\'3f}{\f63 \u27861\'3f}{\f63 \u36824\'3f}{\f63 \u21487\'3f}{\f63 \u20197\'3f}{\f63 \u20316\'3f}{\f63 \u20026\'3f}\f30  then\f10  {\f63 \u31532\'3f}{\f63 \u20108\'3f}{\f63 \u21442\'3f}{\f63 \u25968\'3f}{\f63 \u36827\'3f}{\f63 \u34892\'3f}{\f63 \u23384\'3f}{\f63 \u22312\'3f}{\f63 \u65292\'3f}{\f63 \u26041\'3f}{\f63 \u20415\'3f}{\f63 \u22810\'3f}{\f63 \u23618\'3f}{\f63 \u22238\'3f}{\f63 \u35843\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-312 \li0 \ri6391 \expndtw-22 \f30 \fs18 \cf50 //{\f63 \u19968\'3f}{\f63 \u20307\'3f}{\f63 \u21270\'3f}{\f63 \u25805\'3f}{\f63 \u20316\'3f} 
+\plain\par
+\pard\sl-300 \li0 \ri5047 \expndtw-17 \b\i \f30 \fs18 \cf75 p\b0\i0 \cf44 .then((value)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li0 \ri4723 \fi360 \expndtw-17 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log(value); 
+
+\par
+\sect\sectd\sbknone\sect\sectd\sbkpage\margtsxn760\pard
+\jexpand\viewkind1\paperw11906\paperh16838
+\margt840\margb280\margr1780\margl1800
+\plain\pard\sl-218 \li0 \ri45 \expndtw-17 \f10 \fs18 \cf80 {\f63 \u12304\'3f}{\f63 \u21313\'3f}{\f63 \u22825\'3f}{\f63 \u31934\'3f}{\f63 \u21697\'3f}{\f63 \u35838\'3f}{\f63 \u22530\'3f}{\f63 \u31995\'3f}{\f63 \u21015\'3f}{\f63 \u12305\'3f} 
+\plain\tx7182 \tab \expndtw-19 \f10 \fs18 \cf80 {\f63 \u20027\'3f}{\f63 \u35762\'3f}{\f63 \u65306\'3f}{\f63 \u26446\'3f}{\f63 \u28814\'3f}{\f63 \u24674\'3f} 
+
+\par
+\plain\sl-92\fs9\par\sl-240\fs24\par\par\par\pard\pard\sl-236 \li837 \ri5315 \expndtw-17 \f30 \fs18 \cf44 \}, (reason)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li837 \ri4635 \fi360 \expndtw-17 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log(reason); 
+\plain\par
+\pard\sl-300 \li837 \ri6473 \expndtw-12 \f30 \fs18 \cf44 \}); 
+
+\par
+\plain\sl-116\fs12\par\sl-240\fs24\par\pard\pard\sl-209 \li0 \ri7063 \expndtw-22 \f10 \fs20 \cf1 {\f63 \u20108\'3f}{\f63 \u65294\'3f}{\f63 \u23454\'3f}{\f63 \u20363\'3f}{\f63 \u27979\'3f}{\f63 \u35797\'3f} 
+\plain\par
+\pard\sl-345 \li420 \ri137 \expndtw-12 \f30 \fs20 \cf1 1.\f10  {\f63 \u25105\'3f}{\f63 \u20204\'3f}{\f63 \u20570\'3f}{\f63 \u20010\'3f}{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u22810\'3f}{\f63 \u23618\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u30340\'3f}{\f63 \u23454\'3f}{\f63 \u20363\'3f}{\f63 \u27979\'3f}{\f63 \u35797\'3f}{\f63 \u65292\'3f}{\f63 \u35201\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u22810\'3f}{\f63 \u20010\'3f}{\f63 \u20869\'3f}{\f63 \u23481\'3f}{\f63 \u65292\'3f}{\f63 \u24182\'3f}{\f63 \u25353\'3f}{\f63 \u25351\'3f}{\f63 \u23450\'3f}{\f63 \u39034\'3f}{\f63 \u24207\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-312 \li420 \ri3005 \expndtw-13 \f30 \fs20 \cf1 2.\f10  {\f63 \u20808\'3f}{\f63 \u32473\'3f}{\f63 \u20986\'3f}{\f63 \u19981\'3f}{\f63 \u36827\'3f}{\f63 \u34892\'3f}\f30  Promise\f10  {\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u65292\'3f}{\f63 \u30475\'3f}{\f63 \u23427\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u30340\'3f}{\f63 \u39034\'3f}{\f63 \u24207\'3f}{\f63 \u65306\'3f} 
+\plain\par
+\pard\sl-312 \li840 \ri6424 \expndtw-24 \f30 \fs18 \cf50 //{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f} 1 
+\plain\par
+\pard\sl-300 \li840 \ri5134 \expndtw-17 \i \f30 \fs18 \cf1 setTimeout\i0 \cf44 (()\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li840 \ri4264 \fi360 \expndtw-16 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log('1.\cf87 {\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li840 \ri5937 \expndtw-21 \f30 \fs18 \cf44 \},\b \cf157  3500\b0 \cf44 ); 
+\plain\par
+\sl-120\fs12\par\sl-240\fs24\par\pard\pard\sl-239 \li840 \ri6424 \expndtw-24 \f30 \fs18 \cf50 //{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f} 2 
+\plain\par
+\pard\sl-300 \li840 \ri5134 \expndtw-17 \i \f30 \fs18 \cf1 setTimeout\i0 \cf44 (()\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li840 \ri4264 \fi360 \expndtw-16 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log('2.\cf87 {\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li840 \ri6026 \expndtw-21 \f30 \fs18 \cf44 \},\b \cf157  800\b0 \cf44 ); 
+\plain\par
+\sl-120\fs12\par\sl-240\fs24\par\pard\pard\sl-239 \li840 \ri6424 \expndtw-24 \f30 \fs18 \cf50 //{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f} 3 
+\plain\par
+\pard\sl-300 \li840 \ri5134 \expndtw-17 \i \f30 \fs18 \cf1 setTimeout\i0 \cf44 (()\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li840 \ri4264 \fi360 \expndtw-16 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log('3.\cf87 {\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li840 \ri5937 \expndtw-21 \f30 \fs18 \cf44 \},\b \cf157  1500\b0 \cf44 ); 
+\plain\par
+\sl-123\fs12\par\sl-240\fs24\par\pard\pard\sl-236 \li840 \ri933 \expndtw-13 \f30 \fs18 \cf1 PS\f10 {\f63 \u65306\'3f}{\f63 \u36825\'3f}{\f63 \u37324\'3f}{\f63 \u19981\'3f}{\f63 \u31649\'3f}{\f63 \u20320\'3f}{\f63 \u24590\'3f}{\f63 \u20040\'3f}{\f63 \u35843\'3f}{\f63 \u33410\'3f}{\f63 \u65292\'3f}{\f63 \u26368\'3f}{\f63 \u32456\'3f}{\f63 \u36755\'3f}{\f63 \u20986\'3f}{\f63 \u32467\'3f}{\f63 \u26524\'3f}{\f63 \u24635\'3f}{\f63 \u26159\'3f}{\f63 \u65306\'3f}\f30 2\f10 {\f63 \u65292\'3f}\f30 3\f10 {\f63 \u65292\'3f}\f30 1\f10 {\f63 \u12290\'3f}{\f63 \u38656\'3f}{\f63 \u27714\'3f}{\f63 \u39034\'3f}{\f63 \u24207\'3f}{\f63 \u35201\'3f}{\f63 \u65306\'3f}\f30 1\f10 {\f63 \u65292\'3f}\f30 2\f10 {\f63 \u65292\'3f}\f30 3\f10 {\f63 \u65307\'3f} 
+\plain\par
+\sl-96\fs10\par\sl-240\fs24\par\pard\pard\sl-274 \li0 \ri1325 \fi420 \expndtw-13 \f30 \fs20 \cf1 3.\f10  {\f63 \u23558\'3f}{\f63 \u19978\'3f}{\f63 \u38754\'3f}{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}{\f63 \u65292\'3f}{\f63 \u36890\'3f}{\f63 \u36807\'3f}\f30  Promise\f10  {\f63 \u36827\'3f}{\f63 \u34892\'3f}{\f63 \u25913\'3f}{\f63 \u35013\'3f}{\f63 \u65292\'3f}{\f63 \u20877\'3f}{\f63 \u30475\'3f}{\f63 \u30475\'3f}{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u32467\'3f}{\f63 \u26524\'3f}{\f63 \u65307\'3f} 
+\plain\par
+\pard\sl-312 \li0 \ri2907 \fi840 \expndtw-14 \f30 \fs18 \cf6 let\b\i \cf75  p1\b0\i0 \cf52  =\cf6  new\b\i \cf75  Promise\b0\i0 \cf44 ((resolve,\cf1  reject)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1200 \ri6064 \expndtw-24 \f30 \fs18 \cf50 //{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f} 1 
+\plain\par
+\pard\sl-300 \li1200 \ri4810 \expndtw-17 \i \f30 \fs18 \cf1 setTimeout\i0 \cf44 (()\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-299 \li1560 \ri4067 \expndtw-16 \f30 \fs18 \cf50 //console.log('1.{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li1560 \ri4300 \expndtw-17 \f30 \fs18 \cf1 resolve('1.\cf87 {\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li840 \ri5613 \fi360 \expndtw-21 \f30 \fs18 \cf44 \},\b \cf157  3500\b0 \cf44 ); 
+\plain\par
+\pard\sl-300 \li840 \ri6471 \expndtw-12 \f30 \fs18 \cf44 \}); 
+\plain\par
+\sl-114\fs11\par\sl-240\fs24\par\pard\pard\sl-245 \li840 \ri2907 \expndtw-14 \f30 \fs18 \cf6 let\b\i \cf75  p2\b0\i0 \cf52  =\cf6  new\b\i \cf75  Promise\b0\i0 \cf44 ((resolve,\cf1  reject)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1200 \ri6064 \expndtw-24 \f30 \fs18 \cf50 //{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f} 2 
+\plain\par
+\pard\sl-300 \li1200 \ri4810 \expndtw-17 \i \f30 \fs18 \cf1 setTimeout\i0 \cf44 (()\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1560 \ri4067 \expndtw-16 \f30 \fs18 \cf50 //console.log('2.{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li1560 \ri4300 \expndtw-17 \f30 \fs18 \cf1 resolve('2.\cf87 {\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li840 \ri5702 \fi360 \expndtw-21 \f30 \fs18 \cf44 \},\b \cf157  800\b0 \cf44 ); 
+\plain\par
+\pard\sl-300 \li840 \ri6471 \expndtw-12 \f30 \fs18 \cf44 \}); 
+\plain\par
+\sl-174\fs17\par\sl-240\fs24\par\par\pard\pard\sl-245 \li840 \ri2907 \expndtw-14 \f30 \fs18 \cf6 let\b\i \cf75  p3\b0\i0 \cf52  =\cf6  new\b\i \cf75  Promise\b0\i0 \cf44 ((resolve,\cf1  reject)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1200 \ri6064 \expndtw-24 \f30 \fs18 \cf50 //{\f63 \u27169\'3f}{\f63 \u25311\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f} 3 
+\plain\par
+\pard\sl-300 \li1200 \ri4810 \expndtw-17 \i \f30 \fs18 \cf1 setTimeout\i0 \cf44 (()\cf52  =>\cf44  \{ 
+
+\par
+\sect\sectd\sbkpage\margtsxn760\pard
+\jexpand\viewkind1\paperw11906\paperh16838
+\margt840\margb2040\margr1780\margl1800
+\plain\pard\sl-218 \li0 \ri45 \expndtw-17 \f10 \fs18 \cf80 {\f63 \u12304\'3f}{\f63 \u21313\'3f}{\f63 \u22825\'3f}{\f63 \u31934\'3f}{\f63 \u21697\'3f}{\f63 \u35838\'3f}{\f63 \u22530\'3f}{\f63 \u31995\'3f}{\f63 \u21015\'3f}{\f63 \u12305\'3f} 
+\plain\tx7182 \tab \expndtw-19 \f10 \fs18 \cf80 {\f63 \u20027\'3f}{\f63 \u35762\'3f}{\f63 \u65306\'3f}{\f63 \u26446\'3f}{\f63 \u28814\'3f}{\f63 \u24674\'3f} 
+
+\par
+\plain\sl-88\fs9\par\sl-240\fs24\par\par\par\pard\pard\sl-239 \li1560 \ri4067 \expndtw-16 \f30 \fs18 \cf50 //console.log('3.{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li1560 \ri4300 \expndtw-17 \f30 \fs18 \cf1 resolve('3.\cf87 {\f63 \u36820\'3f}{\f63 \u22238\'3f}{\f63 \u24322\'3f}{\f63 \u27493\'3f}{\f63 \u36890\'3f}{\f63 \u20449\'3f}'); 
+\plain\par
+\pard\sl-300 \li1200 \ri5613 \expndtw-21 \f30 \fs18 \cf44 \},\b \cf157  1500\b0 \cf44 ); 
+
+\par
+\plain\pard\sl-300 \li840 \ri6471 \expndtw-12 \f30 \fs18 \cf44 \}); 
+\plain\par
+\sl-180\fs18\par\sl-240\fs24\par\par\pard\pard\sl-239 \li840 \ri6569 \expndtw-23 \f30 \fs18 \cf50 //{\f63 \u25191\'3f}{\f63 \u34892\'3f}{\f63 \u22238\'3f}{\f63 \u35843\'3f} 
+\plain\par
+\pard\sl-300 \li840 \ri4957 \expndtw-17 \b\i \f30 \fs18 \cf75 p1\b0\i0 \cf44 .then((value)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1200 \ri4721 \expndtw-17 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log(value); 
+\plain\par
+\pard\sl-300 \li1200 \ri5523 \expndtw-20 \f30 \fs18 \cf6 return\b\i \cf75  p2\b0\i0 \cf44 ; 
+\plain\par
+\pard\sl-300 \li840 \ri4957 \expndtw-17 \f30 \fs18 \cf44 \}).then((value)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li1200 \ri4721 \expndtw-17 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log(value); 
+\plain\par
+\pard\sl-300 \li1200 \ri5523 \expndtw-20 \f30 \fs18 \cf6 return\b\i \cf75  p3\b0\i0 \cf44 ; 
+\plain\par
+\pard\sl-300 \li840 \ri4957 \expndtw-17 \f30 \fs18 \cf44 \}).then((value)\cf52  =>\cf44  \{ 
+\plain\par
+\pard\sl-300 \li840 \ri4721 \fi360 \expndtw-17 \b\i \f30 \fs18 \cf75 console\b0\i0 \cf44 .log(value); 
+\plain\par
+\pard\sl-300 \li840 \ri6471 \expndtw-12 \f30 \fs18 \cf44 \}); 
+
+\par
+}

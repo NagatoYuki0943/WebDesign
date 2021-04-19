@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    woshi body 的文字
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+    <button>快速</button>
+
+</body>
+<script src="jquery.min.js"></script>
+<script>
+    $(function() {
+        //1.点击事件
+        $('button').click(function() {
+            //2.让当前元素变为红色
+            //$(this).css('color', 'red');
+            //其余的兄弟元素不变色
+            //$(this).siblings().css('color', "");
+
+            //链式编程
+            $(this).css('color', 'red').siblings().css('color', "");
+
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,163 @@
+jQuery 给我们封装了很多动画效果，最为常见的如下：
+    显示隐藏
+        show()
+        hide()
+        toggle()
+
+    滑动
+        slideDown()
+        slideUp()
+        slideToggle()
+
+    淡入淡出
+        fadeIn()
+        fadeOut()
+        fadeToggle()
+        fadeTo()
+
+    自定义动画
+        animate()
+
+
+
+1  显示隐藏效果     18
+    a. 显示语法规范
+        show([speed,[easing],[fn]])
+
+    b. 显示参数
+        （1）参数都可以省略， 无动画直接显示。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+    c. 隐藏语法规范
+        hide([speed,[easing],[fn]])
+
+    d. 隐藏参数
+        （1）参数都可以省略， 无动画直接显示。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+    e. 切换语法规范
+        toggle([speed,[easing],[fn]])
+
+    f. 切换参数
+        （1）参数都可以省略， 无动画直接显示。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+        建议：平时一般不带参数，直接显示隐藏即可。
+
+
+
+2  滑动效果     19
+    a. 下滑效果语法规范
+        slideDown([speed,[easing],[fn]])
+
+    b. 下滑效果参数
+        （1）参数都可以省略。
+        （2）speed:三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing:(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+    c. 上滑效果语法规范
+        slideUp([speed,[easing],[fn]])
+
+    d. 上滑效果参数
+        （1）参数都可以省略。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+    e. 滑动切换效果语法规范
+        slideToggle([speed,[easing],[fn]])
+
+    f. 滑动切换效果参数
+        （1）参数都可以省略。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+
+
+3  事件切换     20
+    hover([over,]out)
+
+    （1）over:鼠标移到元素上要触发的函数（相当于mouseenter）
+    （2）out:鼠标移出元素要触发的函数（相当于mouseleave）
+    （3）如果只写一个函数，则鼠标经过和离开都会触发它
+
+        $(".nav>li").hover(function() {
+            $(this).children('ul').slideToggle(200);
+        });
+
+
+4  动画队列及其停止排队方法     21
+    a. 动画或效果队列
+        动画或者效果一旦触发就会执行，如果多次触发，就造成多个动画或者效果排队执行。
+        比如上面的滑动,如果快速滑动鼠标,会造成动画排队,鼠标停止后动画还会继续
+    b. 停止排队
+        stop()
+
+        (1）stop() 方法用于停止动画或效果。
+        (2)  注意： stop() 写到动画或者效果的前面， 相当于停止结束上一次的动画。
+
+        $(this).children("ul").stop().slideToggle();
+
+
+
+5  淡入淡出效果     22,23
+    a. 淡入效果语法规范
+        fadeIn([speed,[easing],[fn]])
+
+    b. 淡入效果参数
+        （1）参数都可以省略。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+    c. 淡出效果语法规范
+        fadeOut([speed,[easing],[fn]])
+
+    d. 淡出效果参数
+        （1）参数都可以省略。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+    e. 淡入淡出切换效果语法规范
+        fadeToggle([speed,[easing],[fn]])
+
+    f. 淡入淡出切换效果参数
+        （1）参数都可以省略。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+    g. 渐进方式调整到指定的不透明度
+        fadeTo([[speed],opacity,[easing],[fn]])
+
+    h. 效果参数
+    （1）opacity 透明度必须写，取值 0~1 之间。
+    （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。必须写
+    （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+    （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+
+
+
+6  自定义动画 animate     24
+    a. 语法
+        animate(params,[speed],[easing],[fn])
+    b. 参数
+        （1）params: 想要更改的样式属性，以对象形式传递，必须写。 属性名可以不用带引号， 如果是复合属性则需要采取驼峰命名法 borderLeft。其余参数都可以省略。
+        （2）speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。
+        （3）easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。
+        （4）fn:  回调函数，在动画完成时执行的函数，每个元素执行一次。
+        
+    c. 参数1必须是元素,document不行,body,html元素可以用
+
+7  案例：王者荣耀手风琴效果分析    24
+    鼠标经过某个小li 有两步操作：
+    当前小li 宽度变为 224px， 同时里面的小图片淡出，大图片淡入
+    其余兄弟小li宽度变为69px， 小图片淡入， 大图片淡出

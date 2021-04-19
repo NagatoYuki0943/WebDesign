@@ -1,0 +1,70 @@
+jQuery 尺寸、位置操作
+
+1  jQuery 尺寸
+
+    padding border margin 依次从里到外
+
+    语法                                     用法
+    width()/height()                        取得匹配元素宽度和高度值,只算width/height
+    innerWidth()/innerHeight()              取得匹配元素宽度和高度值,包含padding
+    outerWidth()/outerHeight()              取得匹配元素宽度和高度值,包含padding,border
+    outerWidth(true)/outerHeight(true)      取得匹配元素宽度和高度值,包含padding,border,margin
+
+    以上参数为空，则是获取相应值，返回的是数字型。
+    
+    如果参数为数字，则是修改相应值。
+    参数可以不必写单位。
+    $("div").width(300);
+
+
+
+2  jQuery 位置
+    位置主要有三个： offset()、position()、scrollTop()/scrollLeft()
+
+    a. offset() 设置或获取元素偏移
+        offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。 
+        
+        Object { top: 100, left: 100 }
+        该方法有2个属性 left、top 。
+        
+        offset().top  用于获取距离文档顶部的距离，
+        offset().left 用于获取距离文档左侧的距离。
+
+        可以设置元素的偏移：offset({ top: 10, left: 30 });
+
+
+    b. position() 获取元素偏移
+        position() 方法用于返回被选元素相对于带有定位的父级偏移坐标，如果父级都没有定位，则以文档为准。
+        该方法有2个属性 left、top。position().top 用于获取距离定位父级顶部的距离，position().left 用于获取距离定位父级左侧的距离。
+        该方法只能获取,不能设置。
+
+
+    c.  scroll()页面滚动事件
+        scrollTop()/scrollLeft() 设置或获取元素被卷去的头部和左侧,是被卷起来的距离
+        scrollTop() 方法设置或返回被选元素被卷去的头部。
+        不跟参数是获取，参数为不带单位的数字则是设置被卷去的头部。
+
+        //页面滚动事件
+        $(window).scroll(function() {
+                console.log(1111);
+            });
+
+
+
+3  案例：带有动画的返回顶部
+    核心原理： 使用animate动画返回顶部。
+    animate动画函数里面有个scrollTop 属性，可以设置位置
+    设置的是整个页面,不能获取document,要用body,html.因为animate要设置属性,document不是属性,body,html是属性
+    但是是元素做动画，因此 $(“body,html”).animate({scrollTop: 0})
+
+    设置的是整个页面,不能获取document,要用body,html.因为animate要设置属性,document不是属性,body,html是属性
+
+
+
+4  案例： 品优购电梯导航
+    a. 当我们滚动到 今日推荐 模块，就让电梯导航显示出来
+    b. 点击电梯导航页面可以滚动到相应内容区域
+    c. 核心算法：因为电梯导航模块和内容区模块一一对应的
+    d. 当我们点击电梯导航某个小模块，就可以拿到当前小模块的索引号
+    e. 就可以把animate要移动的距离求出来：当前索引号内容区模块它的offset().top
+    f. 然后执行动画即可

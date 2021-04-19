@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div></div>
+
+</body>
+<script>
+    $(function() {
+        //显示
+        $('button').eq(0).click(function() {
+            $('div').show('slow', function() {
+                alert('显示');
+            });
+        })
+
+        //隐藏
+        $('button').eq(1).click(function() {
+            $('div').hide('slow', function() {
+                alert('隐藏');
+            });
+        })
+
+        //切换
+        $('button').eq(2).click(function() {
+            $('div').toggle('slow', function() {
+                alert('切换');
+            });
+        })
+    });
+</script>
+
+</html>

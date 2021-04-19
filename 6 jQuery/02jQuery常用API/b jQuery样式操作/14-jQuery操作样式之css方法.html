@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+</body>
+<script>
+    // 操作样式之css方法
+    $(function() {
+        //1.获取样式
+        let width = $('div').css('width')
+        console.log(width); //200px
+
+        //2.设置样式
+        $('div').css('width', '300px') //变宽了 300 300px都行
+
+        //使用对象形式修改,属性名引号可加可不加
+        $('div').css({
+            width: 400,
+            'height': 500,
+            //复合属性必须采用驼峰命名法,值不是数字需要引号
+            backgroundColor: 'blue'
+        })
+
+    })
+</script>
+
+</html>

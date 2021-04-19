@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son">
+                儿子
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <p>我是屁</p>
+        <div>
+            <p>我是P</p>
+        </div>
+    </div>
+    <ol>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li class="item">我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ol>
+    <ul>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+        <li>我是ol 的li</li>
+    </ul>
+</body>
+<script src="jquery.min.js"></script>
+<script>
+    $(function() {
+        //父亲 上面一级
+        console.log($('.son').parent()); //1个
+        //儿子 相当于$('ul>li'),最近一级
+        console.log($('.nav').children('p')); //1个 儿子
+        //子代 相当于$('ul li'),后代选择器   
+        console.log($('.nav').find('p')); //2个 儿子和孙子等等
+
+        //兄弟 查找兄弟节点,不包括自己
+        $('ol .item').siblings('li').css('color', 'red');
+
+        //第一个和最后一个
+        $('ul li').first().css('color', 'blue');
+        $('ul li').last().css('color', 'blue');
+
+        //eq  相当于$('li:eq(2)'),index从0开始
+        $('ul li:eq(2)').css('color', 'pink');
+        let index = 3;
+        $('ul li').eq(index).css('color', 'pink');
+
+        //hasClass(class)  检查当前的元素是否含有某个特定的类,如果有,返回true
+        console.log($('ol>li:eq(2)').hasClass('item')); //true
+        console.log($('ol>li:eq(3)').hasClass('item')); //false
+    })
+</script>
+
+
+</html>

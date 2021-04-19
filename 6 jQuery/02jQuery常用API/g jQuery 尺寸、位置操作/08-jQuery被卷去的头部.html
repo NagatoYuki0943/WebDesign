@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        
+        .back {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            right: 30px;
+            bottom: 100px;
+            display: none;
+        }
+        
+        .container {
+            width: 900px;
+            height: 500px;
+            background-color: skyblue;
+            margin: 400px auto;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="back">返回顶部</div>
+    <div class="container">
+    </div>
+    <script>
+        $(function() {
+            //scrollTop()/scrollLeft() 设置或获取元素被卷去的头部和左侧
+
+            //设置文档开始距离
+            $(document).scrollTop(100);
+
+
+            //获取蓝色盒子top值
+            var boxTop = $('.container').offset().top;
+            console.log(boxTop);
+
+            //页面滚动事件
+            $(window).scroll(function() {
+
+                //滚动被卷曲的头部
+                console.log($(document).scrollTop()); //数字
+                if ($(document).scrollTop() >= boxTop) {
+                    //粉色盒子出现 show fadeIn 都行
+                    $('.back').stop().fadeIn();
+                } else {
+                    //粉色盒子消失 hide fadeOut 都行
+                    $('.back').stop().fadeOut();
+                }
+            });
+
+            //点击返回顶部
+            $('.back').click(function() {
+                //这样设置效果不好,直接跳过去
+                //$(document).scrollTop(0);
+
+                //使用animate
+                $('body,html').stop().animate({
+                    scrollTop: 0
+                })
+
+            });
+        })
+    </script>
+</body>
+
+</html>
