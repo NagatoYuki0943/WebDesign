@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <button class="btn btn-success" href="#collapse" data-toggle="collapse">按钮</button>
+
+<div class="collapse border border-success" id="collapse">
+	<p>这是一段要折叠的文本</p>
+</div>
+
+<div>占位文本</div> -->
+
+
+    <!-- <button class="btn btn-success" href="#collapse1" data-toggle="collapse">按钮1</button>
+<button class="btn btn-success" href="#collapse2" data-toggle="collapse">按钮2</button>
+<button class="btn btn-success" href=".multi-collapse" data-toggle="collapse">按钮3</button>
+
+<div class="collapse multi-collapse border border-success" id="collapse1">
+	<p>这是一段要折叠的文本1</p>
+</div>
+
+<div class="collapse multi-collapse border border-success" id="collapse2">
+	<p>这是一段要折叠的文本2</p>
+</div> -->
+
+    <div class="accordion w-50" id="accordion">
+        <div class="card">
+            <button class="btn btn-link" href="#collapse1" data-toggle="collapse">按钮1</button>
+            <div class="collapse show border border-left-0 border-right-0 border-bottom-0" id="collapse1" data-parent="#accordion">
+                <p>这是一段要折叠的文本1</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <button class="btn btn-link" href="#collapse2" data-toggle="collapse">按钮2</button>
+            <div class="collapse border border-left-0 border-right-0 border-bottom-0" id="collapse2" data-parent="#accordion">
+                <p>这是一段要折叠的文本2</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <button class="btn btn-link" href="#collapse3" data-toggle="collapse">按钮3</button>
+            <div class="collapse border border-left-0 border-right-0 border-bottom-0" id="collapse3" data-parent="#accordion">
+                <p>这是一段要折叠的文本3</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/>
+
+
+    <!-- 引入jQuery文件 -->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+#carousel {
+	background-color: #e7e7e7;
+	top:3rem;
+}
+.carousel-indicators li {
+	background-color: #444;
+}
+.carousel-control-prev-icon {
+	background-image: url('../img/left.png');
+	cursor: pointer;
+}
+.carousel-control-next-icon {
+	background-image: url('../img/right.png');
+	cursor: pointer;
+}

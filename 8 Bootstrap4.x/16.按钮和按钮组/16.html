@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>按钮和按钮组</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+        
+        button,
+        a,
+        input {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. 使用.btn 和.btn-*实现按钮的预设样式； -->
+    <button type="button" class="btn btn-primary">bootstrap4.x</button>
+    <button type="button" class="btn btn-secondary">bootstrap4.x</button>
+    <button type="button" class="btn btn-success">bootstrap4.x</button>
+    <button type="button" class="btn btn-danger">bootstrap4.x</button>
+    <button type="button" class="btn btn-warning">bootstrap4.x</button>
+    <button type="button" class="btn btn-info">bootstrap4.x</button>
+    <button type="button" class="btn btn-light">bootstrap4.x</button>
+    <button type="button" class="btn btn-dark">bootstrap4.x</button>
+    <button type="button" class="btn btn-link">bootstrap4.x</button>
+    <hr>
+
+
+    <!--2. .btn 不单单在<button>元素下使用，也可以在<a>、<input>下使用； -->
+    <a href="#" class="btn btn-success">bootstrap4.x</a>
+    <hr>
+
+
+    <!--3. 使用.btn .btn-outline-*可以实现按钮的轮廓效果； 颜色和上面一致 -->
+    <button type="button" class="btn btn-outline-danger">bootstrap4.x</button>
+    <button type="button" class="btn btn-outline-primary">bootstrap4.x</button>
+    <hr>
+
+
+    <!--4. 使用.btn-lg .btn-sm 可以实现按钮尺寸的大和小； -->
+    <button class="btn btn-bg btn-success">bootstrap4.x</button>
+    <button class="btn btn-sm btn-success">bootstrap4.x</button>
+    <hr>
+
+
+    <!--5. 使用.btn-block 将按钮进行 block 区块设置； 占用一整行 -->
+    <button class="btn btn-success btn-block">bootstrap4.x</button>
+    <hr>
+
+
+    <!--6. 使用.active 启用按钮(默认)，使用.disabled 禁用按钮，特别注意<a>的禁用；-->
+    <!-- a的disabled写在class中, 其余的写在外面,写在外面连功能都禁用,写在class里面只是样式,还能点击 -->
+    <button type="button" class="btn btn-success active">Bootstrap4.x</button>
+    <button type="button" class="btn btn-success" disabled>Bootstrap4.x</button>
+
+    <!--disabled 写在 class 里-->
+    <a href="#" class="btn btn-success disabled">Bootstrap4.x</a>
+    <input type="submit" class="btn btn-danger" disabled value="Bootstrap4.x">
+    <hr>
+
+
+    <!--7. 添加 data-toggle="button"实现按钮切换效果，使用.active 可以默认按下； 切换颜色深浅-->
+    <button class="btn btn-bg btn-success" data-toggle="button">bootstrap4.x</button>
+    <hr>
+
+
+    <!--1. 使用.btn-group 实现传统方案的复选框和单选框样式； -->
+    <div class="btn-group" data-toggle="buttons">
+        <!--actice 背景选中 其他选中后颜色也会发生变化-->
+        <label class="btn btn-secondary active">
+            <input type="checkbox" checked>PHP
+        </label>
+
+        <label class="btn btn-secondary">
+            <input type="checkbox">Python
+        </label>
+
+        <label class="btn btn-secondary">
+            <input type="checkbox">GOland
+        </label>
+    </div>
+
+    <div class="btn-group" data-toggle="buttons">
+        <!--actice 背景选中 其他选中后颜色也会发生变化-->
+        <!--radio name相同,为了防止多选-->
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options" checked>PHP
+        </label>
+
+        <label class="btn btn-secondary">
+            <input type="radio" name="options">Python
+        </label>
+
+        <label class="btn btn-secondary">
+            <input type="radio" name="options">GOland
+        </label>
+    </div>
+    <hr>
+
+
+    <!--2. 使用.btn-group .btn-group-toggle 实现全新方案的复选框和单选框； -->
+    <!--这样就没有方框和对勾了,只有颜色-->
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <!--actice 背景选中 其他选中后颜色也会发生变化-->
+        <label class="btn btn-primary active">
+            <input type="checkbox" checked>PHP
+        </label>
+
+        <label class="btn btn-primary">
+            <input type="checkbox">Python
+        </label>
+
+        <label class="btn btn-primary">
+            <input type="checkbox">GOland
+        </label>
+    </div>
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <!--actice 背景选中 其他选中后颜色也会发生变化-->
+        <!--radio name相同,为了防止多选-->
+        <label class="btn btn-primary active">
+            <input type="radio" name="options" checked>PHP
+        </label>
+
+        <label class="btn btn-primary">
+            <input type="radio" name="options">Python
+        </label>
+
+        <label class="btn btn-primary">
+            <input type="radio" name="options">GOland
+        </label>
+    </div>
+    <hr>
+
+
+    <!--3. 使用.btn-group 构建普通的按钮组； -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary">左</button>
+        <button type="button" class="btn btn-secondary">中</button>
+        <button type="button" class="btn btn-secondary">右</button>
+    </div>
+    <hr>
+
+
+    <!--4. 使用.btn-toolbar 构建分页工具类； -->
+    <div class="btn-toolbar">
+        <!--两个div 分成了两个组-->
+        <div class="btn-group mr-2">
+            <button type="button" class="btn btn-secondary">1</button>
+            <button type="button" class="btn btn-secondary">2</button>
+            <button type="button" class="btn btn-secondary">3</button>
+            <button type="button" class="btn btn-secondary">4</button>
+            <button type="button" class="btn btn-secondary">5</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary">7</button>
+            <button type="button" class="btn btn-secondary">8</button>
+            <button type="button" class="btn btn-secondary">9</button>
+        </div>
+    </div>
+    <hr>
+
+
+    <!--5. 使用.btn-group-lg 和.btn-group-sm 实现大尺寸和小尺寸； -->
+    <div class="btn-group-lg">
+        <button type="button" class="btn btn-secondary">7</button>
+        <button type="button" class="btn btn-secondary">8</button>
+        <button type="button" class="btn btn-secondary">9</button>
+    </div>
+    <div class="btn-group-sm">
+        <button type="button" class="btn btn-secondary">7</button>
+        <button type="button" class="btn btn-secondary">8</button>
+        <button type="button" class="btn btn-secondary">9</button>
+    </div>
+
+
+    <!--6. 使用.btn-group-vertical 设置垂直按钮组； -->
+
+    <div class="btn-group-vertical">
+        <button type="button" class="btn btn-secondary">7</button>
+        <button type="button" class="btn btn-secondary">8</button>
+        <button type="button" class="btn btn-secondary">9</button>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script>
+</script>
+
+</html>

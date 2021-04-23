@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>悬停提示和点击提示</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="底部提示">悬停提示</button>
+
+    <button class="btn btn-secondary" data-toggle="popover" data-placement="left" title="右侧提示" data-content="这是一个点击提示效果！">点击提示</button>
+
+    <button id="button">按钮</button>
+
+    <!-- 引入jQuery文件 -->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script>
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+        $('#button').click(function() {
+            //显示
+            //$('[data-toggle="tooltip"]').tooltip('show');
+            //隐藏
+            //$('[data-toggle="tooltip"]').tooltip('hide');
+            //切换
+            $('[data-toggle="tooltip"]').tooltip('toggle');
+            //更多
+        });
+
+        $('#button').click(function() {
+            //显示
+            //$('[data-toggle="popover"]').popover('show');
+            //隐藏
+            //$('[data-toggle="popover"]').popover('hide');
+            //切换
+            $('[data-toggle="popover"]').popover('toggle');
+        });
+    </script>
+</body>
+
+</html>

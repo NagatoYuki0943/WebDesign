@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>布局系统【下】</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .row {
+            border: dashed 1px red;
+        }
+        
+        .c {
+            border: solid 1px blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <!--col 超小屏幕,无论屏幕多大都是3列-->
+            <div class="c col">第一列</div>
+            <div class="c col">第二列</div>
+            <div class="c col">第三列</div>
+        </div>
+    </div>
+    <br>
+
+
+    <!--2. 如果同时是使用两个或以上的级别，并且比例相同，则遵循移动端优先的原则； -->
+    <div class="container">
+        <div class="row">
+            <!-- col-xl-6 分辨率大于992,小于1200,一个占一半-->
+            <!-- col-xl-12 分辨率大于1200,一个占一行-->
+            <div class="c col-sm-4 col-lg-6 col-xl-12">第一列</div>
+            <div class="c col-sm-4 col-lg-6 col-xl-12">第二列</div>
+            <div class="c col-sm-4 col-lg-12 col-xl-12">第三列</div>
+        </div>
+    </div>
+    <br>
+
+
+    <!--3. 栅格系统支持只指定其中一种或几种，其它随机的方式，指定数字奇偶均可； -->
+    <div class="container">
+        <div class="row">
+            <!--两边等宽-->
+            <div class="c col-sm">第一列</div>
+            <div class="c col-sm-7">第二列</div>
+            <div class="c col-sm">第三列</div>
+        </div>
+    </div>
+    <br>
+
+
+    <!--4. 可以通过两个或以上来实现不同设备不同比例的混合布局； -->
+    <div class="container">
+        <div class="row">
+            <!--两边等宽-->
+            <div class="c col-sm-8 col-xl-6">第一列</div>
+            <div class="c col-sm-4 col-xl-6">第二列</div>
+        </div>
+    </div>
+    <br>
+
+
+    <!--5. 使用.w-100 可以切割栅格栏位，进行分行操作； -->
+    <div class="container">
+        <div class="row">
+            <!--两边等宽,分成了两行,每行两个宽度都相等-->
+            <div class="c col">第一列</div>
+            <div class="c col">第二列</div>
+            <div class="w-100"></div>
+            <div class="c col">第三列</div>
+            <div class="c col">第四列</div>
+        </div>
+    </div>
+    <br>
+
+    <!--6. 如果强制设置了 col-3 数值，那切割后，将不会自动填充； -->
+    <div class="container">
+        <div class="row">
+            <!--两边等宽,分成了两行,每行两个宽度都是3,右边空出来-->
+            <div class="c col-3">第一列</div>
+            <div class="c col-3">第二列</div>
+            <div class="w-100"></div>
+            <div class="c col-3">第三列</div>
+            <div class="c col-3">第四列</div>
+        </div>
+    </div>
+    <br>
+</body>
+
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

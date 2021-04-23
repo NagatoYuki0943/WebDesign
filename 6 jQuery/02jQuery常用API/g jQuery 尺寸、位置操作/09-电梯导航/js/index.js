@@ -23,7 +23,6 @@ $(function() {
     toggleTool();
 
 
-
     //页面滚动事件
     $(window).scroll(function() {
         //调用左侧导航
@@ -47,7 +46,7 @@ $(function() {
         //锁上,页面滚动触发事件不生效. 点击左侧导航的时候,页面会滚动,会触发页面滚动事件,让导航栏的背景依次变化,使用互斥锁解决问题
         flag = false;
 
-        console.log($(this).index()); //0 1 2 3
+        //console.log($(this).index()); //0 1 2 3
         //1.当我们每次点击li,就需要计算出页面要去往的位置
         let current = $('.floor .w').eq($(this).index()).offset().top;
 

@@ -1,0 +1,49 @@
+div.container
+    <div class="container">
+    </div>
+
+
+div.row
+    <div class="row">
+    </div>
+
+
+div.alert.alert-warning
+<div class="alert alert-warning"></div>
+
+
+div#id
+    <div id="id">
+    </div>
+
+
+ul>li*4
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+table>thread>tr>th*4
+    <table>
+        <thread>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thread>
+    </table>
+
+
+nav>ol>li.breadcrumb-item*3
+    <nav>
+        <ol>
+            <li class="breadcrumb-item"></li>
+            <li class="breadcrumb-item"></li>
+            <li class="breadcrumb-item"></li>
+        </ol>
+    </nav>

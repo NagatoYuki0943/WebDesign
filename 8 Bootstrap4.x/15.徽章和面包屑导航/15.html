@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>徽章和面包屑导航</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. 使用.badge 设置徽章基础样式，并使用.badge-success 等设置徽章颜色； -->
+    <h1>bootstrap<span class="badge badge-parimary">4.x</span></h1>
+    <h1>bootstrap<span class="badge badge-secondary">4.x</span></h1>
+    <h1>bootstrap<span class="badge badge-success">4.x</span></h1>
+    <h1>bootstrap<span class="badge badge-dangder">4.x</span></h1>
+    <h1>bootstrap<span class="badge badge-warning">4.x</span></h1>
+    <h1>bootstrap<span class="badge badge-info">4.x</span></h1>
+    <h1>bootstrap<span class="badge badge-light">4.x</span></h1>
+    <h1>bootstrap<span class="badge badge-dark">4.x</span></h1>
+    <hr>
+
+
+    <!--2. 使用.badge-pill 将徽章设置成椭圆胶囊式； -->
+    <h3>
+        bootstrap
+        <span class="badge badge-info badge-pill">4.x</span>
+    </h3>
+    <hr>
+
+
+    <!--3. 在超链接使用徽章，鼠标悬停时会有换色效果； -->
+    <h3>
+        bootstrap
+        <a class="badge badge-success badge-pill">4.x</a>
+        <a class="badge badge-info badge-pill">4.x</a>
+    </h3>
+    <hr>
+
+
+    <!--1. 使用.breadcrumb 设置一个层次导航(一行分割显示那种)； -->
+    <nav>
+        <ol>
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <!--active代表当前导航位置,颜色不明显-->
+            <li class="breadcrumb-item active">bootstrap</li>
+        </ol>
+    </nav>
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script>
+</script>
+
+</html>

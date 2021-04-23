@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>工具类【上】</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+        
+        img {
+            margin: 5px;
+        }
+        
+        div.border {
+            width: 200px;
+            height: 200px;
+        }
+        
+        span {
+            background-color: #999;
+            height: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. 使用.close 和&times 构建一个关闭按钮； -->
+    <botton type="button" class="close" aria-label="关闭">
+        <span aria-hidden="true">&times;</span>
+    </botton>
+
+
+    <!--2. 使用.clearfix 给浮动的区域的父元素添加，实现清理浮动的功能；下面的就不受影响了 -->
+    <!--3. 使用.float-left、.float-right、.float-none 实现浮动效果； -->
+    <div class="clearfix">
+        <div class="float-left border border-primary">left</div>
+        <div class="float-right border border-primary">right</div>
+    </div>
+
+    <!--不会受到上面的浮动影响-->
+    <div class="border border-primary">right</div>
+    <br>
+
+
+    <!--5. 使用.text-hide 来隐藏元素标签内容，但本身还存在,保持SEO优化； 字体大小变为0了,还是存在-->
+    <h1 class="text-hide" style="background-color: #999;">bootstrap4.X</h1>
+    <br>
+
+
+
+    <!--6. 使用.overflow-auto 和.overflow-hidden 来设置区域显示方式； -->
+    <!--overflow-auto 溢出部分设置滚动条-->
+    <!--overflow-hidden 溢出部分截取掉-->
+    <div class="clearfix">
+        <div class="float-left border border-primary overflow-auto">left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br></div>
+        <div class="float-right border border-primary overflow-hidden">right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br></div>
+    </div>
+    <br>
+
+    <!--7. 使用.visible 和.invisible 来设置内容可见或不可见； 看不见了,但还是在那里 -->
+    <div class="visible">bootstrap4.x</div>1
+    <div class="invisible">bootstrap4.x</div>1
+
+
+
+    <!--8. 使用.align-*来设置内容文本的对齐方式； -->
+    <div style="height: 50px;">
+        <span class="align-baseline">baseline 基准</span>
+        <span class="align-text-top">text-top 文本顶部</span>
+        <span class="align-top">top 顶部</span>
+        <span class="align-middle">middle 垂直居中</span>
+        <span class="align-bottom">bottom 底部</span>
+        <span class="align-text-bottom">text-bottom 文本底部</span>
+    </div>
+
+
+    <table class="table table-bord ered" style="height : 200px ;">
+        <tbody>
+            <tr>
+                <td class="align-baseline">baseline</td>
+                <td class="align-top">top</td>
+                <td class="align-middle">middle</td>
+                <td class="align-bottom">bottom</td>
+                <td class="align-text-top">text-top</td>
+                <td class="align-text-bottom">text-bottom</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

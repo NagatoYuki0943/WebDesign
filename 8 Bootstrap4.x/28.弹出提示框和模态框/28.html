@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>提示框和模态框</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="toast fade" data-autohide="false">
+        <div class="toast-header">
+            <strong class="mr-auto">提示框</strong>
+            <button class="close ml-2 mb-1" data-dismiss="toast">
+			<span>&times;</span>
+		</button>
+        </div>
+        <div class="toast-body">
+            这是一个提示框！
+        </div>
+    </div>
+
+    <div class="toast fade" data-autohide="false" style="position: absolute;top: 20px; right: 20px;">
+        <div class="toast-header">
+            <strong class="mr-auto">提示框</strong>
+            <button class="close ml-2 mb-1" data-dismiss="toast">
+			<span>&times;</span>
+		</button>
+        </div>
+        <div class="toast-body">
+            这是一个提示框！
+        </div>
+    </div>
+
+
+    <button id="button">弹出</button>
+
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>模态框</h5>
+                    <button class="close" data-dismiss="modal">
+					<span>&times;</span>
+				</button>
+                </div>
+                <div class="modal-body">
+                    body
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">确认保存</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" data-target="#myModal" data-toggle="modal">弹出模态框</button>
+
+
+    <!-- 引入jQuery文件 -->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script>
+        $('.toast').toast();
+        $('#button').click(function() {
+            $('.toast').toast('show');
+        });
+    </script>
+</body>
+
+</html>

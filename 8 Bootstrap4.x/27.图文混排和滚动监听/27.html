@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图文混排和滚动监听</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav id="nav" class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">NavList</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link" href="#one">One</a></li>
+            <li class="nav-item"><a class="nav-link" href="#two">Two</a></li>
+            <li class="nav-item"><a class="nav-link" href="#three">three</a></li>
+        </ul>
+    </nav>
+
+
+    <div data-spy="scroll" data-offset="0" data-target="#nav" style="height: 300px;overflow: scroll;position: relative;">
+        <h4 id="one">One</h4>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <h4 id="two">Two</h4>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <h4 id="three">three</h4>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+        <p>...</p>
+    </div>
+
+
+
+    <br><br><br><br>
+
+
+    <div class="media">
+        <img class="mr-3" src="img/img2.png" alt="">
+        <div class="media-body">
+            <h4>标题部分</h4>
+            <p>这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！</p>
+            <div class="media">
+                <img class="mr-3" src="img/img2.png" alt="">
+                <div class="media-body">
+                    <h4>标题部分</h4>
+                    <p>这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="media">
+        <div class="media-body">
+            <h4>标题部分</h4>
+            <p>这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！</p>
+        </div>
+        <img class="mr-3 align-self-center" src="img/img2.png" alt="">
+    </div>
+
+    <ul class="list-unstyled">
+        <li class="media mb-1">
+            <img class="mr-3" src="img/img2.png" alt="">
+            <div class="media-body">
+                <h4>标题部分</h4>
+                <p>这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！</p>
+            </div>
+        </li>
+        <li class="media mb-1">
+            <img class="mr-3" src="img/img2.png" alt="">
+            <div class="media-body">
+                <h4>标题部分</h4>
+                <p>这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！</p>
+            </div>
+        </li>
+        <li class="media mb-1">
+            <img class="mr-3" src="img/img2.png" alt="">
+            <div class="media-body">
+                <h4>标题部分</h4>
+                <p>这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！这是一段文本！</p>
+            </div>
+        </li>
+    </ul>
+
+
+
+    <!-- 引入jQuery文件 -->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

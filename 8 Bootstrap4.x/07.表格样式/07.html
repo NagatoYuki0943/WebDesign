@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表格样式</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--1. 使用.table 给表格设置一个基类，这是表格的基本样式； -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--2. 使用.table-dark 样式，启用颜色反转对比效果； -->
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+
+        <!--3. 在<thead>使用.thead-light 或.thead-dark 实现浅黑或深灰色调的标头； -->
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--4. 使用.table-striped 实现数据表的条纹状显示； -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--5. 条纹状显示也适用于反转色调上； -->
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--6. 默认情况下，边框是不完全的，使用.table-bordered 设置表格边框； -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--7. 表格边框也可以作用域反转色调上； -->
+        <table class="table table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--8. 使用.table-borderless 设置无边框； -->
+        <!--9. 无边框效果也可以作用于反转色调上； -->
+        <table class="table table-dark table-borderless">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--10. 使用.table-hover 实现一行悬停效果； -->
+        <!--11. 行悬停效果也可以作用于反转色调上；  -->
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--12. 使用.table-sm 实现紧缩型表格，反转色调依然支持； -->
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--13. 使用.table-success 等语义化实现<tr>或<td>、<th>等效果，反转色调通用-->
+        <!--PS：.table-*中的*包含：active、primary、secondary、danger、warning、info、light、dark。-->
+        <table class="table">
+            <thead>
+                <tr class="table-success">
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td class="table-info">1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>54</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>657</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>58</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--14. 使用.table-responsive 实现溢出时出现底部滚动条； 左右滑动-->
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>545555555555555555555555555555555555555555555555555555555555555555555555</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>5455555555555555555555555555555555555555555555555555555555555555555555555555555</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>54555555555555555555555555555555555555555555555555555555555555555555555555</td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--15. 使用.table-responsive-sm 实现只有小于 768px 溢出时出现底部滚动条；-->
+        <table class="table table-responsive-sm">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>成绩</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>545555555555555555555555555555555555555555555555555555555555555555555555</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>5455555555555555555555555555555555555555555555555555555555555555555555555555555</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>女</td>
+                    <td>54555555555555555555555555555555555555555555555555555555555555555555555555</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

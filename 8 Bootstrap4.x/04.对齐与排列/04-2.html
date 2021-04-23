@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>对齐与排列</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .row {
+            height: 100px;
+            margin: 20px 0;
+            border: dashed 1px red;
+        }
+        
+        .c {
+            height: 30px;
+            border: solid 1px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!--1. 栅格的列可以左右排序，使用.order-N，N 最大值为 12； 左右位置不同-->
+    <div class="container">
+        <div class="row">
+            <div class="c col-3 order-3">第一列</div>
+            <div class="c col-3 order-1">第二列</div>
+            <div class="c col-3 order-2">第三列</div>
+        </div>
+
+        <!--3. 使用.order-first，强行设置列为第一列，而.order-last 为最后一列； -->
+        <div class="row">
+            <div class="c col-3 order-last">第一列</div>
+            <div class="c col-3">第二列</div>
+            <div class="c col-3 order-first">第三列</div>
+        </div>
+
+
+        <!--4. 使用.offset-N 或.offset-*-N 来设置列的右偏移量，1 表示一个栅格列；  *代指 sm,md,lg,xl-->
+        <div class="row">
+            <div class="c col-3 offset-1">第一列</div>
+            <div class="c col-3">第二列</div>
+            <div class="c col-3 offset-1">第三列</div>
+        </div>
+
+        <!--5. 使用.ml-N 或.mr-N 来微调列距离，使用.ml-auto 和.mr-auto 来左右对齐； -->
+        <div class="row">
+            <div class="c col-3">第一列</div>
+            <div class="c col-3 ml-2">第二列</div>
+            <div class="c col-3 ml-auto">第三列</div>
+        </div>
+    </div>
+
+
+    <br/>
+
+
+
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>警告提示框</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--1. 使用.alert 设置警告框基础样式，并使用.alert-success 设置警告框颜色； -->
+    <div class="alert alert-primary">bootstrap4.x</div>
+    <div class="alert alert-secondary">bootstrap4.x</div>
+    <div class="alert alert-success">bootstrap4.x</div>
+    <div class="alert alert-danger">bootstrap4.x</div>
+    <div class="alert alert-warning">bootstrap4.x</div>
+    <div class="alert alert-info">bootstrap4.x</div>
+    <div class="alert alert-light">bootstrap4.x</div>
+    <div class="alert alert-dark">bootstrap4.x</div>
+
+
+    <!--2. 在使用了警告框的元素内部设置超链接.alert-link，会搭配相应的颜色； -->
+    <div class="alert alert-success">
+        bootstrap4.x
+        <a href="#" class="alert-link">V4.3</a>
+    </div>
+
+    <!--3. 使用.alert-heading 可以设置继承颜色，alert 本身也可以设置水平线段落等； -->
+    <div class="alert alert-success">
+        <h4 class="alert-heading">bootstrap4.x</h4>
+        <hr>
+        <p>bootstrap4前端工具</p>
+    </div>
+    <hr>
+
+
+    <!--1. 在组件一栏，可以和浏览器实现交互功能，比如警告框的关闭效果； -->
+    <!--2. 解释一下手册给的案例：data-dismiss="alert"实现父元素关闭； -->
+    <!--3. .fade .show 实现了关闭后的淡出效果；  -->
+    <!--4. .alert-dismissible 从调试器可以看到是 padding-right:4rem;  -->
+    <!--5. 也就是说，真正实现关闭效果的只有 data-dismiss="alert"；  -->
+    <!--6. 直接使用脚本的方式也可以关闭： -->
+    <div class="alert alert-warning alert-dismissble fade show">
+        警告：请理解更新你的系统~
+        <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+
+    <!--使用jQuery脚本-->
+    <div class="alert alert-warning alert-dismissible fade show updatesystem">
+        警告：请理解更新你的系统~
+        <button class="closeupdate close">&times;</ button> 
+    </div> 
+    
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script>
+    //点击内部
+    $('.closeupdate').on({
+        click: function() {
+            //关闭外部
+            $('.updatesystem').alert('close');
+        },
+    });
+</script>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>列表组</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+        
+        button,
+        a,
+        input {
+            /*margin: 5px 0;*/
+        }
+        
+        .card-text {
+            /*padding: 10px;*/
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <ul class="list-group w-75">
+        <li class="list-group-item active">列表组1</li>
+        <li class="list-group-item">列表组2</li>
+        <li class="list-group-item">列表组3</li>
+        <li class="list-group-item">列表组4</li>
+        <li class="list-group-item disabled">列表组5</li>
+    </ul>
+
+    <br>
+
+    <div class="list-group w-75">
+        <a href="#" class="list-group-item list-group-item-action active">列表组1</a>
+        <a href="#" class="list-group-item list-group-item-action">列表组2</a>
+        <a href="#" class="list-group-item list-group-item-action">列表组3</a>
+        <a href="#" class="list-group-item list-group-item-action">列表组4</a>
+        <a href="#" class="list-group-item list-group-item-action disabled">列表组5</a>
+    </div>
+
+    <br>
+
+    <div class="list-group list-group-flush w-75">
+        <a href="#" class="list-group-item list-group-item-action active">列表组1</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-primary">列表组2</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-danger">列表组3</a>
+        <a href="#" class="list-group-item list-group-item-action list-group-item-info">列表组4</a>
+        <a href="#" class="list-group-item list-group-item-action disabled">列表组5</a>
+    </div>
+
+    <br>
+
+    <ul class="list-group list-group-horizontal-sm w-75">
+        <li class="list-group-item active">列表组1</li>
+        <li class="list-group-item">列表组2</li>
+        <li class="list-group-item">列表组3</li>
+        <li class="list-group-item">列表组4</li>
+        <li class="list-group-item disabled">列表组5</li>
+    </ul>
+
+    <br>
+
+    <ul class="list-group w-50">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            列表组1
+            <span class="badge badge-primary pb-1">10</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            列表组2
+            <span class="badge badge-danger pb-1">8</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            列表组3
+            <span class="badge badge-info pb-1">2</span>
+        </li>
+        <li class="list-group-item">列表组4</li>
+        <li class="list-group-item">列表组5</li>
+    </ul>
+
+    <br>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group">
+                <a href="#one" data-toggle="list" class="list-group-item list-group-item-action active">列表组1</a>
+                <a href="#two" data-toggle="list" class="list-group-item list-group-item-action">列表组2</a>
+                <a href="#three" data-toggle="list" class="list-group-item list-group-item-action">列表组3</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="one">列表1...列表1...列表1...列表1...</div>
+                <div class="tab-pane fade" id="two">列表2...列表2...列表2...列表2...</div>
+                <div class="tab-pane fade" id="three">列表3...列表3...列表3...列表3...</div>
+            </div>
+        </div>
+    </div>
+
+
+    <br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/>
+
+
+    <!-- 引入jQuery文件 -->
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
