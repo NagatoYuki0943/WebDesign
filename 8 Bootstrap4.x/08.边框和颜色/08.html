@@ -31,13 +31,15 @@
     <!--1. 使用.border 给元素增加相应的边框，默认是淡灰色； -->
     <!--2. 如果颜色太淡，可以使用.border-*设置想要的场景，比如.border-success；  -->
     <!--3. .border-*，包含：primary、secondary、success、danger、warning, info、light、dark 和 white； -->
+    <!--要先写上border或者border-top等,再写颜色才有效-->
     <div class="container">
         <!--border:四面边框;  border-top等等是四面的边框-->
-        <img src="img/img1.png" alt="边框" class="border-success border">
-        <img src="img/img1.png" alt="边框" class="border-success border-top">
-        <img src="img/img1.png" alt="边框" class="border-success border-botton">
-        <img src="img/img1.png" alt="边框" class="border-success border-left">
-        <img src="img/img1.png" alt="边框" class="border-success border-right">
+        <img src="img/img1.png" alt="边框" class="border">
+        <img src="img/img1.png" alt="边框" class="border border-success">
+        <img src="img/img1.png" alt="边框" class="border-top border-primary">
+        <img src="img/img1.png" alt="边框" class="border-botton border-danger">
+        <img src="img/img1.png" alt="边框" class="border-left border-info">
+        <img src="img/img1.png" alt="边框" class="border-right border-success">
         <br>
 
         <!--4. 使用.border-0 消减四周的边框，或使用.border-*-0 消减某一边的边框； border-0 删除全部边框 -->
@@ -81,7 +83,7 @@
         <!-- -50 亮度减50-->
         <span class="text-black-50">bootstrap</span>
         <span class="text-white-50 bg-dark">bootstrap</span>
-        <br>
+        <hr>
 
 
         <!--2. 使用.text-*也可以实现悬停和焦点的超链接样式，white 和 muted 不支持； -->

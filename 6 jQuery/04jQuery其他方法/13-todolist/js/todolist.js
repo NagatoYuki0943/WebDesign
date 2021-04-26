@@ -69,7 +69,7 @@ $(function() {
         var data = getData();
 
         //2.遍历之前先清空里面的数据,不然每次都会多出很多数据
-        $('ol').empty();
+        $('ol').empty(); //empty() 和 html('') 作用相同
         $('ul').empty();
 
         //3.遍历数据         i:下标  n:数据

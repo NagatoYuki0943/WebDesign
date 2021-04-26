@@ -19,47 +19,60 @@
 </head>
 
 <body>
+    <!--1. 使用.form-control、form-check-input 构建一个登录页面； -->
+    <!--2. 表单控件中<input>、<textarea>、<select>统一采用.form-control； -->
+    <form action="#">
+        <!--5. 使用.form-control-plaintext 和只读属性 readonly 实现只读效果； -->
+        <!--row row-9 变为一行-->
+        <div class="form-group row">
 
-
-    <!-- <form action="">
-	<div class="form-group row">
-		<label for="email" class="col-3 col-form-label">请输入邮箱地址：</label>
-		<input type="text" id="email" class="col-9 form-control-plaintext" value="bnbbs@163.com" readonly>
-	</div>
-	<div class="form-group">
-		<label for="password">请输入密码：</label>
-		<input type="password" id="password" class="form-control form-control-sm">
-	</div>
-	<div class="form-group">
-		<input type="checkbox" class="form-control-input" id="check">
-		<label for="check">请输入密码：</label>
-	</div>
-	<div class="form-group">
-		<label for="city">请选择你去过的城市：</label>
-		<select multiple name="" id="city" class="form-control">
-			<option value="1">北京</option>
-			<option value="2">上海</option>
-			<option value="3">深圳</option>
-		</select>
-	</div>
-	<div class="form-group">
-		<label for="info">详情：</label>
-		<textarea name="" id="info" cols="30" rows="10" class="form-control"></textarea>
-	</div>
-	<div class="form-group">
-		<label for="file">上传：</label>
-		<input type="file" class="form-control-file">
-	</div>
-	<input type="range" class="form-control-range">
-</form> -->
-
-
-
-    <form action="">
-        <div class="form-group">
-            <label for="password">请输入密码：</label>
-            <input type="password" id="password" class="form-control form-control-sm">
+            <!--6. 使用栅格布局，再使用 label 元素下的.col-form-label 实现对齐； -->
+            <label for="email" class="col-3 col-form-label">请输入电子邮件</label>
+            <input type="text" id="email" class="col-9 form-control-plaintext" value="111111" readonly>
         </div>
+
+        <!--4. .form-control-sm(xl,lg)支持放大和缩小操作； -->
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="text" id="password" class="form-control form-control-sm">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="check" class="form-control-input">
+            <label for="check">是否保存</label>
+        </div>
+        <div class="form-group">
+            <label for="city">请选择去过的城市</label>
+            <select multiple name="" id="city" class="form-control">
+                <option value="1">北京</option>
+                <option value="2">上海</option>
+                <option value="3">深圳</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="info">详情</label>
+            <textarea type="text" id="info" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+
+
+        <!--3. 对于 file 上传控件，单独使用.form-control-file 样式；没有外边框 -->
+        <div class="form-group">
+            <label for="info">上传</label>
+            <input type="file" class="form-control-file">
+        </div>
+
+
+        <!--7. 使用.form-control-range 构建一个输入范围； -->
+        <input type="range" class="form-control-range">
+    </form>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+
+    <!--8. 使用.form-check 系列样式设计复选框和单选框； -->
+    <!--9. 使用.form-check-inline 实现单选框和复选框水平排列； -->
+    <form action="" class="form-check-inline">
         <div class="form-check">
             <input type="checkbox" class="form-control-input" id="check">
             <label for="check" class="form-check-label">复选框</label>
@@ -70,13 +83,12 @@
         </div>
     </form>
 
-
-
-    <!-- 引入jQuery文件 -->
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script>
-    </script>
 </body>
+
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+</script>
 
 </html>

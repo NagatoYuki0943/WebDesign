@@ -40,6 +40,7 @@ $(function() {
     });
 
 
+
     //点击左侧导航就到那里
     $('.fixedtool li').click(function() {
 

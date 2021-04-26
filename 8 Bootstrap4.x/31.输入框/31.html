@@ -20,11 +20,13 @@
 
 <body>
 
-
+    <!--1. 输入框就是<input>标签元素的强化版组件样式，提供更加丰富的样式； -->
+    <!--2. 输入框组件的核心就是.input-group 内部包含的表单样式；  -->
     <form action="" class="form-row">
         <div class="form-group col-sm-6">
             <label for="user">用户名：</label>
             <div class="input-group">
+                <!--input-group-prepend: 出现在前面-->
                 <div class="input-group-prepend">
                     <span class="input-group-text">@</span>
                 </div>
@@ -36,6 +38,7 @@
             <label for="email">邮箱</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="user" placeholder="请输入密码">
+                <!--input-group-append: 出现在后面-->
                 <div class="input-group-append">
                     <span class="input-group-text">@163.com</span>
                 </div>
@@ -47,10 +50,9 @@
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
-					<input type="checkbox">
-				</span>
+					    <input type="checkbox">
+				    </span>
                 </div>
-                <input type="text" class="form-control" id="user" placeholder="">
             </div>
         </div>
 
@@ -59,10 +61,9 @@
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
-					<input type="radio">
-				</span>
+					    <input type="radio">
+				    </span>
                 </div>
-                <input type="text" class="form-control" id="user" placeholder="">
             </div>
         </div>
 
@@ -78,24 +79,6 @@
             </div>
         </div>
 
-        <div class="form-group col-sm-12">
-            <label for="user">多控件多提示模式：</label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary">button</button>
-                    <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">button</button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">菜单 1</a>
-                        <a class="dropdown-item" href="#">菜单 2</a>
-                        <a class="dropdown-item" href="#">菜单 3</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">菜单 4</a>
-                    </div>
-                </div>
-                <input type="text" class="form-control" id="user" placeholder="姓">
-                <input type="text" class="form-control" id="user" placeholder="名">
-            </div>
-        </div>
 
         <div class="form-group col-sm-12">
             <label for="user">选择城市：</label>
@@ -126,14 +109,16 @@
     </form>
 
 
-    <!-- 引入jQuery文件 -->
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script>
-        $('#file').change(function(e) {
-            $('.custom-file-label').html(e.target.files[0].name);
-        });
-    </script>
+
 </body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    //将文件名添加到文本中
+    $('#file').change(function(e) {
+        $('.custom-file-label').html(e.target.files[0].name);
+    });
+</script>
 
 </html>

@@ -58,6 +58,7 @@ let obj5 = {
     }
 };
 
+
 //create创建对象.以obj4为原型
 let f = Object.create(obj4);
 console.log(f.fn()); //fn1

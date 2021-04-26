@@ -20,8 +20,14 @@
 
 <body>
 
-
-    <div id="carousel" class="carousel slide carousel-fade">
+    <!--1. 一个最简单的经典幻灯片轮播效果，如下： -->
+    <!--2. 给轮播幻灯片两侧加上切换按钮，具体如下： -->
+    <!--3. 给轮播幻灯片底部加上切换按钮，具体如下： -->
+    <!--4. 给轮播幻灯片底加上一些字符说明，具体如下： -->
+    <!--5. 给轮播幻灯片设置渐进式轮播效果，具体如下： -->
+    <!--carousel:轮播器;   slide:滑动;  data-ride="carousel": 轮播器-->
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--3.下部的指示符-->
         <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
             <li data-target="#carousel" data-slide-to="1"></li>
@@ -30,26 +36,34 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="img/1.png" class="w-100" alt="">
+                <!--4.字符说明-->
                 <div class="carousel-caption">
                     <h5>Bootstrap4.x</h5>
+                    主讲：李炎恢
                     <p>这是一款前端样式库，很好用，样式也比较多，大概如此吧...</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="img/2.png" class="w-100" alt="">
+                <img src="img/2.png" class="w-100S" alt="">
+                <!--4.字符说明-->
                 <div class="carousel-caption">
-                    <h5>PHP7.x</h5>
-                    <p>这是一款前端样式库，很好用，样式也比较多，大概如此吧...</p>
+                    <h5>PHP7.X</h5>
+                    主讲：李炎恢
+                    <p>PHP7.X...</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="img/3.png" class="w-100" alt="">
+                <!--4.字符说明-->
                 <div class="carousel-caption">
-                    <h5>Thinkphp5.1</h5>
-                    <p>这是一款前端样式库，很好用，样式也比较多，大概如此吧...</p>
+                    <h5>ThinkPHP5.x</h5>
+                    主讲：李炎恢
+                    <p>ThinkPHP5.x...</p>
                 </div>
             </div>
         </div>
+        <!--2.左右切换标签-->
+        <!--#carousel:查找元素-->
         <a href="#carousel" class="carousel-control-prev" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </a>
@@ -59,27 +73,21 @@
     </div>
 
 
-    <button class="button">控制</button>
+    <button class="btn btn-primary">控制</button>
 
-
-
-    <br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/>
-
-
-    <!-- 引入jQuery文件 -->
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script>
-        $('.carousel').carousel({
-            interval: 500
-        });
-        $('.button').click(function() {
-            $('.carousel').carousel('pause');
-        });
-    </script>
 </body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    //轮播速度
+    $('.carousel').carousel({
+        interval: 1000
+    });
+    //点击下面按钮停止上面的滑动
+    $('.button').on('click', function() {
+        $('.carousel').carousel('pause');
+    });
+</script>
 
 </html>

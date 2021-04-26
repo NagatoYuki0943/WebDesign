@@ -1,19 +1,32 @@
+/* 顶部位置 */
+
 #carousel {
-	background-color: #e7e7e7;
-	top:3rem;
-	margin-bottom: 6rem;
+    background-color: #e7e7e7;
+    top: 3rem;
+    margin-bottom: 6rem;
 }
+
+
+/* 下面提示的颜色 */
+
 .carousel-indicators li {
-	background-color: #444;
+    background-color: #444;
 }
+
+
+/* 指示图片  */
+
 .carousel-control-prev-icon {
-	background-image: url('../img/left.png');
-	cursor: pointer;
+    background-image: url('../img/left.png');
 }
+
 .carousel-control-next-icon {
-	background-image: url('../img/right.png');
-	cursor: pointer;
+    background-image: url('../img/right.png');
 }
+
+
+/* tab5背景 */
+
 .tab5 {
-	background-color: #eee;
+    background-color: #eee;
 }

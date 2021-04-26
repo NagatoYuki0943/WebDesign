@@ -19,67 +19,90 @@
 </head>
 
 <body>
-
-
+    <!--1. 下拉菜单组件依赖于 Popper.js，而 Bootstrap 组件包里没有这个文件； -->
+    <!--2. 但组件包里 bootstrap.bundle.js 已经包含了这个组件功能，使用这个即可； -->
+    <!--3. 只要将将 bootstrap.bundle.js 替代掉 bootstrap.js 即可； -->
+    <!--4. 使用.dropdown 等系列样式，来构建下拉菜单效果； -->
+    <!--5. 使用.dropdown-divider 给菜单项目之间增加一条分割线； -->
     <div class="dropdown">
-        <button class="btn btn-lg btn-secondary dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
         <div class="dropdown-menu">
             <a href="#" class="dropdown-item">菜单1</a>
             <a href="#" class="dropdown-item">菜单2</a>
+            <!--水平分割线-->
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item">菜单3</a>
         </div>
     </div>
+    <hr>
 
-    <br><br>
 
+    <!--6. 使用.dropdown-toggle-split 实现分裂式按钮下拉菜单； -->
+    <!--7. 支持使用.btn-lg 等系列将下拉按钮设置大小； -->
+    <!--分组的作用是为了让两个button连在一起,间隙消失-->
     <div class="dropdown btn-group">
         <button class="btn btn-secondary btn-lg">下拉菜单</button>
-        <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split btn-lg" data-toggle="dropdown"></button>
+        <!--dropdown-toggle-split:让两个button更紧凑-->
+        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
         <div class="dropdown-menu">
             <a href="#" class="dropdown-item">菜单1</a>
             <a href="#" class="dropdown-item">菜单2</a>
+            <!--水平分割线-->
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item">菜单3</a>
         </div>
     </div>
+    <hr>
 
-    <br><br>
 
-    <div class="dropdown dropup">
-        <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+    <!--8. 使用.dropup 可以将下拉菜单向上展开，会根据上下区域调整； -->
+    <div class="dropup">
+        <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">菜单1</a>
+            <a href="#" class="dropdown-item">菜单2</a>
+            <!--水平分割线-->
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">菜单3</a>
+        </div>
+    </div>
+    <hr>
+
+
+    <!--9. 使用.dropright、dropleft 可以将下拉菜单向右、向左展开； -->
+    <!--10. 使用.active 设置首选项，使用 disabled； -->
+    <div class="dropdown dropright">
+        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
         <div class="dropdown-menu">
             <a href="#" class="dropdown-item">菜单1</a>
             <a href="#" class="dropdown-item active">菜单2</a>
+            <!--水平分割线-->
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item disabled">菜单3</a>
         </div>
     </div>
+    <hr>
 
-    <br><br>
 
-    <div class="dropdown" style="margin-left:100px;">
-        <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+    <!--11. 使用.dropdown-menu-right 可以设置菜单向右对齐； 默认左对齐-->
+    <div class="dropdown" style="margin-left: 100px;">
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
         <div class="dropdown-menu dropdown-menu-right">
             <a href="#" class="dropdown-item">菜单1</a>
-            <a href="#" class="dropdown-item active">菜单2</a>
+            <a href="#" class="dropdown-item">菜单2</a>
+            <!--水平分割线-->
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item disabled">菜单3</a>
+            <a href="#" class="dropdown-item">菜单3</a>
         </div>
     </div>
+    <hr>
 
 
-    <br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/>
-    <br/><br/><br/><br/><br/><br/><br/>
-
-
-    <!-- 引入jQuery文件 -->
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script>
-    </script>
 </body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+</script>
 
 </html>

@@ -20,62 +20,72 @@
 
 <body>
 
+    <!--1. 使用.form-row 构建一个响应式布局的表单，并使用谷歌和 opera 测试； -->
+    <from action="#" class="form-row">
+        <div class="form-group col-sm-6">
+            <label for="user">用户名</label>
+            <input type="text" id="user" placeholder="用户名" class="form-control">
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="password">密码</label>
+            <input type="text" id="password" placeholder="密码" class="form-control">
+        </div>
 
-    <form action="">
-        <fieldset disabled class="form-row">
-            <div class="form-group col-sm-6">
-                <label for="user">用户名：</label>
-                <input type="text" id="user" placeholder="用户名" class="form-control">
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="password">密码：</label>
-                <input type="password" id="password" placeholder="密码" class="form-control">
-            </div>
-            <div class="form-group col-sm-12">
-                <label for="address">收货地址：</label>
-                <input type="password" id="address" placeholder="收货地址" class="form-control">
-                <small class="form-text text-muted">
-			收货地址必须是省市区门牌号！
-		</small>
-            </div>
+        <!--3. 使用.form-text 给表单控件增加提示功能，如果要一行，使用.form-inline; -->
+        <div class="form-group col-sm-12">
+            <label for="address">地址</label>
+            <input type="text" id="address" placeholder="地址" class="form-control">
+            <small class="form-text text-muted">
+                收货地址必须是门牌号
+            </small>
+        </div>
+
+        <div class="form-group col-sm-4">
+            <label for="state">国家</label>
+            <select name="" id="state" class="form-control">
+                <option value="1">中国</option>
+                <option value="2">其他</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="city">城市</label>
+            <select name="" id="city" class="form-control">
+                <option value="1">上海</option>
+                <option value="2">北京</option>
+            </select>
+        </div>
+
+
+        <!--4. 使用<fieldset disabled>禁用所有整体表单功能； -->
+        <fieldset disabled>
+
             <div class="form-group col-sm-4">
-                <label for="state">国家：</label>
-                <select name="" id="state" class="form-control">
-			<option value="1">中国</option>
-			<option value="2">其它</option>
-		</select>
-            </div>
-            <div class="form-group col-sm-4">
-                <label for="city">城市：</label>
-                <select name="" id="city" class="form-control">
-			<option value="1">北京</option>
-			<option value="2">上海</option>
-		</select>
-            </div>
-            <div class="form-group col-sm-4">
-                <label for="zip">邮编：</label>
+                <label for="zip">邮编</label>
                 <input type="text" id="zip" placeholder="邮编" class="form-control">
             </div>
-
             <div class="form-group col-sm-4">
-                <label for="email">邮件：</label>
+                <label for="email">邮件</label>
+
+                <!--2. 在邮箱控件左侧增加一个提示标识，使用.input-group 等样式； -->
                 <div class="input-group">
-                    <div class="input-group-prepend">
+                    <div type="text" class="group-prepend">
                         <span class="input-group-text">@</span>
                     </div>
                     <input type="text" id="email" placeholder="邮件" class="form-control">
                 </div>
             </div>
+
         </fieldset>
-    </form>
+    </from>
 
 
 
-    <!-- 引入jQuery文件 -->
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script>
-    </script>
+
 </body>
+<!-- 引入jQuery文件 -->
+<script src=" ../js/jquery-3.6.0.js "></script>
+<script src="../js/bootstrap.bundle.js "></script>
+<script>
+</script>
 
 </html>

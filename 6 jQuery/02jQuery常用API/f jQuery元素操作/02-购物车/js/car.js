@@ -136,6 +136,10 @@ $(function() {
         //4.计算总金额
         $('.p-sum').each(function(i, ele) {
             //1.去除 ￥ 符号  2.转换为浮点型  
+
+            //下面四个方法两两作用相同
+            //Number.parseInt() parseInt()
+            //Number.parseFloat() parseFloat()
             money += parseFloat($(ele).text().substr(1));
         });
 

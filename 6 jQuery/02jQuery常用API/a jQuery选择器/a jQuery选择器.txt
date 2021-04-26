@@ -82,3 +82,11 @@
 
     13链式编程
     $(this).css('color', 'red').siblings().css('color', "");
+
+
+
+9  高级选择
+    在bootstrap 26 中
+    <button class="btn btn-secondary" data-toggle="popover" data-trigger="focus" data-placement="right" title="提示标题" data-content="这是一个点击的提示!">点击按钮</button>
+
+    $('[data-toggle="popover"]').popover();

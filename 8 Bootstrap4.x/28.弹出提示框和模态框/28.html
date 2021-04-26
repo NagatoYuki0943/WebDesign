@@ -19,47 +19,73 @@
 </head>
 
 <body>
-
-
-    <div class="toast fade" data-autohide="false">
+    <!--1. 使用.toast 可以创建一个弹出提示框，默认是隐藏，设置 show 显示； -->
+    <!--3. 如果关闭时想要过渡效果，加上.fade 即可，多个弹窗会向下叠加； -->
+    <div class="toast hide fade">
         <div class="toast-header">
+            <!--mr-auto将其他元素往右边挤-->
             <strong class="mr-auto">提示框</strong>
-            <button class="close ml-2 mb-1" data-dismiss="toast">
-			<span>&times;</span>
-		</button>
+            <!--这是右边的叉号-->
+            <button class="close ml-2 mb-2" data-dismiss="toast">
+                <span>&times;</span>
+            </button>
         </div>
         <div class="toast-body">
-            这是一个提示框！
-        </div>
-    </div>
-
-    <div class="toast fade" data-autohide="false" style="position: absolute;top: 20px; right: 20px;">
-        <div class="toast-header">
-            <strong class="mr-auto">提示框</strong>
-            <button class="close ml-2 mb-1" data-dismiss="toast">
-			<span>&times;</span>
-		</button>
-        </div>
-        <div class="toast-body">
-            这是一个提示框！
+            这是一个提示框1
         </div>
     </div>
 
 
-    <button id="button">弹出</button>
+    <!--4. 可以直接用 CSS 定位调整出现的方位，比如右上角； -->
+    <!--5. 点击弹窗时，默认是自动隐藏的，可以关闭它； data-autohide="false -->
+    <div class="toast hide fade" style="position: absolute;top:20px;right: 20px;" data-autohide="false">
+        <div class="toast-header">
+            <!--mr-auto将其他元素往右边挤-->
+            <strong class="mr-auto">提示框</strong>
+            <!--这是右边的叉号-->
+            <button class="close ml-2 mb-2" data-dismiss="toast">
+                <span>&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            这是一个提示框2
+        </div>
+    </div>
+    <button id="button" class="btn btn-success">弹出</button>
+    <hr>
+    <hr>
+    <hr>
 
+
+    <!--1. 模态框.modal 系列样式组成，需要很多层次构建； -->
+    <!--2. 模态框支持长文浏览模式，通过鼠标中键或者滚动条浏览； -->
+    <!--4. 模态框可以想象成一个完整的 HTML 区域，支持内部的表单、栅格、其它组件等； -->
 
     <div class="modal fade" id="myModal">
+
+        <!--3. 模态框默认是偏上显示的，也可以设置居中显示； -->
+        <!--4. 模态框支持设置大小，.modal-sm(xl、lg)等； -->
+        <!--modal-dialog-centered: 在屏幕中心显示-->
         <div class="modal-dialog modal-dialog-centered modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5>模态框</h5>
-                    <button class="close" data-dismiss="modal">
-					<span>&times;</span>
-				</button>
+                    <h5>模态框标题</h5>
+                    <button class="close ml-2 mb-2" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    body
+
+                    <body>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                    </body>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary">确认保存</button>
@@ -69,18 +95,19 @@
         </div>
     </div>
 
-    <button class="btn btn-primary" data-target="#myModal" data-toggle="modal">弹出模态框</button>
+    <button class="btn btn-primary" data-target="#myModal" data-toggle="modal">模态框弹出</button>
 
-
-    <!-- 引入jQuery文件 -->
-    <script src="../js/jquery-3.6.0.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script>
-        $('.toast').toast();
-        $('#button').click(function() {
-            $('.toast').toast('show');
-        });
-    </script>
 </body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    //2. 弹出提示框要求要通过脚本初始化，否则无法实现关闭功能； 
+    $('.toast').toast();
+
+    $('#button').click(function() {
+        $('.toast').toast('show');
+    });
+</script>
 
 </html>

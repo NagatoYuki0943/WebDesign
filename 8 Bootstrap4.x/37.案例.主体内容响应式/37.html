@@ -7,6 +7,7 @@
 
     <!-- 引入Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <!--引入自己的CSS-->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- 移动设备优先 -->
@@ -16,7 +17,7 @@
 
 <body>
 
-
+    <!--导航栏-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar">
 		<span class="navbar-toggler-icon"></span>
@@ -34,6 +35,7 @@
                 <a href="#" class="nav-item nav-link">关于</a>
             </div>
 
+            <!--ml-auto: 将其他的往左边推-->
             <form action="" class="form-inline ml-auto">
                 <input type="text" class="form-control mr-2" placeholder="关键字">
                 <button class="btn btn-outline-secondary my-2">搜索</button>
@@ -42,13 +44,14 @@
     </nav>
 
 
+    <!--轮播图-->
     <div id="carousel" class="carousel slide w-100" data-ride="carousel">
+        <!--下面的指示符-->
         <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
             <li data-target="#carousel" data-slide-to="1"></li>
             <li data-target="#carousel" data-slide-to="2"></li>
         </ol>
-
 
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -62,6 +65,7 @@
             </div>
         </div>
 
+        <!--左右图片-->
         <a href="#carousel" class="carousel-control-prev" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </a>
@@ -71,6 +75,7 @@
     </div>
 
 
+    <!--主题内容栅格 media图文混排-->
     <div class="container">
         <h2 class="index index-h2">「为什么选择Bootstrap4.x」</h2>
         <p class="index index-p mb-4">简洁、直观、强悍的前端开发框架，让web开发更迅速、简单！</p>
@@ -85,29 +90,27 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-6 mb-4">
                 <div class="media">
                     <img src="img/tab-2.png" alt="">
                     <div class="media-body ml-2">
                         <h5>师资力量</h5>
                         <p><del>其他：非欧美正牌大学毕业的、业界没有知名度的讲师！</del></p>
-                        <p>我们：美国哈佛、耶鲁等世界高校、享有声誉的名牌专家！</p>
+                        <p>我们：美国哈佛、耶鲁等世界一流高校、享有声誉的名牌专家！</p>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-6 mb-4">
                 <div class="media">
                     <img src="img/tab-3.png" alt="">
                     <div class="media-body ml-2">
-                        <h5>课时安排</h5>
+                        <h5>tab-3 课时安排
+                        </h5>
                         <p><del>其他：无法保证上课效率、没有时间表，任务无法完成！</del></p>
                         <p>我们：保证按时间表的上课、效率高、当天的任务当天完成！</p>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-6 mb-4">
                 <div class="media">
                     <img src="img/tab-4.png" alt="">
@@ -118,51 +121,54 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
-
 
     <div class="tab5 mb-5">
         <div class="container">
             <div class="row align-items-center text-center">
                 <div class="col-md-6 p-5">
-                    <img src="img/tab5.png" style="width:60%;" alt="">
+                    <img src="img/tab5.png" style="width: 60%;" alt="">
                 </div>
                 <div class="col-md-6 p-4">
                     <h3>强大的学习体系</h3>
                     <p>经过管理学大师层层把关、让您的企业突飞猛进。</p>
                 </div>
+
             </div>
         </div>
     </div>
-
     <div class="tab6 mb-5">
         <div class="container">
             <div class="row align-items-center text-center">
+                <!--order-md-1/2 在大屏幕下进行排序-->
                 <div class="col-md-6 p-5 order-md-2">
-                    <img src="img/tab6.png" style="width:70%;" alt="">
+                    <img src="img/tab6.png" style="width: 70%;" alt="">
                 </div>
                 <div class="col-md-6 p-4 order-md-1">
                     <h3>完美的管理方式</h3>
                     <p>最新的管理培训方案，让您的企业赶超同行。</p>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <footer class="bg-dark text-light p-5 text-center">
+
+    <!--最下面-->
+    <footer class="bg-dark text-light text-center p-5">
         <p class="m-1">企业培训 | 合作事宜 | 版权投诉</p>
         <p>苏ICP 备12345678. © 2009-2020 Bootstrap4.x. Powered by Bootstrap.</p>
     </footer>
 
-
-    <!-- 引入jQuery文件 -->
-    <script src="js/jquery-3.6.0.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script>
-    </script>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
 </body>
+<!-- 引入jQuery文件 -->
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<script>
+</script>
 
 </html>

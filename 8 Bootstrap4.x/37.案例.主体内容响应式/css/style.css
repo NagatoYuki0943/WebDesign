@@ -1,69 +1,115 @@
+/* 页面统一颜色 */
+
 body {
-	color: #555;
+    color: #555;
 }
+
+
+/* 顶部位置 */
+
 #carousel {
-	background-color: #e7e7e7;
-	top:3rem;
-	margin-bottom: 6rem;
+    background-color: #e7e7e7;
+    top: 3rem;
+    margin-bottom: 6rem;
 }
+
+
+/* 下面提示的颜色 */
+
 .carousel-indicators li {
-	background-color: #444;
+    background-color: #444;
 }
+
+
+/* 指示图片  */
+
 .carousel-control-prev-icon {
-	background-image: url('../img/left.png');
-	cursor: pointer;
+    background-image: url('../img/left.png');
 }
+
 .carousel-control-next-icon {
-	background-image: url('../img/right.png');
-	cursor: pointer;
+    background-image: url('../img/right.png');
 }
+
+
+/* bootstrap介绍部分 */
+
 .index {
-	text-align: center;
-	letter-spacing: 1px;
+    text-align: center;
+    letter-spacing: 1px;
 }
+
 .index-h2 {
-	font-size: calc(1rem + 1vw);
-	color: #0059b2;
+    /* calc(1rem + 1vw) 是bootstrap运算,不同屏幕大小文字大小不同  rem指的是字体大小 vm指的是屏幕变化幅度*/
+    font-size: calc(1rem + 1vw);
+    color: #0059b2;
 }
+
 .index-p {
-	font-size: calc(0.7rem + 0.8vw);
-	color: #999;
+    font-size: calc(0.7rem + 0.8vw);
+    color: #999;
 }
+
+.index-content {}
+
 .index-content h5 {
-	font-size: calc(1.2rem + 0.09vw);
+    font-size: calc(1.2rem + 0.09vw);
 }
+
 .index-content p {
-	font-size: calc(0.9rem + 0.1vw);
+    font-size: calc(0.9rem + 0.1vw);
 }
+
+
+/* tab5背景 */
+
 .tab5 {
-	background-color: #eee;
-}
-.tab5 h3, .tab6 h3 {
-	font-size: calc(1.2rem + 0.8vw);
-}
-.tab5 p, .tab6 p,footer {
-	font-size: calc(0.9rem + 0.1vw);
+    background-color: #eee;
 }
 
-/*Small devices (landscape phones, 576px and up)*/ 
-@media (min-width: 576px) and (max-width: 767px) {
 
-}
-/*Medium devices (tablets, 768px and up)*/ 
-@media (min-width: 768px) and (max-width: 991px) 
-{ 
+/* 更改tab5和6下面的文字 */
 
+.tab5 h3,
+.tab6 h3 {
+    font-size: calc(1.2rem + 0.8vw);
 }
-/*Large devices (desktops, 992px and up)*/ 
-@media (min-width: 992px) and (max-width: 1199px) { 
 
+.tab5 p,
+.tab6 p,
+footer {
+    font-size: calc(0.9rem + 0.1vw);
 }
-/*Extra large devices (large desktops, 1200px and up)*/ 
+
+
+/*媒体查询*/
+
+
+/*Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) and (max-width: 767px) {}
+
+
+/*Medium devices (tablets, 768px and up)*/
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+
+/*Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+
+/*Extra large devices (large desktops, 1200px and up)*/
+
+
+/* 当屏幕过大之后,文字大小固定了 */
+
 @media (min-width: 1200px) {
-	.index-h2 { 
-		font-size: 220%; 
-	}
-	.index-p { 
-		font-size: 160%; 
-	}
+    .index-h2 {
+        font-size: 220%;
+    }
+    .index-h2-p {
+        font-size: 160%;
+    }
 }
