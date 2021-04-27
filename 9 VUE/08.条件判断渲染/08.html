@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染指令</title>
+</head>
+
+<body>
+
+    <div id="app">
+        计算器：{{ counter }}<br>
+        <!--v-if 指令的简单用法：通过布尔属性隐藏或显示： -->
+        <div v-if="flag">是否显示</div>
+        <!--支持else-->
+        <div v-else>404</div>
+
+        <!--还支持v-else-if="flag"-->
+        <div v-if="type === 'a'">A</div>
+        <div v-else-if="type === 'b'">B</div>
+        <div v-else-if="type === 'c'">C</div>
+        <div v-else>None</div>
+
+
+        <!--4. 如果条件判断的区域是一大段代码，我们可以使用<template>来整合多个元素；要么都显示,要么都不显示 -->
+        <template v-if="flag">
+            <h2>标题</h2>
+            <h4>小标题</h4>
+            <div>内容</div>
+        </template>
+
+        <!--5. 如果只是简单的切换显示或隐藏， 可以使用 v-show， 但不支持 else 和 template；style="display:none" -->
+        <div v-show="flag">显示/隐藏</div>
+
+        <!--PS：v-if 是条件渲染，惰性的，适时的销毁和重建渲染的内容； 
+            PS：v-show，就是 display 的隐藏显示切换；结论：时时频繁切换用 v-show，反之 v-if； -->
+    </div>
+
+
+</body>
+<script src="../vue.global.js"></script>
+<script>
+    // 声明一个选项对象
+    const App = {
+        // 初始数据
+        data() {
+            return {
+                counter: 100,
+                flag: true,
+                type: 'c'
+            }
+        },
+
+        // 方法
+        methods: {
+
+        },
+
+        // 计算属性
+        computed: {
+
+        }
+    }
+
+    // 全局API对象.创建应用对象返回(选项对象).挂载方法(DOM节点)
+    const vm = Vue.createApp(App).mount('#app')
+</script>
+
+</html>

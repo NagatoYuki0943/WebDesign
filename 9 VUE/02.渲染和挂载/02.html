@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>渲染和挂载</title>
+</head>
+
+<body>
+    <!--2. Vue 的 MVVM 模型：即视图(View)-视图模型(ViewModel)-模型(Model)； -->
+    <!--3. Vue 的操作核心：即使用模版语法声明式的将数据渲染进 DOM 中去； -->
+
+    <div id="app">
+        <!--差值-->
+        计数器: {{ counter }}
+    </div>
+
+
+</body>
+<script src="../vue.global.js"></script>
+<script>
+    //7. 这个选项对象 App，是需要当作参数传递到 Vue 的全局 API：createApp()； 
+    // 声明一个选项对象
+    const App = {
+        // 初始数据
+        //不使用return包裹的数据会在项目的全局可见，会造成变量污染
+        // 使用return包裹后数据中变量只在当前组件中生效，不会影响其他组件
+        data() {
+            return {
+                counter: 100,
+            }
+        }
+    }
+
+    //8. createApp()方法会返回应用实例，再通过这个实例来挂载对应的 DOM 即可； 
+    //全局API对象.创建应用对象再返回(选项对象).挂载对象(dom节点)
+    Vue.createApp(App).mount('#app')
+</script>
+
+</html>

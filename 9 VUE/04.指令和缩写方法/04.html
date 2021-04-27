@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>指令及缩写</title>
+</head>
+
+<body>
+
+    <div id="app">
+        计算器：{{ counter }}<br>
+        <!--3. 比如：我们想让一段内容是否可见，可以通过 v-if 的值为 false 对其隐藏； -->
+        <div v-if="flag">{{ counter }}</div>
+
+        <!--4. 有些指令可以接受一些"参数"，比如动态的设置 url 链接地址，采用 v-bind； -->
+        <div>
+            <a v-bind:href="url">百度</a>
+        </div>
+
+        <!--5. 上面的例子中 v-bind:href 中 href 看似固定，实则可以动态改变，具体如下： []中必须小写 -->
+        <div>
+            <a v-bind:[attrname]="url">百度</a>
+        </div>
+
+
+        <!--1. 在实际使用过程中，v-bind:和 v-on:(事件部分会讲)，会非常常用； -->
+        <!--2. 而这两种质量后续会带各种参数和修饰符导致过于繁琐，故提供了简写方案：  -->
+        <div>
+            <!--v-bind不写也行,直接 : ,上面的attrname那里也一样-->
+            <a :href="url">百度</a>
+        </div>
+
+
+        <!-- v-bind:  只写 : ,不写 v-bind
+        v-bind:href = :href 
+        v-bind:[key] = :[key] -->
+
+
+        <!-- v-on 的简写, 直接用 @
+        v-on:click = @click 
+        v-on:[key] = @[key] -->
+
+    </div>
+
+
+</body>
+
+<script src="../vue.global.js"></script>
+<script>
+    const App = {
+        // 初始数据
+        data() {
+            return {
+                counter: 100,
+                flag: true,
+                attrname: 'href',
+                url: 'https://www.baidu.com',
+            }
+        }
+    }
+
+    // 全局API对象.创建应用对象返回(选项对象).挂载方法(DOM节点)
+    const vm = Vue.createApp(App).mount('#app')
+</script>
+
+</html>

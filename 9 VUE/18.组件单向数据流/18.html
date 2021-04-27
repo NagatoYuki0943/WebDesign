@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件单向数据流</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--一次绑定一个数据,多个数据分开绑定多次-->
+        <html-a v-bind:parent-message="message" v-bind:parent-counter="counter"></html-a>
+        <hr>
+    </div>
+
+
+</body>
+<script src="../vue.global.js"></script>
+<script>
+    // 1. 父组件的 data 值更新后通过 props 选项交给子组件进行渲染， 反之则不行；
+    // 2. 这就是单向数据流(单向下行绑定)， 不能通过子组件来改变父组件的状态；
+    // 3. 这样做的是为了防止父组件发生改变后， 数据流变得难以理解；
+    // 4. 父组件更新时， 子组件所有 props 值也会更新， 你不能改变子组件的 props 值；
+    // 5. 通过控制台输入 vm.message='XXX' 赋值， 子组件的自动渲染刷新；
+
+
+    // 定义一个局部组件
+    const htmlA = {
+        // 数据
+        data() {
+            return {
+                message: '子组件Vue3.x',
+                //没法改变父级的值,那就先把他保存到子级,修改子级数据就好了,这里使用this
+                childCounter: this.parentCounter
+            }
+        },
+
+        props: [
+            'parentMessage',
+            'parentCounter',
+        ],
+
+        //模板
+        template: `
+            <div>parentMessage:{{ parentMessage }}</div>
+
+            <div>parentCounter:{{ parentCounter }}</div>
+            <!--尝试更改父组件,出现警告:只读-->
+            <div><button v-on:click="parentCounter++">parentCounter无法更改</button></div>
+
+            <div>childCounter:{{ childCounter }}</div>
+            <!--尝试更改子组件,OK-->
+            <div><button v-on:click="childCounter++">childCounter可以更改</button></div>
+
+        `,
+
+
+        // PS： 上面的写法就是通过使用子组件的 data 属性， 让 props 父组件的值先赋值过来；
+        // PS： 然后通过操作这个子组件的 childCounter 实现累加， 而并未修改父组件的 Counter；
+        // PS： 当然， 通过计算属性 computed 或方法 methods 来修改 childCounter 也是可以的；
+    }
+
+
+    // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+    const vm = Vue.createApp({
+        data() {
+            return {
+                message: '父组件Vue3.x',
+                counter: 100,
+            }
+        },
+
+        //组件
+        components: {
+            'html-a': htmlA,
+        }
+
+
+    }).mount('#app');
+
+    console.log(vm);
+</script>
+
+</html>

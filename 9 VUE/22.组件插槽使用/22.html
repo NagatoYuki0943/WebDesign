@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件插槽使用</title>
+</head>
+
+<body>
+
+    <!--自定义标签中填内容默认不会渲染,要在模板中写<slot></slot>进行渲染-->
+    <div id="app">
+        <html-a>@@@@</html-a>
+        <html-a>####</html-a>
+        <html-a>^^^^</html-a>
+        <!--有默认值就会显示默认值-->
+        <html-a></html-a>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 定义一个局部组件
+        const htmlA = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件Vue3.x~'
+                }
+            },
+
+            //1. 组件中有一些高级的小功能，比如：插槽<slot>，可以实现内容的动态分发； 
+            //2. 有时，我们需要在组件模板中定义大量重复的内容区域，可以用插槽来避免重复； 
+            //4. 如果可以在<html-a>内部输入不同的符号内容， 过某种机制(插槽)来实现排版
+            //6. 如果组件元素中没有内容，也可以通过插槽<slot>提供一个默认值； 
+            // 模板
+            template: `
+                <div>{{message}}<slot>0000</slot></div>
+            `,
+        }
+
+        // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+        const app = Vue.createApp({
+            data() {
+                return {}
+            },
+
+            // 创建一个局部组件，也是一个子组件
+            components: {
+                'html-a': htmlA
+            }
+        })
+
+        // 挂载
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件Prop类型</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--1.我们之前使用的 v-bind:parent-message="message"，这是动态 Prop； -->
+        <html-a v-bind:parent-message="message"></html-a>
+        <hr>
+
+        <!--2.那么静态 Prop 又是什么意思？其实就是直接通过 HTML 端给子组件赋值； 传过去的是一个字符串-->
+        <html-a parent-message="0"></html-a>
+        <hr>
+
+        <!--3.上面传递的还是字符串,要使用 v-bind: 告诉它是一个数字,里面无论填写数字,属性,data中对象属性都可以-->
+        <html-a v-bind:parent-message="0"></html-a>
+        <html-a v-bind:parent-message="num"></html-a>
+        <html-a v-bind:parent-message="post.likes"></html-a>
+        <hr>
+
+
+        <!--4.当直接传递一个对象的时候，我们可以在插值通过对象的调用方法获取值；,直接传递对象或者data中对象都可以 -->
+        <!--PS：当然，也可以直接传递父组件的对象，一个意思；而数组、布尔等类型都一样自行练习； -->
+        <html-a v-bind:object1="{name: 'Mr.Lee'}"></html-a>
+        <html-a v-bind:object1="post"></html-a>
+        <hr>
+
+
+        <!--5.也可以传入对象的所有 property(属性)，然后通过查看器查看节点变化； -->
+        <html-a v-bind="post"></html-a>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 定义一个局部组件
+        const htmlA = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件Vue3.x',
+                }
+            },
+
+            //属性
+            //1. 上一节课，我们采用了 props : ['abc', 'def']这种形式构建数据父传子； 
+            //2. 而这种方式，是以字符串的形式来进行值传递的，其实还可设置数据类型； 
+            //PS：当传入字符串的时候，不需要 v-bind 的，当传入数字、数组、布尔和对象时则需要； 
+            //PS：当传入不匹配的类型时，控制台会提示警告；null 和 undefined 会通过任何类型检查； 
+            //使用对象的方式来写
+            props: {
+                'parentMessage': Number,
+                'object1': Object,
+            },
+
+            //模板
+            template: `
+                        <div>{{ typeof parentMessage }}</div>
+                        <div>{{ typeof object1 }}</div>
+                        <div>{{ message }}</div>
+                    `,
+
+        }
+
+        // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+        const app = Vue.createApp({
+            //数据
+            data() {
+                return {
+                    message: '父组件Vue3.x',
+                    num: 12,
+                    post: {
+                        likes: 100,
+                        id: 4
+                    }
+                }
+            },
+            //组件
+            components: {
+                'html-a': htmlA,
+            }
+        });
+
+        // 挂载
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

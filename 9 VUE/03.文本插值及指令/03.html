@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文本插值及指令</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        计算器:{{ counter }}
+        <br>
+        <!--3. 如果要设置成常量那种不可改变的量，可以使用指令：v-once； 上面的还会更改,下面的就是初始值-->
+        <span v-once>{{ counter }}</span>
+        <br>
+
+        <!--文本插值解析出来的是普通文本，而非 HTML 代码，测试代码如下： -->
+        <!--如果要解析，需要使用指令：v-html； 不用写{{rawContent}}  -->
+        是否解析html: <span v-html="rawContent"></span>
+        <br>
+
+
+        <!--5. 模板的文本插值是不能在 HTML attribute(属性)，先看下错误写法： -->
+        <!-- <span class="{{className}}">Vue3.X</span> -->
+        <div v-bind:class="className">Vue3.X</div>
+
+
+        <!--7. 在模板语法中，支持 JavaScript 表达式，比如：运算、函数等； -->
+        <!--注意：语句不支持，比如赋值语句，条件判断等-->
+        <div>{{ counter++ }}</div>
+        <div>{{true ? '真' : '假'}}</div>
+        <div>{{'bbb12@aaa'.split('@')}}</div>
+    </div>
+
+
+
+
+</body>
+<script src="../vue.global.js"></script>
+<script>
+    const App = {
+        // 初始数据
+        data() {
+            return {
+                counter: 100,
+                //html文本
+                rawContent: '<span style="color:red">Vue3.X</span>',
+                className: "blue",
+
+            }
+        }
+    };
+
+    //2. 绑定在模板中的插值{{counter}}，模板是可变的，可以理解为变量； 
+    const vm = Vue.createApp(App).mount('#app');
+    vm.counter = 101;
+    //可以直接访问到里面的值
+    console.log(vm.counter); //101
+</script>
+
+</html>

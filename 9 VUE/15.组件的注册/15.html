@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件的注册</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--使用组件名就可以了,三个组件互不干涉-->
+        <button-counter></button-counter>
+        <button-counter2></button-counter2>
+        <button-counter3></button-counter3>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        //2. 那么，我们探讨一下组件名称的一些规则，具体如下： 
+        //  (1).组件名称是唯一的；
+        //  (2).命名规则可以采用 kebab -
+        //      case (button - counter)， 减号隔开；
+        //  (3).命名规则也可以用 PascalCase(ButtonCounter)， 单词首字母大写；
+        //  (4).这里推荐使用 kebab -
+        //      case， 全小写并用减号隔开， 遵循 W3C， 防止冲突；
+
+
+
+        //我们定义了一个全局组件，用连缀方法再写一遍，如下： 
+        //Vue.createApp({}).component('button-counter', {}).mount('#app');
+
+
+
+
+        //2. 有全局注册，就有局部注册的方法，局部注册的方法如下： 
+
+        //定义一个局部组件
+        const buttonCounter = {
+            //数据
+            data() {
+                return {
+                    counter: 100
+                }
+            },
+
+            //下面的counter指的是模板中自己的counter
+            //模板
+            template: `
+                        计算器: {{ counter }}
+                        <br>
+                        <button v-on:click="counter++">counter++</button>
+                        <hr>
+                    `
+        }
+
+
+
+        //创建一个Vue应用实例,这个本身也是一个组件,跟组件,最顶层的
+        const app = Vue.createApp({
+            data() {
+                return {}
+            },
+
+            //创建一个局部组件,也是一个子组件
+            components: {
+
+                'button-counter': {
+                    //数据
+                    data() {
+                        return {
+                            counter: 100
+                        }
+                    },
+
+                    //下面的counter指的是模板中自己的counter
+                    //模板
+                    template: `
+                        计算器: {{ counter }}
+                        <br>
+                        <button v-on:click="counter++">counter++</button>
+                        <hr>
+                    `
+                },
+
+                //使用上面的子组件更好用
+                'button-counter2': buttonCounter,
+                'button-counter3': buttonCounter
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>key和数组检测</title>
+</head>
+
+<body>
+
+    <div id="app">
+        计算器：{{ counter }}<br>
+
+        <ul>
+            <li v-for="(item,index) in array" v-bind:key="item.id">
+                <!--这个对勾在添加了新元素之后还在原位置,和事实不符合了,让上面key绑定item.id-->
+                <input type="checkbox"> {{ index+1 }}--{{ item.city }}
+            </li>
+        </ul>
+        <hr>
+        <button v-on:click="add">添加新元素</button>
+    </div>
+
+
+
+
+</body>
+<script src="../vue.global.js"></script>
+<script>
+    //1. 为了更好的渲染视图，Vue 提供了如下的变更方法，执行后可渲染视图更新； 
+    //push()/pop()/shift()/unshift()/splice()/sort()/reverse(); 
+    //PS：在控制台输入 app.array.push({city : '重庆'})，视图立马渲染更新； 
+
+    // 声明一个选项对象
+    const App = {
+        // 初始数据
+        data() {
+            return {
+                counter: 100,
+                array: [{
+                    id: 1,
+                    city: '北京',
+                }, {
+                    id: 2,
+                    city: '上海',
+                }, {
+                    id: 3,
+                    city: '广州',
+                }, {
+                    id: 4,
+                    city: '深圳',
+                }, ],
+
+            }
+        },
+
+        // 方法
+        methods: {
+            add() {
+                this.array.unshift({
+                    id: 5,
+                    city: '石家庄'
+                });
+            }
+        },
+
+        // 计算属性
+        computed: {
+
+        }
+    }
+
+    // 全局API对象.创建应用对象返回(选项对象).挂载方法(DOM节点)
+    const vm = Vue.createApp(App).mount('#app');
+
+    //添加一条新元素
+    vm.array.push({
+        city: '重庆'
+    });
+
+    //替换掉第二条的内容
+    vm.array[1] = {
+        city: '南京'
+    };
+
+    //PS：Vue 也提供了比如 filter()/concat()/slice()来替换并返回一个新数组；
+    vm.array.slice(1, 2); //返回一条数据,从0数第一条
+</script>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件Prop验证</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--使用v-bind绑定父级属性-->
+        <!--定义成 parent-message，在JS中写成parentMessage,在html中写成 parent-message -->
+        <!--这里的传值如果是数字的话直接写,是字符串的话默认找的是父级data中的数据,按照名字找-->
+        <html-a v-bind:parent-message="11"></html-a>
+        <hr>
+
+        <!--没有绑定,使用子组件,注意绑定后面为空也算赋值-->
+        <html-a></html-a>
+        <hr>
+
+        <!--数据验证,只有传过去a,b,c才通过验证,验证失败也能显示,但会警告-->
+        <html-a parent-message="a"></html-a>
+        <hr>
+
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 定义一个局部组件
+        const htmlA = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件Vue3.x~'
+                }
+            },
+
+            //当然，除了限定一个类型之外，还可以设置限定多个类型，比如： String, Number, Boolean, Array, Object, Date, Function, Symbol
+            props: {
+                //多个类型使用数组类型
+                //parentMessage: [Number, String],
+
+                //如果没有值传入的时候，也可以给其设置一个默认值,要改为对象形式
+                'parentMessage': {
+                    type: [String, Number],
+
+
+                    //default: 0
+                    //默认值也可以通过函数进行返回； 
+                    default: function() {
+                        return 200
+                    },
+
+                    //使用自定义验证函数 validator 来处理传递过来的数据； 
+                    validator(value) {
+                        //只有数据是a/b/c才返回true
+                        return ['a', 'b', 'c'].indexOf(value) !== -1;
+                    }
+                }
+            },
+
+            // 模板
+            template: `
+                <div>{{parentMessage}}</div>
+                <div>{{message}}</div>
+            `,
+        }
+
+        // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: '父组件Vue3.x~'
+                }
+            },
+
+            // 创建一个局部组件，也是一个子组件
+            components: {
+                'html-a': htmlA
+            }
+        })
+
+        // 挂载
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

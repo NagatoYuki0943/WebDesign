@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    VUE中的in和of都能放2个参数
+    <!--1. 使用 v-for 指令来渲染一个列表，其中 array 是数据源，item 是元素别名； -->
+    <!-- <ul>
+        <li v-for="item in array">{{ item.city }}</li>
+    </ul>
+
+    <ul>
+        <li v-for="(item,index) in array">{{ index+1 }}--{{ item.city }}</li>
+    </ul>
+    <hr>
+    <!--PS：这里的 in 可以使用 JS 迭代器语法 of：(item, index) of array； -->
+    <!--PS：index 参数在第二位置，item 在第一个参数位置； -->
+    <!--<ul>
+        <li v-for="item of array">{{ item.city }}</li>
+    </ul>
+    <ul>
+        <li v-for="(item, index) of array">{{ index+1 }}--{{ item.city }}</li>
+    </ul> -->
+</body>
+<script>
+    var myArray = [1, 2, 4, 5];
+
+    //for in 遍历的是下标
+    for (var index in myArray) {
+        console.log(index); //0,1,2,3
+    }
+
+    console.log('-----------------------');
+
+    //for of 遍历的是属性 of前面只有一个值,写两个无论使用 () 还是 {} 都报错
+    for (var value of myArray) {
+        console.log(value); //1,2,4,5
+    }
+</script>
+
+</html>

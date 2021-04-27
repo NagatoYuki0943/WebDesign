@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件Prop通信</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--使用v-bind绑定父级属性-->
+        <!--定义成 parent-message，在JS中写成parentMessage,在html中写成 parent-message -->
+        <html-a v-bind:parent-message="message"></html-a>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 定义一个局部组件
+        const htmlA = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件Vue3.x~'
+                }
+            },
+
+            //Vue3.x 提供了一个 props 来获取父组件给子组件传递的值；
+            //PS：props 里定义数组，表示可以定义多个；在 HTML 端使用 v-bind:abc 来获取父组件对应值；  
+            props: ['parentMessage'],
+
+            // 模板
+            template: `
+                <div>{{parentMessage}}</div>
+                <div>{{message}}</div>
+            `,
+        }
+
+        // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: '父组件Vue3.x~'
+                }
+            },
+
+            // 创建一个局部组件，也是一个子组件
+            components: {
+                'html-a': htmlA
+            }
+        })
+
+        // 挂载
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

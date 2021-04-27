@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>循环渲染列表</title>
+</head>
+
+<body>
+
+    <div id="app">
+        计算器：{{ counter }}<br>
+        <!--1. 使用 v-for 指令来渲染一个列表，其中 array 是数据源，item 是元素别名； -->
+        <ul>
+            <li v-for="item in array">{{ item.city }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(item,index) in array">{{ index+1 }}--{{ item.city }}</li>
+        </ul>
+        <hr>
+
+        <!--PS：这里的 in 可以使用 JS 迭代器语法 of：(item, index) of array； -->
+        <!--PS：index 参数在第二位置，item 在第一个参数位置； -->
+        <ul>
+            <li v-for="item of array">{{ item.city }}</li>
+        </ul>
+        <ul>
+            <li v-for="(item,index) of array">{{ index+1 }}--{{ item.city }}</li>
+        </ul>
+        <hr>
+
+
+        <!--2. 如果数据是一个对象，内部包含多个属性，那也可以使用 v-for 遍历； 输出item就是值了-->
+        <ol>
+            <li v-for="item in object">{{ item }}</li>
+        </ol>
+        <!--PS：这里支持(value, name, key)的参数，支持单独输出； -->
+        <ol>
+            <li v-for="(value,name,key) in object">{{ key }}.{{ name }}.{{ value }}</li>
+        </ol>
+        <hr>
+
+
+        <!--3. 支持<template>进行多代码块的渲染方式，比如： -->
+        <ul>
+            <template v-for="(item,index) in array">
+                <li>{{ index+1 }}</li>
+                <li>{{ item.city }}</li>
+            </template>
+        </ul>
+        <hr>
+
+
+        <!--4. v-for 支持数值循环渲染，如下： -->
+        <span v-for="n in 10">{{ n }}</span>
+        <hr>
+
+
+        <!--5. v-if 和 v-for 不推荐在同一元素上使用，因为 if 比 for 权限高，导致无法访问； -->
+        <!--6. 那可以结合<template>来实现使用 if 来判断渲染，具体如下： -->
+        <ul>
+            <template v-for="item of array">
+                <!--上海不输出-->
+                <li v-if="item.city !== '上海'">{{ item.city }}</li>
+            </template>
+        </ul>
+    </div>
+
+
+
+
+</body>
+<script src="../vue.global.js"></script>
+<script>
+    // 声明一个选项对象
+    const App = {
+        // 初始数据
+        data() {
+            return {
+                counter: 100,
+                array: [{
+                    city: '北京',
+                }, {
+                    city: '上海',
+                }, {
+                    city: '广州',
+                }, {
+                    city: '深圳',
+                }, ],
+
+                object: {
+                    name: 'MR.Lee',
+                    gemder: 100
+                }
+            }
+        },
+
+        // 方法
+        methods: {
+
+        },
+
+        // 计算属性
+        computed: {
+
+        }
+    }
+
+    // 全局API对象.创建应用对象返回(选项对象).挂载方法(DOM节点)
+    const vm = Vue.createApp(App).mount('#app')
+</script>
+
+</html>

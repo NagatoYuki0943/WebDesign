@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>应用实例和生命周期</title>
+</head>
+
+<body>
+
+    <div id="app">
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 创建一个应用实例，
+        const app = Vue.createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            },
+
+        })
+
+
+        // 这是一个根组件实例
+        const vm = app.mount('#app')
+            //console.log(vm)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件自定义事件</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--(3). 通过子组件<html-a>中使用 v-on 以自定义事件去执行父组件的一个方法；-->
+        <html-a v-bind:parent-message="message" v-on:child-event="parentFn"></html-a>
+        <hr>
+        <html-b v-bind:parent-message="message"></html-b>
+        <hr>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        //1. 系统内置的事件比如： click、 change 等等， 也可以自定义事件；
+        //2. 而组件中的自定义事件， 可以满足之前无法实现的需求： 更改父组件的值；
+
+
+        // 定义一个局部组件
+        const htmlA = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件A~'
+                }
+            },
+
+            //Vue3.x 提供了一个 props 来获取父组件给子组件传递的值；
+            props: ['parentMessage'],
+
+
+            //(2). 在其中一个子组件，比如 htmlA 中定义一个自定义事件，和 props 的定义方式一样； 这个组件只有名字,它要绑定父级方法,
+            //自定义事件,使用 - 连接符, 相当于click
+            //emits: ['child-event'],
+
+
+            //验证抛出的事件  这个和 props 用法的一样的，具体如下：  验证失败会报错,但是依然可以传递值
+            emits: {
+                // 不验证 
+                //'child-event' : null 
+
+                //复杂验证
+                'child-event': (value) => {
+                    if (value !== 'abc') {
+                        console.log('验证失败');
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            },
+
+
+            //子组件方法
+            methods: {
+                childClick(value) {
+                    //触发自定义事件,参数1是自定义事件; 参数2是参数,可以通过对象传输多个
+                    this.$emit('child-event', value);
+                }
+            },
+
+
+            //(4).在子组件模板中添加一个按钮， 点击后来执行这个自定义事件， 并抛出一个值；
+            template: `
+                <div>{{parentMessage}}</div>
+                <div>{{message}}</div>
+                <!--这里给childClick()传递的值是自己的message,可以更改-->
+                <div v-on:click="childClick(message)">{{message}}</div>
+            `,
+
+
+        }
+
+        const htmlB = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件B~'
+                }
+            },
+
+            //Vue3.x 提供了一个 props 来获取父组件给子组件传递的值；
+            //PS：props 里定义数组，表示可以定义多个；在 HTML 端使用 v-bind:abc 来获取父组件对应值；  
+            props: ['parentMessage'],
+
+            // 模板
+            template: `
+            <div>{{parentMessage}}</div>
+            <div>{{message}}</div>
+        `
+        }
+
+
+        // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: '父组件Vue3.x~'
+                }
+            },
+
+            // 创建一个局部组件，也是一个子组件
+            components: {
+                'html-a': htmlA,
+                'html-b': htmlB
+            },
+
+
+            //(5). 最后一步了：执行父组件的一个方法，并获取子组件传递的值，然后更改父组件内容； 
+            methods: {
+                parentFn(value) {
+                    //获取子组件参数2的值
+                    console.log(value);
+                    this.message = 'aaa'
+                },
+            },
+        })
+
+        // 挂载
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
