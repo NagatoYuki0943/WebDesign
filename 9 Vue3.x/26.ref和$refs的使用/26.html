@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ref和$refs的使用</title>
+</head>
+
+<body>
+    <!--2. ref 是在元素标签中进行设置注册，而$refs 则通过注册的信息进行内容获取； -->
+    <div id="app">
+        <input type="text" value="Mr.Lee" ref="user">
+        <hr>
+        <html-a></html-a>
+        <hr>
+        <!--ref 父组件调用子组件的内容-->
+        <html-a ref="child"></html-a>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        //1. 有时， 我们要操作一下 html 中的 DOM 内容， 比如 < input > 或其中的 value；
+        //2. ref 是在元素标签中进行设置注册， 而$refs 则通过注册的信息进行内容获取；
+        // 因为 ref 本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们 - 它们还不存在！
+        // $refs 也是非响应式的，因此你不应该试图用它在模板中做数据绑定。
+
+
+
+        //3. 在子组件上使用 ref 时，在外部父组件调用时，根据调用链对应即可； 
+        const htmlA = {
+            // 数据
+            data() {
+                return {}
+            },
+
+            //挂载之后可以获取refs
+            mounted() {
+                console.log('子组件:');
+                //user指的是自己定义的ref的名字
+                console.log(this.$refs.user.value); //Mr.Wang
+            },
+
+            // 模板
+            template: `
+                <input type="text" value="Mr.Wang" ref="user">
+            `
+        }
+
+
+        // 创建一个应用实例，
+        const app = Vue.createApp({
+            data() {
+                return {
+
+                }
+            },
+
+
+            //初始化
+            created() {
+                //空的
+                //console.log(this.$refs); //Object {  }
+                //console.log(this.$refs.user.value); // this.$refs.user is undefined
+            },
+
+
+            //挂载之后可以获取refs
+            mounted() {
+                console.log('父组件:');
+                //user指的是自己定义的ref的名字
+                console.log(this.$refs.user.value); //Mr.Lee
+
+
+                console.log('父组件调用子组件:');
+                //this.$refs.child 指的是子组件,使用子组件调用它的refs中的user.value
+                console.log(this.$refs.child.$refs.user.value); //Mr.Wang
+            },
+
+
+            // 创建一个局部组件，也是一个子组件
+            components: {
+                'html-a': htmlA
+            },
+        })
+
+        const vm = app.mount('#app');
+
+        //获取ref中的值
+        //console.log(vm.$refs.user); //<input type="text">
+        //console.log(vm.$refs.user.value); //Mr.Lee
+    </script>
+</body>
+
+</html>

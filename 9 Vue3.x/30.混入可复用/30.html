@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>混入可复用</title>
+</head>
+
+<body>
+
+    <div id="app">
+        计数器: {{ count }}
+        <br> 信息: {{ message }}
+        <br>
+        <button v-on:click="getInfo">button</button>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        //1. 混入(mixin)：用来分发 Vue 组件中可复用的部分，先简单的看下语法： 
+        //2. 选项合并： 如果在组件体内设置自己的选项内容时， 会进行恰当的合并；
+        //     (1).重名时， 会替换掉混入的部分， 没有重名， 则合并；
+        //     (2).如果复用的部分有声明周期钩子， 比如 created()， 将会执行这个；
+        //     (3).如果复用的部分都有声明周期钩子， 那么两个钩子都会被执行；
+        //     (4).如果复用的部分有 methods 等方法， 重名将覆盖mix中的， 不重名则合并；
+
+
+        // 创建可复用的混入
+        const baseMixin = {
+            data() {
+                return {
+                    count: 0
+                }
+            },
+
+
+            //(2).如果复用的部分有声明周期钩子， 比如 created()， 将会执行这个；
+            //它的优先级比下面的data中的高,先调用混入钩子,再执行组件钩子
+            created() {
+                console.log('混入 created');
+                this.count = 200
+            },
+
+
+            //(4).如果复用的部分有 methods 等方法， 重名将覆盖mix中的， 不重名则合并；
+            methods: {
+                getInfo() {
+                    console.log('我是混入方法');
+                }
+            }
+
+        }
+
+        // 创建一个应用实例，
+        const app = Vue.createApp({
+            //载入混入 将代码放进来
+            mixins: [baseMixin],
+
+            data() {
+                return {
+                    //(1).重名时，会替换掉混入的部分; 没有重名，则合并；
+                    count: 100,
+                    message: 'Vue3.x'
+                }
+            },
+
+
+            //(3).如果复用的部分都有声明周期钩子， 那么两个钩子都会被执行；
+            //它的优先级比被引入的created高,先调用混入钩子,再执行组件钩子
+            created() {
+                console.log('应用实例 created');
+                this.count = 300
+            },
+
+
+            //(4).如果复用的部分有 methods 等方法， 重名将覆盖mix中的， 不重名则合并；
+            methods: {
+                getInfo() {
+                    console.log('我是组件方法');
+                }
+            }
+
+
+        })
+
+        // 这是一个根组件实例
+        const vm = app.mount('#app')
+    </script>
+</body>
+
+</html>

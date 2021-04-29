@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件和计算属性</title>
+</head>
+
+<body>
+
+    <div id="app">
+        计算器：{{ counter }}<br>
+
+        <!--v-on:click，点击触发事件； -->
+        <!--这么写,点击就能让counter变化-->
+        <button v-on:click="counter++">counter++"</button>
+
+
+        <!--调用methods中的方法-->
+        <button v-on:click="addCounter">counter++"</button>
+
+        <!--属性计算-->
+        <div>{{firstName}}{{lastName}}</div>
+        <div>{{firstName + lastName}}</div>
+
+
+        <!-- 调用methods方法,直接写方法名 + 括号 -->
+        <div>{{ fullName() }}</div>
+        <!--调用computed属性,不用加括号-->
+        <div>{{ fullName2 }}</div>
+    </div>
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 声明一个选项对象
+        const App = {
+            // 初始数据
+            data() {
+                return {
+                    counter: 100,
+                    firstName: 'Mr.',
+                    lastName: 'Lee'
+                }
+            },
+
+            // 事件处理方法 
+            methods: {
+                // 累加
+                addCounter() {
+                    //直接拿到数据
+                    this.counter++;
+                },
+
+                //使用方法进行返回，把运算和显示整合起来； 
+                //全名方法
+                fullName() {
+                    return this.firstName + this.lastName + ' fullName';
+                },
+            },
+
+            //计算属性
+            computed: {
+                //全名
+                fullName2() {
+                    return this.firstName + this.lastName + ' fullName2';
+                }
+            }
+            //PS：计算属性和属性一样的调用方式，而方法调用却需要括号，所以推荐用计算属性； 
+            //PS：计算属性具有缓存，当值没有改变时，不会重新执行方法，而去使用缓存；
+            //PS：可以参考手册去了解一下计算属性缓存的相关细节，本人推荐需要在实战中体会更好；
+
+        }
+
+        // 全局API对象.创建应用对象返回(选项对象).挂载方法(DOM节点)
+        const vm = Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>

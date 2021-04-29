@@ -1,0 +1,14 @@
+{
+  "name": "03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "webpack-dev-server --config ./dev.config.js",
+    "build" : "webpack --config ./prod.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

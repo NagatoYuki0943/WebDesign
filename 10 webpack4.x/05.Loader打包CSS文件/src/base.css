@@ -1,0 +1,5 @@
+/*base.css*/
+@import "font.css";
+body {
+    background-color: burlywood;
+}

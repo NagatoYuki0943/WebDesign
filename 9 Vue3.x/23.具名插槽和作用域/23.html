@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>具名插槽和作用域</title>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <!--没对应的名字,就不会导入-->
+        <!-- <html-a>@@@@</html-a> -->
+        <!--slot有了名字要使用v-slot绑定-->
+        <!-- <html-a v-slot:header>123</html-a> -->
+
+
+        <!--1. 	用于作用域的问题，插槽内的值是无法获取到子组件 data 属性的内容的； -->
+        <!--这里填充的是父组件的值,因为在这里插值只能插父组件-->
+        <!-- <html-a>{{ message }}</html-a> -->
+
+
+        <!--2. 为了解决这个问题，插槽提供了 v-slot:default 方案来处理，具体如下： -->
+        <!--slotProps是一个对象,里面的值是绑定的值,-->
+        <html-a v-slot:default="slotProps">
+            {{ slotProps }}
+        </html-a>
+        <hr>
+        <!--abc是自己绑定的子组件中data中的值-->
+        <html-a v-slot:default="slotProps">
+            {{ slotProps.abc }}
+        </html-a>
+        <hr>
+
+        <!--3. 下面是作用域插槽的一些简写，具体如下： -->
+        <html-a v-slot="slotProps">
+            {{ slotProps.abc }}
+        </html-a>
+        <hr>
+
+        <!--4. 使用 ES6+的解构语法，更加方便，具体如下： -->
+        <!--abc是下面自定义的名字,直接传递过去就可以,不用slotProps-->
+        <html-a v-slot="{abc}">
+            {{abc}}
+        </html-a>
+        <hr>
+        <!--或使用结构 abc: info 将abc赋值给info-->
+        <html-a v-slot="{abc: info}">
+            {{info}}
+        </html-a>
+        <hr>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 定义一个局部组件
+        const htmlA = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件Vue3.x~'
+                }
+            },
+
+            //1. 具名插槽也就是给插槽起一个名字，然后调用对应的内容，而其它则被忽略； 
+            // 模板
+            // template: `
+            //     <div>{{message}}</div>
+            //     <div><slot name="header">0000</slot></div>
+            // `,
+
+            template: `
+                <div>{{message}}</div>
+                <!--v-bind的abc是自定义的名字,后面的message是子组件data中的数据-->
+                <div><slot v-bind:abc="message"></slot></div>
+            `,
+
+
+        }
+
+        // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+        const app = Vue.createApp({
+            data() {
+                return {}
+            },
+
+            // 创建一个局部组件，也是一个子组件
+            components: {
+                'html-a': htmlA
+            }
+        })
+
+        // 挂载
+        app.mount('#app')
+    </script>
+</body>
+
+
+
+</html>

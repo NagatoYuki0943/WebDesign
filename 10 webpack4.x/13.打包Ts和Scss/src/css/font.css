@@ -1,0 +1,9 @@
+:root {
+    --red : red;
+}
+h1 {
+    font-size: 200px;
+    display: flex;
+    transform: rotateX(130deg);
+    color : var(--red);
+}

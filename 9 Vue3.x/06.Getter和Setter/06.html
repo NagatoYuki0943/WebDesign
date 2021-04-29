@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Getter和Setter</title>
+</head>
+
+<body>
+
+    <div id="app">
+        计算器：{{ counter }}
+        <div>{{ fullName }}</div>
+    </div>
+
+
+</body>
+<script src="../vue.global.js"></script>
+<script>
+    // 声明一个选项对象
+    const App = {
+        // 初始数据
+        data() {
+            return {
+                counter: 100,
+                firstName: 'Mr.',
+                lastName: 'Lee'
+            }
+        },
+
+        // 方法
+        methods: {
+
+        },
+
+
+        //get和set要写在computed中,methods中没作用
+        // 计算属性
+        computed: {
+            //所有属性字段有 Getter 和 Setter 方法； 
+
+            fullName: {
+                //获取
+                get() {
+                    return this.firstName + this.lastName + ' fullName';
+                },
+                //设置
+                set(value) {
+                    console.log(value); //Mr.Wang
+                    const str = value.split('.');
+
+                    //更改原值
+                    this.firstName = str[0] + '.';
+                    this.lastName = str[1];
+                }
+            }
+        }
+    }
+
+    // 全局API对象.创建应用对象返回(选项对象).挂载方法(DOM节点)
+    const vm = Vue.createApp(App).mount('#app')
+
+    //尝试修改,触发上面的set方法
+    vm.fullName = 'Mr.Wang';
+
+
+    // PS： Setter 会被先执行进行赋值， 然后 Getter 执行取出， 可通过控制台输出了解顺序；
+    // PS： 当没有赋值操作， 则执行一次 get， 当有赋值操作， 会以 get - > set - > get 三次执行；
+    // PS： 赋值通过 vm.fullName = 'Miss.Wang'  进行赋值；
+</script>
+
+</html>

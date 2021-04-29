@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>watch监听进阶</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text" v-model="user.name">
+        <br> {{user.name}}
+    </div>
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 创建一个应用实例，
+        const app = Vue.createApp({
+            data() {
+                return {
+                    user: {
+                        name: 'Mr.Lee',
+                        age: 100
+                    }
+                }
+            },
+
+            // 方法
+            methods: {
+                getUser(newValue, oldValue) {
+                    console.log('监听');
+                    console.log('newName ' + newValue);
+                    console.log('oldName ' + oldValue);
+                    console.log('======================');
+                },
+
+
+                //深度绑定
+                //PS：此时在 getUser 方法传递的参数只有一个，且只是 user 对象实例； 
+                getUser1(obj) {
+                    console.log('监听1');
+                    //修改后的值
+                    console.log(obj.name); //Mr.Lee1
+                    console.log(obj.age); //100
+                },
+
+                //深度绑定
+                getUser2(obj) {
+                    console.log('监听2');
+                    //修改后的值
+                    console.log(obj.name); //Mr.Lee1
+                    console.log(obj.age); //100
+                },
+            },
+
+
+            // 监听对象
+            watch: {
+                //1. 上一节第三种方式，通过计算属性来实现 watch()监听，也可以用字符串形式；
+                'user.name': 'getUser',
+
+
+                //2. 如果说，对象有多个数据那么上面两种方法就存在了局限性(只能得到对象的一个属性)，需要更深度的监听； 
+                //3. watch 提供了监听的三种属性， 具体如下：
+                //    (1).handle： 要监听的方法名；
+                //    (2).deep： 是否开启深度监听；
+                //    (3).immediate： 是否以当前的初始值执行方法(立即执行)；
+
+
+                //执行一个监听
+                // user: {
+                //     handler: 'getUser', // 执行方法 
+                //     deep: true, // 开启深度监听 
+                //     immediate: true, // 立即执行,刷新时立即执行,不开启只有触发就执行
+                // }
+
+
+                //4. 使用数组的方式，可以同时实现多个监听； 
+                user: [{
+                    handler: 'getUser1', // 执行方法 
+                    deep: true, // 开启深度监听 
+                }, {
+                    handler: 'getUser2', // 执行方法 
+                    deep: true, // 开启深度监听 
+                }]
+            }
+        })
+
+        // 这是一个根组件实例
+        const vm = app.mount('#app')
+    </script>
+</body>
+
+</html>

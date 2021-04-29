@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>应用实例和生命周期</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <b>{{ count }}</b>
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // (3).updated 钩子： 当虚拟 DOM 被修改后会执行；
+
+
+        //1. 首先，回顾一下：我们创建一个应用实例，具体方案如下：
+        const app = Vue.createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            },
+
+            // (1).created 钩子： 当实例被创建后会执行(在模板渲染前执行， 一般用于初始化属性值)；
+            created() {
+                //this指的是根组件对象,就是下面的vm
+                console.log(this);
+
+                this.count = 100;
+
+                //无法获取dom, 会报错
+                //console.log(document.getElementById('app').innerHTML);
+            },
+
+
+            // (2).mounted 钩子： 当实例被挂载后会执行(在模板渲染完成后执行， 此时可以操作 DOM)；
+            mounted() {
+                //可以获取dom
+                console.log(document.getElementById('app').innerHTML); //<b>100</b>
+            },
+
+
+            //(3) .updated 钩子：当虚拟 DOM 被修改后会执行； 仅仅修改vue数据并不会执行
+            updated() {
+                console.log('数据被修改了');
+            },
+
+
+
+        });
+        //console.log(app);
+        //返回一个对象
+        //Object { _uid: 0, _component: {}, _props: null,
+
+
+        // app.mount()这个返回的是一个代理对象，并不返回应用本身 
+        // 它返回的是这个组件本身，也就是根组件
+        const vm = app.mount('#app');
+        //console.log(vm); //返回一个代理对象  Proxy { <target>: {…}, <handler>: {…} }
+
+        //2. 由于， mount()返回的是根组件实例对象， 那么它可以直接调用 data()内的数据； 	
+        //console.log(vm.count); //0
+    </script>
+</body>
+
+</html>

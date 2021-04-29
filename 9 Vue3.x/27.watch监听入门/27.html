@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>watch监听入门</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text " v-model="user">
+        <br>
+        <div>{{ user }}</div>
+        <hr>
+        <input type="text " v-model="age">
+        <br>
+        <div>{{ age }}</div>
+        <hr>
+        <input type="text " v-model="hobby.pantyhose">
+        <br>
+        <div>{{ hobby.pantyhose }}</div>
+    </div>
+
+    <script src="../vue.global.js"></script>
+    <script>
+        //1. watch 是一个监听选项对象，用于对数据的变化实现监听的过程； 
+        //3. watch 监听选项对象，和 data、computed、methods 处在同一层级上； 
+
+        // 创建一个应用实例，
+        const app = Vue.createApp({
+            data() {
+                return {
+                    user: 'Mr.Lee',
+                    age: 16,
+                    hobby: {
+                        pantyhose: true
+                    }
+                }
+            },
+
+
+            // 方法
+            methods: {
+                //5. 当然，我们也可以将逻辑封装到方法里,在watch中调用
+                ageChange(newValue, oldValue) {
+                    console.log('newAge ' + newValue);
+                    console.log('oldAge ' + oldValue);
+                },
+
+                hobbyChange(newValue, oldValue) {
+                    console.log('newHobby ' + newValue);
+                    console.log('oldHobby ' + oldValue);
+                }
+            },
+
+
+            // 计算属性
+            computed: {
+                //6. 如果要监听的类型是对象，那么需要配合计算属性进行监听，具体如下： 
+                getHobby() {
+                    return this.hobby.pantyhose;
+                }
+            },
+
+
+            // 监听对象
+            watch: {
+                //4. 在内部设置的方法名和被监听的 v-model 的值名是一样的，并且有两个参数； 
+                // 参数 1 为新值，参数 2 为上一次值 
+                user(newValue, oldValue) {
+                    console.log('newUser ' + newValue);
+                    console.log('oldUser ' + oldValue);
+                },
+
+
+                //5. 当然，我们也可以将逻辑封装到method方法里,在watch中调用
+                age: 'ageChange',
+
+
+                //6. 如果要监听的类型是对象，那么需要配合计算属性进行监听，具体如下： 
+                //前面是computed, 后面是methods
+                getHobby: 'hobbyChange'
+            }
+
+        })
+
+        // 这是一个根组件实例
+        const vm = app.mount('#app')
+    </script>
+</body>
+
+</html>

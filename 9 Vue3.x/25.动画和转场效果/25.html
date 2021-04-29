@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动画和转场效果</title>
+    <style>
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 0.5s ease;
+        }
+        
+        .fade-enter-from,
+        .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--3. 创建一个按钮、要切换进场和离场的内容，以及设置默认显示的属性； -->
+    <!--4. 用一个表达式来实现简单的布尔值的切换功能，具体如下： -->
+    <div id="app">
+        <!--show = !show 取反给自己-->
+        <button v-on:click="show = !show">切换{{ show }}</button>
+
+        <!--6. 最后一步，使用 Vue 的效果组件<transition>来实现过渡效果； -->
+        <!--name填写css中的fade-->
+        <transition name="fade">
+            <p v-if="show">显示/隐藏</p>
+        </transition>
+    </div>
+
+
+    <!-- PS：这是手册上的第一个小案例，我们一句句分析一下； 
+        (1) .show : true，用于判断 dom 节点 p 状态； 
+        (2) .show = !show，注意这里不是!=，而是!show，表示 show=true|false； 
+        (3) . <transition>是 Vue 过渡动画组件，包含在里面才能实现动画效果； 
+        (4) .name=fade，定义 CSS 样式的前缀名称，都已 fade 为前缀； 
+    PS：在进入过渡或离开的过程中，有 6 种 class 可供切换，没有 name 默认为 v： 
+        (1) .v-enter：进入过渡的开始状态； 
+        (2) .v-enter-active：进入过渡的生效状态； 
+        (3) .v-enter-to：进入过渡的结束状态； 
+        (4) .v-leave：离开过渡的开始状态； 
+        (5) .v-leave-active：离开过渡的生效状态；
+        (6) .v-leave-to：离开过渡的结束状态； -->
+
+
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        //1. 动画效果并不是 Vue 的核心功能， 这里简单的了解下即可， 原因如下：
+        //    (1).内容不难， 但繁杂(主要 CSS 调用多)；
+        //    (2).学了一个， 其它的参考手册， 对应着搭建即可完成效果；
+
+
+
+        // 创建一个应用实例，
+        const app = Vue.createApp({
+            data() {
+                return {
+                    show: true
+                }
+            },
+
+            created() {
+                this.show = true;
+            },
+
+        })
+
+        // 这是一个根组件实例
+        const vm = app.mount('#app')
+    </script>
+</body>
+
+</html>

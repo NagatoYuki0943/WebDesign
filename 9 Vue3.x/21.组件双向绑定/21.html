@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件双向绑定</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--1. 首先，回顾一下双向绑定的使用方法，使用 v-model 即可实现； -->
+        <input type="text" v-model="message">
+        <!--2. 当然，它的原理就是通过 input 事件来进行内容的替换，如果改成完全形式如下： -->
+        <input type="text" v-bind:value="message" v-on:input="message = $event.target.value">
+        <hr>
+
+
+        <!--首先，在组件调用的地方改写成如下格式： v-bind => v-model -->
+        <!--PS：将 v-bind:改成 v-model 即双向绑定，而模板内部需要绑定对应的父组件属性； -->
+        <html-a v-model:parent-message="message"></html-a>
+
+
+
+    </div>
+
+
+
+    <script src="../vue.global.js"></script>
+    <script>
+        // 定义一个局部组件
+        const htmlA = {
+            // 数据
+            data() {
+                return {
+                    message: '子组件Vue3.x~'
+                }
+            },
+
+            //prop通信
+            props: ['parentMessage'],
+
+
+            // 模板
+            template: `
+                <div>{{parentMessage}}</div>
+                <!--2. 双向绑定父级的值不能使用v-model,要使用完整形式-->
+                <div><input type="text" v-bind:value="parentMessage" v-on:input="$emit('update:parentMessage', $event.target.value)"/></div>
+                     <input type="text" v-bind:value="parentMessage" v-on:input="abc">
+
+                <!--3. 也可以通过计算属性中的 get()和 set()来改写组件中的双向绑定； -->
+                <div><input type="text" v-model="abc"/></div>
+
+                <div>{{message}}</div>
+                <!--更改自己的数据-->
+                <div><input type="text" v-model="message"/></div>
+            `,
+
+
+            //get和set要写在computed中
+            computed: {
+                //3. 也可以通过计算属性中的 get()和 set()来改写组件中的双向绑定；
+                abc: {
+                    get() {
+                        return this.parentMessage;
+                    },
+                    set(value) {
+                        this.$emit('update:parentMessage', value);
+                    }
+                },
+            },
+        }
+
+
+        // 创建一个Vue应用实例，这个本身也是一个组件，根组件，最顶层的
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: '父组件Vue3.x~'
+                }
+            },
+
+
+            // 创建一个局部组件，也是一个子组件
+            components: {
+                'html-a': htmlA
+            }
+        })
+
+        // 挂载
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

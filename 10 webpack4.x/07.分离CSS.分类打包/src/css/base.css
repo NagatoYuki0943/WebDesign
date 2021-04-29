@@ -1,0 +1,15 @@
+/*base.css*/
+@import "font.css";
+body {
+    background-color: burlywood;
+}
+#ts {
+    width: 609px;
+    height: 609px;
+    background-image: url("../img/ts.png");
+}
+#loading {
+    width: 780px;
+    height: 422px;
+    background-image: url("../img/loading.gif");
+}
