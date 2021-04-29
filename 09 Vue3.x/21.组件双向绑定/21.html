@@ -19,9 +19,6 @@
         <!--首先，在组件调用的地方改写成如下格式： v-bind => v-model -->
         <!--PS：将 v-bind:改成 v-model 即双向绑定，而模板内部需要绑定对应的父组件属性； -->
         <html-a v-model:parent-message="message"></html-a>
-
-
-
     </div>
 
 
@@ -46,8 +43,7 @@
                 <div>{{parentMessage}}</div>
                 <!--2. 双向绑定父级的值不能使用v-model,要使用完整形式-->
                 <div><input type="text" v-bind:value="parentMessage" v-on:input="$emit('update:parentMessage', $event.target.value)"/></div>
-                     <input type="text" v-bind:value="parentMessage" v-on:input="abc">
-
+                
                 <!--3. 也可以通过计算属性中的 get()和 set()来改写组件中的双向绑定； -->
                 <div><input type="text" v-model="abc"/></div>
 

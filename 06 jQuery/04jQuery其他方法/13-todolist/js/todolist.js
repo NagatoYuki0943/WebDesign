@@ -76,7 +76,7 @@ $(function() {
         $.each(data, function(i, n) {
             //console.log(n);
             //Object { title: "aaa", done: false }  n个信息  
-            //done=true 说明已完成,就放到下面去                                                                              i值得是数据索引号,方便删除
+            //done=true 说明已完成,就放到下面去
             if (n.done) {
                 $('ul').prepend("<li><input type='checkbox' checked='checked'><p>" + n.title + "</p><a href='javascript:;' id=" + i + " >D</a></li>");
                 doneCount++;

@@ -127,6 +127,9 @@ $(function() {
         //2直接找到相应的标签即可,不需要从父亲直接找
         $('.itxt').each(function(i, ele) {
             //累加个数
+            //下面四个方法两两作用相同
+            //Number.parseInt() parseInt()
+            //Number.parseFloat() parseFloat()
             count += parseInt($(ele).val());
         });
 
@@ -179,10 +182,5 @@ $(function() {
         //2.重新计算总价
         getSum();
     });
-
-
-
-
-
 
 })
