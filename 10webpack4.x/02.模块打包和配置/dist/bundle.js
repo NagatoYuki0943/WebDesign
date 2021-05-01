@@ -9,23 +9,23 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./02.模块打包和配置/src/index.js":
+/*!*********************************!*\
+  !*** ./02.模块打包和配置/src/index.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("//nodejs导入方式,浏览器无法使用\r\nconst name = __webpack_require__(/*! ./module.js */ \"./src/module.js\");\r\nconsole.log(name);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("//nodejs导入方式,浏览器无法使用\r\nconst name = __webpack_require__(/*! ./module.js */ \"./02.模块打包和配置/src/module.js\");\r\nconsole.log(name);\n\n//# sourceURL=webpack://10webpack4.x/./02.%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E5%92%8C%E9%85%8D%E7%BD%AE/src/index.js?");
 
 /***/ }),
 
-/***/ "./src/module.js":
-/*!***********************!*\
-  !*** ./src/module.js ***!
-  \***********************/
+/***/ "./02.模块打包和配置/src/module.js":
+/*!**********************************!*\
+  !*** ./02.模块打包和配置/src/module.js ***!
+  \**********************************/
 /***/ ((module) => {
 
-eval("//导出\r\nmodule.exports = {\r\n    name: 'Mr.Lee'\r\n};\n\n//# sourceURL=webpack:///./src/module.js?");
+eval("//导出\r\nmodule.exports = {\r\n    name: 'Mr.Lee'\r\n};\n\n//# sourceURL=webpack://10webpack4.x/./02.%E6%A8%A1%E5%9D%97%E6%89%93%E5%8C%85%E5%92%8C%E9%85%8D%E7%BD%AE/src/module.js?");
 
 /***/ })
 
@@ -60,7 +60,7 @@ eval("//导出\r\nmodule.exports = {\r\n    name: 'Mr.Lee'\r\n};\n\n//# sourceUR
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./02.模块打包和配置/src/index.js");
 /******/ 	
 /******/ })()
 ;
