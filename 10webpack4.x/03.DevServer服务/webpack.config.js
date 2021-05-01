@@ -2,10 +2,11 @@
     webpack配置文件，每次执行会自动读取这里的配置
  */
 
+//路径
 const path = require('path');
 
 module.exports = {
-    //出口文件
+    //入口文件
     entry: './src/index.js',
 
     //出口文件

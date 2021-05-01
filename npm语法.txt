@@ -25,6 +25,13 @@
     npm install -g cnpm --registry=https://registry.npm.taobao.org 
 
 
+npm安装方式区别
+    npm install module_name -S    即    npm install module_name --save      写入dependencies
+    npm install module_name -D    即    npm install module_name --save-dev  写入devDependencies
+    npm install module_name -g 全局安装(命令行使用)
+    npm install module_name 本地安装(将安装包放在 ./node_modules 下)
+
+
 安装webpack
     webpack5要和webpack-cli3同时使用,和4使用会有bug
     首先，先全局安装，需要两个：webpack 核心模块、webpack-cli 命令行工具； 
@@ -58,13 +65,25 @@
         npm uni -g webpack webpack-cli
 
 
-PS：在应用根目录安装，package.json 会自动添加 webpack-dev-server 版本号 
+webpack 使用
+webpack.config.json  是配置文件
+在这个目录直接使用 webpack 命令就能使用
 
+
+PS：在应用根目录安装，package.json 会自动添加 webpack-dev-server 版本号 
 
 在package.json中的scripts中写名字和命令,在外面直接使用 npm run 名字即可
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev" : "webpack-dev-server"
+        "build": "webpack ./02.模块打包和配置/src/index.js -o ./02.模块打包和配置/dist/bundle.js --mode=development"
     },
 
-    npm run dev
+    npm run build
+
+
+
+兼容列表
+    "webpack": "^5.36.2",
+    "webpack-cli": "^3.3.12",   //不要用最新版
+
+    "less-loader": "^6.2.0",    //不要用最新版
