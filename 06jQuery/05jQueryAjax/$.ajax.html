@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$.ajax</title>
+</head>
+
+<body>
+
+    <button id="button">button</button>
+    <table class="table" style="display: none;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+</body>
+
+
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function() {
+
+        $('#button').on({
+            click: function() {
+
+                //1.success 和 Promise 写法
+                $.ajax({
+                    type: 'GET', //请求方式
+                    url: 'js/data.json', //请求地址
+                    data: { //请求数据,没数据可以选择
+                        username: '张三',
+                        password: 123456
+                    },
+                    dataType: 'json', //预期返回数据类型
+
+                    // success(data) {      //成功时的回调方法,可以使用 then
+                    //     console.log(data);
+                    // }
+
+                }).then((data) => {
+                    //遍历添加数据
+                    $.each(data, (index, item) => {
+                        //console.log($(item)[0].ID);
+                        let tr = $(`<tr><td>${$(item)[0].ID}</td><td>${$(item)[0].Name}</td><td>${$(item)[0].Age}</td></tr>`)
+                        $('.table').append(tr).fadeIn();
+                    })
+                });
+
+
+                //2. async await写法
+                let a = async() => {
+                    let data = await $.ajax({
+                        type: 'GET', //请求方式
+                        url: 'js/data.json', //请求地址
+                        dataType: 'json', //预期返回数据类型
+                    });
+
+                    $.each(data, (index, item) => {
+                        let tr = $(`<tr><td>${$(item)[0].ID}</td><td>${$(item)[0].Name}</td><td>${$(item)[0].Age}</td></tr>`)
+                        $('.table').append(tr).fadeIn();
+                    })
+                }
+                a();
+
+            }
+        })
+
+
+
+        //Array(4) [ {…}, {…}, {…}, {…} ] ​ 
+        //0: Object { ID: 1, Name: "张三", Age: 18 } ​ 
+        //1: Object { ID: 2, Name: "李四", Age: 16 } ​ 
+        //2: Object { ID: 3, Name: "王五", Age: 19 } ​ 
+        //3: Object { ID: 4, Name: "赵六", Age: 15 } ​ 
+        //length: 4
+
+    })
+</script>
+
+</html>
+
+</html>

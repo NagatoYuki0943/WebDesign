@@ -38,7 +38,7 @@
     :eq(index)      $('li:eq(2)')               获取到的li元素中,选择索引号为2的元素,index从0开始
     :odd            $('li:odd')                 获取到的li元素中,选择索引为奇数的元素,index从0开始,所以选择的是偶数
     :even           $('li:even')                获取到的li元素中,选择索引为偶数的元素,index从0开始,所以选择的是奇数
-    :checked        $('.checkbox:checked')      单选获取选中的部分
+    :checked        $('.mycheckbox:checked')    单选获取选中的部分
 
 
 

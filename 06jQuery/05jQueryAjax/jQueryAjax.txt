@@ -1,0 +1,66 @@
+它们都支持Promise和async
+
+
+$.ajax
+    格式: $.ajax({});
+
+    参数:
+        type:   请求方式  GET/POST/PUT/DELETE       常用
+
+        url:    请求地址url                         常用
+
+        async:  是否异步,默认true,表示异步
+
+        data:   发送到服务器的数据                    常用
+
+        dataType:                                  常用
+                预期服务器返回的数据类型
+
+        contentType:
+                发送数据到服务器时所使用的内容类型。默认是："application/x-www-form-urlencoded"。
+
+        success:                                   常用
+                请求成功时调用此函数
+
+        error:  请求失败调用此函数
+
+  
+get请求
+    $.ajax({
+        type: 'GET', 
+        url: 'js/data.json', 
+        data: { 
+            username: '张三',
+            password: 123456
+        },
+        dataType: 'json', 
+    }).then((data) => {})
+
+
+
+$.get
+    执行get请求,执行成功后调用回调函数,如果需要在出错时执行函数,要使用$.ajax
+    $.get('请求地址',{请求参数对象},()=>{回调函数});
+
+
+    //1.请求json文件,忽略返回数据
+    $.get('js/data.json');
+
+    //2.请求json文件,传递参数,忽略返回值
+    $.get('js/data.json',{name:'张三',age:100});
+
+    //3.请求json文件,拿到返回值
+    $.get('js/data.json',(data)=>{console.log(data)});
+
+    //4.请求json文件,传递参数,拿到返回值
+    $.get('js/data.json',{name:'张三',age:100},(data)=>{console.log(data)});
+
+
+$.post
+    执行post请求
+    $.post('请求地址',{请求参数对象},()=>{回调函数});
+
+
+$.getJSON
+    必须返回json,可以是json字符串
+    $.getJSON('请求地址',{请求参数对象},()=>{回调函数});

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$.getJSON</title>
+</head>
+
+<body>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function() {
+        //普通回调函数
+        $.getJSON('js/data.json', {
+            name: 111
+        }, (data) => {
+            console.log(data);
+        })
+
+        //Promise写法
+        $.getJSON('js/data.json').then((data) => {
+            console.log(data);
+        })
+
+
+        let a = async() => {
+            let data = await $.getJSON('js/data.json');
+            console.log(data);
+        }
+        a();
+    })
+
+    //3次打印
+    //0: Object { ID: 1, Name: "张三", Age: 18 }​
+    //1: Object { ID: 2, Name: "李四", Age: 16 }    
+    //2: Object { ID: 3, Name: "王五", Age: 19 }
+    //3: Object { ID: 4, Name: "赵六", Age: 15 }
+</script>
+
+</html>

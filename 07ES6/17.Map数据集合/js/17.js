@@ -15,7 +15,7 @@ console.log(map1); //Map { name → "Yuki", age → 100 }
 //size长度
 console.log(map1.size); //2
 
-//get()获取
+//get()获取 里面填下标,获取的是值
 console.log(map1.get('name')); //Yuki
 console.log('==================');
 
