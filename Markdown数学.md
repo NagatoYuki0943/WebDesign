@@ -205,11 +205,13 @@
 
 
 ```ruby
-$$\begin{matrix}
+$$
+\begin{matrix}
 1&0&0\\
 0&1&0\\
 0&0&1\\
-\end{matrix}$$
+\end{matrix}
+$$
 ```
 
 呈现为：
