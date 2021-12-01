@@ -1,4 +1,4 @@
-//一. 数组解构赋值，有两种基本的写法：1.分行解构；2 单行解构； 
+//一. 数组解构赋值，有两种基本的写法：1.分行解构；2 单行解构；
 console.log('数组解构');
 
 //1. 分行解构；
@@ -25,25 +25,25 @@ console.log('===========================');
 
 
 //4. 从上面的例子分行或单行，都可以确定必须一一完美匹配才可以正确赋值；
-//数组层次也需要匹配 
+//数组层次也需要匹配
 let [name4, [age4, gender4]] = ['Mr.Qian', [15, 'male']];
 console.log(name4, age4, gender4); //Mr.Qian 15 male
 
 
 
-//5. 用逗号作为占位符不赋值 
+//5. 用逗号作为占位符不赋值
 let [, , gender5] = ['Mr.Lee', 100, '男'];
 console.log(gender5); //男
 
 
 
-//6. 在变量解构时，可以在数组的元素中设置一个默认值； 
+//6. 在变量解构时，可以在数组的元素中设置一个默认值；
 let [name6, age6, gender6 = 'female'] = ['Miss.Zhang', 11];
 console.log(name6, age6, gender6); //Miss.Zhang 11 female
 
 
 
-//7. 还有一种...var 的语法，可以将没有赋值的内容都赋值给这个变量,形成一个数组； 
+//7. 还有一种...var 的语法，可以将没有赋值的内容都赋值给这个变量,形成一个数组；
 let [name7, ...other7] = ['Mr Hai', 100, 'fff'];
 console.log(name7, other7); //Mr Hai Array [ 100, "fff" ]
 console.log('===========================');
