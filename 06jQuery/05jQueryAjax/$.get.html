@@ -13,13 +13,21 @@
 </body>
 <script src="js/jquery.min.js"></script>
 <script>
+    // url 参数 返回处理方法
     $(function() {
-        $.get('js/data.json', {
-            name: 111
-        }, (data) => {
-            console.log(data);
-        })
-    })
+        $.get(
+            'js/data.json',
+            {name: 111},
+            (data) => {
+                console.log(data);
+            })
+
+        $.get(
+            'js/data.json',
+            {name: 111}).
+            then((data) => {
+                console.log(data);
+            })
 </script>
 
 </html>
