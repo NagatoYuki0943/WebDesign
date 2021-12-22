@@ -11,33 +11,30 @@ jQuery 尺寸、位置操作
     outerWidth(true)/outerHeight(true)      取得匹配元素宽度和高度值,包含padding,border,margin
 
     以上参数为空，则是获取相应值，返回的是数字型。
-    
+
     如果参数为数字，则是修改相应值。
     参数可以不必写单位。
     $("div").width(300);
-
 
 
 2  jQuery 位置
     位置主要有三个： offset()、position()、scrollTop()/scrollLeft()
 
     a. offset() 设置或获取元素偏移
-        offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。 
-        
+        offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。
+
         Object { top: 100, left: 100 }
         该方法有2个属性 left、top 。
-        
+
         offset().top  用于获取距离文档顶部的距离，
         offset().left 用于获取距离文档左侧的距离。
 
         可以设置元素的偏移：offset({ top: 10, left: 30 });
 
-
     b. position() 获取元素偏移
         position() 方法用于返回被选元素相对于带有定位的父级偏移坐标，如果父级都没有定位，则以文档为准。
         该方法有2个属性 left、top。position().top 用于获取距离定位父级顶部的距离，position().left 用于获取距离定位父级左侧的距离。
         该方法只能获取,不能设置。
-
 
     c.  scroll()页面滚动事件
         scrollTop()/scrollLeft() 设置或获取元素被卷去的头部和左侧,是被卷起来的距离
@@ -50,7 +47,6 @@ jQuery 尺寸、位置操作
             });
 
 
-
 3  案例：带有动画的返回顶部
     核心原理： 使用animate动画返回顶部。
     animate动画函数里面有个scrollTop 属性，可以设置位置
@@ -58,7 +54,6 @@ jQuery 尺寸、位置操作
     但是是元素做动画，因此 $(“body,html”).animate({scrollTop: 0})
 
     设置的是整个页面,不能获取document,要用body,html.因为animate要设置属性,document不是属性,body,html是属性
-
 
 
 4  案例： 品优购电梯导航

@@ -24,18 +24,17 @@ $.ajax
 
         error:  请求失败调用此函数
 
-  
+
 get请求
     $.ajax({
-        type: 'GET', 
-        url: 'js/data.json', 
-        data: { 
+        type: 'GET',
+        url: 'js/data.json',
+        data: {
             username: '张三',
             password: 123456
         },
-        dataType: 'json', 
+        dataType: 'json',
     }).then((data) => {})
-
 
 
 $.get
