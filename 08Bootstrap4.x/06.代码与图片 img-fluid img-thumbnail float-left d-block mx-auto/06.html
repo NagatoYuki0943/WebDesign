@@ -17,62 +17,68 @@
 </head>
 
 <body>
-    <!--1. 使用<code>标签元素，可以将编程代码放入其中，但还是要手动转义特殊符号； -->
-    <!--2. 使用<pre>标签元素，配合<code>实现代码块的效果-->
-    <!--3. 可以在代码区域设置.pre-scrollable 样式，实现固定区域滚动，默认高 350px； -->
+    1. 使用 code 标签元素，可以将编程代码放入其中，但还是要手动转义特殊符号 <br>
+    2. 使用 pre 标签元素，配合 code 实现代码块的效果 <br>
+    3. 可以在代码区域设置.pre-scrollable 样式，实现固定区域滚动，默认高 350px <br>
     <pre class="pre-scrollable" style="width: 500px;height: 150px;">
 		<code>
-			&lt; div&gt; 
-				&lt;span&gt;这是一个代码块效果！&lt;span&gt; 
-			&lt; div&gt; 
-		</code>	
+			&lt; div&gt;
+				&lt;span&gt;这是一个代码块效果&lt;span&gt;
+			&lt; div&gt;
+		</code>
 	</pre>
+    <hr>
 
-
-    <!--4. 使用<var>标签元素标识变量部分； -->
+    4. 使用 var 标签元素标识变量部分
     <var>y</var> = <var>m</var> + <var>b</var>
     <!-- 整体包含原则上是不对的 -->
     <var>y = m + b</var>
+    <hr>
 
-    <!--5. 使用<kbd>标签元素标识键盘输入； -->
+    5. 使用 kbd 标签元素标识键盘输入
     <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>c</kbd>
+    <hr>
 
-
-    <!--6. 使用<samp>标签元素标识这是一个示例； -->
+    6. 使用 samp 标签元素标识这是一个示例
     <samp>这是一段代码</samp>
-
     <br>
-    <!--1. 给图片添加一个.img-fluid 样式或设置 max-width:100%，height:auto； -->
+    <hr>
+    <br>
+
+
+    <h1>图片</h1>
+    1. 给图片添加一个.img-fluid 样式或设置 max-width:100% 就变为响应式
     <img src="img/banner.png" class="img-fluid" alt="响应式图片">
+    <hr>
 
-
-    <!--2. 给小图片加上一个缩略图的样式.img-thumbnail，设置一个空心边框； -->
-    <!--3. 通过设置.float-left 和.float-right 来设置图片的左右浮动； -->
+    2. 给小图片加上一个缩略图的样式.img-thumbnail，设置一个空心边框 <br>
+    3. 通过设置.float-left 和.float-right 来设置图片的左右浮动 <br>
     <img src="img/thumb.png" class="img-thumbnail float-left" alt="左浮动">
     <img src="img/thumb.png" class="img-thumbnail float-right" alt="右浮动">
+    <hr>
 
-    <!--清除上面的浮动-->
+    <!-- style="clear:both;" 清除上面的浮动 -->
     <div style="clear:both;"></div>
+    <hr>
 
-
-    <!--4. 通过.d-block 设置为区块，再通过 margin 左右 auto 方式.mx-auto 实现居中； -->
+    4. 通过.d-block 设置为区块，再通过 margin 左右 auto 方式.mx-auto 实现居中
     <img src="img/thumb.png" class="img-thumbnail d-block mx-auto" alt="居中">
+    <hr>
 
-
-    <!--5. 因为图片本身是内联块属性，所以直接在父层用.text-center 也可以实现居中； -->
+    5. 因为图片本身是内联块属性，所以直接在父层用.text-center 也可以实现居中
     <div class="text-center">
         <img src="img/thumb.png" alt="居中">
     </div>
+    <hr>
 
-
-    <!--6. 使用 HTML5 新标签<picture>来实现响应式图片设置； -->
+    6. 使用 HTML5 新标签 picture 来实现响应式图片设置 <br>
     <picture>
         <source srcset="img/banner2.png" media="(max-wid th:800px) ">
-        <img src="img/banner.png" alt="大图">
+        <img src="img/banner.png" style="height: 300px;" alt="大图">
     </picture>
+    <hr>
 
-
-    <!--7. 使用 figure 和 figcaption 实现图文组合显示； -->
+    7. 使用 figure 和 figcaption 实现图文组合显示 <br>
     <figure class="figure">
         <img src="img/thumb.png" class="figure-img" alt="图文组合">
         <figcaption class="figure-cap tion text-right">

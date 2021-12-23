@@ -20,7 +20,7 @@
 
 <body>
     <div class="container">
-        <!--1. 使用.table 给表格设置一个基类，这是表格的基本样式； -->
+        1. 使用.table 给表格设置一个基类，这是表格的基本样式
         <table class="table">
             <thead>
                 <tr>
@@ -29,6 +29,8 @@
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -47,10 +49,12 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--2. 使用.table-dark 样式，启用颜色反转对比效果； -->
+        2. 使用.table-dark 样式，启用颜色反转对比效果
         <table class="table table-dark">
             <thead>
                 <tr>
@@ -59,6 +63,8 @@
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -77,19 +83,22 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-
-        <!--3. 在<thead>使用.thead-light 或.thead-dark 实现浅黑或深灰色调的标头； -->
+        3. 在 thead 使用.thead-light 或.thead-dark 实现浅黑或深灰色调的标头
         <table class="table">
-            <thead class="thead-dark">
+            <thead class="thead-light">
                 <tr>
                     <th>ID</th>
                     <th>姓名</th>
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -108,18 +117,22 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--4. 使用.table-striped 实现数据表的条纹状显示； -->
+        4. 使用.table-striped 实现数据表的条纹状显示
         <table class="table table-striped">
-            <thead>
+            <thead  class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>姓名</th>
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -138,10 +151,12 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--5. 条纹状显示也适用于反转色调上； -->
+        5. 条纹状显示也适用于反转色调上
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -150,6 +165,8 @@
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -168,18 +185,22 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--6. 默认情况下，边框是不完全的，使用.table-bordered 设置表格边框； -->
+        6. 默认情况下，边框是不完全的，使用.table-bordered 设置表格边框
         <table class="table table-bordered">
-            <thead>
+            <thead class="thead-light">
                 <tr>
                     <th>ID</th>
                     <th>姓名</th>
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -198,10 +219,12 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--7. 表格边框也可以作用域反转色调上； -->
+        7. 表格边框也可以作用域反转色调上
         <table class="table table-dark table-bordered">
             <thead>
                 <tr>
@@ -210,6 +233,8 @@
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -228,11 +253,13 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--8. 使用.table-borderless 设置无边框； -->
-        <!--9. 无边框效果也可以作用于反转色调上； -->
+        8. 使用.table-borderless 设置无边框
+        9. 无边框效果也可以作用于反转色调上
         <table class="table table-dark table-borderless">
             <thead>
                 <tr>
@@ -241,6 +268,8 @@
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -259,19 +288,23 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--10. 使用.table-hover 实现一行悬停效果； -->
-        <!--11. 行悬停效果也可以作用于反转色调上；  -->
-        <table class="table table-dark table-hover">
-            <thead>
+        10. 使用.table-hover 实现一行悬停效果 <br>
+        11. 行悬停效果也可以作用于反转色调上
+        <table class="table table-hover">
+            <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
                     <th>姓名</th>
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -290,10 +323,12 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--12. 使用.table-sm 实现紧缩型表格，反转色调依然支持； -->
+        12. 使用.table-sm 实现紧缩型表格，反转色调依然支持
         <table class="table table-sm">
             <thead>
                 <tr>
@@ -302,6 +337,8 @@
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td>张三</td>
@@ -320,21 +357,25 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--13. 使用.table-success 等语义化实现<tr>或<td>、<th>等效果，反转色调通用-->
-        <!--PS：.table-*中的*包含：active、primary、secondary、danger、warning、info、light、dark。-->
+        13. 使用.table-success 等语义化实现 tr 或 td 、 th 等效果，反转色调通用 <br>
+        PS:.table-*中的*包含:active、primary、secondary、danger、warning、info、light、dark
         <table class="table">
             <thead>
-                <tr class="table-success">
+                <tr>
                     <th>ID</th>
                     <th>姓名</th>
                     <th>性别</th>
                     <th>成绩</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
-                    <td class="table-info">1</td>
+                    <td>1</td>
                     <td>张三</td>
                     <td>男</td>
                     <td>54</td>
@@ -351,10 +392,12 @@
                     <td>女</td>
                     <td>58</td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
+        <hr>
+        <br>
 
-        <!--14. 使用.table-responsive 实现溢出时出现底部滚动条； 左右滑动-->
+        14. 使用.table-responsive 实现溢出时出现底部滚动条 左右滑动
         <table class="table table-responsive">
             <thead>
                 <tr>
@@ -383,8 +426,10 @@
                 </tr>
             </thead>
         </table>
+        <hr>
+        <br>
 
-        <!--15. 使用.table-responsive-sm 实现只有小于 768px 溢出时出现底部滚动条；-->
+        15. 使用.table-responsive-sm 实现只有宽度小于 768px 溢出时出现底部滚动条
         <table class="table table-responsive-sm">
             <thead>
                 <tr>
@@ -416,7 +461,7 @@
     </div>
 
 </body>
-<!-- 引入jQuery文件 -->
+<!--引入jQuery文件 -->
 <script src="../js/jquery-3.6.0.js"></script>
 <script src="../js/bootstrap.js"></script>
 

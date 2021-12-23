@@ -15,11 +15,11 @@
         body {
             margin: 20px;
         }
-        
+
         img {
             margin: 5px;
         }
-        
+
         .rounded-pill {
             width: 200px;
             height: 100px;
@@ -28,29 +28,33 @@
 </head>
 
 <body>
-    <!--1. 使用.border 给元素增加相应的边框，默认是淡灰色； -->
-    <!--2. 如果颜色太淡，可以使用.border-*设置想要的场景，比如.border-success；  -->
-    <!--3. .border-*，包含：primary、secondary、success、danger、warning, info、light、dark 和 white； -->
-    <!--要先写上border或者border-top等,再写颜色才有效-->
+
     <div class="container">
-        <!--border:四面边框;  border-top等等是四面的边框-->
+        <h1>边框,圆角</h1>
+        1. 使用.border 给元素增加相应的边框，默认是淡灰色 <br>
+        2. 如果颜色太淡，可以使用 .border-* 设置想要的场景，比如.border-success <br>
+        3. .border-*，包含:primary、secondary、success、danger、warning, info、light、dark 和 white <br>
+        要先写上border或者border-top等,再写颜色才有效 <br>
+        border:四面边框;  border-top等等是四面的边框 <br>
         <img src="img/img1.png" alt="边框" class="border">
         <img src="img/img1.png" alt="边框" class="border border-success">
         <img src="img/img1.png" alt="边框" class="border-top border-primary">
         <img src="img/img1.png" alt="边框" class="border-botton border-danger">
         <img src="img/img1.png" alt="边框" class="border-left border-info">
         <img src="img/img1.png" alt="边框" class="border-right border-success">
+        <hr>
         <br>
 
-        <!--4. 使用.border-0 消减四周的边框，或使用.border-*-0 消减某一边的边框； border-0 删除全部边框 -->
-        <img src="img/img1.png" alt="边框" class="border-success border border-0">
-        <img src="img/img1.png" alt="边框" class="border-success border border-top-0">
-        <img src="img/img1.png" alt="边框" class="border-success border border-botton-0">
-        <img src="img/img1.png" alt="边框" class="border-success border border-left-0">
-        <img src="img/img1.png" alt="边框" class="border-success border border-right-0">
+        4. 使用 .border-0 消减四周的边框，或使用.border-*-0 消减某一边的边框； border-0 删除全部边框 <br>
+        <img src="img/img1.png" alt="边框" class="border border-success border-0">
+        <img src="img/img1.png" alt="边框" class="border border-success border-top-0">
+        <img src="img/img1.png" alt="边框" class="border border-success border-botton-0">
+        <img src="img/img1.png" alt="边框" class="border border-success border-left-0">
+        <img src="img/img1.png" alt="边框" class="border border-success border-right-0">
+        <hr>
         <br>
 
-        <!--5. 使用.rounded 和.rounded-*实现各种方位圆角； 后面是不同的圆角样式, 0没有样式-->
+        5. 使用 .rounded 和 .rounded-* 实现各种方位圆角； 后面是不同的圆角样式, 0没有样式 <br>
         <img src="img/img2.png " alt="圆角" class="rounded">
         <img src="img/img2.png " alt="圆角" class="rounded-top">
         <img src="img/img2.png " alt="圆角" class="rounded-bottom">
@@ -59,15 +63,18 @@
         <img src="img/img2.png " alt="圆角" class="rounded-circle">
         <img src="img/img2.png " alt="圆角" class="rounded-pill">
         <img src="img/img2.png " alt="圆角" class="rounded-0 ">
+        <hr>
         <br>
 
-        <!--6. 使用.rounded-sm 和.rounded-lg 实现圆角半径大小； -->
+        6. 使用 .rounded-sm 和 .rounded-lg 实现圆角半径大小 <br>
         <img src="img/img2.png " alt="圆角" class="rounded-sm">
         <img src="img/img2.png " alt="圆角" class="rounded-lg">
+        <hr>
         <br>
 
 
-        <!--1. 使用.text-*将文本设置成指定的颜色，比如：text-success； -->
+        <h1>文本</h1>
+        1. 使用 .text-* 将文本设置成指定的颜色，比如:text-success <br>
         <span>bootstrap</span>
         <span class="text-primary">bootstrap</span>
         <span class="text-secondary">bootstrap</span>
@@ -80,13 +87,13 @@
         <span class="text-muted">bootstrap</span>
         <span class="text-light bg-dark">bootstrap</span>
         <span class="text-white bg-dark">bootstrap</span>
-        <!-- -50 亮度减50-->
+        <br> text-black-50 亮度减50 <br>
         <span class="text-black-50">bootstrap</span>
         <span class="text-white-50 bg-dark">bootstrap</span>
         <hr>
+        <br>
 
-
-        <!--2. 使用.text-*也可以实现悬停和焦点的超链接样式，white 和 muted 不支持； -->
+        2. 使用 .text-* 也可以实现悬停和焦点的超链接样式，white 和 muted 不支持 <br>
         <a href="#">bootstrap</a>
         <a href="#" class="text-primary">bootstrap</a>
         <a href="#" class="text-secondary">bootstrap</a>
@@ -101,12 +108,12 @@
         <a href="#" class="text-white bg-dark">bootstrap(no)</a>
         <a href="#" class="text-black-50">bootstrap</a>
         <a href="#" class="text-white-50 bg-dark">bootstrap</a>
+        <hr>
         <br>
 
-
-        <!--3. 使用.bg-*可以实现背景色，具体如下： -->
-        <!-- p-2 padding 内边距  -->
-        <!-- mb-2 margin botton 下边外边距 -->
+        3. 使用 .bg-* 可以实现背景色，具体如下 <br>
+        p-2 padding 内边距 <br>
+        mb-2 margin botton 下边外边距 <br>
         <div class="p-2 mb-2 bg-primary">Bootstrap</div>
         <div class="p-2 mb-2 bg-secondary">Bootstrap</div>
         <div class="p-2 mb-2 bg-success">Bootstrap</div>

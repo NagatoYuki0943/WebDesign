@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>布局系统【上】</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .row {
+            border: dashed 1px red;
+        }
+
+        .col-sm,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-8 {
+            border: solid 1px blue
+        }
+    </style>
+</head>
+
+<body>
+    <!--container表示固体自适应,最大宽度像素固定-->
+    <!--一列分为12段-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">第一列</div>
+            <div class="col-sm">第二列</div>
+            <div class="col-sm">第三列</div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <!--.container-fluid 是流体 100%宽度自适应方式,宽度随屏幕变化-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">第一列</div>
+            <div class="col-sm">第二列</div>
+            <div class="col-sm">第三列</div>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+    <!--所占的栅格位正好是 12 列，超过 12 列则会换行，小于 12 列则不能 100%-->
+    <div class="row">
+        <div class="col-sm-4">第一列</div>
+        <div class="col-sm-4">第二列</div>
+        <div class="col-sm-2">第三列</div>
+    </div>
+
+
+    <br>
+    <hr>
+    <br>
+    <!--超过12换行了-->
+    <div class="row">
+        <div class="col-sm-4">第一列</div>
+        <div class="col-sm-4">第二列</div>
+        <div class="col-sm-8">第三列</div>
+    </div>
+
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

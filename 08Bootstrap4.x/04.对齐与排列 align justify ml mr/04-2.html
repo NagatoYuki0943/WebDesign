@@ -17,7 +17,7 @@
             margin: 20px 0;
             border: dashed 1px red;
         }
-        
+
         .c {
             height: 30px;
             border: solid 1px blue;
@@ -26,43 +26,42 @@
 </head>
 
 <body>
-    <!--1. 栅格的列可以左右排序，使用.order-N，N 最大值为 12； 左右位置不同-->
     <div class="container">
+        1. 栅格的列可以左右排序，使用.order-N，N 最大值为 12； 左右位置不同<br>
+        如果我们要给一个三列的行的第一列排到最后，可以如下设置
         <div class="row">
             <div class="c col-3 order-3">第一列</div>
             <div class="c col-3 order-1">第二列</div>
             <div class="c col-3 order-2">第三列</div>
         </div>
+        <hr>
+        <br>
 
-        <!--3. 使用.order-first，强行设置列为第一列，而.order-last 为最后一列； -->
+        3. 使用.order-first，强行设置列为第一列，而.order-last 为最后一列
         <div class="row">
             <div class="c col-3 order-last">第一列</div>
             <div class="c col-3">第二列</div>
             <div class="c col-3 order-first">第三列</div>
         </div>
+        <hr>
+        <br>
 
-
-        <!--4. 使用.offset-N 或.offset-*-N 来设置列的右偏移量，1 表示一个栅格列；  *代指 sm,md,lg,xl-->
+        4. 使用.offset-N 或.offset-*-N 来设置列的右偏移量(后面的也会移动)，1 表示一个栅格列；  *代指 sm,md,lg,xl
         <div class="row">
             <div class="c col-3 offset-1">第一列</div>
             <div class="c col-3">第二列</div>
             <div class="c col-3 offset-1">第三列</div>
         </div>
+        <hr>
+        <br>
 
-        <!--5. 使用.ml-N 或.mr-N 来微调列距离，使用.ml-auto 和.mr-auto 来左右对齐； -->
-        <div class="row">
+        5. 使用.ml-N 或.mr-N 来微调列距离，使用.ml-auto 和.mr-auto 来左右对齐 l向右,r向左
+        <div class="row justify-">
             <div class="c col-3">第一列</div>
-            <div class="c col-3 ml-2">第二列</div>
+            <div class="c col-3 ml-4">第二列</div>
             <div class="c col-3 ml-auto">第三列</div>
         </div>
     </div>
-
-
-    <br/>
-
-
-
-
 </body>
 <!-- 引入jQuery文件 -->
 <script src="../js/jquery-3.6.0.js"></script>
