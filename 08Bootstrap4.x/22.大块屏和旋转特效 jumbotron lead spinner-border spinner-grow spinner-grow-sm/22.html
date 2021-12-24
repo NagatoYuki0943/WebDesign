@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大块屏和旋转特效</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>大块屏</h1>
+        1. 大块屏.jumbotron 是为了展示一些核心内容或广告内容的区域
+        <div class="jumbotron">
+            <h1 class="display-4">bootstrap4.x</h1>
+            <p class="text-muted">这里是标题简介</p>
+            <hr>
+            <p class="lead text-center">这里是各种内容区域</p>
+            <p class="lead d-flex justify-content-center">
+                <button class="btn btn-success btn-lg">按钮</button>
+            </p>
+        </div>
+        <hr>
+        <br>
+
+        <h1>旋转特效</h1>
+        1. 通过.spinner-border 实现类 loading...的旋转特效的功能 <br>
+        2. 使用.text-success(或其它)给旋转特效增加各种颜色 <br>
+        <div class="spinner-border text-success"></div>
+        <div class="spinner-border text-info"></div>
+        <div class="spinner-border text-primary"></div>
+        <div class="spinner-border text-danger"></div>
+        <hr>
+        <br>
+
+        3. 使用.spinner-grow 可以实现渐变式 loading...特效 <br>
+        <div class="spinner-grow text-success"></div>
+        <hr>
+        <br>
+
+        4. 使用.m-5(margin)外边距来调整距离，如果精确就用普通的 CSS <br>
+        <div class="spinner-grow text-secondary m-3"></div>
+        <hr>
+        <br>
+
+        5. 通过 .spinner-broder-sm 或.spinner-grow-sm 实现特效尺寸的大小,必须有 spinner-border <br>
+        <div class="spinner-border spinner-border-sm text-primary"></div>
+        <hr>
+        <br>
+
+        6. 通过.text-center，将特效当作文本进行左中右排列，flex 方式雷同 <br>
+        text-center
+        <div class="text-center">
+            <div class="spinner-border text-danger"></div>
+        </div>
+        <br>
+        d-flex justify-content-center
+        <br>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-danger"></div>
+            <div class="spinner-border text-danger"></div>
+        </div>
+        <hr>
+        <br>
+
+        7. 结合 button 按钮和文本，实现禁用状态下的 loading... <br>
+        <button class="btn btn-info" disabled>
+            <div class="spinner-border spinner-border-sm"></div>
+            <span>Loading...</span>
+        </button>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script>
+</script>
+
+</html>

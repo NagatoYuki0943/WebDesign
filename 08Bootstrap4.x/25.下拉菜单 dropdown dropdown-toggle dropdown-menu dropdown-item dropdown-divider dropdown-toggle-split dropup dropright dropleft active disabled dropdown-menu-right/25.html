@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 下拉菜单组件依赖于 Popper.js，而 Bootstrap 组件包里没有这个文件 <br>
+        2. 但组件包里 bootstrap.bundle.js 已经包含了这个组件功能，使用这个即可 <br>
+        3. 只要将将 bootstrap.bundle.js 替代掉 bootstrap.js 即可 <br>
+        4. 使用 .dropdown 等系列样式，来构建下拉菜单效果 <br>
+        5. 使用 .dropdown-divider 给菜单项目之间增加一条分割线 <br>
+        6. 使用 .dropdown-toggle 下拉三角提示
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">菜单1</a>
+                <a href="#" class="dropdown-item">菜单2</a>
+                <div class="dropdown-divider"></div>    <!--水平分割线-->
+                <a href="#" class="dropdown-item">菜单3</a>
+            </div>
+        </div>
+        <hr>
+        <br>
+
+        7. 使用 .dropdown-toggle-split 实现分裂式按钮下拉菜单,让按钮离得更近 <br>
+        8. 支持使用.btn-lg 等系列将下拉按钮设置大小 <br>
+        分组的作用是为了让两个button连在一起,间隙消失 <br>
+        <div class="dropdown btn-group">
+            <button class="btn btn-secondary btn-lg">下拉菜单</button>
+            <!--dropdown-toggle-split:让两个button更紧凑-->
+            <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">菜单1</a>
+                <a href="#" class="dropdown-item">菜单2</a>
+                <div class="dropdown-divider"></div>    <!--水平分割线-->
+                <a href="#" class="dropdown-item">菜单3</a>
+            </div>
+        </div>
+        <hr>
+        <br>
+
+        9. 使用 .dropup 可以将下拉菜单向上展开，会根据上下区域调整 <br>
+        <div class="dropup">
+            <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">菜单1</a>
+                <a href="#" class="dropdown-item">菜单2</a>
+                <a href="#" class="dropdown-item">菜单3</a>
+            </div>
+        </div>
+        <hr>
+        <br>
+
+        10. 使用 .dropright、dropleft 可以将下拉菜单向右、向左展开 <br>
+        11. 使用 .active 设置首选项，使用 disabled
+        <div class="dropdown dropright">
+            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">菜单1</a>
+                <a href="#" class="dropdown-item active">菜单2</a>
+                <a href="#" class="dropdown-item disabled">菜单3</a>
+            </div>
+        </div>
+        <hr>
+        <br>
+
+        12. 使用 .dropdown-menu-right 可以设置菜单向右对齐； 默认左对齐
+        <div class="dropdown" style="margin-left: 100px;">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="#" class="dropdown-item">菜单1</a>
+                <a href="#" class="dropdown-item">菜单2</a>
+                <a href="#" class="dropdown-item">菜单3</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+</script>
+
+</html>

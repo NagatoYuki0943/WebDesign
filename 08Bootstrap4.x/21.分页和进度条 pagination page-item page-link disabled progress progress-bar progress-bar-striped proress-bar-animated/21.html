@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>分页和进度条</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 通过.pagination 和.page-item、.page-link 构建一个列表模式分页 <br>
+        2. 在 li 标签下使用.disabled，可以禁用某个分页项目 <br>
+        3. 直接将 a 标签替换为 span 标签，直接使链接失效但不会显示禁用的灰色样式 <br>
+        4. 通过.pagination-lg(或其它)来实现，分页样式的大小 <br>
+        5. 通过.justify-content-center(或其它)来实现，分页对齐方式
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a href="#" class="page-link">首页</a></li>
+            <li class="page-item"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item disabled"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link">4</a></li>
+            <li class="page-item"><a href="#" class="page-link">5</a></li>
+            <li class="page-item"><a href="#" class="page-link">尾页</a></li>
+        </ul>
+        <br>
+        使用div和a也可以正常使用
+        <div class="pagination pagination-lg  justify-content-center">
+            <a href="#" class="page-item page-link">首页</a>
+            <a href="#" class="page-item page-link">1</a>
+            <a href="#" class="page-item page-link">2</a>
+            <a href="#" class="page-item page-link">3</a>
+            <a href="#" class="page-item page-link">4</a>
+            <a href="#" class="page-item page-link">5</a>
+            <a href="#" class="page-item page-link">尾页</a>
+        </div>
+        <hr>
+        <br>
+
+        1. 通过.progress 和.progress-bar 构建一个进度条
+        <div class="progress">
+            <div class="progress-bar" style="width: 25%;"></div>
+        </div>
+        <hr>
+        <br>
+
+        2. 使用.w-50 样式，也可以实现项目进度，只不过数值有局限
+        <div class="progress">
+            <div class="progress-bar w-50"></div>
+        </div>
+        <hr>
+        <br>
+
+        3. 设置进度条高度，使用普通高度样式即可
+        <div class="progress" style="height: 30px;">
+            <div class="progress-bar w-50"></div>
+        </div>
+        <hr>
+        <br>
+
+        4. 在进度条项目中，可以设置进度条的颜色
+        <div class="progress">
+            <div class="progress-bar w-50 bg-danger"></div>
+        </div>
+        <hr>
+        <br>
+
+        5. 使用多组嵌套，可以实现进度条的进度样式；w-50 一个进度条分为四个等长部分
+        <div class="progress">
+            <div class="progress-bar w-50 bg-success"></div>
+            <div class="progress-bar w-50 bg-info"></div>
+            <div class="progress-bar w-50 bg-warning"></div>
+            <div class="progress-bar w-50 bg-danger"></div>
+        </div>
+        <hr>
+        <br>
+
+        6. 使用.progress-bar-striped 实现条纹进度条
+        <div class="progress">
+            <div class="progress-bar w-50 bg-warning progress-bar-striped"></div>
+        </div>
+        <hr>
+        <br>
+
+        7. 在条纹进度条的基础上，使用.proress-bar-animated 实现动画效果
+        <div class="progress">
+            <div class="progress-bar w-75 bg-warning progress-bar-striped progress-bar-animated"></div>
+        </div>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js "></script>
+<script src="../js/bootstrap.js "></script>
+<script>
+</script>
+
+</html>

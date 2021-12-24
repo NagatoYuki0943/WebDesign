@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>工具类【中】</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        img {
+            margin: 5px;
+        }
+
+        div.border {
+            height: 200px;
+        }
+
+        span {
+            background-color: #999;
+            height: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 使用 .p-* 来设置内边距(padding)，范围在 0-5 之间和 auto <br>
+        <span class="p-5">bootstrap 4.x</span>
+        <span class="p-3">bootstrap 4.x</span>
+        <span class="p-auto">bootstrap 4.x</span>
+        <hr>
+        <br>
+
+        2. 使用 .m-* 来设置外边距(margin)，范围在 0-5 之间和 auto <br>
+        <span class="m-5">Bootstrap 4.x</span>
+        <hr>
+        <br>
+
+        3. 使用 .pt-* 或 mt-* 设置边缘的距离，这里的 t(top)、b(bottom)、l(left)、r(right) <br>
+        <span class="pt-5">Bootstrap4.x</span>
+        <span class="mb-5">Bootstrap4.x</span>
+        <hr>
+        <br>
+
+        5. 使用 .px-*或 mx-* 设置左右边缘的距离，这里的 x 表示(left、right) <br>
+        <span class="px-5">Bootstrap4.x</span>
+        <span class="mx-5">Bootstrap4.x</span>
+        <hr>
+        <br>
+
+        6. 使用 .py-*或 my-* 设置上下边缘的距离，这里的 y 表示(top、bottom) <br>
+        <span class="py-5">Bootstrap4.x</span>
+        <span class="my-5">Bootstrap4.x</span>
+        <hr>
+        <br>
+
+        7. 使用 .py-*-5，*可以是 md、lg 等响应式的方式来设置边缘 <br>
+        <span class="py-md-5">Bootstrap4.x</span>
+        <span class="py-lg-5">Bootstrap4.x</span>
+        <hr>
+        <br>
+
+        8. 使用 .w-* 设置元素的长度，包括 25%、50%、75%、100% 和 auto <br>
+        <div class="p-2 w-25 bg-info">25%</div>
+        <div class="p-2 w-50 bg-info">50%</div>
+        <div class="p-2 w-75 bg-info">75%</div>
+        <div class="p-2 w-100 bg-info">100%</div>
+        <div class="p-2 w-auto bg-info">auto</div>
+        <hr>
+        <br>
+
+        9. 使用 .h-* 设置元素的高度，包括 25%、50%、75%、100% 和 auto <br>
+        <div class="border border-success">
+            <div class="p-2 h-25 bg-info d-inline-block">Bootstrap4.x</div>
+            <div class="p-2 h-50 bg-info d-inline-block">Bootstrap4.x</div>
+            <div class="p-2 h-75 bg-info d-inline-block">Bootstrap4.x</div>
+            <div class="p-2 h-100 bg-info d-inline-block">Bootstrap4.x</div>
+            <div class="p-2 h-auto bg-info d-inline-block">Bootstrap4.x</div>
+        </div>
+        <hr>
+        <br>
+
+        10. 使用 .mw-* 和 .mh-* 设置 max-width 和 max-height
+        <div class="p-3 mv-100 mh-100 bg-info">max-100%</div>
+        <hr>
+        <br>
+
+        11. 使用 .vw-* 和 .vh-* 设置相对于窗口的大小
+        <div class="p-3 vw-100 vh-100 bg-info">vw,vh 单位</div>
+        <br>
+        <div class="p-3 vw-50 vh-50 bg-info">vw,vh 单位</div>
+        <hr>
+        <br>
+
+        12. 使用 .shadow-* 实现元素的阴影效果
+        <div class="shadow mb-5">Bootstrap4.x</div>
+        <div class="shadow-none mb-5">Bootstrap4.x</div>
+        <div class="shadow-sm mb-5">Bootstrap4.x</div>
+        <div class="shadow-lg mb-5">Bootstrap4.x</div>
+    </div>
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

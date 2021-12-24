@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>悬停提示和点击提示</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>悬停提示</h1>
+    1. 组件依赖于 Popper.js，而 Bootstrap 组件包里没有这个文件 <br>
+    2. 但组件包里 bootstrap.bundle.js 已经包含了这个组件功能，使用这个即可 <br>
+    3. 只要将 bootstrap.bundle.js 替代掉 bootstrap.js 即可 <br>
+    4. 悬停提示，必须要脚本端进行绑定才能执行效果 <br>
+    data-placement: bottom、top、left 和 right，提示位置 <br>
+    <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="底部提示">悬停提示</button>
+    <button id="button1" class="btn btn-primary">按钮1</button>
+    <hr>
+    <br>
+
+    <h1>点击提示</h1>
+    2. 默认情况下，离开触发环境不会自动隐藏，需要设置 data-trigger="focus" <br>
+    <button class="btn btn-secondary" data-toggle="popover" data-trigger="focus" data-placement="right" title="提示标题" data-content="这是一个点击的提示!">点击按钮</button>
+    <br>
+    <button id="button2" class="btn btn-primary">按钮2</button>
+    <hr>
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    //一．悬停提示
+    //5. 支持通过 JS 脚本方式控制提示的各种行为操作；
+    //高级查询,触发底部提示
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#button1').on('click', function() {
+        //切换
+        $('[data-toggle="tooltip"]').tooltip('toggle');
+        //显示
+        // $('[data-toggle="tooltip"]').tooltip('show');
+        // //隐藏
+        // $('[data-toggle="tooltip"]').tooltip('hide');
+    });
+
+
+    //二．点击提示
+    //1. 点击提示也需要脚本支持才能显示出效果；
+    $('[data-toggle="popover"]').popover();
+    $('#button2').on('click', function() {
+        //切换
+        $('[data-toggle="popover"]').popover('toggle');
+        //显示
+        // $('[data-toggle="tooltip"]').tooltip('show');
+        // //隐藏
+        // $('[data-toggle="tooltip"]').tooltip('hide');
+    });
+</script>
+
+</html>

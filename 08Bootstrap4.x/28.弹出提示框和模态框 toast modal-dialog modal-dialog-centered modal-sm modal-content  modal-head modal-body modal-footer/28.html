@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>提示框和模态框</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    1. 使用.toast 可以创建一个弹出提示框，默认是隐藏，设置 show 显示, hide隐藏位置 <br>
+    2. 弹出提示框要求要通过脚本初始化，否则无法实现关闭功能 <br>
+    3. 如果关闭时想要过渡效果，加上.fade 即可，多个弹窗会向下叠加 <br>
+    <div class="toast hide fade">
+        <div class="toast-header">
+            <!--mr-auto将其他元素往右边挤-->
+            <strong class="mr-auto">提示框</strong>
+            <!--这是右边的叉号-->
+            <button class="close ml-2 mb-2" data-dismiss="toast">
+                <span>&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            这是一个提示框1
+        </div>
+    </div>
+    <hr>
+    <br>
+
+    4. 可以直接用 CSS 定位调整出现的方位，比如右上角 <br>
+    5. 点击弹窗时，默认是自动隐藏的，可以关闭它: data-autohide="false" <br>
+    <div class="toast hide fade" data-autohide="false" style="position: absolute; top: 20px; right: 20px;">
+        <div class="toast-header">
+            <!--mr-auto将其他元素往右边挤-->
+            <strong class="mr-auto">提示框</strong>
+            <!--这是右边的叉号-->
+            <button class="close ml-2 mb-2" data-dismiss="toast">
+                <span>&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            这是一个提示框2
+        </div>
+    </div>
+    <button id="button" class="btn btn-success">弹出</button>
+    <hr>
+    <br>
+    <br>
+
+
+    1. 模态框.modal 系列样式组成，需要很多层次构建 <br>
+    2. 模态框支持长文浏览模式，通过鼠标中键或者滚动条浏览 <br>
+    4. 模态框可以想象成一个完整的 HTML 区域，支持内部的表单、栅格、其它组件等 <br>
+    3. 模态框默认是偏上显示的，也可以设置居中显示 <br>
+    4. 模态框支持设置大小，.modal-sm(xl、lg)等 <br>
+    modal-dialog-centered: 在屏幕中心显示 <br>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>模态框标题</h5>
+                    <button class="close ml-2 mb-2" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <body>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                        <p>......</p>
+                    </body>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary">确认保存</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-info" data-target="#myModal" data-toggle="modal">模态框弹出</button>
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    //2. 弹出提示框要求要通过脚本初始化，否则无法实现关闭功能；
+    $('.toast').toast();
+
+    //点击按钮弹出框
+    $('#button').click(function() {
+        $('.toast').toast('show');
+    });
+</script>
+
+</html>

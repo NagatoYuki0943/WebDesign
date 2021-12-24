@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>列表组</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 列表组 ul 使用 .list-group，li 使用.list-group-item 实现项目 <br>
+        2. 使用 .active 在项目中实现首选项 <br>
+        3. 使用 .disabled 在项目中实现禁用
+        <ul class="list-group w-75">
+            <li class="list-group-item active">列表组1</li>
+            <li class="list-group-item">列表组2</li>
+            <li class="list-group-item">列表组3</li>
+            <li class="list-group-item">列表组4</li>
+            <li class="list-group-item disabled">列表组5</li>
+        </ul>
+        <hr>
+        <br>
+
+        4. 将 ul、li 替换成 div、a 实现列表组的功能，需配合 .list-group-item-action:去除下划线 鼠标浮动会有淡灰色 <br>
+        5. 或将 ul、li 替换成 div、button 和 a 效果一样
+        <div class="list-group w-75">
+            <a href="#" class="list-group-item list-group-item-action active">列表组1</a>
+            <a href="#" class="list-group-item list-group-item-action">列表组2</a>
+            <a href="#" class="list-group-item list-group-item-action">列表组3</a>
+            <a href="#" class="list-group-item list-group-item-action">列表组4</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">列表组4</a>
+        </div>
+        <hr>
+        <br>
+
+        6. 使用 .list-group-flush 实现紧贴效果，就是外围无边框
+        <div class="list-group list-group-flush w-75">
+            <a href="#" class="list-group-item list-group-item-action active">列表组1</a>
+            <a href="#" class="list-group-item list-group-item-action">列表组2</a>
+            <a href="#" class="list-group-item list-group-item-action">列表组3</a>
+            <a href="#" class="list-group-item list-group-item-action">列表组4</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">列表组4</a>
+        </div>
+        <hr>
+        <br>
+
+        7. 使用 .list-group-horizontal 实现水平排列效果 <br>
+        8. .list-group-horizntal-*，*号可以表示 md,sm,lg,xl 等屏幕响应式
+        <ul class="list-group list-group-horizontal-sm w-75">
+            <li class="list-group-item active">列表组1</li>
+            <li class="list-group-item">列表组2</li>
+            <li class="list-group-item">列表组3</li>
+            <li class="list-group-item">列表组4</li>
+            <li class="list-group-item disabled">列表组5</li>
+        </ul>
+        <hr>
+        <br>
+
+        9. 列表语境颜色显示，.list-group-item-*，*表示颜色
+        <ul class="list-group list-group-horizontal-sm w-75">
+            <li class="list-group-item active">列表组1</li>
+            <li class="list-group-item list-group-item-danger">列表组2</li>
+            <li class="list-group-item list-group-item-primary">列表组3</li>
+            <li class="list-group-item list-group-item-info">列表组4</li>
+            <li class="list-group-item disabled">列表组5</li>
+        </ul>
+        <hr>
+        <br>
+
+        10. 可以将 .badge 徽章引入到列表组里，并进行适当的排版布局 <br>
+        让文字在左边,badge在右边 d-flex:浮动布局;  justify-content-between:左右分散布局;  align-items-center:里面元素竖直对齐
+        <ul class="list-group w-50">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                列表组1
+                <span class="badge badge-primary pb-1">10</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                列表组2
+                <span class="badge badge-danger pb-1">8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                列表组3
+                <span class="badge badge-info pb-1">5</span>
+            </li>
+        </ul>
+        <hr>
+        <br>
+
+        11. 结合 jQuery 和 Bootstrap.js 内置的脚本效果，实现内容切换功能
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group">
+                    <!--href写下面的id,data-toggle写list-->
+                    <a href="#one"   data-toggle='list' class="list-group-item list-group-item-action active">列表组1</a>
+                    <a href="#two"   data-toggle='list' class="list-group-item list-group-item-action">列表组2</a>
+                    <a href="#three" data-toggle='list' class="list-group-item list-group-item-action">列表组3</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <!--tab-content和tab-pane 用来消除看不见的元素-->
+                <div class="tab-content">
+                    <!--fade全部隐藏,show显示一个-->
+                    <div class="tab-pane show active" id="one">列表1...列表1...列表1...列表1...</div>
+                    <div class="tab-pane fade" id="two">列表2...列表2...列表2...列表2...</div>
+                    <div class="tab-pane fade" id="three">列表3...列表3...列表3...列表3...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

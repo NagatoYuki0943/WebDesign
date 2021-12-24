@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flex弹性布局【下】</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 使用 .flex-fill 强制让每个元素项目占据相等的水平宽度, 左右分隔 <br>
+        2. 三个项目同时设置了.flex-fill，则它们等比例分割宽度，适合导航项目
+        <div class="d-flex m-2 p-2 bg-secondary text-light">
+            <div class="p-2 border border-primary flex-fill">flex-fill</div>
+            <div class="p-2 border border-primary flex-fill">flex-fill</div>
+            <div class="p-2 border border-primary flex-fill">flex-fill</div>
+        </div>
+        3. 如果其中一个或两个没有设置.flex-fill，则没有设置的会被设置的填充宽度 <br>
+        4. .flex-*-fill 也可以实现响应式的媒体查询操作
+        <div class="d-flex m-2 p-2 bg-secondary text-light">
+            <div class="p-2 border border-primary flex-fill">flex-fill</div>
+            <div class="p-2 border border-primary">项目2</div>
+            <div class="p-2 border border-primary">项目3</div>
+        </div>
+        <hr>
+        <br>
+
+        5. 使用 .flex-grow-*，*表示 0 或 1，也能实现.flex-fill 的功能，设置 1 即可,0表示不填充 <br>
+        6. 通过元素生成的 CSS，我们可以看出，其实.flex-fill 就是 flex-grow-1 的简写形式
+        <div class="d-flex m-2 p-2 bg-secondary text-light">
+            <div class="p-2 border border-primary flex-grow-1">flex-grow-1</div>
+            <div class="p-2 border border-primary flex-grow-1">flex-grow-1</div>
+            <div class="p-2 border border-primary flex-grow-1">flex-grow-1</div>
+        </div>
+        <hr>
+        <br>
+
+        7. 使用 .flex-shrink-*，*表示 0 或 1，表示是否强制更换到新行中, 0表示还在这一行,1表示换行 <br>
+        8. 这一对样式，也支持响应式的媒体查询: .flex-*-grow|shrink-*
+        <div class="d-flex m-2 p-2 bg-secondary text-light">
+            <div class="p-2 border border-primary w-100">项目1</div>
+            <div class="p-2 border border-primary flex-shrink-0">flex-shrink-0</div>
+        </div>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-row">
+            <div class="p-2 border border-primary w-100">项目1</div>
+            <div class="p-2 border border-primary flex-shrink-1">flex-shrink-1</div>
+        </div>
+        <hr>
+        <br>
+
+        9. 使用 .mr-auto .ml-auto 等对齐方式，对 flex 元素进行浮动对齐 <br>
+        项目1在左,其他在右
+        <div class="d-flex m-2 p-2 bg-secondary text-light">
+            <div class="p-2 border border-primary mr-auto">mr-auto</div>
+            <div class="p-2 border border-primary ">项目2</div>
+            <div class="p-2 border border-primary ">项目3</div>
+        </div>
+        <br>
+        项目3在右,其他在左
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-row">
+            <div class="p-2 border border-primary">项目1</div>
+            <div class="p-2 border border-primary">项目2</div>
+            <div class="p-2 border border-primary ml-auto">ml-auto</div>
+        </div>
+        <hr>
+        <br>
+
+        10. 对于垂直方向，也可以使用.mb-auto 和.mt-auto 来设置对象方向 <br>
+        1在上,其余在下
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-column align-items-start" style="height:200px;">
+            <div class="p-2 border border-primary mb-auto">mb-auto</div>
+            <div class="p-2 border border-primary">项目2</div>
+            <div class="p-2 border border-primary">项目3</div>
+        </div>
+        <br>
+        3在下,其余在上 <br>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-column align-items-start" style="height:200px;">
+            <div class="p-2 border border-primary">项目1</div>
+            <div class="p-2 border border-primary">项目2</div>
+            <div class="p-2 border border-primary mt-auto">mt-auto</div>
+        </div>
+        <hr>
+        <br>
+
+        11. 使用.flex-wrap(包裹)和.flex-nowrap(不包裹，默认)来设置子元素项目 <br>
+        flex-wrap 超出长度后换行,父级要设定宽度
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap" style="width: 200px;">
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+            <div class="p-2 border border-primary bg-info">wrap</div>
+        </div>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-nowrap" style="width: 200px;">
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+            <div class="p-2 border border-primary bg-info">nowrap</div>
+        </div>
+        <hr>
+        <br>
+
+        12. 使用.flex-warp-reverse 进行项目排序顺序的倒序 <br>
+        13. 这三个样式，也支持响应式的媒体查询: .flex-*-warp 等 <br>
+        顺序反了
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap-reverse" style="width: 200px;">
+            <div class="p-2 border border-primary bg-info">项目1</div>
+            <div class="p-2 border border-primary bg-info">项目2</div>
+            <div class="p-2 border border-primary bg-info">项目3</div>
+            <div class="p-2 border border-primary bg-info">项目4</div>
+            <div class="p-2 border border-primary bg-info">项目5</div>
+            <div class="p-2 border border-primary bg-info">项目6</div>
+            <div class="p-2 border border-primary bg-info">项目7</div>
+            <div class="p-2 border border-primary bg-info">项目8</div>
+            <div class="p-2 border border-primary bg-info">项目9</div>
+        </div>
+        <hr>
+        <br>
+
+        14. 使用.order-*，来设置子元素项目的排序顺序，支持.order-*-*； 位置顺序
+        <div class="d-flex m-2 p-2 bg-secondary text-light">
+            <div class="p-2 border border-primary order-3">order-3</div>
+            <div class="p-2 border border-primary order-1">order-1</div>
+            <div class="p-2 border border-primary order-2">order-2</div>
+        </div>
+        <hr>
+        <br>
+
+        15. .align-content-start(end、center、between、around、stretch)垂直对齐 <br>
+        align-items-start 效果类似,可以自己尝试, align-content在多行的时候效果和items不同,可以调整宽度查看
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-content-start" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+            <div class="p-2 border border-primary bg-info">align-content-start</div>
+        </div>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-items-start" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+            <div class="p-2 border border-primary bg-info">align-items-start</div>
+        </div>
+        <hr>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-content-center" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+            <div class="p-2 border border-primary bg-info">align-content-center</div>
+        </div>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-items-center" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+            <div class="p-2 border border-primary bg-info">align-items-center</div>
+        </div>
+        <hr>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-content-end" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+            <div class="p-2 border border-primary bg-info">align-content-end</div>
+        </div>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-items-end" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+            <div class="p-2 border border-primary bg-info">align-items-end</div>
+        </div>
+        <hr>
+        下面三个只能是content,不能是items
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-content-between" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+            <div class="p-2 border border-primary bg-info">align-content-between</div>
+        </div>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-content-around" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+            <div class="p-2 border border-primary bg-info">align-content-around</div>
+        </div>
+        <div class="d-flex m-2 p-2 bg-secondary text-light flex-wrap align-content-stretch" style="height: 300px;">
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+            <div class="p-2 border border-primary bg-info">align-content-stretch</div>
+        </div>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.js"></script>
+
+</html>

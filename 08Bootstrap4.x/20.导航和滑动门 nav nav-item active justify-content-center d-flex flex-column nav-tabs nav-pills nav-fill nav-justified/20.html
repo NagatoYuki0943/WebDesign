@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>导航滑动门</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        a,
+        li {
+            border: 1px solid rgba(40, 243, 158, 0.349);
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    1. 构建一个简单的 ul 导航列表，具体如下 <br>
+    2. 测试发现，上面中.nav-item 和 active 暂时体现不出效果 <br>
+    <ul class="nav">
+        <li class="nav-item"><a href="#" class="nav-link active">首页</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">内容</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">项目</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">关于</a></li>
+    </ul>
+    <hr>
+    <br>
+
+    3. 更改成 nav 和 a，也可以实现相同的导航效果 <br>
+    <nav class="nav">
+        <a href="#" class="nav-link active">首页</a>
+        <a href="#" class="nav-link">内容</a>
+        <a href="#" class="nav-link">项目</a>
+        <a href="#" class="nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <br>
+
+    4. 使用.justify-content-center 实现导航的居中对齐，-end 右对齐 <br>
+    <nav class="nav justify-content-center">
+        <a href="#" class="nav-link active">首页</a>
+        <a href="#" class="nav-link">内容</a>
+        <a href="#" class="nav-link">项目</a>
+        <a href="#" class="nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <br>
+
+    5. 使用.flex-column 将导航垂直显示；这是使用的d-flex浮动布局的样式 <br>
+    <nav class="nav d-flex flex-column">
+        <a href="#" class="nav-link active">首页</a>
+        <a href="#" class="nav-link">内容</a>
+        <a href="#" class="nav-link">项目</a>
+        <a href="#" class="nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <nav class="nav align-items-start">
+        <a href="#" class="nav-link active">首页1</a>
+        <a href="#" class="nav-link">内容1</a>
+        <a href="#" class="nav-link">项目1</a>
+        <a href="#" class="nav-link disabled">关于1</a>
+    </nav>
+    <hr>
+    <br>
+
+    6. 使用.nav-tabs 实现标签选项卡 <br>
+    <nav class="nav nav-tabs">
+        <a href="#" class="nav-item nav-link active">首页</a>
+        <a href="#" class="nav-item nav-link">内容</a>
+        <a href="#" class="nav-item nav-link">项目</a>
+        <a href="#" class="nav-item nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <br>
+
+    7. 使用.nav-pills 实现按钮式选项卡 <br>
+    <nav class="nav nav-pills">
+        <a href="#" class="nav-item nav-link active">首页</a>
+        <a href="#" class="nav-item nav-link">内容</a>
+        <a href="#" class="nav-item nav-link">项目</a>
+        <a href="#" class="nav-item nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <br>
+
+    8. 使用.nav-fill 实现水平布局； 四个平均分开 和justify-content-around类似 <br>
+    当使用 nav 来实现以上效果时，此时需要.nav-item 来体现效果
+    <nav class="nav nav-fill">
+        <a href="#" class="nav-item nav-link active">nav-fill</a>
+        <a href="#" class="nav-item nav-link">内容</a>
+        <a href="#" class="nav-item nav-link">项目</a>
+        <a href="#" class="nav-item nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <nav class="nav justify-content-around">
+        <a href="#" class="nav-item nav-link active">justify-content-around</a>
+        <a href="#" class="nav-item nav-link">内容</a>
+        <a href="#" class="nav-item nav-link">项目</a>
+        <a href="#" class="nav-item nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <br>
+
+    10. 等宽操作，使用.nav-justified，可以通过加上边框来体会区别；这个是等宽的,上面的两个受到里面文字的长度影响
+    <nav class="nav nav-justified">
+        <a href="#" class="nav-item nav-link active">nav-justified</a>
+        <a href="#" class="nav-item nav-link">内容</a>
+        <a href="#" class="nav-item nav-link">项目</a>
+        <a href="#" class="nav-item nav-link disabled">关于</a>
+    </nav>
+    <hr>
+    <br>
+
+    <h1>滑动门效果</h1>
+    1. 滑动门效果，即采用 jQuery 和 Bootstrap.js 实现选项卡切换 <br>
+    nav-tabs
+    <nav class="nav nav-tabs">
+        <a href="#one" data-toggle="tab" class="nav-item nav-link active">首页</a>
+        <a href="#two" data-toggle="tab" class="nav-item nav-link">内容</a>
+        <a href="#three" data-toggle="tab" class="nav-item nav-link">项目</a>
+        <a href="#" class="nav-item nav-link disabled">关于</a>
+    </nav>
+    <div class="tab-content">
+        <div id="one" class="tab-pane fade show active">首页...</div>
+        <div id="two" class="tab-pane fade">内容...</div>
+        <div id="three" class="tab-pane fade">项目...</div>
+    </div>
+    <hr>
+    nav-pills
+    <nav class="nav nav-pills">
+        <a href="#a" data-toggle="tab" class="nav-item nav-link active">首页</a>
+        <a href="#b" data-toggle="tab" class="nav-item nav-link">内容</a>
+        <a href="#c" data-toggle="tab" class="nav-item nav-link">项目</a>
+        <a href="#" class="nav-item nav-link disabled">关于</a>
+    </nav>
+    <div class="tab-content">
+        <div id="a" class="tab-pane fade show active">首页...</div>
+        <div id="b" class="tab-pane fade">内容...</div>
+        <div id="c" class="tab-pane fade">项目...</div>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src=" ../js/jquery-3.6.0.js "></script>
+<script src="../js/bootstrap.js "></script>
+<script>
+</script>
+
+</html>

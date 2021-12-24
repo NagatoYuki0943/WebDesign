@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 使用.collapse 构建一个最简单的折叠菜单的效果 <br>
+        <button class="btn btn-success" data-toggle='collapse' href="#collapse1">按钮</button>
+        <button class="btn btn-success" data-toggle='collapse' href="#collapse2">按钮</button>
+        <div class="collapse border border-success" id="collapse1">
+            <p>这里是一段要被切换的文本</p>
+        </div>
+        <div class="collapse border border-success" id="collapse2">
+            <p>这里是一段要被切换的文本</p>
+        </div>
+        <hr>
+        <br>
+
+        2. 使用.multi-collapse 实现一个按钮控制多个折叠菜单的功能；同时展开,同时关闭 <br>
+        <button class="btn btn-success" data-toggle='collapse' href="#collapse3">按钮</button>
+        <button class="btn btn-success" data-toggle='collapse' href="#collapse4">按钮</button>
+        <button class="btn btn-success" data-toggle='collapse' href=".multi-collapse">按钮</button>
+        <div class="collapse multi-collapse border border-success" id="collapse3">
+            <p>这里是一段要被切换的文本</p>
+        </div>
+        <div class="collapse multi-collapse border border-success" id="collapse4">
+            <p>这里是一段要被切换的文本</p>
+        </div>
+        <hr>
+        <br>
+
+        3. 使用.accordion 结合.card 卡片实现手风琴效果 <br>
+        data-parent="#accordion" 实现动态手风琴效果,点开一个其余的减少
+        <div class="d-flex justify-content-center"> <!--左右居中-->
+            <div class="accordion w-50 text-center" id="accordion">
+                <div class="card">
+                    <button class="btn btn-link" data-toggle='collapse' href="#collapse5">按钮1</button>
+                    <div class="collapse show border border-left-0 border-right-0 border-bottom-0 border-success" id="collapse5" data-parent="#accordion">
+                        <p>这里是一段要被切换的文本</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <button class="btn btn-link" data-toggle='collapse' href="#collapse6">按钮2</button>
+                    <div class="collapse" id="collapse6" data-parent="#accordion">
+                        <p>这里是一段要被切换的文本</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <button class="btn btn-link" data-toggle='collapse' href="#collapse7">按钮3</button>
+                    <div class="collapse" id="collapse7" data-parent="#accordion">
+                        <p>这里是一段要被切换的文本</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+</script>
+
+</html>
