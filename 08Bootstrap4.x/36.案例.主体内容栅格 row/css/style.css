@@ -1,12 +1,12 @@
 /* 顶部位置 */
-
 #carousel {
-    top: 3rem;
     background-color: #e7e7e7;
+    top: 3rem;
+    margin-bottom: 6rem;
 }
 
 
-/* 下面提示的背景颜色 */
+/* 下面提示的颜色 */
 .carousel-indicators li {
     background-color: #444;
 }
@@ -16,7 +16,12 @@
 .carousel-control-prev-icon {
     background-image: url('../img/left.png');
 }
-
 .carousel-control-next-icon {
     background-image: url('../img/right.png');
+}
+
+
+/* tab5背景 */
+.tab5 {
+    background-color: #eee;
 }

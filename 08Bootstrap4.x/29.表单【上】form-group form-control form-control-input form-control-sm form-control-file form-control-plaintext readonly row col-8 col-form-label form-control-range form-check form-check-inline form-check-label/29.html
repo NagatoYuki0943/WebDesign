@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单【上】</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 使用.form-control、form-control-input、form-check-input 构建一个登录页面 <br>
+        2. 表单控件中 input 、 textarea 、 select 统一采用.form-control <br>
+        <hr>
+        <form action="#">
+            <div class="form-group">
+                <label for="email">form-control 请输入邮箱地址</label>
+                <input type="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">form-control 请输入密码</label>
+                <input type="password" id="password" class="form-control">
+            </div>
+            单选框
+            <div class="form-group">
+                <input type="checkbox" id="check" class="form-control-input">
+                <label for="check">checkbox form-control-input</label>
+            </div>
+            <hr><br>
+
+            单选
+            <div class="form-group">
+                <label for="city">form-control 请选择去过的城市</label>
+                <select name="city" id="" class="form-control">
+                    <option value="1">洛杉矶</option>
+                    <option value="2">旧金山</option>
+                    <option value="3">拉斯维加斯</option>
+                </select>
+            </div>
+            <hr><br>
+
+            多选
+            <div class="form-group">
+                <label for="city">form-control 请选择去过的城市</label>
+                <select multiple name="city" id="" class="form-control">
+                    <option value="1">洛杉矶</option>
+                    <option value="2">旧金山</option>
+                    <option value="3">拉斯维加斯</option>
+                </select>
+            </div>
+            <hr><br>
+
+            多行文本框
+            <div class="form-group">
+                <label for="info">form-control </label>
+                <textarea class="form-control" name="info" id="" cols="30" rows="10"></textarea>
+            </div>
+            <hr><br>
+
+            3. 对于 file 上传控件，单独使用.form-control-file 样式；没有外边框
+            <div class="form-group">
+                <label for="info">点击上传</label>
+                <input type="file" class="form-control-file">
+            </div>
+            <hr><br>
+
+            4. .form-control-sm(xl,lg)支持放大和缩小操作
+            <div class="form-group">
+                <label for="password">form-control 请输入密码</label>
+                <input type="password" id="password" class="form-control form-control-sm">
+            </div>
+            <hr><br>
+
+            5. 使用 .form-control-plaintext 和只读属性 readonly 实现只读效果
+            <div class="form-group">
+                <label for="email">form-control 请输入邮箱地址</label>
+                <input type="email" id="email" class="form-control form-control-plaintext" value="154@qq.com" readonly>
+            </div>
+            <hr><br>
+
+            6 .row 再使用栅格布局，再使用 label 元素下的 .col-form-label 实现对齐
+            <div class="form-group row">
+                <label for="password" class="col-4 col-form-label">请输入密码</label>
+                <input type="password" id="password" class="form-control col-8">
+            </div>
+            <hr><br>
+
+            7. 使用.form-control-range 构建一个输入范围
+            <input type="range" class="form-control-range">
+        </form>
+        <hr><br>
+
+        8. 使用 .form-check 系列样式设计复选框和单选框 <br>
+        9. 使用 .form-check-inline 实现单选框和复选框水平排列 <br>
+        <form action="" class="form-check-inline">
+            <div class="form-check">
+                <input type="checkbox" class="form-control-input" id="check1" name="c">
+                <label for="check1" class="form-check-label">复选框1</label>
+                <input type="checkbox" class="form-control-input" id="check2" name="c">
+                <label for="check2" class="form-check-label">复选框1</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-control-input" id="radio1" name="r">
+                <label for="radio1" class="form-check-label">单选框1</label>
+                <input type="radio" class="form-control-input" id="radio2" name="r">
+                <label for="radio2" class="form-check-label">单选框2</label>
+            </div>
+        </form>
+    </div>
+</body>
+
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+</script>
+
+</html>

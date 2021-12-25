@@ -40,8 +40,8 @@ body {
 }
 
 .index-h2 {
-    /* calc(1rem + 1vw) 是bootstrap运算,不同屏幕大小文字大小不同  rem指的是字体大小 vm指的是屏幕变化幅度*/
-    font-size: calc(1rem + 1vw);
+    /* calc(1rem + 1vw) 是bootstrap运算,不同屏幕大小文字大小不同  rem指的是字体大小 vm指的是屏幕变化幅度,随屏幕变化*/
+    font-size: calc(1rem + 1vw);    /**/
     color: #0059b2;
 }
 
@@ -50,8 +50,7 @@ body {
     color: #999;
 }
 
-.index-content {}
-
+/*主题内容*/
 .index-content h5 {
     font-size: calc(1.2rem + 0.09vw);
 }
@@ -62,14 +61,12 @@ body {
 
 
 /* tab5背景 */
-
 .tab5 {
     background-color: #eee;
 }
 
 
 /* 更改tab5和6下面的文字 */
-
 .tab5 h3,
 .tab6 h3 {
     font-size: calc(1.2rem + 0.8vw);
@@ -83,28 +80,20 @@ footer {
 
 
 /*媒体查询*/
-
-
 /*Small devices (landscape phones, 576px and up)*/
-
 @media (min-width: 576px) and (max-width: 767px) {}
 
 
 /*Medium devices (tablets, 768px and up)*/
-
 @media (min-width: 768px) and (max-width: 991px) {}
 
 
 /*Large devices (desktops, 992px and up)*/
-
 @media (min-width: 992px) and (max-width: 1199px) {}
 
 
 /*Extra large devices (large desktops, 1200px and up)*/
-
-
 /* 当屏幕过大之后,文字大小固定了 */
-
 @media (min-width: 1200px) {
     .index-h2 {
         font-size: 220%;

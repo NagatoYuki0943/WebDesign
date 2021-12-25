@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单【下】</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        1. 使用.form-row 构建一个响应式布局的表单,普通的row间隔太宽;也要配合col-sm-6
+        <form action="#" class="form-row">
+            <div class="form-group col-sm-6">
+                <label for="user">用户名:</label>
+                <input type="text" id="user" placeholder="用户名" class="form-control">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="password">密码:</label>
+                <input type="password" id="password" placeholder="密码" class="form-control">
+            </div>
+            <div class="form-group col-sm-12">
+                <label for="address">收货地址:</label>
+                <input type="text" id="address" placeholder="收货地址" class="form-control">
+            </div>
+
+            <div class="col-sm-12">
+                使用 select input 都要使用 form-control
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="state">国家:</label>
+                <select name="" id="state" class="form-control">
+                    <option value="0">Norway</option>
+                    <option value="1">Sweden</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="city">城市:</label>
+                <select name="" id="city" class="form-control">
+                    <option value="0">Stockholm</option>
+                    <option value="1">Oslo</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="address">邮编:</label>
+                <input type="text" id="zip" placeholder="邮编" class="form-control">
+            </div>
+
+            <div class="col-sm-12">
+                2. 在邮箱控件左侧增加一个提示标识，使用.input-group input-group-prepend input-group-text 等样式
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="email">邮箱:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <!-- input要写在input-group中,不然换行 -->
+                    <input type="text" id="email" placeholder="邮箱" class="form-control">
+                </div>
+            </div>
+        </form>
+        <hr>
+        <br>
+
+        3. 使用.form-text 给表单控件增加提示功能，如果要一行，使用 .form-inline
+        <form class="form-inline">
+            <div class="form-group col-sm-12">
+                <label for="address">收货地址:</label>
+                <input type="text" id="address" placeholder="收货地址" class="form-control">
+                <small class="text-muted form-text">收货地址必须写清楚</small>
+            </div>
+        </form>
+        <hr>
+        <br>
+
+        4. 使用 fieldset disabled 禁用所有整体表单功能,同时form-row也必须给它,不然布局就被破坏了
+        <form action="#" >
+            <fieldset disabled class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="user">用户名:</label>
+                    <input type="text" id="user" placeholder="用户名" class="form-control">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="password">密码:</label>
+                    <input type="password" id="password" placeholder="密码" class="form-control">
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="address">收货地址:</label>
+                    <input type="text" id="address" placeholder="收货地址" class="form-control">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src=" ../js/jquery-3.6.0.js "></script>
+<script src="../js/bootstrap.bundle.js "></script>
+<script>
+</script>
+
+</html>

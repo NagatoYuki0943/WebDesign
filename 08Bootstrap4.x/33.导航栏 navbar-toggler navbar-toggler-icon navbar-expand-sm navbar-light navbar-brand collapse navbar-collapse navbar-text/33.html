@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        1. 导航栏是一种响应式的组件，主要使用.navbar-toggler 来实现 <br>
+        导航栏可以设置主题配色，主要修改.navbar-dark 和.bg-dark 两个样式；navbar-light和bg-light颜色要匹配 <br>
+        navbar-light bg-light 调整颜色时,navbar-brand也会跟着变 <br>
+        navbar-expand-sm/md/lg 导航栏大小,将列表改为横的(缩小就变为竖的) <br>
+        collapse navbar-collapse 和 navbar-expand-sm 让宽度小于sm时,文字就消失 <br>
+        <br><br>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <span class="navbar-brand">Logo</span>  <!--logo-->
+
+            <!-- navbar-toggler 更改按钮样式 data-toggle="collapse" data-target="#navbar" 绑定数据 -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar1">
+                <span class="navbar-toggler-icon"></span>   <!-- navbar-toggler-icon 在小于sm时,点击这个按钮就出现列表 -->
+            </button>
+
+            <div id="navbar1" class="collapse navbar-collapse">  <!-- collapse navbar-collapse 和 navbar-expand-sm 让宽度小于sm时,文字就消失 -->
+                <ul class="navbar-nav ml-auto"> <!-- ml-auto 有浮动, 去掉就去左边了 -->
+                    <li class="nav-item active"><a class="nav-link" href="">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">列表</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">图文</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">关于</a></li>
+                </ul>
+            </div>
+        </nav>
+        <hr><br>
+
+
+        2. 如果你不想使用 ul>li 这种方式实现导航列表，可以使用 div>a <br>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <!-- navbar-toggler 更改按钮样式 data-toggle="collapse" data-target="#navbar" 绑定数据 -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar2">
+                <span class="navbar-toggler-icon"></span>   <!-- navbar-toggler-icon 在小于sm时,点击这个按钮就出现列表 -->
+            </button>
+
+            <div id="navbar2" class="collapse navbar-collapse">  <!-- collapse navbar-collapse 和 navbar-expand-sm 让宽度小于sm时,文字就消失 -->
+                <span class="navbar-brand">Logo</span>  <!--logo可以放到这里,这样在手机上就看不到了-->
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="">首页</a>
+                    <a class="nav-item nav-link" href="">列表</a>
+                    <a class="nav-item nav-link" href="">图文</a>
+                    <a class="nav-item nav-link" href="">关于</a>
+                </div>
+            </div>
+        </nav>
+        <hr><br>
+
+
+        3. 给导航栏增加一个查询的表单 <br>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a href="#" class="navbar-brand">Logo</a>
+            <!-- navbar-toggler 更改按钮样式 data-toggle="collapse" data-target="#navbar" 绑定数据 -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar3">
+                <span class="navbar-toggler-icon"></span>   <!-- navbar-toggler-icon 在小于sm时,点击这个按钮就出现列表 -->
+            </button>
+
+            <div id="navbar3" class="collapse navbar-collapse">  <!-- collapse navbar-collapse 和 navbar-expand-sm 让宽度小于sm时,文字就消失 -->
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="">首页</a>
+                    <a class="nav-item nav-link" href="">列表</a>
+                    <a class="nav-item nav-link" href="">图文</a>
+                    <a class="nav-item nav-link" href="">关于</a>
+                </div>
+                <form action="#" class="form-inline ml-auto">
+                    <input type="text" class="form-control mr-2" placeholder="搜索">
+                    <button class="btn btn-outline-secondary my-2">Search</button>
+                </form>
+            </div>
+        </nav>
+        <hr><br>
+
+        4. 如果你想给导航栏增加文本，使用.navbar-text <br>
+        <!-- <span class="navbar-text">这里是文本！ </span> -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a href="#" class="navbar-brand">Logo</a>
+            <!-- navbar-toggler 更改按钮样式 data-toggle="collapse" data-target="#navbar" 绑定数据 -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar3">
+                <span class="navbar-toggler-icon"></span>   <!-- navbar-toggler-icon 在小于sm时,点击这个按钮就出现列表 -->
+            </button>
+
+            <div id="navbar3" class="collapse navbar-collapse">  <!-- collapse navbar-collapse 和 navbar-expand-sm 让宽度小于sm时,文字就消失 -->
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="">首页</a>
+                    <a class="nav-item nav-link" href="">列表</a>
+                    <a class="nav-item nav-link" href="">图文</a>
+                    <a class="nav-item nav-link" href="">关于</a>
+                </div>
+
+                <span class="navbar-text">navbar-text文本</span>
+
+                <form action="#" class="form-inline ml-auto">
+                    <input type="text" class="form-control mr-2" placeholder="搜索">
+                    <button class="btn btn-outline-secondary my-2">Search</button>
+                </form>
+            </div>
+        </nav>
+        <hr><br>
+
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+</script>
+
+</html>

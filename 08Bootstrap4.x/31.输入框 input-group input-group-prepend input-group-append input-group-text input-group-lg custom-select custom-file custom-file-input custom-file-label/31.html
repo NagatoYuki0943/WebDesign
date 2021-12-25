@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>输入框</title>
+
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" class="form-row">
+            <div class="col-sm-12">
+                1. 输入框就是 input 标签元素的强化版组件样式，提供更加丰富的样式 <br>
+                2. 输入框组件的核心就是.input-group 内部包含的表单样式 <br>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="user">用户名:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">#</span>
+                    </div>
+                    <input type="text" name="user" id="user" placeholder="请输入用户名">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="email">邮箱:</label>
+                <div class="input-group">
+                    <input type="text" name="email" id="email" placeholder="请输入邮箱">
+                    <!-- input-group-append 后面的文字  -->
+                    <div class="input-group-append">
+                        <span class="input-group-text">@qq.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 复选框 -->
+            <div class="form-group col-sm-6">
+                <label for="c">复选框:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <input type="checkbox" name="c">    <!--要有名字-->
+                        </span>
+                    </div>
+                    <input type="text" name="c" id="c" placeholder="aaaaaaaaaaa" disabled>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="c">复选框:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <input type="checkbox" name="c">    <!--要有名字-->
+                        </span>
+                    </div>
+                    <input type="text" name="c" id="c" placeholder="bbbbbbbbbbb" disabled>
+                </div>
+            </div>
+
+            <!-- 单选框 -->
+            <div class="form-group col-sm-6">
+                <label for="r1">单选框:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <input type="radio" name="r">    <!--要有名字-->
+                        </span>
+                    </div>
+                    <input type="text" name="r1" id="r1" placeholder="1111111111" disabled>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="r2">单选框:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <input type="radio" name="r">    <!--要有名字-->
+                        </span>
+                    </div>
+                    <input type="text" name="r2" id="r2" placeholder="2222222222" disabled>
+                </div>
+            </div>
+
+            <!-- 设置输入框组件 -->
+            <div class="col-sm-12">3. .input-group-lg(sm)等可以设置输入框组件大小</div>
+            <div class="form-group col-sm-6">
+                <label for="user">用户名:</label>
+                <div class="input-group input-group-lg">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">#</span>
+                    </div>
+                    <input type="text" name="user" id="user" placeholder="请输入用户名">
+                </div>
+            </div>
+
+            <div class="col-sm-12">4. 支持多控件输入模式，也支持多提示模式和按钮模式</div>
+            <div class="form-group col-sm-6">
+                <label for="user">多控件多提示模式:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">姓</span>    <!-- 两个控件 -->
+                        <span class="input-group-text">名</span>
+                    </div>
+                    <input type="text" name="user" id="user" placeholder="姓">  <!-- 两个内容 -->
+                    <input type="text" name="user" id="user" placeholder="名">
+                </div>
+            </div>
+            <div class="form-group col-sm-12">
+                <label for="user">多控件多提示模式:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary">姓</button>   <!-- span改为button -->
+                        <button class="btn btn-outline-secondary">名</button>
+                    </div>
+                    <input type="text" name="user" id="user" placeholder="姓">
+                    <input type="text" name="user" id="user" placeholder="名">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                5. 支持按钮的下拉菜单模式
+            </div>
+            <div class="form-group col-sm-12">
+                <label for="user">用户名:</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary">button</button>
+                        <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">button</button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">菜单1</a>
+                            <a href="#" class="dropdown-item">菜单2</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">菜单3</a>
+                        </div>
+                    </div>
+                    <input type="text" name="user" id="user" placeholder="姓">
+                    <input type="text" name="user" id="user" placeholder="名">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                6. 支持 select 下拉菜单模式
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="city">城市:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">city:</span>
+                    </div>
+                    <select name="city" id="city" class="custom-select">
+                        <option value="0" selected>请选择</option>
+                        <option value="1">北京</option>
+                        <option value="2">上海</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                7. 上传
+            </div>
+            <div class="form-group col-sm-6">
+                <label>上传:</label>
+                <div class="input-group">
+                    <!-- input-group-prepend 前面的文字  -->
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">File:</span>
+                    </div>
+                    <!-- 后面的选择框 -->
+                    <div class="custom-file">
+                        <label for="file" class="custom-file-label" id="file-label">上传:</label>
+                        <input id="file" type="file" class="custom-file-input" required>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<!-- 引入jQuery文件 -->
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    //将文件名添加到文本中
+    $('#file').change(function(e) {
+        $('#file-label').html(e.target.files[0].name);
+    });
+</script>
+
+</html>
