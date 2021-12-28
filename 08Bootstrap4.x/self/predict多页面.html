@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        .c{
+            background-color: aquamarine;
+        }
+        #header{
+            background-color: rgba(133, 27, 233, 0.671);
+        }
+        #picker{
+            width: 100px;
+            margin: 20px auto 10px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container bg-light">
+        <div id="header" class=" d-flex justify-content-center p-3" style="height: 90px;">
+            <h1>垃圾图像检测</h1>
+        </div>
+        <div class="jumbotron mt-1">
+            <div class="card">
+                <img class="card-img" src="img/垃圾分类3.jpg" alt="bt">
+                <div class="card-img-overlay">
+                    <h1 class="display-4 text-primary"></h1>
+                    <h4 class="text-muted">垃圾分类,人人有责!</h4>
+                </div>
+            </div>
+
+            <!-- 表单提交 -->
+            <form action="" class="form-row was-validated mt-3">
+                <div class="form-group col-sm-6 mx-auto">
+                    <label for="file">上传文件:</label>
+                    <div class="custom-file">
+                        <input id="picker" type="file" class="custom-file-input" required>
+                        <label for="picker" class="custom-file-label" id="file-label">选择文件</label>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                    <input type="submit" class="btn btn-primary d-inline-block ml-auto mr-5">
+                    <input type="reset" class="btn btn-info d-inline-block mr-auto ml-5">
+            </form>
+        </div>
+        <hr>
+
+        <div>
+            <div class="card w-75 bg-info text-light border-info mx-auto">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="card-img img-thumbnail" src="img/垃圾分类3.jpg" alt="bt">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="d-flex justify-content-around">
+                                <span class="btn btn-primary">类别</span>
+                                <span class="btn btn-secondary">准确率</span>
+                            </p>
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    $('#picker').change(function(e) {
+        $('#file-label').html(e.target.files[0].name);
+    });
+    $('#predict').click(function(){
+        //滑动出现
+        $('#spinner').stop().slideToggle()
+    })
+
+    //点击叉号就消失
+    $('.close').click(function(){
+        $(this).parent('div').remove()
+    })
+
+    $('#test').click(function(){
+        $('.a').slideDown()
+    })
+</script>
+</html>

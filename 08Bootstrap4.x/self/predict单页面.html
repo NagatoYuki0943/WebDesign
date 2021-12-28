@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="./webuploader/webuploader.css">
+    <style>
+        .c{
+            background-color: aquamarine;
+        }
+        #header{
+            background-color: rgba(133, 27, 233, 0.671);
+        }
+        #picker{
+            width: 100px;
+            margin: 20px auto 10px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container bg-light">
+        <div id="header" class=" d-flex justify-content-center p-3" style="height: 90px;">
+            <h1>垃圾图像检测</h1>
+        </div>
+        <div class="jumbotron mt-1">
+            <div class="card">
+                <img class="card-img" src="img/垃圾分类3.jpg" alt="bt">
+                <div class="card-img-overlay">
+                    <h1 class="display-4 text-primary"></h1>
+                    <h4 class="text-muted">垃圾分类,人人有责!</h4>
+                </div>
+            </div>
+
+            <p class="text-center">
+                <div id="picker">选择图片</div>
+            </p>
+            <div class="toast hide fade mx-auto">
+                <div class="toast-header">
+                    <!--mr-auto将其他元素往右边挤-->
+                    <strong class="mr-auto">提示</strong>
+                    <!--这是右边的叉号-->
+                    <button class="close ml-2 mb-2" data-dismiss="toast">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    没有选择图片
+                </div>
+            </div>
+            <p class="lead d-flex justify-content-center mb-0">
+                <button id="predict" class="btn btn-success btn mr-1">点击检测</button>
+            </p>
+        </div>
+        <hr>
+
+        <div id="spinner" class="text-center mb-3">
+            <div class="spinner-border text-success"></div>
+        </div>
+        <div id="a">
+            <!-- 关闭按钮 -->
+            <button type="button" class="close btn btn-primary p-1 bg-info" aria-label="关闭">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="card w-75 bg-info text-light border-info mx-auto">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="card-img img-thumbnail" src="img/垃圾分类3.jpg" alt="bt">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="d-flex justify-content-around">
+                                <span class="btn btn-primary">类别</span>
+                                <span class="btn btn-secondary">准确率</span>
+                            </p>
+                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-center">
+            <button id="test" class="btn btn-primary">test</button>
+        </p>
+    </div>
+</body>
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script src="./webuploader/webuploader.js"></script>
+<script>
+    //隐藏下部全部
+    $('#spinner').stop().hide()
+    $('#a').stop().hide()
+
+    $('#picker').change(function(e) {
+        $('#file-label').html(e.target.files[0].name);
+    });
+
+    //初始化Web Uploader
+    var uploader = WebUploader.create({
+
+        //选完文件后，是否自动上传。
+        auto: false,
+
+        //swf文件路径
+        swf: "./webuploader/Uploader.swf",
+
+        //文件接收服务端。
+        server: "???",
+
+        //文件上传时携带的参数
+        formData: {
+        },
+
+        //选择文件的按钮。可选。
+        //内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: {
+            id: '#picker',
+            //是否开启选择多个文件的能力
+            multiple: false,
+        },
+
+        //文件上传在表单中的名字
+        fileVal: 'image',
+
+        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+        resize: false
+    });
+
+    //手动上传图片
+    $('#predict').click(function(){
+        var length = uploader.getFiles().length;
+        console.log(length);
+        if (length > 0) {
+            //上传图片
+            uploader.upload();
+            //滑动出现圆圈
+            $('#spinner').stop().slideToggle()
+        } else {
+            //alert("请选择文件");
+            $('.toast').toast('show');
+        }
+    })
+
+    //上传成功后的异步方法 上传一张照片就调用一次     可能性  类别
+    uploader.on('uploadSuccess', function (file, {y_prob, y_predict, img_url}) {
+        console.log(y_prob);
+        console.log(y_predict);
+        $('#y_predict').html(y_predict)
+        $('#y_prob').html(y_prob)
+        console.log(img_url); ///static/pic/upload/24-0030.jpg
+        $('img').attr('src', img_url)
+    });
+
+    //点击叉号就消失
+    $('.close').click(function(){
+        $(this).parent('div').remove()
+    })
+
+    $('#test').click(function(){
+        $('#a').slideDown();
+        $('#spinner').slideUp();
+    })
+</script>
+</html>
