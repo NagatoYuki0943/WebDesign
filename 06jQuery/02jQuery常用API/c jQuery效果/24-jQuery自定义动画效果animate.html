@@ -18,13 +18,20 @@
 </head>
 
 <body>
-    <button>动起来</button>
+    <button id="change">动起来</button>
+    <button id="down">向下滚动</button>
     <div></div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <button id="c">c</button>
 
 </body>
 <script>
     $(function() {
-        $('button').click(function() {
+        $('#change').click(function() {
             $('div').animate({
                 left: 500, //向右500
                 top: 300, //向下300
@@ -34,6 +41,25 @@
             }, 500)
 
         });
+
+        $('#down').click(function(){
+            scrollTo('#c')
+        })
+
+
+    //滚动
+    function scrollTo(element,speed) {
+        if(!speed){
+            speed = 300;
+        }
+        if(!element){
+            $("html,body").animate({scrollTop:0},speed);
+        }else{
+            if(element.length>0){
+                $("html,body").animate({scrollTop:$(element).offset().top-200},speed);
+            }
+        }
+    }
     })
 </script>
 

@@ -76,7 +76,7 @@
                                 <span class="btn btn-primary">类别</span>
                                 <span class="btn btn-secondary">准确率</span>
                             </p>
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                            <p class="ml-5">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                             </p>
@@ -85,18 +85,14 @@
                 </div>
             </div>
         </div>
-        <p class="text-center">
-            <button id="test" class="btn btn-primary">test</button>
-        </p>
     </div>
 </body>
 <script src="../js/jquery-3.6.0.js"></script>
 <script src="../js/bootstrap.bundle.js"></script>
 <script src="./webuploader/webuploader.js"></script>
 <script>
-    //隐藏下部全部
+    //隐藏圆圈
     $('#spinner').stop().hide()
-    $('#a').stop().hide()
 
     $('#picker').change(function(e) {
         $('#file-label').html(e.target.files[0].name);
@@ -156,16 +152,33 @@
         $('#y_prob').html(y_prob)
         console.log(img_url); ///static/pic/upload/24-0030.jpg
         $('img').attr('src', img_url)
+
+        //圆圈消失
+        $('#spinner').slideUp();
+        //展示图片
+        $('#a').stop().slideDown();
+        //移动到底部
+        scrollTo('#buttom')
     });
 
     //点击叉号就消失
     $('.close').click(function(){
-        $(this).parent('div').remove()
+        $('#spinner').stop().slideUp()
+        $('#a').stop().slideUp()
     })
 
-    $('#test').click(function(){
-        $('#a').slideDown();
-        $('#spinner').slideUp();
-    })
+    //滚动
+    function scrollTo(element,speed) {
+        if(!speed){
+            speed = 300;
+        }
+        if(!element){
+            $("html,body").animate({scrollTop:0},speed);
+        }else{
+            if(element.length>0){
+                $("html,body").animate({scrollTop:$(element).offset().top-200},speed);
+            }
+        }
+    }
 </script>
 </html>
