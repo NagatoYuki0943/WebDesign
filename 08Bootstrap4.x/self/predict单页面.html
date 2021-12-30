@@ -76,7 +76,7 @@
                                 <span class="btn btn-primary">类别</span>
                                 <span class="btn btn-secondary">准确率</span>
                             </p>
-                            <p class="ml-5">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                            <p class="text-center">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                             </p>
@@ -84,6 +84,7 @@
                     </div>
                 </div>
             </div>
+            <hr id="buttom">
         </div>
     </div>
 </body>
@@ -138,6 +139,8 @@
             uploader.upload();
             //滑动出现圆圈
             $('#spinner').stop().slideToggle()
+            //移动到底部
+            scrollTo('#buttom')
         } else {
             //alert("请选择文件");
             $('.toast').toast('show');
@@ -157,8 +160,6 @@
         $('#spinner').slideUp();
         //展示图片
         $('#a').stop().slideDown();
-        //移动到底部
-        scrollTo('#buttom')
     });
 
     //点击叉号就消失
