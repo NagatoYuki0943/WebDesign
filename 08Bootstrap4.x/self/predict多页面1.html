@@ -48,29 +48,6 @@
                     <input type="reset" class="btn btn-info d-inline-block mr-auto ml-5">
             </form>
         </div>
-        <hr>
-
-        <div>
-            <div class="card w-75 bg-info text-light border-info mx-auto">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img class="card-img img-thumbnail" src="img/垃圾分类3.jpg" alt="bt">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <p class="d-flex justify-content-around">
-                                <span class="btn btn-primary">类别</span>
-                                <span class="btn btn-secondary">准确率</span>
-                            </p>
-                            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 <script src="../js/jquery-3.6.0.js"></script>
@@ -79,18 +56,5 @@
     $('#picker').change(function(e) {
         $('#file-label').html(e.target.files[0].name);
     });
-    $('#predict').click(function(){
-        //滑动出现
-        $('#spinner').stop().slideToggle()
-    })
-
-    //点击叉号就消失
-    $('.close').click(function(){
-        $(this).parent('div').remove()
-    })
-
-    $('#test').click(function(){
-        $('.a').slideDown()
-    })
 </script>
 </html>
