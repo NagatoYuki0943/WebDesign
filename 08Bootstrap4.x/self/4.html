@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+    <div class="toast hide fade">
+        <div class="toast-header">
+            <!--mr-auto将其他元素往右边挤-->
+            <strong class="mr-auto">提示框</strong>
+            <!--这是右边的叉号-->
+            <button class="close ml-2 mb-2" data-dismiss="toast">
+                <span>&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            这是一个提示框1
+        </div>
+    </div>
+    <!-- 表单提交 -->
+    <form id="form" action="#" class="form-row was-validated mt-3" method="post" enctype="multipart/form-data">
+        <div class="form-group col-sm-6 mx-auto">
+            <input type="text" name="name" id="">
+        </div>
+        <div class="w-100"></div>
+            <input type="submit" class="btn btn-primary d-inline-block ml-auto mr-5">
+            <input type="reset" class="btn btn-info d-inline-block mr-auto ml-5">
+    </form>
+</body>
+<script src="../js/jquery-3.6.0.js"></script>
+<script src="../js/bootstrap.bundle.js"></script>
+<script>
+    //2. 弹出提示框要求要通过脚本初始化，否则无法实现关闭功能；
+    $('.toast').toast();
+
+    //点击按钮弹出框
+    $('#form').submit(function() {
+        $('.toast').toast('show');
+        url = 'www.baidu.com';
+        setTimeout("location.href = '" + url + "'", 3000);
+    });
+</script>
+</html>

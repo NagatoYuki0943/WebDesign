@@ -40,19 +40,22 @@
 
     4. 可以直接用 CSS 定位调整出现的方位，比如右上角 <br>
     5. 点击弹窗时，默认是自动隐藏的，可以关闭它: data-autohide="false" <br>
-    <div class="toast hide fade" data-autohide="false" style="position: absolute; top: 20px; right: 20px;">
-        <div class="toast-header">
-            <!--mr-auto将其他元素往右边挤-->
-            <strong class="mr-auto">提示框</strong>
-            <!--这是右边的叉号-->
-            <button class="close ml-2 mb-2" data-dismiss="toast">
-                <span>&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-            这是一个提示框2
+    <div class="d-flex justify-content-center">
+        <div class="toast hide fade mx-auto" data-autohide="false" style="position: relative;">
+            <div class="toast-header">
+                <!--mr-auto将其他元素往右边挤-->
+                <strong class="mr-auto">提示框</strong>
+                <!--这是右边的叉号-->
+                <button class="close ml-2 mb-2" data-dismiss="toast">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                这是一个提示框2
+            </div>
         </div>
     </div>
+
     <button id="button" class="btn btn-success">弹出</button>
     <hr>
     <br>
