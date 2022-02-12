@@ -11,7 +11,7 @@
             background-color: aquamarine;
         }
         #header{
-            background-color: rgba(133, 27, 233, 0.671);
+            background-color: rgba(43, 255, 114, 0.67);
         }
         #picker{
             width: 100px;
@@ -20,31 +20,34 @@
     </style>
 </head>
 <body>
-
     <div class="container bg-light">
-        <div id="header" class=" d-flex justify-content-center p-3" style="height: 90px;">
-            <h1>垃圾图像检测</h1>
+        <div id="header" class="d-flex justify-content-center p-2" style="height: 70px;">
+            <h1>预测结果</h1>
         </div>
         <div class="jumbotron">
-            <div class="card-deck">
+            <div class="card-deck text-center">
                 <div class="card">
-                    <img class="card-img-top" src="img/bt.png" alt="bt">
+                    <img id="pred_img" class="card-img-top" src="img/bt.png" alt="bt" img_id="0" style="height: 275px;">
                     <div class="card-body">
                         <p class="d-flex justify-content-around">
                             <span class="btn btn-primary">类别</span>
-                            <span class="btn btn-secondary">准确率</span>
+                            <span class="btn btn-secondary">置信度:准确率</span>
                         </p>
                         <hr>
-                        <p class="text-center">
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        <h5 style="color:rgb(78, 49, 69);">判断对了吗?</h5>
+                        <br>
+                        <p class="d-flex justify-content-around">
+                            <button id="yes" class="btn btn-success">判断正确</button>
+                            <button id="no"  class="btn btn-danger">判断错误</button>
                         </p>
+                    </div>
+                    <div class="card-footer">
+                        <p id="footer">请点击上面的按钮</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="img/bt.png" alt="bt">
-                    <div class="card-body text-center">
+                    <img class="card-img-top" src="img/bt.png" alt="bt" style="height: 275px;">
+                    <div class="card-body">
                         <h2>Tips</h2>
                         <hr>
                         <p>
@@ -52,6 +55,9 @@
                             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                         </p>
+                    </div>
+                    <div class="card-footer">
+                        页脚
                     </div>
                 </div>
             </div>
@@ -61,5 +67,35 @@
 <script src="../js/jquery-3.6.0.js"></script>
 <script src="../js/bootstrap.bundle.js"></script>
 <script>
+    $("#yes").click(function(){
+        //图片id
+        img_id = $("#pred_img").attr("img_id");
+        //发送请求
+        $.post("#",
+            {
+                img_id,
+                result: 1
+            }
+            ).then((res)=>{
+                if (res==1){
+                    $("#footer").removeClass("text-danger").addClass("text-success").html("yes!判断正确")
+                }
+            });
+    });
+    $("#no").click(function(){
+        //图片id
+        img_id = $("#pred_img").attr("img_id");
+        //发送请求
+        $.post("#",
+            {
+                img_id,
+                result: 0
+            }
+            ).then((res)=>{
+                if (res==1){
+                    $("#footer").removeClass("text-success").addClass("text-danger").html("no!判断错误")
+                }
+            })
+    });
 </script>
 </html>
