@@ -27,27 +27,26 @@
         <div class="jumbotron">
             <div class="card-deck text-center">
                 <div class="card">
-                    <img id="pred_img" class="card-img-top" src="img/bt.png" alt="bt" img_id="0" style="height: 275px;">
-                    <div class="card-body">
+                    <img id="pred_img" class="card-img-top" src="img/bt.png" alt="bt" img_id="0" style="width: 100%;">
+                    <div class="card-body pb-1">
                         <p class="d-flex justify-content-around">
                             <span class="btn btn-primary">类别</span>
                             <span class="btn btn-secondary">置信度:准确率</span>
                         </p>
                         <hr>
                         <h5 style="color:rgb(78, 49, 69);">判断对了吗?</h5>
-                        <br>
-                        <p class="d-flex justify-content-around">
-                            <button id="yes" class="btn btn-success">判断正确</button>
-                            <button id="no"  class="btn btn-danger">判断错误</button>
+                        <p class="d-flex justify-content-around mb-0">
+                            <button class="yes btn btn-success">判断正确</button>
+                            <button class="no  btn btn-danger">判断错误</button>
                         </p>
                     </div>
                     <div class="card-footer">
-                        <p id="footer">请点击上面的按钮</p>
+                        <p id="footer" class="mb-0">请点击上面的按钮</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="img/bt.png" alt="bt" style="height: 275px;">
-                    <div class="card-body">
+                    <img class="card-img-top" src="img/bt.png" alt="bt" style="width: 100%;">
+                    <div class="card-body pb-1">
                         <h2>Tips</h2>
                         <hr>
                         <p>
@@ -67,7 +66,7 @@
 <script src="../js/jquery-3.6.0.js"></script>
 <script src="../js/bootstrap.bundle.js"></script>
 <script>
-    $("#yes").click(function(){
+    $(".yes").click(function(){
         //图片id
         img_id = $("#pred_img").attr("img_id");
         //发送请求
@@ -82,7 +81,7 @@
                 }
             });
     });
-    $("#no").click(function(){
+    $(".no").click(function(){
         //图片id
         img_id = $("#pred_img").attr("img_id");
         //发送请求
