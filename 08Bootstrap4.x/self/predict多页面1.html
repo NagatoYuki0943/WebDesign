@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predict</title>
+    <title>垃圾检测</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <style>
         .c{
@@ -21,40 +21,85 @@
 </head>
 <body>
 
-    <div class="container bg-light">
-        <div id="header" class="d-flex justify-content-center p-2" style="height: 70px;">
-            <h1>垃圾图像检测</h1>
-        </div>
-        <div class="jumbotron p-5">
-            <div class="card">
-                <img class="card-img" src="img/垃圾分类3.jpg" alt="bt">
-                <div class="card-img-overlay">
-                    <h1 class="display-4 text-primary"></h1>
-                    <h4 class="text-muted">垃圾分类,人人有责!</h4>
+    <div class="container bg-light px-0">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-info mb-4">
+            <!-- navbar-toggler 更改按钮样式 data-toggle="collapse" data-target="#navbar" 绑定数据 -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar2">
+                <span class="navbar-toggler-icon"></span>   <!-- navbar-toggler-icon 在小于sm时,点击这个按钮就出现列表 -->
+            </button>
+            <div id="navbar2" class="collapse navbar-collapse">  <!-- collapse navbar-collapse 和 navbar-expand-sm 让宽度小于sm时,文字就消失 -->
+                <a class="navbar-brand" href="#">Logo</a>  <!--logo可以放到这里,这样在手机上就看不到了-->
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="#">检测</a>
+                    <a class="nav-item nav-link" href="#">检测历史</a>
+                    <a class="nav-item nav-link" href="#">管理(管理员)</a>
+                    <a class="nav-item nav-link" href="#">注册</a>
+                    <a class="nav-item nav-link" href="#">登录</a>
+                    <a class="nav-item nav-link" href="#">关于</a>
                 </div>
             </div>
-
+        </nav>
+        <div class="jumbotron p-3">
+            <div class="card">
+                <img class="card-img" src="img/垃圾分类4.jpg" alt="bt">
+                <div class="card-img-overlay">
+                    <h4 class="text-muted">垃圾分类,人人有责!</h4>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- 检测提示框 -->
+                    <div class="d-flex justify-content-center mt-5">
+                        <div class="toast hide fade text-info text-center" data-autohide="false" style="width: 250px; background-color:rgba(213, 255, 196, 0.774)">
+                            <div class="toast-header">
+                                <h4 class="mx-auto text-info">正在检测,请稍后</h4>
+                            </div>
+                            <div class="toast-body text-center mx-5">
+                                <div class="spinner-border text-info"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- 表单提交 -->
-            <form action="" class="form-row was-validated mt-3">
+            <form id="form" action="#" class="form-row was-validated mt-3" method="post" enctype="multipart/form-data">
                 <div class="form-group col-sm-6 mx-auto">
                     <label for="file">上传文件:</label>
                     <div class="custom-file">
-                        <input id="picker" type="file" class="custom-file-input" required>
+                        <input id="picker" type="file" class="custom-file-input" name="image" required>
                         <label for="picker" class="custom-file-label" id="file-label">选择文件</label>
                     </div>
                 </div>
+                <!-- 强制换行 -->
                 <div class="w-100"></div>
-                    <input type="submit" class="btn btn-primary d-inline-block ml-auto mr-5">
-                    <input type="reset" class="btn btn-info d-inline-block mr-auto ml-5">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4 text-center mb-3 mb-sm-0">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <input type="reset" class="btn btn-info">
+                    </div>
+                    <div class="col-sm-2"></div>
+
             </form>
         </div>
+        <hr>
     </div>
 </body>
-<script src="../js/jquery-3.6.0.js"></script>
-<script src="../js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.bundle.js"></script>
 <script>
     $('#picker').change(function(e) {
         $('#file-label').html(e.target.files[0].name);
     });
+
+    //2. 弹出提示框要求要通过脚本初始化，否则无法实现关闭功能；
+    $('.toast').toast();
+
+    $('#form').submit(function(e){
+        console.log(e);
+        $('.toast').toast('show');
+        //return false;
+    });
+
 </script>
 </html>
