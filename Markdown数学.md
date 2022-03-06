@@ -20,12 +20,12 @@ $$C_n^2$$
 
 - 单独显示(display)的LaTeX公式用`$$...$$`定义，此时公式居中并放大显示
 
-- 语句为`\sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t`
+- 语句为`\sum_{i=0}^{\infty}N\int_{a}^{b}g(t,i)dt`
 
     - 显示为
 
     $$
-    \sum_{i=0}N\int_{a}{b}g(t,i)\text{d}t
+    \sum_{i=0}^{\infty}N\int_{a}^{b}g(t,i)dt
     $$
 
     
