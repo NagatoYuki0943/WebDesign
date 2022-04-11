@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结果</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        .c{
+            background-color: aquamarine;
+        }
+        #header{
+            background-color: rgba(43, 255, 114, 0.67);
+        }
+        #picker{
+            width: 100px;
+            margin: 20px auto 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info mb-4">
+        <!-- navbar-toggler 更改按钮样式 data-toggle="collapse" data-target="#navbar" 绑定数据 -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar2">
+            <span class="navbar-toggler-icon"></span>   <!-- navbar-toggler-icon 在小于sm时,点击这个按钮就出现列表 -->
+        </button>
+        <div id="navbar2" class="collapse navbar-collapse">  <!-- collapse navbar-collapse 和 navbar-expand-sm 让宽度小于sm时,文字就消失 -->
+            <a class="navbar-brand" href="#">Logo</a>  <!--logo可以放到这里,这样在手机上就看不到了-->
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="#">检测</a>
+
+                <!-- 登录 -->
+                <!-- {% if user %} -->
+                    <!-- 管理员查看全部历史 -->
+                    <!-- {% if user.id==1 %} -->
+                        <a class="nav-item nav-link" href="#">管理</a>
+                    <!-- {% else %} -->
+                    <a class="nav-item nav-link" href="#">检测历史</a>
+                    <!-- {% endif %} -->
+                    <span class="navbar-text">你好，user</span>
+                    <a class="nav-item nav-link" href="#">退出</a>
+                <!-- 未登录 -->
+                <!-- {% else %} -->
+                    <a class="nav-item nav-link" href="#">注册</a>
+                    <a class="nav-item nav-link" href="#">登录</a>
+                <!-- {% endif %} -->
+
+                <a class="nav-item nav-link" href="#">关于</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container px-0">
+        <div class="container px-0">
+            <div class="jumbotron">
+                <div class="card-deck">
+                    <div class="card text-center" style="background-color: rgba(158, 158, 158, 0.164);">
+                        <img id="pred_img" class="card-img-top" src="img/bt.png" alt="bt" img_id="">
+                        <div class="card-body pb-1">
+                            <p class="d-flex justify-content-around">
+                                <span class="btn btn-primary">种类1</span>
+                                <span class="btn btn-secondary">置信度:0.99</span>
+                            </p>
+                            <hr>
+                            <h5 style="color:rgb(78, 49, 69);">判断对了吗?</h5>
+                            <p class="d-flex justify-content-around mb-0">
+                                <button class="yes btn btn-success">判断正确</button>
+                                <button class="no btn btn-danger">判断错误</button>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <p id="footer" class="mb-0">请点击上面的按钮</p>
+                        </div>
+                    </div>
+                    <div class="card" style="background-color: rgba(235, 112, 112, 0.2);">
+                        <img class="card-img-top mx-auto w-75" src="img/result/result-4.png">
+                        <div class="card-img-overlay">
+                            <br>
+                            <p class="h2 text-left text-danger">属于有害垃圾</p>
+                        </div>
+                        <div class="card-body pb-1">
+                            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有害垃圾指对人体健康或者自然环境造成直接或者潜在危害的生活废弃物。</h5>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有害垃圾包括充电电池、锂电池、镉镍电池、铅酸电池、蓄电池、纽扣电池、废日光灯管、废水银温度计、过期药物、药物胶囊、药片、药品内包装、酒精、使用过的医用纱布棉签、废含汞温度计、废含汞血压计、废杀虫剂及其包装等。
+                            </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            页脚
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.bundle.js"></script>
+<script>
+    $(".yes").click(function(){
+        //图片id
+        img_id = $("#pred_img").attr("img_id");
+        $("#footer").removeClass("text-danger").addClass("text-success").html("yes!判断正确")
+        //发送请求
+        //$.post("{{ url_for('admin.judgment_result') }}",
+        //    {
+        //        img_id,
+        //        result: 1
+        //    }
+        //    ).then((res)=>{
+        //        if (res==1){
+        //            $("#footer").removeClass("text-danger").addClass("text-success").html("yes!判断正确")
+        //        }
+        //    });
+    });
+    $(".no").click(function(){
+        //图片id
+        img_id = $("#pred_img").attr("img_id");
+        $("#footer").removeClass("text-success").addClass("text-danger").html("no!判断错误")
+        //发送请求
+        //$.post("{{ url_for('admin.judgment_result') }}",
+        //    {
+        //        img_id,
+        //        result: 0
+        //    }
+        //    ).then((res)=>{
+        //        if (res==1){
+        //            $("#footer").removeClass("text-success").addClass("text-danger").html("no!判断错误")
+        //        }
+        //    })
+    });
+</script>
+</html>
