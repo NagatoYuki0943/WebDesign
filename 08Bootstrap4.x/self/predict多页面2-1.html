@@ -17,6 +17,15 @@
             width: 100px;
             margin: 20px auto 10px auto;
         }
+        .h2{
+            font-size: calc(1rem + 1vw)
+        }
+        .left{
+            font-size: calc(1rem + 0.4vw)
+        }
+        .right{
+            font-size: calc(0.9rem + 0.2vw)
+        }
     </style>
 </head>
 <body>
@@ -62,14 +71,14 @@
                                 <span class="btn btn-secondary">置信度:0.99</span>
                             </p>
                             <hr>
-                            <h5 style="color:rgb(78, 49, 69);">判断对了吗?</h5>
-                            <p class="d-flex justify-content-around mb-0">
+                            <p class="left" style="color:rgb(78, 49, 69);">判断对了吗?</p>
+                            <p class="d-flex justify-content-around mb-sm-0">
                                 <button class="yes btn btn-success">判断正确</button>
                                 <button class="no btn btn-danger">判断错误</button>
                             </p>
                         </div>
                         <div class="card-footer">
-                            <p id="footer" class="mb-0">请点击上面的按钮</p>
+                            <p id="footer" class="right mb-0">请点击上面的按钮</p>
                         </div>
                     </div>
                     <div class="card" style="background-color: rgba(69, 241, 69, 0.2);">
@@ -79,15 +88,15 @@
                             <p class="h2 text-left text-success">属于厨余垃圾</p>
                         </div>
                         <div class="card-body pb-1">
-                            <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <h5 class="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 厨余垃圾是指居民日常生活及食品加工、饮食服务、单位供餐等活动中产生的垃圾。
                             </h5>
-                            <p>
+                            <p class="right">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 厨余垃圾含有极高的水分与有机物，很容易腐坏，产生恶臭。经过妥善处理和加工，可转化为新的资源，高有机物含量的特点使其经过严格处理后可作为肥料、饲料，也可产生沼气用作燃料或发电，油脂部分则可用于制备生物燃料。
                             </p>
                         </div>
-                        <div class="card-footer text-center">
+                        <div class="right card-footer text-center">
                             请将厨余垃圾放到绿色的垃圾桶中!
                         </div>
                     </div>
