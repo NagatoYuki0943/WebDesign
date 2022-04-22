@@ -7,6 +7,20 @@
     <title>登录</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <style>
+        .container{
+            background-image: url(img/背景2-2x.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+            height: 600px;
+        }
+        #form_out{
+            background-color: rgba(255, 255, 255, 0.675);
+            border-radius: 5px
+        }
+        .h4{
+            font-size: calc(1rem + 0.5vw)
+        }
     </style>
 </head>
 <body>
@@ -27,38 +41,22 @@
             </div>
         </div>
     </nav>
-    <div class="container bg-light px-0">
-
-        <div class="jumbotron p-0">
-            <div class="card">
-                <img class="card-img" src="img/背景2-2x.png" alt="bt">
-                <div class="card-img-overlay">
-                    <h4 class="text-muted pl-1 pt-1 mb-5">垃圾分类,人人有责!</h4>
-                    <div class="col-sm-4 mx-auto p-3" style="background-color: rgba(255, 255, 255, 0.675); border-radius: 5px">
-                        <form action="#" class="form-row d-flex justify-content-center" method="post">
-                            <div class="form-group w-100">
-                                <label for="user">用户名 / 邮箱</label>
-                                                                    <!-- is-valid 默认成功 -->
-                                <input type="text" class="form-control " id="user" name="user" placeholder="请输入用户名或邮箱">
-                                <!--上面是valid和invalid会显示下面的一个-->
-                                <!-- <div class="valid-feedback">success!</div>
-                                <div class="invalid-feedback">failed!</div> -->
-                            </div>
-                            <div class="w-100"></div>
-                            <div class="form-group w-100">
-                                <label for="password">密码</label>
-                                                                    <!-- is-invalid 默认不成功 -->
-                                <input type="password" class="form-control " id="password" name="password" placeholder="请输入密码">
-                                <!--上面是valid和invalid会显示下面的一个-->
-                                <!-- <div class="valid-feedback">success!</div>
-                                <div class="invalid-feedback">failed!</div> -->
-                            </div>
-                            <input type="submit" class="btn btn-info" value="登录">
-                        </form>
-                    </div>
-
+    <div class="container px-0">
+        <p class="h4 text-muted pl-1 pt-1 mb-5">垃圾分类,人人有责!</p>
+        <div id="form_out" class="col-md-5 mx-auto p-md-3">
+            <form action="" class="form-row d-flex justify-content-center" method="post">
+                <div class="form-group w-100">
+                    <label for="user">用户名 / 邮箱</label>
+                    <input type="text" class="form-control " id="user" name="user" placeholder="请输入用户名或邮箱" value="">
                 </div>
-            </div>
+                <div class="w-100"></div>
+                <div class="form-group w-100">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control " id="password" name="password" placeholder="请输入密码" value="">
+                </div>
+                <input type="submit" class="btn btn-info" value="登录">
+            </form>
+        </div>
     </div>
 </body>
 <script src="../js/jquery-3.6.0.js"></script>
