@@ -144,21 +144,28 @@ $$
     - `{1 \over {x}}` => ${1 \over {x}}$
 - 根式: `\sqrt [x] {y}` => $\sqrt [x] {y}$
 
-## 4.2 其他
+## 4.2 开方
+
+- 开方  `\sqrt[2]{8}`  $\sqrt[2]{8}$
+
+## 4.3 乘除
+
+- 乘法  `\times`  $\times$
+
+- 点乘  `\cdot`  $\cdot$
+
+- 除法  `\div`  $\div$
+
+## 4.x 其他
 
 |     中文     |                       代码                       |                       效果                       |
 | :----------: | :----------------------------------------------: | :----------------------------------------------: |
-|     分数     |      `\frac{}{}`或`\dfrac{}{}`或`{}\over{}`      |    $\frac{1}{2}或\dfrac{1}{2}或{{1}\over{2}}$    |
-|     开方     |                  `\sqrt[2]{8}`                   |                  $\sqrt[2]{8}$                   |
 |     积分     |                `\int_0^1 x^2 dx`                 |                $\int_0^1 x^2 dx$                 |
 |     极限     | `\lim\limits_{x \rightarrow \infty} \frac{1}{x}` | $\lim\limits_{x \rightarrow \infty} \frac{1}{x}$ |
 |     累加     |             `\sum_1^n \frac{1}{x^2}`             |             $\sum_1^n \frac{1}{x^2}$             |
 |     累乘     |         `\prod_{i=0}^n {1 \over {x^2}}`          |          $\prod_{i=0}^n{1 \over {x^2}}$          |
 |     对数     |               `\log`或`\ln`或`\lg`               |                 $\log或\ln或\lg$                 |
 |   三角函数   |  `\sin`或`\sin`或`\tan`或`\cot`或`\sec`或`\csc`  |       $\sin或\sin或\tan或\cot或\sec或\csc$       |
-|     乘法     |                     `\times`                     |                     $\times$                     |
-|     除法     |                      `\div`                      |                      $\div$                      |
-|     点乘     |                     `\cdot`                      |                     $\cdot$                      |
 |     加减     |                      `\pm`                       |                      $\pm$                       |
 |     减加     |                      `\mp`                       |                      $\mp$                       |
 |    省略号    |                `\cdots`或`\ldots`                |                 $\cdots或\ldots$                 |
@@ -202,6 +209,9 @@ $$
 |     连线     |       `\hat{y}`或`\check{y}`或`\breve{y}`        |    $\hat{y} \quad \check{y} \quad \breve{y}$     |
 |   转义符号   |              `\# \$ \% \& \_ \{ \}`              |              $\# \$ \% \& \_ \{ \}$              |
 |    相当于    |                     `\equiv`                     |                     $\equiv$                     |
+|     内积     |              `\langle x, b \rangle`              |              $\langle x, b \rangle$              |
+|     外积     |                   `x\otimes b`                   |                   $x\otimes b$                   |
+|              |                                                  |                                                  |
 |              |                                                  |                                                  |
 
 ----
