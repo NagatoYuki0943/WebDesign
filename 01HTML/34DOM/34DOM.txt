@@ -1,5 +1,6 @@
 闭包
     目前可以简单理解成子方法使用父方法的变量即可(不建议使用闭包,变量不易释放)
+
 DOM
     1.DOM即Document Object Model
     2.DOM用于操作操作html文档,准确的说是操作html标签内的内容
@@ -7,14 +8,15 @@ DOM
     4.在html中,每个标签都拥有自己的属性,如 style ID class 等,也拥有触发 事件 方法.
       同样在js中作为对象处理的标签也拥有 属性 事件 方法 等成员
     5.操作DOM对象,一般使用 document 关键字调用
+
 JS获取关键字的方法
     document.getElementById(id):                 根据id获取元素节点
     document.getElementsByName(name):            根据name获取元素节点(配合form表单)
     document.getElementsByClassName(className):  根据class的值获取一组元素节点
     document.getElementsByTagName(tag):          根据标签名的值获取一组元素节点
     document.body                                document.body直接获取body,不需要get方法
-    
+
     //h5中的新方法,id前面要加#,class之前要加 . ,和css类似
-    console.log(document.querySelector("#dv1")); 
+    console.log(document.querySelector("#dv1"));
     console.log(document.querySelector(".div"));   //只获取第一个
     console.log(document.querySelectorAll(".dv")); //获取全部

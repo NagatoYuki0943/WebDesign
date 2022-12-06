@@ -14,7 +14,7 @@ DOM用于操作浏览器行为
         milliseconds:执行代码的周期
         方法会不停调用函数,直到clearInterval()被调用或者窗口被关闭.
         由setInterval()返回计时器ID值可用作clearInterval()方法的参数
-        
+
         提示:1000毫秒=1秒.如果只想执行一次可以使用setTimeout()方法
 
     5. setTimeout(code,milliseconds):一次性计时器 方法用于在指定的毫秒数后调用函数或者计算表达式

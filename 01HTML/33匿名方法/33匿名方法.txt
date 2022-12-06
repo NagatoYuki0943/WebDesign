@@ -1,10 +1,10 @@
 匿名方法
     1.匿名方法可以简单理解成 不需要写方法名称的方法
     2.匿名方法一般有两种方法
-    
+
     i.方法一(委托)
 
-    var func=function (p1){
+    var func = function (p1){
         console.log(p1);
     }
     func("hello"); //把匿名方法赋值给变量,然后用变量传值就能调用

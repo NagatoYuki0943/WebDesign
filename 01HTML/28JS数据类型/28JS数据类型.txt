@@ -12,7 +12,7 @@
     var srt = "Hello World!";
     var Type = typeof(srt);
     alert(Type); //弹出窗口
-    console.log(Type); //在控制台输出: "string"    
+    console.log(Type); //在控制台输出: "string"
 
     //测试数字变量的类型
     var numValue = 123;

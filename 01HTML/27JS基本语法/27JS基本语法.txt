@@ -13,9 +13,9 @@ JS基本语法
         *@param{*} param1 参数1
         *@param{&} parma2 参数2
         */
-        function testFun(param1,parma2){} 
+        function testFun(param1,parma2){}
 
     字符串既可以使用单引号,也可以使用双引号
         var value="hello world!"
-        var value='hello world'        
+        var value='hello world'
 

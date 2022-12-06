@@ -1,6 +1,6 @@
 1.数组: [...]  是中括号不是大括号
     方式1: var array1 = new Array();  //怎么写都可以,注意Array, A要大写
-    方式2: var array = [1,2,3,4,5,6];  
+    方式2: var array = [1,2,3,4,5,6];
      console.log(array1); //可以直接打印出数组内容
 
 
@@ -26,7 +26,7 @@
             console.log(kv);
 
 
-3.对象数组: [{属性:值1,,,},{},{},,,] 
+3.对象数组: [{属性:值1,,,},{},{},,,]
     var keyValue = [
         {"key1":"value1","key1":"value2","key3":"value3"},   //每个大括号算是一个对象
         {"key1":"value1","key1":"value2","key3":"value3"},
@@ -37,6 +37,3 @@
 
 4.Array对象属性
     length设置或返回数组中元素的数目
-
-    
-

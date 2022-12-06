@@ -2,7 +2,7 @@
     注册事件常用的方法有很多种,此处先介绍两种最常用的方法.
     一种为直接在元素上注册事件,另一种为在获取的对象上注册触发事件
 
-(1)元素注册法 
+(1)元素注册法
     onclick="方法" 点击对话框就出现了
     <input type="text" name="" id="txt1" value="阿猫" onchange="changeMe()">
     <input type="button" value="按钮" onclick="clickMe()">

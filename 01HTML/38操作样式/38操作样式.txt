@@ -25,7 +25,7 @@
  (2)操作className属性
     className属性设置或者返回元素的class属性
         获取属性值: HTMLElementObject.className
-        设置属性值: HTMlElementObject.className=classname   
+        设置属性值: HTMlElementObject.className=classname
 
          //给p3加上 ppt 类
         document.getElementById("p3").className = "ppp";
@@ -36,7 +36,7 @@
         //document.getElementsByTagName("p").style.backgroundColor = "aqua";
         //这样给全体tag赋值也是错误的
         //document.querySelectorAll("p").style.backgroundColor = "red";
-        
+
         //正确写法
         var els = document.getElementsByTagName("p");
         for (let i = 0; i < els.length; i++) {
