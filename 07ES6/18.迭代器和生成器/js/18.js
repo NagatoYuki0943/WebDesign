@@ -1,6 +1,6 @@
-//1. 迭代器(Iterator)，用于给数据结构提供统一的访问遍历的机制； 
-//2. ES6 之前的迭代器比较麻烦，而现在引入了生成器对象，让迭代器更加容易； 
-//3. 首先创建一个生成器方法，方法名前面加上*号，迭代的内容之前使用 yield； 
+//1. 迭代器(Iterator)，用于给数据结构提供统一的访问遍历的机制；
+//2. ES6 之前的迭代器比较麻烦，而现在引入了生成器对象，让迭代器更加容易；
+//3. 首先创建一个生成器方法，方法名前面加上*号，迭代的内容之前使用 yield；
 
 //生成器
 function* cit() {
@@ -15,8 +15,8 @@ let it = cit();
 
 
 
-//4. 迭代器对象的.next()方法，类似指针，每次执行将下移一行； 
-//PS：属性 value 得到值，没有返回 undefined，当没有值了，done 则返回 true； 
+//4. 迭代器对象的.next()方法，类似指针，每次执行将下移一行；
+//PS：属性 value 得到值，没有返回 undefined，当没有值了，done 则返回 true；
 console.log(it.next()); //Object { value: 1, done: false }
 console.log(it.next()); //Object { value: 2, done: false }
 console.log(it.next()); //Object { value: 3, done: false }
@@ -51,9 +51,9 @@ console.log('=========================');
 
 
 //二．默认迭代接口
-// 1. 很多数据结构类型拥有默认迭代接口，比如：Array、Map、Set 等等； 
-// 2. 对于原生就支持迭代器的数据结构，我们不用自己编写生成器迭代器； 
-// 3. 最简单的迭代方式，就是使用 for...of 迭代语句去遍历即可； 
+// 1. 很多数据结构类型拥有默认迭代接口，比如：Array、Map、Set 等等；
+// 2. 对于原生就支持迭代器的数据结构，我们不用自己编写生成器迭代器；
+// 3. 最简单的迭代方式，就是使用 for...of 迭代语句去遍历即可；
 // 4. 它对于 Array 数组类型， 提供了有关三个方法： keys()、 values()和 entries()；
 
 let items = [1, 2, 3, 4, 5];
@@ -63,7 +63,7 @@ console.log(items.entries()); //key+value, Array Iterator {  }
 
 
 //for of 遍历的是数据  for in 遍历的是下标
-//5. 最简单的迭代方式，就是使用 for...of 迭代语句去遍历即可；  
+//5. 最简单的迭代方式，就是使用 for...of 迭代语句去遍历即可；
 //下标
 for (let i of items.keys()) {
     console.log(i);

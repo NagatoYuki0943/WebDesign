@@ -33,18 +33,18 @@ console.log('============================');
 
 
 
-//3. 对于 y 修饰符，ES6 提供了 stikcy 属性，用来检测是否存在 y 修饰符； 
+//3. 对于 y 修饰符，ES6 提供了 stikcy 属性，用来检测是否存在 y 修饰符；
 console.log(patt.sticky); //true
 
 
 
-//4. ES6 提供了 flags 属性，用于返回正则使用的修饰符名称； 
+//4. ES6 提供了 flags 属性，用于返回正则使用的修饰符名称；
 console.log(patt.flags); //y
 console.log('============================');
 
 
 
-//5. .表示匹配所有，除了终止符，比如回车\n 换行\n 等等，使用 s 修饰符匹配可以匹配它们； 
+//5. .表示匹配所有，除了终止符，比如回车\n 换行\n 等等，使用 s 修饰符匹配可以匹配它们；
 text = 'x\nyz';
 patt = /x.+yz/;
 console.log(patt.test(text)); //false

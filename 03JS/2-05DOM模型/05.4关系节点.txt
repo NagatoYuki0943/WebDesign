@@ -15,7 +15,6 @@
 
         childNodes[下标]    注意空格和回车也算节点
         childNodes[下标].nodeValue  获取孩子节点的内容
-        
+
     childElementCount
         孩子节点个数
- 

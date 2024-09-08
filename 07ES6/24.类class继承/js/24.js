@@ -22,7 +22,7 @@ class Children extends Person {
 
 }
 
-//2. 当子类继承了父类，实例化子类后，就可以直接拥有父类的构造、属性和方法； 
+//2. 当子类继承了父类，实例化子类后，就可以直接拥有父类的构造、属性和方法；
 let c = new Children('CH');
 console.log(c.name); //CH
 c.setName = 'Mr W';
@@ -32,7 +32,7 @@ console.log('==================');
 
 
 
-//3. 继承之后，一般来说，我们需要覆写父类，然后对子类进行增强； 
+//3. 继承之后，一般来说，我们需要覆写父类，然后对子类进行增强；
 
 class Person1 {
     constructor(name) {
@@ -77,13 +77,13 @@ console.log('==================');
 
 
 
-//4. 可以使用 Object.getPrototypeOf()判断子类是否继承了父类； 
+//4. 可以使用 Object.getPrototypeOf()判断子类是否继承了父类；
 console.log(Object.getPrototypeOf(Children) === Person); //true
 console.log('==================');
 
 
 
-//5. ES6 的类支持静态属性和方法，也支持静态被子类继承和复写； 
+//5. ES6 的类支持静态属性和方法，也支持静态被子类继承和复写；
 class Person2 {
     static gender = '男';
 

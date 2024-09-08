@@ -17,7 +17,7 @@
         JS中数组被归为了对象类型
 
 
-4. PHP的8中变量类型: 
+4. PHP的8中变量类型:
     4种标量数据类型
         boolean布尔型       :   只有两个值  true 和  flase
         integer整形         :   包括正整数和负整数,无小数位
@@ -38,7 +38,7 @@
     var srt = "Hello World!";
     var Type = typeof(srt);
     alert(Type); //弹出窗口
-    console.log(Type); //在控制台输出: "string"    
+    console.log(Type); //在控制台输出: "string"
 
     //测试数字变量的类型
     var numValue = 123;
@@ -56,4 +56,3 @@
 6.js中单引号字符串
     var str = '=486aea13\\agr540-/=1,as;-af.;'; //JS中即使是单引号包裹的字符串里面的\也是转义,和php不同
     alert(str); // =486aea13\agr540-/=1,as;-af.;   \\ -> \ 被转义了
-    

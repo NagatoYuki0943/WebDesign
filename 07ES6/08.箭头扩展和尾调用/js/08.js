@@ -1,5 +1,5 @@
 //一．箭头扩展
-//1. 箭头也支持一些内置函数的使用，比如 sort()排序； 
+//1. 箭头也支持一些内置函数的使用，比如 sort()排序；
 let arr1 = [3, 1, 4, 0].sort((a, b) => a - b);
 console.log(arr1); //Array(4) [ 0, 1, 3, 4 ]
 
@@ -22,7 +22,7 @@ console.log(fn(1, 44)); //45
 
 
 
-//3. 箭头函数和普通函数一样，都可以被 typeof 和 instanceof； 
+//3. 箭头函数和普通函数一样，都可以被 typeof 和 instanceof；
 console.log(typeof fn); //function
 console.log(fn instanceof Function); //true
 

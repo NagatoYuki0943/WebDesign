@@ -2,7 +2,7 @@
 
 2 第二个参数要写函数的名字,所以要将函数移出来,即使是在内部将匿名函数改成普通函数也没用,removeEventListener依然找不到
 
-  removeEventListener('事件', 方法名);
+    removeEventListener('事件', 方法名);
 
 
     <body>
@@ -25,5 +25,3 @@
         //第二个参数要写函数的名字,所以要将函数移出来
         d.removeEventListener('click', f2); //不会打印dddd了
     </script>
-
-    

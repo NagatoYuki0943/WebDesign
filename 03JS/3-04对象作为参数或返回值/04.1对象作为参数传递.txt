@@ -4,7 +4,7 @@
 
     注意: 传递的参数是引用传递
 
-2 
+2
     //传递对象给函数作为参数
     function dis(obj) {
         console.log(obj);

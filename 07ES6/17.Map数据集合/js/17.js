@@ -31,7 +31,7 @@ console.log('==================');
 
 
 
-//3. 使用 has()检测、delete()删除、clear()清空等对 Map 集合的操作； 
+//3. 使用 has()检测、delete()删除、clear()清空等对 Map 集合的操作；
 console.log(map2.has('age')); //true
 console.log(map2.delete('age')); //true
 console.log(map2.has('age')); //false
@@ -41,7 +41,7 @@ console.log('==================');
 
 
 
-//4. 我们可以使用 forEach 来遍历 Map 集合，至于 for 遍历，下个章节说； 
+//4. 我们可以使用 forEach 来遍历 Map 集合，至于 for 遍历，下个章节说；
 //value:值; key:键值; m:map自身
 map1.forEach((value, key, m) => {
     console.log(key + '-' + value);
@@ -55,11 +55,11 @@ console.log('==================');
 
 
 
-//5. Map 集合还提供针对对象的 Weak map 集合，添加非对象类型会报错； 
-//6. Weak Map 不支持遍历，内部隐藏(无法查看内容)，不支持 foreach 和 size； 
+//5. Map 集合还提供针对对象的 Weak map 集合，添加非对象类型会报错；
+//6. Weak Map 不支持遍历，内部隐藏(无法查看内容)，不支持 foreach 和 size；
 //7. 对于应用场景来说，存放对象的弱引用，不用担心对象被回收后引发的问题；
 
-//弱引用 
+//弱引用
 let wm = new WeakMap(),
     obj = {};
 wm.set(obj);

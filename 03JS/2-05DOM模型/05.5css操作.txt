@@ -1,7 +1,7 @@
 1 每一个DOM对象都有一个style属性,我们可以直接操作,用来读写行内css样式
 
 
-2 获取css的方式  
+2 获取css的方式
     这种方式改变行内的style,也能改变css中的样式,不过改的是行内的style,不是css中的样式
     document.querySelector("#d1").style.width = "500px";
 

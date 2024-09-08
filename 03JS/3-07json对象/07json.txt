@@ -5,7 +5,7 @@
     JSON独立于语言
     JSON具有自我描述性,便于理解
 
-    
+
     注意:
     JSON使用JavaScript语法来描述数据对象,但是JSON任然独立于语言和平台
     JSON解析器和JSON库支持许多不同的编程语言
@@ -32,19 +32,19 @@
 3  js专门为json准备了json对象
 
         JSON.stringify(js数据);   将一个js数据转换为json字符串
-          stringify()可以将不标准格式转换成JSON标准格式
-            
+            stringify()可以将不标准格式转换成JSON标准格式
+
             var json = JSON.stringify(arr);
 
-        JSON.parse(JSON字符串);   将一个json字符串转换成js数据     
+        JSON.parse(JSON字符串);   将一个json字符串转换成js数据
 
-            var j = JSON.parse(json); 
+            var j = JSON.parse(json);
 
 
-4 
+4
     json字符串
     {"name":"mike","age":"15","sex":"male"}
-    
+
     json数组
     {
         {"name":"mike","age":"15","sex":"male"},

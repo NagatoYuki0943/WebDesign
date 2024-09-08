@@ -28,7 +28,7 @@
     var p2 = p; //这样不是开辟新的内存空间,是指向同一块内存,和php一样,是引用传值
     console.log(p2); //Object { name: "小李子", age: 27 }   可以获取到
     p2.name = "小刘";
-    console.log(p2.name); //小刘  
+    console.log(p2.name); //小刘
     console.log(p.name); //小刘
 
     //赋值为null,变量为null,是指向的地址为空,那里的地址的内容不变

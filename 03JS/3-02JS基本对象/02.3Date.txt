@@ -18,4 +18,3 @@
     getMilliseconds() 返回毫秒(0~999)
 
     getTimezoneOffset() 返回当前时间与UTC的时区差异,返回结果考虑到了夏令时因素
-    

@@ -3,7 +3,7 @@
     检测undefined弹出undefined
     本质上null和undefined都表示空,只是null由于历史遗留原因显示为null
     true,说明内容一样,不过如果使用 === 就不行了,因为类型不同
-    
+
 
 2 注意:
     (1) null和undefined在宽松比较时,都表示空,没有,无 等含义
@@ -15,7 +15,7 @@
     (3) 获取不存在的对象时返回null
     (4) null的数据类型是object
         undefined数据类型是undefined
-    (5) null是表示 "无" 的对象,数据类型转换转为数值型是 0 
+    (5) null是表示 "无" 的对象,数据类型转换转为数值型是 0
         undefined是表示 "无" 的原始值,转为数值时是 NaN
 
 
@@ -54,7 +54,7 @@
     console.log($id); //null
 
     console.log('----------------------------------');
-    //null是表示 "无" 的对象,数据类型转换转为数值型是 0 
+    //null是表示 "无" 的对象,数据类型转换转为数值型是 0
     //undefined是表示 "无" 的原始值,转为数值时是 NaN
     var n = Number(null);
     console.log(n); //0

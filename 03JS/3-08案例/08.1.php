@@ -1,7 +1,7 @@
 <?php
 $menu = '水煮肉';
 $url = 'http://apis.juhe.cn/cook/query.php&key=6b04ec72c88cb709f5b0757c32a66f9b&menu=水煮肉';
- 
+
 //获取数据
 $s = file_get_contents($url);
 

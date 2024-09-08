@@ -6,7 +6,7 @@ console.log(add(...[10, 20])); //30
 
 
 
-//2. 既然三点运算符通过逗号分割，那么可以想象的应用场景就随意发挥； 
+//2. 既然三点运算符通过逗号分割，那么可以想象的应用场景就随意发挥；
 console.log(Math.max(...[1, 2, 3])); //3
 console.log(...[1, 2, 3], ...[4, 256]); //1 2 3 4 256
 console.log('========================');
@@ -31,8 +31,8 @@ console.log('========================');
 
 //2. ES6 提供了 Array.from()方法，将类似数组的对象或遍历转换成真正的数组；
 //PS：对象转换成数组要求比较严格：
-//(1).key 必须是数值或字符串数字； 
-//(2).length 设置长度，而且 key 在范围内； 
+//(1).key 必须是数值或字符串数字；
+//(2).length 设置长度，而且 key 在范围内；
 
 let obj = {
     0: 'name',
@@ -43,8 +43,8 @@ let obj = {
 items = Array.from(obj);
 console.log(items); //Array(3) [ "name", "age", "gender" ]
 
-//既然要求这么严格，那什么样的场景会产生这种对象？ 
-//(1).DOM 的 NodeList 集合; 
+//既然要求这么严格，那什么样的场景会产生这种对象？
+//(1).DOM 的 NodeList 集合;
 //(2).ES6 新增的 Set 和 Map(后续内容)；
 
 let nl = document.querySelectorAll('p');
@@ -61,7 +61,7 @@ console.log('========================');
 
 
 
-//3. ES6 提供了 find()和 findIndex()方法，用于查找数组中第一个匹配的值； 
+//3. ES6 提供了 find()和 findIndex()方法，用于查找数组中第一个匹配的值；
 //find()查找值,findIndex()查找值得下标
 item = [10, 20, 30, 10, 40];
 console.log(item.find(value => value > 19)); //20

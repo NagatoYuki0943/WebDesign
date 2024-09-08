@@ -1,6 +1,6 @@
 //一．async 语法    ES8提供
-//1. async 也是处理异步的，它是对 Promise 的一种扩展，让异步更加方便； 
-//2. 优势：async 是基于 Promise 的，虽然是异步操作，但看上去像同步； 
+//1. async 也是处理异步的，它是对 Promise 的一种扩展，让异步更加方便；
+//2. 优势：async 是基于 Promise 的，虽然是异步操作，但看上去像同步；
 //3. 首先，我们先来看下 async 的基本语法；
 
 
@@ -38,15 +38,15 @@ as(); //2.异步
 // async function as() {
 //     let result = await p2;
 //     console.log(result);
-// } 
+// }
 // as();
 
 
 
 // p1.then(value => {
 //     console.log(value);
-//     console.log(p1); 
-//     //返回p2 Promise 默认返回自己   
+//     console.log(p1);
+//     //返回p2 Promise 默认返回自己
 //     return p2;
 // }).then(value => {
 //     console.log(value);
@@ -56,7 +56,7 @@ as(); //2.异步
 // });
 
 
-//4. 如果有三个异步需要列队输出，我们用 async 语法来处理一下； 
+//4. 如果有三个异步需要列队输出，我们用 async 语法来处理一下；
 let as1 = async() => {
     //返回回调函数
     let r1 = await p1,
@@ -67,11 +67,11 @@ let as1 = async() => {
 }
 as1(); //1.异步 2.异步 3.异步
 
-//PS：await 关键字只能在 async 函数内部，否则不可识别； 
+//PS：await 关键字只能在 async 函数内部，否则不可识别；
 //PS：从上面的例子中，能感受到语义和清晰度都得到了很大提升，更像同步代码；
 
 
-//批量异步列队，类似 Promise.all() 
+//批量异步列队，类似 Promise.all()
 as2 = async() => {
     //一次注册3个
     let all = [await p1, await p2, await p3];
@@ -81,7 +81,7 @@ as2();
 
 
 
-//5. async 函数如果设置了返回值，这个值是 Promise 对象。 
+//5. async 函数如果设置了返回值，这个值是 Promise 对象。
 as3 = async() => {
     return 'hello world';
 }

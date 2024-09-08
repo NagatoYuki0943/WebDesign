@@ -28,7 +28,7 @@
     (1) document就是根节点,document是window的子对象,因为window是定义,document是下一级,所以不写window可以自动往上找
         window.document
 
-    
+
 5 查找节点
     (1) getElement
         document.getElementById;            //通过id属性查找元素元素对象
@@ -37,7 +37,7 @@
         document.getElementsByTagName;      //通过tag标签名属性查找元素对象,Elements  通过集合形式返回 就是 p,div 这些
 
 
-    (2) QuerySelector[All],通过css选择器找,参数是css选择器形式  
+    (2) QuerySelector[All],通过css选择器找,参数是css选择器形式
         *   对整个页面生效
         div 会对所有div生效
         #name   查找名字

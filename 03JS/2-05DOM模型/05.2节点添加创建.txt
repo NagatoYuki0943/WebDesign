@@ -31,6 +31,4 @@
         返回元素包含的Text内容
 
         可读可写
-            d.innerText = "www.ithome.com"; 
-            
-    
+            d.innerText = "www.ithome.com";
