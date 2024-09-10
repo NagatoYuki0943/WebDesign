@@ -10,7 +10,6 @@ let x: string
 // x = a //警告：不能将类型“unknown”分配给类型“string”
 
 
-
 // unknown 会强制开发者在使⽤之前进⾏类型检查，从⽽提供更强的类型安全性。
 // 设置a的类型为unknown
 let b: unknown

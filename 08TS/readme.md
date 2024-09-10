@@ -1,8 +1,17 @@
+
+
+# 介绍 TypeScript
+
+1. TypeScript 由微软开发，是基于 JavaScript 的⼀个**扩展语⾔**。
+2. TypeScript 包含了 JavaScript 的所有内容，即： TypeScript 是 JavaScript 的**超集**。
+3. TypeScript 增加了：静态类型检查、接⼝、 泛型等很多**现代开发特性**，更适合**⼤型项⽬**的开发。
+4. TypeScript 需要**编译**为 JavaScript ，然后交给浏览器或其他 JavaScript 运⾏环境执⾏。
+
 # 编译 TypeScript
 
 浏览器不能直接运⾏ TypeScript 代码，需要编译为 JavaScript 再交由浏览器解析器执⾏。
 
-## 1.命令⾏编译
+## 1. 命令⾏编译
 
 要把 .ts ⽂件编译为 .js ⽂件，需要配置 TypeScript 的编译环境，步骤如下：
 
@@ -281,6 +290,16 @@ if (typeof a === 'string') {
 }
 ```
 
+3. never 可以用来限制函数的返回值
+
+```ts
+// 默认情况下，函数返回值类型为 undefined，即使函数没有显式的返回值。
+// 函数没有返回值 never (返回 `never` 的函数不能具有可访问的终结点。)
+function foo(): never{
+    throw new Error('error')
+}
+```
+
 ## 4. void
 
 > void 的含义是空，即：函数不返回任何值，调⽤者也不应依赖其返回值进⾏任何操作！
@@ -288,10 +307,10 @@ if (typeof a === 'string') {
 1. void 通常⽤于函数返回值声明
 
 ```ts
-function logMessage(msg:string):void{
+function logMessage(msg: string): void{
     console.log(msg)
 }
-logMessage('你好')5
+logMessage('你好')
 ```
 
 > **注意：编码者没有编写 return 指定函数返回值，所以 logMessage 函数是没有显式 返回值的，但会有⼀个隐式返回值 ，是 undefined ，虽然函数返回类型为 void ，但 也是可以接受 undefined 的，简单记： undefined 是 void 可以接受的⼀种“空”。**
@@ -300,39 +319,44 @@ logMessage('你好')5
 
 ```ts
 // ⽆警告
-function logMessage(msg:string):void{
+function logMessage1(msg: string): void{
     console.log(msg)
 }
+logMessage1('你好')
+
 // ⽆警告
-function logMessage(msg:string):void{
+function logMessage2(msg: string): void{
     console.log(msg)
     return;
 }
+logMessage1('你好')
+
 // ⽆警告
-function logMessage(msg:string):void{
- console.log(msg)
- return undefined
+function logMessage3(msg: string): void{
+    console.log(msg)
+    return undefined
 }
+logMessage1('你好')
 ```
 
 3. 那限制函数返回值时，是不是 undefined 和 void 就没区别呢？—— 有区别。因为还有 这句话 ：【返回值类型为 void 的函数，调⽤者不应依赖其返回值进⾏任何操作！】对⽐下 ⾯两段代码：
 
 ```ts
-function logMessage(msg:string):void{
+function logMessage4(msg: string): void{
     console.log(msg)
 }
-let result = logMessage('你好')
+let result = logMessage4('你好')
 if(result){ // 此⾏报错：⽆法测试 "void" 类型的表达式的真实性
     console.log('logMessage有返回值')
 }
 ```
 
 ```ts
-function logMessage(msg:string):undefined{
+function logMessage5(msg: string): undefined{
     console.log(msg)
 }
-let result = logMessage('你好')
-if(result){ // 此⾏⽆警告
+let result1 = logMessage5('你好')
+if(result1){ // 此⾏⽆警告
     console.log('logMessage有返回值')
 }
 ```
@@ -359,7 +383,7 @@ object（⼩写）
 object （⼩写）的含义是：所有⾮原始类型，可存储：对象、函数、数组等，由于限制 的范围⽐较宽泛，在实际开发中使⽤的相对较少。
 
 ```ts
-let a:object //a的值可以是任何【⾮原始类型】，包括：对象、函数、数组等
+let a: object //a的值可以是任何【⾮原始类型】，包括：对象、函数、数组等
 // 以下代码，是将【⾮原始类型】赋给a，所以均符合要求
 a = {}
 a = {name:'张三'}
@@ -372,7 +396,7 @@ a = new Person()
 // 以下代码，是将【原始类型】赋给a，有警告
 a = 1 // 警告：不能将类型“number”分配给类型“object”
 a = true // 警告：不能将类型“boolean”分配给类型“object”
-a = '你好' // 警告：不能将类型“string”分配给类型“object” 
+a = '你好' // 警告：不能将类型“string”分配给类型“object”
 a = null // 警告：不能将类型“null”分配给类型“object”
 a = undefined // 警告：不能将类型“undefined”分配给类型“object”
 ```
@@ -383,7 +407,34 @@ Object（⼤写）
 - 简单记忆：除了 undefined 和 null 的任何值。
 - 由于限制的范围实在太⼤了！所以实际开发中使⽤频率极低。
 
-声明对象类型
+```ts
+let b: Object
+b = {}
+console.log(b)
+
+b = {name: '张三'}
+console.log(b)
+
+b = [1, 3, 5, 7, 9]
+console.log(b)
+
+b = function(){}
+console.log(b)
+
+b = new String('123')
+console.log(b)
+
+b = new Person()
+console.log(b)
+
+b = 1
+b = true
+b = '你好'
+b = null // 警告：不能将类型“null”分配给类型“object”
+b = undefined // 警告：不能将类型“undefined”分配给类型“object”
+```
+
+> 声明对象类型
 
 1. 实际开发中，限制⼀般对象，通常使⽤以下形式
 
@@ -396,17 +447,20 @@ let person2: { name: string; age?: number }
 
 // 含义同上，也能⽤换⾏做分隔
 let person3: {
- name: string
- age?: number
+    name: string
+    age?: number
 }
 
 // 如下赋值均可以
-person1 = {name:'李四',age:18}
-person2 = {name:'张三'}
-person3 = {name:'王五'}
+person1 = {name: '李四', age: 18}
+person2 = {name: '张三'}
+person3 = {name: '王五'}
+console.log(person1)
+console.log(person2)
+console.log(person3)
 
 // 如下赋值不合法，因为person3的类型限制中，没有对gender属性的说明
-person3 = {name:'王五',gender:'男'}
+person3 = {name: '王五', gender: '男'}
 ```
 
 2. 索引签名： 允许定义对象可以具有任意数量的属性，这些属性的键和类型是可变的， 常⽤于：描述类型不确定的属性，（具有动态属性的对象）。
@@ -414,25 +468,27 @@ person3 = {name:'王五',gender:'男'}
 ```ts
 // 限制person对象必须有name属性，可选age属性但值必须是数字，同时可以有任意数量、任意类型的其他属性
 let person: {
- name: string
- age?: number
- [key: string]: any // 索引签名，完全可以不⽤key这个单词，换成其他的也可以
+    name: string
+    age?: number
+    [key: string]: any // 索引签名，完全可以不⽤key这个单词，换成其他的也可以, 含义为可以有任何数量个 key, value 的键值对, 只要保证 key 是 string 类型即可
 }
 
 // 赋值合法
 person = {
- name:'张三',
- age:18,
- gender:'男'
+    name:'赵六',
+    age:18,
+    gender:'男'
 }
 ```
 
-声明函数类型
+> 声明函数类型
 
 ```ts
+// (参数1: 类型, 参数2: 类型, ...参数n: 类型) => 返回值类型
+// 形参的名字可以和实参的名字不一致，但类型必须保持一致
 let count: (a: number, b: number) => number
 count = function (x, y) {
- return x + y
+    return x + y
 }
 ```
 
@@ -458,42 +514,54 @@ arr2 = ['hello','world']
 > 元组 (Tuple) 是⼀种特殊的数组类型，可以存储固定数量的元素，并且每个元素的类型是已知的且可以不同。元组⽤于精确描述⼀组值的类型， ? 表示可选元素。
 
 ```ts
+// 元组 (Tuple) 是⼀种特殊的数组类型，可以存储固定数量的元素，并且每个元素的类型是已知的且可以不同。
+// 元组⽤于精确描述⼀组值的类型， ? 表示可选元素。
+
 // 第⼀个元素必须是 string 类型，第⼆个元素必须是 number 类型。
-let arr1: [string,number]
-// 第⼀个元素必须是 number 类型，第⼆个元素是可选的，如果存在，必须是 boolean 类型。
-let arr2: [number,boolean?]
-// 第⼀个元素必须是 number 类型，后⾯的元素可以是任意数量的 string 类型
-let arr3: [number,...string[]]
+let arr1: [string, number]
 
 // 可以赋值
-arr1 = ['hello',123]
-arr2 = [100,false]
-arr2 = [200]
-arr3 = [100,'hello','world']
-arr3 = [100]
-
+arr1 = ['hello', 123]
 // 不可以赋值，arr1声明时是两个元素，赋值的是三个
-arr1 = ['hello',123,false]
+// arr1 = ['hello', 123, false]
+console.log(arr1)
+
+
+// 第⼀个元素必须是 number 类型，第⼆个元素是可选的，如果存在，必须是 boolean 类型。
+let arr2: [number, boolean?]
+arr2 = [100, false]
+console.log(arr2)
+
+arr2 = [200]
+console.log(arr2)
+
+
+// 第⼀个元素必须是 number 类型，后⾯的元素可以是任意数量的 string 类型
+let arr3: [number, ...string[]]
+arr3 = [100, 'hello', 'world']
+console.log(arr3)
+arr3 = [100]
+console.log(arr3)
 ```
 
 ## 7.  enum
 
 > 枚举（ enum ）可以定义⼀组命名常量，它能增强代码的可读性，也让代码更好维护。
 
-如下代码的功能是：根据调⽤ walk 时传⼊的不同参数，执⾏不同的逻辑，存在的问题是调⽤ w alk 时传参时没有任何提示，编码者很容易写错字符串内容；并且⽤于判断逻辑的 up 、 dow n 、 left 、 right 是连续且相关的⼀组值，那此时就特别适合使⽤ 枚举（ enum ）。
+如下代码的功能是：根据调⽤ walk 时传⼊的不同参数，执⾏不同的逻辑，存在的问题是调⽤ walk 时传参时没有任何提示，编码者很容易写错字符串内容；并且⽤于判断逻辑的 up 、 dow n 、 left 、 right 是连续且相关的⼀组值，那此时就特别适合使⽤ 枚举（ enum ）。
 
 ```ts
-function walk(str:string) {
+function walk(str: string) {
     if (str === 'up') {
         console.log("向【上】⾛");
     } else if (str === 'down') {
-    	console.log("向【下】⾛");
+        console.log("向【下】⾛");
     } else if (str === 'left') {
-    	console.log("向【左】⾛");
+        console.log("向【左】⾛");
     } else if (str === 'right') {
-    	console.log("向【右】⾛");
+        console.log("向【右】⾛");
     } else {
-    	console.log("未知⽅向");
+        console.log("未知⽅向");
     }
 }
 
@@ -505,7 +573,7 @@ walk('right')
 
 1. 数字枚举
 
-数字枚举⼀种最常⻅的枚举类型，其成员的值会⾃动递增，且数字枚举还具备反向映射的 特点，在下⾯代码的打印中，不难发现：可以通过值来获取对应的枚举成员名称 。
+数字枚举⼀种最常⻅的枚举类型，其成员的值会⾃动递增，且数字枚举还具备反向映射的特点，在下⾯代码的打印中，不难发现：可以通过值来获取对应的枚举成员名称 。
 
 ```ts
 // 定义⼀个描述【上下左右】⽅向的枚举Direction
@@ -517,22 +585,22 @@ enum Direction {
 }
 
 console.log(Direction) // 打印Direction会看到如下内容
-/* 
- {
- 0:'Up', 
- 1:'Down', 
- 2:'Left', 
- 3:'Right', 
- Up:0, 
- Down:1, 
- Left:2,
- Right:3
- } 
+/*
+{
+    0:'Up',
+    1:'Down',
+    2:'Left',
+    3:'Right',
+    Up:0,
+    Down:1,
+    Left:2,
+    Right:3
+}
 */
 
 // 反向映射
-console.log(Direction.Up)
-console.log(Direction[0])
+console.log(Direction.Up) // 输出: 0
+console.log(Direction[0]) // 输出: "Up"
 
 // 此⾏代码报错，枚举中的属性是只读的
 Direction.Up = 'shang'
@@ -541,43 +609,46 @@ Direction.Up = 'shang'
 也可以指定枚举成员的初始值，其后的成员值会⾃动递增。
 
 ```ts
-enum Direction {
+// 也可以指定枚举成员的初始值，其后的成员值会⾃动递增。
+enum Direction1 {
     Up = 6,
     Down,
-    Left,
+    Left = 10,
     Right
 }
 
-console.log(Direction.Up); // 输出: 6
-console.log(Direction.Down); // 输出: 7
+console.log(Direction1.Up); // 输出: 6
+console.log(Direction1.Down); // 输出: 7
+console.log(Direction1.Left); // 输出: 10
+console.log(Direction1.Right); // 输出: 11
 ```
 
-使⽤数字枚举完成刚才 walk 函数中的逻辑，此时我们发现： 代码更加直观易读，⽽且类 型安全，同时也更易于维护。
+使⽤数字枚举完成刚才 walk 函数中的逻辑，此时我们发现： 代码更加直观易读，⽽且类型安全，同时也更易于维护。
 
 ```ts
-enum Direction {
+enum Direction2 {
     Up,
     Down,
     Left,
     Right,
 }
 
-function walk(n: Direction) {
-    if (n === Direction.Up) {
+function walk1(n: Direction2) {
+    if (n === Direction2.Up) {
         console.log("向【上】⾛");
-    } else if (n === Direction.Down) {
+    } else if (n === Direction2.Down) {
         console.log("向【下】⾛");
-    } else if (n === Direction.Left) {
+    } else if (n === Direction2.Left) {
         console.log("向【左】⾛");
-    } else if (n === Direction.Right) {
+    } else if (n === Direction2.Right) {
         console.log("向【右】⾛");
     } else {
         console.log("未知⽅向");
     }
 }
 
-walk(Direction.Up)
-walk(Direction.Down)
+walk1(Direction2.Up)
+walk1(Direction2.Down)
 ```
 
 2. 字符串枚举
@@ -585,37 +656,37 @@ walk(Direction.Down)
 枚举成员的值是字符串
 
 ```ts
-enum Direction {
+enum Direction3 {
     Up = "up",
     Down = "down",
     Left = "left",
     Right = "right"
 }
 
-let dir: Direction = Direction.Up;
+let dir: Direction3 = Direction3.Up;
 console.log(dir); // 输出: "up"
 ```
 
 3. 常量枚举
 
-> 官⽅描述：常量枚举是⼀种特殊枚举类型，它使⽤ const 关键字定义，在编译时会被 内联，避免⽣成⼀些额外的代码。
+> 官⽅描述：常量枚举是⼀种特殊枚举类型，它使⽤ const 关键字定义，在编译时会被内联，避免⽣成⼀些额外的代码。
 
-> 何为编译时内联？ 所谓“内联”其实就是 TypeScript 在编译时，会将枚举成员引⽤替换为它们的实际值， ⽽不是⽣成额外的枚举对象。这可以减少⽣成的 JavaScript 代码量，并提⾼运⾏时性 能。
+> 何为编译时内联？ 所谓“内联”其实就是 TypeScript 在编译时，会将枚举成员引⽤替换为它们的实际值， ⽽不是⽣成额外的枚举对象。这可以减少⽣成的 JavaScript 代码量，并提⾼运⾏时性能。
 
 使⽤普通枚举的 TypeScript 代码如下：
 
 ```ts
-enum Directions {
+enum Directions4 {
     Up,
     Down,
     Left,
     Right
 }
 
-let x = Directions.Up;
+let x = Directions4.Up
 ```
 
-编译后⽣成的 JavaScript 代码量较⼤ ：
+编译后⽣成的 JavaScript 代码量较⼤：
 
 ```ts
 "use strict";
@@ -628,19 +699,20 @@ var Directions;
     Directions[Directions["Right"] = 3] = "Right";
 })(Directions || (Directions = {}));
 
-let x = Directions.Up;
+let x = Directions.Up
 ```
 
 使⽤常量枚举的 TypeScript 代码如下：
 
 ```ts
-const enum Directions {
+const enum Directions5 {
     Up,
     Down,
     Left,
     Right
 }
-let x = Directions.Up;
+
+let y = Directions5.Up
 ```
 
 编译后⽣成的 JavaScript 代码量较⼩：
@@ -659,12 +731,12 @@ type 可以为任意类型创建别名，让代码更简洁、可读性更强，
 > 类型别名使⽤ type 关键字定义， type 后跟类型名称，例如下⾯代码中 num 是类 型别名。
 
 ```ts
-type num = number;
+type num = number
 let price: num
 price = 100
 ```
 
-2. 联合类型
+2. 联合类型 或 |
 
 > 联合类型是⼀种⾼级类型，它表示⼀个值可以是⼏种不同类型之⼀。
 
@@ -672,42 +744,43 @@ price = 100
 type Status = number | string
 type Gender = '男' | '⼥'
 
-function printStatus(status: Status) {
- console.log(status);
+function printStatus(status: Status): void {
+    console.log(status)
 }
 
-function logGender(str:Gender){
- console.log(str)
+function logGender(str:Gender): void {
+    console.log(str)
 }
 
-printStatus(404);
-printStatus('200');
-printStatus('501');
+printStatus(404)
+printStatus('200')
+printStatus('501')
 
 logGender('男')
 logGender('⼥')
 ```
 
-3.交叉类型
+3. 交叉类型 且 &
 
-> 交叉类型（Intersection Types）允许将多个类型合并为⼀个类型。合并后的类型将拥 有所有被合并类型的成员。交叉类型通常⽤于对象类型。 
+> 交叉类型（Intersection Types）允许将多个类型合并为⼀个类型。合并后的类型将拥有所有被合并类型的成员。交叉类型通常⽤于对象类型。
 
 ```ts
-//⾯积
+// 可以使用 , 或者 ; 分隔
+// ⾯积
 type Area = {
-    height: number; //⾼
-    width: number; //宽
-};
+    height: number, // ⾼
+    width: number, // 宽
+}
 
-//地址
+// 地址
 type Address = {
-    num: number; //楼号
-    cell: number; //单元号
-    room: string; //房间号
-};
+    num: number; // 楼号
+    cell: number; // 单元号
+    room: string; // 房间号
+}
 
 // 定义类型House，且House是Area和Address组成的交叉类型
-type House = Area & Address;
+type House = Area & Address
 
 const house: House = {
     height: 180,
@@ -715,7 +788,7 @@ const house: House = {
     num: 6,
     cell: 3,
     room: '702'
-};
+}
 ```
 
 ## 9. ⼀个特殊情况
@@ -727,7 +800,7 @@ const house: House = {
 在函数定义时，限制函数返回值为 void ，那么函数的返回值就必须是空。
 
 ```ts
-function demo():void{
+function demo(): void{
     // 返回undefined合法
     return undefined
 
@@ -745,26 +818,714 @@ demo()
 使⽤ 限制函数返回值为 void 时， TypeScript 并不会严格要求函数返回空。
 
 ```ts
+// 使⽤ 限制函数返回值为 void 时， TypeScript 并不会严格要求函数返回空。
 type LogFunc = () => void
 
 const f1: LogFunc = () => {
-    return 100; // 允许返回⾮空值
-};
+    return 100 // 允许返回⾮空值
+}
+let ret = f1()
+// 可以打印,但是不能进行判断,因为返回值应该为 void
+console.log(ret)
+// if (ret) {
+//     console.log('ret is not undefined')
+// }
 
 const f2: LogFunc = () => 200; // 允许返回⾮空值
+console.log(f2())
+
 const f3: LogFunc = function () {
-    return 300; // 允许返回⾮空值
-};
+    return 300 // 允许返回⾮空值
+}
+console.log(f3())
 ```
 
 为什么会这样？
 
-是为了确保如下代码成⽴，我们知道 Array.prototype.push 的返回值是⼀个数字， ⽽ Array.prototype.forEach ⽅法期望其回调的返回类型是 void 。
+是为了确保如下代码成⽴，我们知道 `Array.prototype.push` 的返回值是⼀个数字，⽽ `Array.prototype.forEach` ⽅法期望其回调的返回类型是 `void`。
 
 ```ts
-const src = [1, 2, 3];
-const dst = [0];
+const src = [1, 2, 3]
+const dst = [0]
 
-src.forEach((el) => dst.push(el));
+src.forEach((el) => dst.push(el))
+```
+
+## 10. abstract class (抽象类)
+
+### 复习类相关知识
+
+#### class
+
+> 声明
+
+```ts
+class Person {
+    // 属性声明
+    name: string
+    age: number
+
+    // 构造器
+    constructor(name: string, age: number) {
+        this.name = name
+        this.age = age
+    }
+
+    // ⽅法
+    speak() {
+        console.log(`我叫：${this.name}，今年${this.age}岁`)
+    }
+}
+
+// Person实例
+const p1 = new Person('周杰伦', 38)
+```
+
+#### extends
+
+> 继承
+>
+> Student 继承 Person
+
+```ts
+class Student extends Person {
+    grade: string
+
+    // 构造器
+    constructor(name: string, age: number, grade: string) {
+        super(name, age)
+        this.grade = grade
+    }
+
+    // 备注本例中若Student类不需要额外的属性，Student的构造器可以省略
+    // 重写从⽗类继承的⽅法
+    override speak() {
+        console.log(`我是学⽣，我叫：${this.name}，今年${this.age}岁，在读${this.grade}年级`,)
+    }
+
+    // ⼦类⾃⼰的⽅法
+    study() {
+        console.log(`${this.name}正在努⼒学习中......`)
+    }
+}
+```
+
+> 属性修饰符
+
+| 修饰符      | 含义     | 具体规则                                        |
+| ----------- | -------- | ----------------------------------------------- |
+| `public`    | 公开的   | 可以被：**类内部**、**⼦类**、**类外部**访问 。 |
+| `protected` | 受保护的 | 可以被：**类内部**、**⼦类**访问。              |
+| `private`   | 私有的   | 可以被：**类内部**访问。                        |
+| `readonly`  | 只读属性 | 属性⽆法修改。                                  |
+
+#### public 修饰符
+
+```ts
+class Person {
+    // name写了public修饰符，age没写修饰符，最终都是public修饰符
+    public name: string
+    age: number
+
+    constructor(name: string, age: number) {
+        this.name = name
+        this.age = age
+    }
+
+    speak() {
+        // 类的【内部】可以访问public修饰的name和age
+        console.log(`我叫：${this.name}，今年${this.age}岁`)
+    }
+}
+
+const p1 = new Person('张三', 18)
+// 类的【外部】可以访问public修饰的属性
+console.log(p1.name)
+
+
+class Student extends Person {
+    constructor(name: string, age: number) {
+        super(name, age)
+    }
+
+    study() {
+        // 【⼦类中】可以访问⽗类中public修饰的：name属性、age属性
+        console.log(`${this.age}岁的${this.name}正在努⼒学习`)
+    }
+}
+```
+
+> 属性的简写形式
+
+```ts
+// 完整写法
+class Person {
+    public name: string;
+    public age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+
+// 简写形式
+class Person {
+    constructor(
+        public name: string,
+        public age: number
+    ) { }
+}
+```
+
+#### protected 修饰符
+
+```ts
+class Person {
+    // name和age是受保护属性，不能在类外部访问，但可以在【类】与【⼦类】中访问
+    constructor(
+        protected name: string,
+        protected age: number
+    ) {}
+
+    // getDetails是受保护⽅法，不能在类外部访问，但可以在【类】与【⼦类】中访问
+    protected getDetails(): string {
+        // 类中能访问受保护的name和age属性
+        return `我叫：${this.name}，年龄是：${this.age}`
+    }
+
+    // introduce是公开⽅法，类、⼦类、类外部都能使⽤
+    introduce() {
+        // 类中能访问受保护的getDetails⽅法
+        console.log(this.getDetails());
+    }
+}
+
+const p1 = new Person('杨超越',18)
+// 可以在类外部访问introduce
+p1.introduce()
+
+// 以下代码均报错
+// p1.getDetails()
+// p1.name
+// p1.age
+
+
+class Student extends Person {
+    constructor(name: string, age: number){
+        super(name,age)
+    }
+
+    study(){
+        // ⼦类中可以访问introduce
+        this.introduce()
+        // ⼦类中可以访问name
+        console.log(`${this.name}正在努⼒学习`)
+    }
+}
+
+const s1 = new Student('tom',17)
+s1.introduce()
+```
+
+#### private 修饰符
+
+```ts
+class Person {
+    constructor(
+        public name: string,
+        public age: number,
+        // IDCard属性为私有的(private)属性，只能在【类内部】使⽤
+        private IDCard: string
+    ) { }
+
+    private getPrivateInfo(){
+        // 类内部可以访问私有的(private)属性 —— IDCard
+        return `身份证号码为：${this.IDCard}`
+    }
+
+    getInfo() {
+        // 类内部可以访问受保护的(protected)属性 —— name和age
+        return `我叫: ${this.name}, 今年刚满${this.age}岁`
+    }
+
+    getFullInfo(){
+        // 类内部可以访问公开的getInfo⽅法，也可以访问私有的getPrivateInfo⽅法
+        return this.getInfo() + '，' + this.getPrivateInfo()
+    }
+}
+
+const p1 = new Person('张三',18,'110114198702034432')
+console.log(p1.getFullInfo())
+console.log(p1.getInfo())
+
+// 以下代码均报错
+// p1.name
+// p1.age
+// p1.IDCard
+// p1.getPrivateInfo()
+```
+
+#### readonly 修饰符
+
+```ts
+class Car {
+    constructor(
+        public readonly vin: string, // ⻋辆识别码，为只读属性
+        public readonly year: number,// 出⼚年份，为只读属性
+        public color: string,
+        public sound: string
+    ) { }
+
+    // 打印⻋辆信息
+    displayInfo() {
+        console.log(`
+        识别码：${this.vin},
+        出⼚年份：${this.year},
+        颜⾊：${this.color},
+        ⾳响：${this.sound}
+        `)
+    }
+}
+
+const car = new Car('1HGCM82633A123456', 2018, '⿊⾊', 'Bose⾳响');
+car.displayInfo()
+
+// 以下代码均错误：不能修改 readonly 属性
+// car.vin = '897WYE87HA8SGDD8SDGHF'; 
+// car.year = 2020; 
+```
+
+### abstract class (抽象类)
+
+> 概述：抽象类是⼀种**⽆法被实例化**的类，专⻔⽤来定义类的**结构和⾏为**，类中可以写**抽象⽅法**，也可以写**具体实现**。抽象类主要⽤来为其派⽣类提供⼀个**基础结构**，要求其派⽣类**必须实现**其中的抽象⽅法。
+>
+> 简记：抽象类**不能实例化**，其意义是**可以被继承**，抽象类⾥可以有**普通⽅法**、也可以有**抽象⽅法**。
+
+通过以下场景，理解抽象类：
+
+我们定义⼀个抽象类 `Package` ，表示所有包裹的基本结构，任何包裹都有重量属性 `weight`，包裹都需要计算运费。但不同类型的包裹（如：标准速度、特快专递）都有不同的运费计算⽅式，因此⽤于计算运费的 `calculate` ⽅法是⼀个抽象⽅法，必须由具体的⼦类来实现。 
+
+```ts
+abstract class Package {
+     constructor(public weight: number) { }
+
+     // 抽象⽅法：⽤来计算运费，不同类型包裹有不同的计算⽅式
+     abstract calculate(): number
+
+     // 通⽤⽅法：打印包裹详情
+     printPackage() {
+         console.log(`包裹重量为: ${this.weight}kg，运费为: ${this.calculate()}元`)
+     }
+}
+
+
+// StandardPackage 类继承了 Package ，实现了 calculate ⽅法：
+// 标准包裹
+class StandardPackage extends Package {
+    constructor(
+        weight: number,
+        public unitPrice: number // 每公⽄的固定费率
+    ) { super(weight) }
+
+    // 实现抽象⽅法：计算运费
+    calculate(): number {
+        return this.weight * this.unitPrice;
+    }
+}
+
+// 创建标准包裹实例
+const s1 = new StandardPackage(10, 5)
+s1.printPackage()
+
+
+// ExpressPackage 类继承了 Package ，实现了 calculate ⽅法：
+class ExpressPackage extends Package {
+    constructor(
+        weight: number,
+        private unitPrice: number, // 每公⽄的固定费率（快速包裹更⾼）
+        private additional: number // 超出10kg以后的附加费
+    ) { super(weight) }
+
+    // 实现抽象⽅法：计算运费
+    calculate(): number {
+        if(this.weight > 10){
+            // 超出10kg的部分，每公⽄多收additional对应的价格
+            return 10 * this.unitPrice + (this.weight - 10) * this.additional
+        }else {
+            return this.weight * this.unitPrice;
+        }
+    }
+}
+// 创建特快包裹实例
+const e1 = new ExpressPackage(13,8,2)
+e1.printPackage()
+```
+
+> 总结：何时使⽤抽象类？
+>
+> 1. 定义**通用接口**：为⼀组相关的类定义通⽤的⾏为（⽅法或属性）时。
+> 2. 提供**基础实现**：在抽象类中提供某些⽅法或为其提供基础实现，这样派⽣类就可以继承这 些实现。
+> 3. 确保**关键实现**：强制派⽣类实现⼀些关键⾏为。
+> 4. **共享**代码和逻辑：当多个类需要共享部分代码时，抽象类可以避免代码重复。
+
+## 11. interface (接⼝)
+
+> interface 是⼀种**定义结构**的⽅式，主要作⽤是为：类、对象、函数等规定**⼀种契约**，这样可以确保代码的⼀致性和类型安全，但要注意 interface **只能**定义**格式**，不能包含**任何实现** ！
+
+### 定义**类**结构
+
+```ts
+// PersonInterface接⼝，⽤与限制Person类的格式
+interface PersonInterface {
+    name: string
+    age: number
+    speak(n: number): void
+}
+
+// 定义⼀个类 Person，实现 PersonInterface 接⼝
+class Person implements PersonInterface {
+    constructor(
+        public name: string,
+        public age: number
+    ) { }
+
+    // 实现接⼝中的 speak ⽅法
+    speak(n: number): void {
+        for (let i = 0; i < n; i++) {
+            // 打印出包含名字和年龄的问候语句
+            console.log(`你好，我叫${this.name}，我的年龄是${this.age}`)
+        }
+    }
+}
+
+// 创建⼀个 Person 类的实例 p1，传⼊名字 'tom' 和年龄 18
+const p1 = new Person('tom', 18);
+p1.speak(3)
+```
+
+### 定义**对象**结构
+
+```ts
+interface UserInterface {
+    name: string
+    readonly gender: string // 只读属性
+    age?: number // 可选属性
+    run: (n: number) => void
+}
+
+const user: UserInterface = {
+    name: "张三",
+    gender: '男',
+    age: 18,
+    run(n) {
+        console.log(`奔跑了${n}⽶`)
+    }
+}
+```
+
+### 定义**函数**结构
+
+```ts
+interface CountInterface {
+    (a: number, b: number): number
+}
+
+const count: CountInterface = (x, y) => {
+    return x + y
+}
+```
+
+### 接⼝之间的继承
+
+> ⼀个 interface 继承另⼀个 interface ，从⽽实现代码的复⽤
+
+```ts
+interface PersonInterface {
+    name: string // 姓名
+    age: number // 年龄
+}
+
+interface StudentInterface extends PersonInterface {
+    grade: string // 年级
+}
+
+const stu: StudentInterface = {
+    name: "张三",
+    age: 25,
+    grade: '⾼三',
+}
+```
+
+### 接⼝⾃动合并（可重复定义）
+
+```ts
+// PersonInterface接⼝
+interface PersonInterface {
+    // 属性声明
+    name: string
+    age: number
+}
+
+// 给PersonInterface接⼝添加新属性
+interface PersonInterface {
+    // ⽅法声明
+    speak(): void
+}
+
+// Person类实现PersonInterface
+class Person implements PersonInterface {
+    name: string
+    age: number
+
+    // 构造器
+    constructor(name: string, age: number) {
+        this.name = name
+        this.age = age
+    }
+
+    // ⽅法
+    speak() {
+        console.log('你好！我是⽼师:', this.name)
+    }
+}
+```
+
+> 总结：何时使⽤接⼝？
+>
+> 1. 定义对象的格式： 描述数据模型、API 响应格式、配置对象........等等，是开发中⽤的最多 的场景。
+> 2. 类的契约：规定⼀个类需要实现哪些属性和⽅法。
+> 3. 扩展已有接⼝：⼀般⽤于扩展第三⽅库的类型， 这种特性在⼤型项⽬中可能会⽤到。
+
+## 12. ⼀些相似概念的区别
+
+### interface 与 type 的区别
+
+> 相同点： `interface` 和 `type` 都可以⽤于定义**对象结构**，在定义对象结构时两者可以互换。
+>
+> 不同点：
+>
+> 1. `interface`：更专注于定义**对象**和**类**的结构，⽀持继承、合并。
+> 2. `type`：可以定义**类型别名**、**联合类型**、**交叉类型**，但不⽀持继承和⾃动合并。
+
+> interface 和 type 都可以定义对象结构
+
+```ts
+// 使⽤ interface 定义 Person 对象
+interface PersonInterface {
+    name: string
+    age: number
+    speak(): void
+}
+
+// 使⽤ type 定义 Person 对象
+type PersonType = {
+    name: string
+    age: number
+    speak(): void
+};
+
+// 使⽤PersonInterface
+let person1: PersonInterface = {
+    name:'张三',
+    age:18,
+
+    speak(){
+        console.log(`我叫：${this.name}，年龄：${this.age}`)
+    }
+}
+
+// 使⽤PersonType
+let person2: PersonType = {
+    name:'张三',
+    age:18,
+
+    speak(){
+        console.log(`我叫：${this.name}，年龄：${this.age}`)
+    }
+}
+```
+
+> interface 可以继承、合并
+
+```ts
+interface PersonInterface {
+    name: string // 姓名
+    age: number // 年龄
+}
+
+interface PersonInterface {
+    speak: () => void
+}
+
+interface StudentInterface extends PersonInterface {
+    grade: string // 年级
+}
+
+const student: StudentInterface = {
+    name: '李四',
+    age: 18,
+    grade: '⾼⼆',
+
+    speak() {
+        console.log(this.name,this.age,this.grade)
+    }
+}
+```
+
+> type 的交叉类型
+
+```ts
+// 使⽤ type 定义 Person 类型，并通过交叉类型实现属性的合并
+type PersonType = {
+    name: string; // 姓名
+    age: number; // 年龄
+} & {
+    speak: () => void
+}
+
+// 使⽤ type 定义 Student 类型，并通过交叉类型继承 PersonType
+type StudentType = PersonType & {
+    grade: string // 年级
+}
+
+const student: StudentType = {
+    name: '李四',
+    age: 18,
+    grade: '⾼⼆',
+
+    speak() {
+        console.log(this.name, this.age, this.grade)
+    }
+}
+```
+
+### interface 与 抽象类的区别
+
+> 相同点：都能定义⼀个**类的格式**（定义类应遵循的契约）
+>
+> 不相同：
+>
+> 1. 接⼝：**只能**描述**结构**，**不能**有任何**实现代码**，⼀个类可以实现**多个**接⼝。
+> 2. 抽象类：既可以包含**抽象⽅法**，也可以包含**具体⽅法**， ⼀个类只能继承**⼀个**抽象类。
+
+> ⼀个类可以实现多个接⼝ 
+
+```ts
+// FlyInterface 接⼝
+interface FlyInterface {
+    fly(): void
+}
+// 定义 SwimInterface 接⼝
+interface SwimInterface {
+    swim(): void
+}
+// Duck 类实现了 FlyInterface 和 SwimInterface 两个接⼝
+class Duck implements FlyInterface, SwimInterface {
+
+    fly(): void {
+        console.log('鸭⼦可以⻜')
+    }
+
+    swim(): void {
+        console.log('鸭⼦可以游泳')
+    }
+}
+
+// 创建⼀个 Duck 实例
+const duck = new Duck();
+duck.fly() // 输出: 鸭⼦可以⻜
+duck.swim() // 输出: 鸭⼦可以游泳
+```
+
+## 13. 泛型
+
+> 泛型允许我们在定义函数、类或接⼝时，使⽤类型参数来表示**未指定的类型**，这些参数在具体**使⽤时**，才被指定**具体的类型**，泛型能让同⼀段代码适⽤于多种类型，同时仍然保持类型的安 全性。
+
+举例：如下代码中 `<T>` 就是泛型，（不⼀定⾮叫 `T` ），设置泛型后即可在函数中使⽤ `T` 来表 示该类型：
+
+> 泛型函数
+
+```ts
+function logData<T>(data: T): T {
+    console.log(data)
+    return data
+}
+
+logData<number>(100)
+logData<string>('hello')
+```
+
+> 泛型可以有多个
+
+```ts
+function logData<T, U>(data1: T, data2: U): T | U {
+    console.log(data1,data2)
+    return Date.now() % 2 ? data1 : data2
+}
+
+logData<number, string>(100, 'hello')
+logData<string, boolean>('ok', false)
+```
+
+> 泛型接⼝
+
+```ts
+interface PersonInterface<T> {
+    name: string,
+    age: number,
+    extraInfo: T
+}
+
+let p1: PersonInterface<string>
+let p2: PersonInterface<number>
+    
+p1 = { name: '张三', age: 18, extraInfo: '⼀个好⼈' }
+p2 = { name: '李四', age: 18, extraInfo: 250 }
+```
+
+> 泛型约束
+
+```ts
+interface LengthInterface {
+    length: number
+}
+
+// 约束规则是：传⼊的类型T必须具有 length 属性
+function logPerson<T extends LengthInterface>(data: T): void {
+    console.log(data.length)
+}
+
+logPerson<string>('hello')
+// 报错：因为number不具备length属性
+// logPerson<number>(100)
+```
+
+> 泛型类
+
+```ts
+class Person<T> {
+    constructor(
+        public name: string,
+        public age: number,
+        public extraInfo: T
+    ) { }
+
+    speak() {
+        console.log(`我叫${this.name}今年${this.age}岁了`)
+        console.log(this.extraInfo)
+    }
+}
+
+// 测试代码1
+const p1 = new Person<number>("tom", 30, 250)
+
+// 测试代码2
+type JobInfo = {
+    title: string;
+    company: string;
+}
+const p2 = new Person<JobInfo>("tom", 30, { title: '研发总监', company: '发发发科技公司' })
 ```
 

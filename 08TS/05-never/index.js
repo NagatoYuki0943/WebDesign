@@ -1,36 +1,25 @@
 "use strict";
-// unknown 可以理解为⼀个类型安全的 any 。
-// 设置a的类型为unknown
+/* 指定a的类型为never，那就意味着a以后不能存任何的数据了 */
+// let a: never
+// 以下对a的所有赋值都会有警告
+// a = 1
+// a = true
+// a = undefined
+// a = null
+// never ⼀般是 TypeScript 主动推断出来的，例如：
+// 指定a的类型为string
 let a;
-//以下对a的赋值，均符合规范
-a = 100;
-a = false;
-a = '你好';
-// 设置x的数据类型为string
-let x;
-// x = a //警告：不能将类型“unknown”分配给类型“string”
-// unknown 会强制开发者在使⽤之前进⾏类型检查，从⽽提供更强的类型安全性。
-// 设置a的类型为unknown
-let b;
-b = 'hello';
-//第⼀种⽅式：加类型判断
-if (typeof b === 'string') {
-    x = b;
-    console.log(x);
+// 给a设置⼀个值
+a = 'hello';
+if (typeof a === 'string') {
+    console.log(a.toUpperCase());
 }
-//第⼆种⽅式：加断⾔
-x = b;
-//第三种⽅式：加断⾔
-x = b;
-// 读取 any 类型数据的任何属性都不会报错，⽽ unknown 正好与之相反。
-let str1;
-str1 = 'hello';
-str1.toUpperCase(); //⽆警告
-let str2;
-str2 = 'hello';
-str2.toUpperCase(); //⽆警告
-let str3;
-str3 = 'hello';
-// str3.toUpperCase() //警告：“str3”的类型为“未知”
-// 使⽤断⾔强制指定str3的类型为string
-str3.toUpperCase(); //⽆警告
+else {
+    console.log(a); // TypeScript会推断出此处的a是never，因为没有任何⼀个值符合此处的逻辑
+}
+// never 可以用来限制函数的返回值
+// 默认情况下，函数返回值类型为 undefined，即使函数没有显式的返回值。
+// 函数没有返回值 never (返回 `never` 的函数不能具有可访问的终结点。)
+function foo() {
+    throw new Error('error');
+}
