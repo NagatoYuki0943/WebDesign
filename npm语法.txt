@@ -3,26 +3,26 @@
 
 
 查看npm版本
-    npm -v      
+    npm -v
 
 
 恢复默认镜像
-    npm config delete registry   
+    npm config delete registry
 
     https://registry.npmjs.org/
 
 
 获取配置镜像地址
     npm get registry
-    npm config get registry 
+    npm config get registry
 
 
-查看镜像，不是国内，设置淘宝镜像即可 
-    npm config set registry https://registry.npm.taobao.org 
+查看镜像，不是国内，设置淘宝镜像即可
+    npm config set registry https://registry.npm.taobao.org
 
 
 有时 npm 命令不太稳定，报错的话，可以使用 cnpm，语法一模一样
-    npm install -g cnpm --registry=https://registry.npm.taobao.org 
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 
 npm安装方式区别
@@ -34,28 +34,28 @@ npm安装方式区别
 
 安装webpack
     webpack5要和webpack-cli3同时使用,和4使用会有bug
-    首先，先全局安装，需要两个：webpack 核心模块、webpack-cli 命令行工具； 
-    其中：install 可以简写为 i，-g 表示全局； 
-        npm i webpack webpack-cli -g 
+    首先，先全局安装，需要两个：webpack 核心模块、webpack-cli 命令行工具；
+    其中：install 可以简写为 i，-g 表示全局；
+        npm i webpack webpack-cli -g
         //指定具体版本下载
         npm i webpack-cli@3 -g
 
-    或者：在本地的项目中安装 webpack，--save-dev 可以简写为-D； 
-        npm i webpack webpack-cli -D 
+    或者：在本地的项目中安装 webpack，--save-dev 可以简写为-D；
+        npm i webpack webpack-cli -D
         //指定具体版本下载
         npm i webpack-cli@3 -D
 
 
-安装好 npm 或 cnpm 后，测试 webpack 命令是否有效，如下： 
-    webpack -v 
-    webpack-cli -v 
+安装好 npm 或 cnpm 后，测试 webpack 命令是否有效，如下：
+    webpack -v
+    webpack-cli -v
 
-本地安装查询 
-    npx webpack -v 
-    npx webpack-cil -v 
+本地安装查询
+    npx webpack -v
+    npx webpack-cil -v
 
-    PS：官方推荐使用本地安装，这样如果有多版本的话，不会导致冲突； 
-    PS：而本地安装，就只能在本项目中使用 webpack 命令，并且需要 npx 命令; 
+    PS：官方推荐使用本地安装，这样如果有多版本的话，不会导致冲突；
+    PS：而本地安装，就只能在本项目中使用 webpack 命令，并且需要 npx 命令;
 
 
 卸载
@@ -70,7 +70,7 @@ webpack.config.json  是配置文件
 在这个目录直接使用 webpack 命令就能使用
 
 
-PS：在应用根目录安装，package.json 会自动添加 webpack-dev-server 版本号 
+PS：在应用根目录安装，package.json 会自动添加 webpack-dev-server 版本号
 
 在package.json中的scripts中写名字和命令,在外面直接使用 npm run 名字即可
     "scripts": {
