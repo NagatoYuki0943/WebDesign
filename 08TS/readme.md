@@ -866,19 +866,22 @@ class Person {
     age: number
 
     // 构造器
-    constructor(name: string, age: number) {
+    constructor(name: string, age: number){
         this.name = name
         this.age = age
     }
 
     // ⽅法
-    speak() {
+    speak(): void {
         console.log(`我叫：${this.name}，今年${this.age}岁`)
     }
 }
 
-// Person实例
-const p1 = new Person('周杰伦', 38)
+// 实例化
+const p1 = new Person('张三', 25)
+
+// 调用方法
+p1.speak() // 我叫：张三，今年25岁
 ```
 
 #### extends
@@ -891,23 +894,31 @@ const p1 = new Person('周杰伦', 38)
 class Student extends Person {
     grade: string
 
+    // 备注本例中若Student类不需要额外的属性，Student的构造器可以省略
     // 构造器
-    constructor(name: string, age: number, grade: string) {
+    constructor(name: string, age: number, grade: string){
         super(name, age)
         this.grade = grade
     }
 
-    // 备注本例中若Student类不需要额外的属性，Student的构造器可以省略
-    // 重写从⽗类继承的⽅法
-    override speak() {
+    // 重写父类方法
+    // override 关键字表示重写父类方法, 可以省略
+    override speak(): void {
         console.log(`我是学⽣，我叫：${this.name}，今年${this.age}岁，在读${this.grade}年级`,)
     }
 
     // ⼦类⾃⼰的⽅法
-    study() {
+    study(): void {
         console.log(`${this.name}正在努⼒学习中......`)
     }
 }
+
+// 实例化
+const s1 = new Student('李四', 20, '高三')
+
+// 调用方法
+s1.speak() // 我是学⽣，我叫：李四，今年20岁，在读高三年级
+s1.study() // 李四正在努⼒学习中......
 ```
 
 > 属性修饰符
@@ -927,32 +938,53 @@ class Person {
     public name: string
     age: number
 
-    constructor(name: string, age: number) {
+    // 构造器
+    constructor(name: string, age: number){
         this.name = name
         this.age = age
     }
 
-    speak() {
+    // 默认不加修饰符也是 public
+    speak(): void {
         // 类的【内部】可以访问public修饰的name和age
         console.log(`我叫：${this.name}，今年${this.age}岁`)
     }
 }
 
-const p1 = new Person('张三', 18)
+// 实例化
+const p1 = new Person('张三', 25)
+
+// 调用方法
+p1.speak() // 我叫：张三，今年25岁
 // 类的【外部】可以访问public修饰的属性
 console.log(p1.name)
 
 
+// 继承
 class Student extends Person {
-    constructor(name: string, age: number) {
+    grade: string
+
+    // 备注本例中若Student类不需要额外的属性，Student的构造器可以省略
+    // 构造器
+    constructor(name: string, age: number, grade: string){
         super(name, age)
+        this.grade = grade
     }
 
-    study() {
+    // 重写父类方法
+    // override 关键字表示重写父类方法, 可以省略
+    override speak(): void {
         // 【⼦类中】可以访问⽗类中public修饰的：name属性、age属性
-        console.log(`${this.age}岁的${this.name}正在努⼒学习`)
+        console.log(`我是学⽣，我叫：${this.name}，今年${this.age}岁，在读${this.grade}年级`,)
     }
 }
+
+// 实例化
+const s1 = new Student('李四', 20, '高三')
+// 调用方法
+s1.speak() // 我是学⽣，我叫：李四，今年20岁，在读高三年级
+// 类的【外部】可以访问public修饰的属性
+console.log(s1.name)
 ```
 
 > 属性的简写形式
@@ -960,8 +992,8 @@ class Student extends Person {
 ```ts
 // 完整写法
 class Person {
-    public name: string;
-    public age: number;
+    name: string;
+    age: number;
 
     constructor(name: string, age: number) {
         this.name = name;
@@ -972,10 +1004,14 @@ class Person {
 
 // 简写形式
 class Person {
+    // 构造器
     constructor(
+        // 这里必须有属性修饰符
         public name: string,
-        public age: number
-    ) { }
+        protected age: number,
+        private gender: string,
+        readonly city: string
+    ){ }
 }
 ```
 
@@ -996,15 +1032,16 @@ class Person {
     }
 
     // introduce是公开⽅法，类、⼦类、类外部都能使⽤
-    introduce() {
+    introduce(): void {
         // 类中能访问受保护的getDetails⽅法
         console.log(this.getDetails());
     }
 }
 
-const p1 = new Person('杨超越',18)
+const p1 = new Person('杨超越', 18)
 // 可以在类外部访问introduce
 p1.introduce()
+// 我叫：杨超越，年龄是：18
 
 // 以下代码均报错
 // p1.getDetails()
@@ -1014,10 +1051,10 @@ p1.introduce()
 
 class Student extends Person {
     constructor(name: string, age: number){
-        super(name,age)
+        super(name, age)
     }
 
-    study(){
+    study(): void {
         // ⼦类中可以访问introduce
         this.introduce()
         // ⼦类中可以访问name
@@ -1025,8 +1062,13 @@ class Student extends Person {
     }
 }
 
-const s1 = new Student('tom',17)
-s1.introduce()
+const s1 = new Student('tom', 17)
+s1.study()
+// 我叫：tom，年龄是：17
+// index.js:34 tom正在努⼒学习
+
+// 以下代码报错
+// s1.name
 ```
 
 #### private 修饰符
@@ -1041,30 +1083,68 @@ class Person {
     ) { }
 
     private getPrivateInfo(){
+        console.log("Person.getPrivateInfo")
         // 类内部可以访问私有的(private)属性 —— IDCard
         return `身份证号码为：${this.IDCard}`
     }
 
-    getInfo() {
+    getInfo(): string {
+        console.log("Person.getInfo")
         // 类内部可以访问受保护的(protected)属性 —— name和age
         return `我叫: ${this.name}, 今年刚满${this.age}岁`
     }
 
-    getFullInfo(){
+    getFullInfo(): string {
+        console.log("Person.getFullInfo")
         // 类内部可以访问公开的getInfo⽅法，也可以访问私有的getPrivateInfo⽅法
         return this.getInfo() + '，' + this.getPrivateInfo()
     }
 }
 
-const p1 = new Person('张三',18,'110114198702034432')
-console.log(p1.getFullInfo())
+const p1 = new Person('张三', 18, '110114198702034432')
 console.log(p1.getInfo())
+// 我叫: 张三, 今年刚满18岁
+console.log(p1.getFullInfo())
+// 我叫: 张三, 今年刚满18岁，身份证号码为：110114198702034432
 
 // 以下代码均报错
-// p1.name
-// p1.age
 // p1.IDCard
 // p1.getPrivateInfo()
+
+class Student extends Person {
+    constructor(
+        name: string,
+        age: number,
+        IDCard: string,
+        public grade: number
+    ) {
+        super(name, age, IDCard)
+    }
+
+    getInfo(): string {
+        console.log("Student.getInfo")
+        return `我叫: ${this.name}, 今年刚满${this.age}岁, 我在读${this.grade}年级`
+    }
+
+    getFullInfo(): string {
+        console.log("Student.getFullInfo")
+        // 子类不可以访问父类的 private 属性
+        // return this.getInfo() + '，' + super.getPrivateInfo()
+        // 但是可以通过父类访问的 public / protected 方法强制访问 private 函数
+        return super.getFullInfo() + '，' + `我在读${this.grade}年级`
+    }
+}
+
+const s1 = new Student('李四', 11, '110114198702034433', 3)
+console.log(s1.getInfo())
+// 我叫: 李四, 今年刚满11岁, 我在读3年级
+console.log(s1.getFullInfo())
+// 我叫: 李四, 今年刚满11岁, 我在读3年级，身份证号码为：110114198702034433，我在读3年级
+// 打印 2 次 `我在读3年级`，因为 super.getFullInfo() 调用了父类的 getFullInfo() 方法，
+// 而父类的 getFullInfo() 调用了子类的 getInfo() 方法，而子类的 getInfo() 会打印 `我在读3年级`
+
+// 报错，因为子类不可以访问父类的 private 属性
+//s1.IDCard
 ```
 
 #### readonly 修饰符
@@ -1093,8 +1173,8 @@ const car = new Car('1HGCM82633A123456', 2018, '⿊⾊', 'Bose⾳响');
 car.displayInfo()
 
 // 以下代码均错误：不能修改 readonly 属性
-// car.vin = '897WYE87HA8SGDD8SDGHF'; 
-// car.year = 2020; 
+// car.vin = '897WYE87HA8SGDD8SDGHF';
+// car.year = 2020;
 ```
 
 ### abstract class (抽象类)
@@ -1109,17 +1189,19 @@ car.displayInfo()
 
 ```ts
 abstract class Package {
-     constructor(public weight: number) { }
+    constructor(public weight: number) { }
 
-     // 抽象⽅法：⽤来计算运费，不同类型包裹有不同的计算⽅式
-     abstract calculate(): number
+    // 抽象⽅法：⽤来计算运费，不同类型包裹有不同的计算⽅式
+    abstract calculate(): number
 
-     // 通⽤⽅法：打印包裹详情
-     printPackage() {
-         console.log(`包裹重量为: ${this.weight}kg，运费为: ${this.calculate()}元`)
-     }
+    // 通⽤⽅法：打印包裹详情
+    printPackage() {
+        console.log(`包裹重量为: ${this.weight}kg，运费为: ${this.calculate()}元`)
+    }
 }
 
+// 无法创建抽象类的实例。
+// const p = new Package(10)
 
 // StandardPackage 类继承了 Package ，实现了 calculate ⽅法：
 // 标准包裹
@@ -1129,7 +1211,7 @@ class StandardPackage extends Package {
         public unitPrice: number // 每公⽄的固定费率
     ) { super(weight) }
 
-    // 实现抽象⽅法：计算运费
+   // 实现抽象⽅法：计算运费
     calculate(): number {
         return this.weight * this.unitPrice;
     }
@@ -1144,11 +1226,11 @@ s1.printPackage()
 class ExpressPackage extends Package {
     constructor(
         weight: number,
-        private unitPrice: number, // 每公⽄的固定费率（快速包裹更⾼）
+        public unitPrice: number, // 每公⽄的固定费率（快速包裹更⾼）
         private additional: number // 超出10kg以后的附加费
     ) { super(weight) }
 
-    // 实现抽象⽅法：计算运费
+   // 实现抽象⽅法：计算运费
     calculate(): number {
         if(this.weight > 10){
             // 超出10kg的部分，每公⽄多收additional对应的价格
@@ -1159,8 +1241,18 @@ class ExpressPackage extends Package {
     }
 }
 // 创建特快包裹实例
-const e1 = new ExpressPackage(13,8,2)
+const e1 = new ExpressPackage(13, 8, 2)
 e1.printPackage()
+
+
+// 可以用抽象类继承抽象类,这样就不用实现具体方法了
+abstract class SuperPackage extends Package {
+    constructor(
+        weight: number,
+    ) { super(weight) }
+
+    abstract calculate(): number
+}
 ```
 
 > 总结：何时使⽤抽象类？
@@ -1179,8 +1271,10 @@ e1.printPackage()
 ```ts
 // PersonInterface接⼝，⽤与限制Person类的格式
 interface PersonInterface {
+    // 不能定义 public / private / protected 修饰符
+    // public name: string
     name: string
-    age: number
+    readonly age: number
     speak(n: number): void
 }
 
@@ -1203,6 +1297,9 @@ class Person implements PersonInterface {
 // 创建⼀个 Person 类的实例 p1，传⼊名字 'tom' 和年龄 18
 const p1 = new Person('tom', 18);
 p1.speak(3)
+// 你好，我叫tom，我的年龄是18
+// 你好，我叫tom，我的年龄是18
+// 你好，我叫tom，我的年龄是18
 ```
 
 ### 定义**对象**结构
@@ -1223,6 +1320,7 @@ const user: UserInterface = {
         console.log(`奔跑了${n}⽶`)
     }
 }
+user.run(3) // 奔跑了3⽶
 ```
 
 ### 定义**函数**结构
@@ -1242,12 +1340,12 @@ const count: CountInterface = (x, y) => {
 > ⼀个 interface 继承另⼀个 interface ，从⽽实现代码的复⽤
 
 ```ts
-interface PersonInterface {
+interface PersonInterface1 {
     name: string // 姓名
     age: number // 年龄
 }
 
-interface StudentInterface extends PersonInterface {
+interface StudentInterface extends PersonInterface1 {
     grade: string // 年级
 }
 
@@ -1256,47 +1354,52 @@ const stu: StudentInterface = {
     age: 25,
     grade: '⾼三',
 }
+
+console.log(stu.name) // 张三
+console.log(stu.age) // 25
+console.log(stu.grade) // ⾼三
 ```
 
 ### 接⼝⾃动合并（可重复定义）
 
 ```ts
-// PersonInterface接⼝
-interface PersonInterface {
+// PersonInterface2 接⼝
+interface PersonInterface2 {
     // 属性声明
     name: string
     age: number
 }
 
-// 给PersonInterface接⼝添加新属性
-interface PersonInterface {
+// 给PersonInterface2 接⼝添加新属性
+interface PersonInterface2 {
     // ⽅法声明
     speak(): void
 }
 
-// Person类实现PersonInterface
-class Person implements PersonInterface {
-    name: string
-    age: number
+// Person1 类实现 PersonInterface2
+class Person1 implements PersonInterface2 {
 
     // 构造器
-    constructor(name: string, age: number) {
-        this.name = name
-        this.age = age
-    }
+    constructor(
+        public name: string,
+        public age: number
+    ) { }
 
     // ⽅法
     speak() {
         console.log('你好！我是⽼师:', this.name)
     }
 }
+
+const p2 = new Person1('李四', 20)
+p2.speak() // 你好！我是⽼师: 李四
 ```
 
 > 总结：何时使⽤接⼝？
 >
-> 1. 定义对象的格式： 描述数据模型、API 响应格式、配置对象........等等，是开发中⽤的最多 的场景。
+> 1. 定义对象的格式： **描述数据模型**、**API 响应格式**、**配置对象**........等等，是开发中⽤的最多 的场景。
 > 2. 类的契约：规定⼀个类需要实现哪些属性和⽅法。
-> 3. 扩展已有接⼝：⼀般⽤于扩展第三⽅库的类型， 这种特性在⼤型项⽬中可能会⽤到。
+> 3. **自动合并，可以扩展已有接⼝**：⼀般⽤于扩展第三⽅库的类型， 这种特性在⼤型项⽬中可能会⽤到。
 
 ## 12. ⼀些相似概念的区别
 
@@ -1350,20 +1453,22 @@ let person2: PersonType = {
 > interface 可以继承、合并
 
 ```ts
-interface PersonInterface {
+interface PersonInterface1 {
     name: string // 姓名
     age: number // 年龄
 }
 
-interface PersonInterface {
+// 合并
+interface PersonInterface1 {
     speak: () => void
 }
 
-interface StudentInterface extends PersonInterface {
+// 继承
+interface StudentInterface1 extends PersonInterface1 {
     grade: string // 年级
 }
 
-const student: StudentInterface = {
+const student: StudentInterface1 = {
     name: '李四',
     age: 18,
     grade: '⾼⼆',
@@ -1372,13 +1477,14 @@ const student: StudentInterface = {
         console.log(this.name,this.age,this.grade)
     }
 }
+student.speak()
 ```
 
 > type 的交叉类型
 
 ```ts
 // 使⽤ type 定义 Person 类型，并通过交叉类型实现属性的合并
-type PersonType = {
+type PersonType1 = {
     name: string; // 姓名
     age: number; // 年龄
 } & {
@@ -1386,11 +1492,11 @@ type PersonType = {
 }
 
 // 使⽤ type 定义 Student 类型，并通过交叉类型继承 PersonType
-type StudentType = PersonType & {
+type StudentType1 = PersonType1 & {
     grade: string // 年级
 }
 
-const student: StudentType = {
+const student1: StudentType1 = {
     name: '李四',
     age: 18,
     grade: '⾼⼆',
@@ -1399,6 +1505,7 @@ const student: StudentType = {
         console.log(this.name, this.age, this.grade)
     }
 }
+student1.speak()
 ```
 
 ### interface 与 抽象类的区别
@@ -1417,10 +1524,12 @@ const student: StudentType = {
 interface FlyInterface {
     fly(): void
 }
+
 // 定义 SwimInterface 接⼝
 interface SwimInterface {
     swim(): void
 }
+
 // Duck 类实现了 FlyInterface 和 SwimInterface 两个接⼝
 class Duck implements FlyInterface, SwimInterface {
 
@@ -1441,7 +1550,7 @@ duck.swim() // 输出: 鸭⼦可以游泳
 
 ## 13. 泛型
 
-> 泛型允许我们在定义函数、类或接⼝时，使⽤类型参数来表示**未指定的类型**，这些参数在具体**使⽤时**，才被指定**具体的类型**，泛型能让同⼀段代码适⽤于多种类型，同时仍然保持类型的安 全性。
+> 泛型允许我们在定义函数、类或接⼝时，使⽤类型参数来表示**未指定的类型**，这些参数在具体**使⽤时**，才被指定**具体的类型**，泛型能让同⼀段代码适⽤于多种类型，同时仍然保持类型的安全性。
 
 举例：如下代码中 `<T>` 就是泛型，（不⼀定⾮叫 `T` ），设置泛型后即可在函数中使⽤ `T` 来表 示该类型：
 
@@ -1460,13 +1569,13 @@ logData<string>('hello')
 > 泛型可以有多个
 
 ```ts
-function logData<T, U>(data1: T, data2: U): T | U {
+function logData1<T, U>(data1: T, data2: U): T | U {
     console.log(data1,data2)
     return Date.now() % 2 ? data1 : data2
 }
 
-logData<number, string>(100, 'hello')
-logData<string, boolean>('ok', false)
+logData1<number, string>(100, 'hello')
+logData1<string, boolean>('ok', false)
 ```
 
 > 泛型接⼝
@@ -1480,7 +1589,7 @@ interface PersonInterface<T> {
 
 let p1: PersonInterface<string>
 let p2: PersonInterface<number>
-    
+
 p1 = { name: '张三', age: 18, extraInfo: '⼀个好⼈' }
 p2 = { name: '李四', age: 18, extraInfo: 250 }
 ```
@@ -1519,13 +1628,48 @@ class Person<T> {
 }
 
 // 测试代码1
-const p1 = new Person<number>("tom", 30, 250)
+const p3 = new Person<number>("tom", 30, 250)
+p3.speak()
 
 // 测试代码2
 type JobInfo = {
     title: string;
     company: string;
 }
-const p2 = new Person<JobInfo>("tom", 30, { title: '研发总监', company: '发发发科技公司' })
+const p4 = new Person<JobInfo>("tom", 30, { title: '研发总监', company: '发发发科技公司' })
+p4.speak()
+```
+
+## 14. 类型声明⽂件
+
+类型声明⽂件是 TypeScript 中的⼀种特殊⽂件，通常以 `.d.ts` 作为扩展名。它的主要作⽤是为现有的**JavaScript 代码**提供**类型信息**，使得 TypeScript 能够在使⽤这些 JavaScript 库或模块时进⾏**类型检查和提示**。
+
+`demo.js`
+
+```js
+export function add(a, b) {
+    return a + b;
+}
+export function mul(a, b) {
+    return a * b;
+}
+```
+
+`demo.d.ts`
+
+```ts
+declare function add(a: number, b: number): number
+declare function mul(a: number, b: number): number
+export { add, mul }
+```
+
+`index.ts`
+
+```ts
+// example.ts
+import { add, mul } from "./demo.js"
+const x = add(2, 3) // x 类型为 number
+const y = mul(4, 5) // y 类型为 number
+console.log(x,y)
 ```
 
