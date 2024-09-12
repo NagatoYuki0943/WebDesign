@@ -11,16 +11,17 @@ function logData<T>(data: T): T {
 
 logData<number>(100)
 logData<string>('hello')
+logData<boolean>(false)
 
 
 // **泛型可以有多个**
 function logData1<T, U>(data1: T, data2: U): T | U {
-    console.log(data1,data2)
+    console.log(data1, data2)
     return Date.now() % 2 ? data1 : data2
 }
 
-logData1<number, string>(100, 'hello')
-logData1<string, boolean>('ok', false)
+console.log(logData1<number, string>(100, 'hello'))
+console.log(logData1<string, boolean>('ok', false))
 
 
 // **泛型接⼝**
@@ -30,10 +31,9 @@ interface PersonInterface<T> {
     extraInfo: T
 }
 
-let p1: PersonInterface<string>
-let p2: PersonInterface<number>
+const p1: PersonInterface<string> = { name: '张三', age: 18, extraInfo: '⼀个好⼈' }
 
-p1 = { name: '张三', age: 18, extraInfo: '⼀个好⼈' }
+let p2: PersonInterface<number>
 p2 = { name: '李四', age: 18, extraInfo: 250 }
 
 

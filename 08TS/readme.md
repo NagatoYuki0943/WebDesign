@@ -1548,7 +1548,7 @@ duck.fly() // 输出: 鸭⼦可以⻜
 duck.swim() // 输出: 鸭⼦可以游泳
 ```
 
-## 13. 泛型
+# 泛型
 
 > 泛型允许我们在定义函数、类或接⼝时，使⽤类型参数来表示**未指定的类型**，这些参数在具体**使⽤时**，才被指定**具体的类型**，泛型能让同⼀段代码适⽤于多种类型，同时仍然保持类型的安全性。
 
@@ -1564,13 +1564,14 @@ function logData<T>(data: T): T {
 
 logData<number>(100)
 logData<string>('hello')
+logData<boolean>(false)
 ```
 
 > 泛型可以有多个
 
 ```ts
 function logData1<T, U>(data1: T, data2: U): T | U {
-    console.log(data1,data2)
+    console.log(data1, data2)
     return Date.now() % 2 ? data1 : data2
 }
 
@@ -1587,10 +1588,9 @@ interface PersonInterface<T> {
     extraInfo: T
 }
 
-let p1: PersonInterface<string>
-let p2: PersonInterface<number>
+const p1: PersonInterface<string> = { name: '张三', age: 18, extraInfo: '⼀个好⼈' }
 
-p1 = { name: '张三', age: 18, extraInfo: '⼀个好⼈' }
+let p2: PersonInterface<number>
 p2 = { name: '李四', age: 18, extraInfo: 250 }
 ```
 
@@ -1640,7 +1640,7 @@ const p4 = new Person<JobInfo>("tom", 30, { title: '研发总监', company: '发
 p4.speak()
 ```
 
-## 14. 类型声明⽂件
+# 类型声明⽂件
 
 类型声明⽂件是 TypeScript 中的⼀种特殊⽂件，通常以 `.d.ts` 作为扩展名。它的主要作⽤是为现有的**JavaScript 代码**提供**类型信息**，使得 TypeScript 能够在使⽤这些 JavaScript 库或模块时进⾏**类型检查和提示**。
 
@@ -1666,10 +1666,9 @@ export { add, mul }
 `index.ts`
 
 ```ts
-// example.ts
 import { add, mul } from "./demo.js"
 const x = add(2, 3) // x 类型为 number
 const y = mul(4, 5) // y 类型为 number
-console.log(x,y)
+console.log(x, y)
 ```
 

@@ -30,5 +30,3 @@ class Duck implements FlyInterface, SwimInterface {
 const duck = new Duck();
 duck.fly() // 输出: 鸭⼦可以⻜
 duck.swim() // 输出: 鸭⼦可以游泳
-
-

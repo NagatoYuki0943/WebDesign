@@ -9,16 +9,16 @@ function logData(data) {
 }
 logData(100);
 logData('hello');
+logData(false);
 // **泛型可以有多个**
 function logData1(data1, data2) {
     console.log(data1, data2);
     return Date.now() % 2 ? data1 : data2;
 }
-logData1(100, 'hello');
-logData1('ok', false);
-let p1;
+console.log(logData1(100, 'hello'));
+console.log(logData1('ok', false));
+const p1 = { name: '张三', age: 18, extraInfo: '⼀个好⼈' };
 let p2;
-p1 = { name: '张三', age: 18, extraInfo: '⼀个好⼈' };
 p2 = { name: '李四', age: 18, extraInfo: 250 };
 // 约束规则是：传⼊的类型T必须具有 length 属性
 function logPerson(data) {
