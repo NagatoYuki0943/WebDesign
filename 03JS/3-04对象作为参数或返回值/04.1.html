@@ -11,21 +11,21 @@
 
 </body>
 <script>
-    //传递对象给函数作为参数
+    // 传递对象给函数作为参数
     function dis(obj) {
         obj.name = 456;
         console.log(obj);
         console.log(obj.age);
     }
-    //建立对象
+    // 建立对象
     var o = {
         name: 123,
         age: 15,
         sex: '男'
     };
-    dis(o); //引用传递 Object { name: 123, age: 15, sex: "男" }  15
+    dis(o); // 引用传递 Object { name: 123, age: 15, sex: "男" }  15
 
-    console.log(o.name); //456 函数里面改了,是引用传递
+    console.log(o.name); // 456 函数里面改了,是引用传递
 </script>
 
 </html>

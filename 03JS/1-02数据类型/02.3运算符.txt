@@ -3,7 +3,8 @@
     -
     *
     /
-    %
+    %  取余
+    ** 幂运算
     ++
     --
 
@@ -26,40 +27,120 @@
     && 的运算优先级高于 ||
 
     在js中逻辑或逻辑与的返回值取决于整个表达式的子表达式的值
-        var a = 0;
-        var b = 3;
-        var o = a || b; //为真,找真的值
-        console.log(o); //3
 
-        var k = a && b; //为假,找假的值
-        console.log(k); //0
+4 代码
+<script>
+    console.log("++ --");
+    //  + - * / % ++ --
+    var i = 10;
+    var j = i++;
+    console.log(j); // 10
+    var h = ++i;
+    console.log(h); // 12
+    var i = 3;
+    console.log(!i); // false
+    console.log("------------------------------------------");
 
-        var v = 0;
-        var f = true;
-        var p = v || f;
-        console.log(p); //true
-        var e = v && f;
-        console.log(e); //0
+    console.log("? :");
+    var s = 2 ? 4 : 5;
+    console.log(s); // 4
 
-        //两个都为真
-        var a = 1;
-        var b = 3;
-        var c = a && b;
-        console.log(c); //3  &&找到最后一个才是真,就取这个值,选择3
-        var c = a || b;
-        console.log(c); //1  ||找到第一个为真的就取这个值,选择1
+    var s = 0 ? 4 : 5;
+    console.log(s); // 5
+    console.log("------------------------------------------");
 
-        //两个都为假
-        var a = 0;
-        var b = false;
-        var c = a && b;
-        console.log(c); //0  &&找到第一个为假就为假,选0
-        var c = a || b;
-        console.log(c); //false ||找到最后一个为假的就取这个值,选false
+    console.log("&& ||");
+    // 在js中逻辑或逻辑与的返回值取决于整个表达式的子表达式的值
+    // 一真一假
+    var a = 0;
+    var b = 3;
+    var o = a || b; // 为真,找真的值
+    console.log(o); // 3
+    var k = a && b; // 为假,找假的值
+    console.log(k); // 0
 
-        //三个数
-        var a = 1;
-        var v = 0;
-        var f = false;
-        var t = a || v && f;
-        console.log(t); //1  && 的运算优先级高于 ||,先算右边为 false,再和a进行或运算,结果为1
+    // 一真一假
+    var v = 0;
+    var f = true;
+    var p = v || f; // 为真,找真的值
+    console.log(p); // true
+    var e = v && f; // 为假,找假的值
+    console.log(e); // 0
+
+    // 两个都为真
+    var a = 1;
+    var b = 3;
+    var c = a && b; // && 找到最后一个才是真,就取这个值,选择3
+    console.log(c); // 3
+    var c = a || b; // || 找到第一个为真的就取这个值,选择1
+    console.log(c); // 1
+
+    // 两个都为假
+    var a = 0;
+    var b = false;
+    var c = a && b; // && 找到第一个为假就为假,选0
+    console.log(c); // 0
+    var c = a || b; // || 找到最后一个为假的就取这个值,选false
+    console.log(c); // false
+
+    // 三个数
+    var a = 1;
+    var v = 0;
+    var f = false;
+    var t = a || v && f; // && 的运算优先级高于 ||,先算右边为 false,再和a进行或运算,结果为1
+    console.log(t); // 1
+
+    console.log("------------------------------------------");
+
+    console.log("if else");
+    var a = 4;
+    if (a > 5) {
+        console.log(6);
+    } else if (a < 5) { // else if 必须有空格
+        console.log(4);
+    } else {
+        console.log(5);
+    }
+    console.log("------------------------------------------");
+
+    console.log("switch");
+    switch (a) {
+        case 3:
+            console.log(3);
+            break;
+        case 4:
+            console.log(4); // 4
+            break;
+        case 5:
+            console.log(5);
+        default:
+            console.log('xxx');
+    }
+    console.log("------------------------------------------");
+
+    console.log("for while");
+    var i = 1;
+    while (i < 5) {
+        console.log(i);
+        i++;
+    }
+    /**
+     * 1
+     * 2
+     * 3
+     * 4
+     */
+    console.log("------------------------------------------")
+
+    console.log("for");
+    for (var i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    /**
+     * 0
+     * 1
+     * 2
+     * 3
+     * 4
+     */
+</script>

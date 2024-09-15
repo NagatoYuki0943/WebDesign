@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function man() {
+        // 在内部添加静态属性
+        man.x = 10;
+        man.s++;
+    }
+    // 静态属性和方法直接使用函数名字.属性/方法来赋值,用的不是对象
+    // 添加静态属性
+    man.s = 0;
+    // 添加静态方法
+    man.f = function() {
+        console.log(man.s);
+    }
+
+    // 通过类名来调用属性和方法
+    man.f();            // 0
+    console.log(man.s); // 0
+    console.log(man.x); // undefined
+    man(); // 调用函数，执行函数体内的代码, 执行了 man.x = 10; 和 man.s++; ,因此下面才有变化
+    console.log(man.s); // 1
+    console.log(man.x); // 10
+
+    var m1 = new man();
+    var m2 = new man();
+    var m3 = new man();
+    console.log(m3.x);    // undefinied
+    console.log(m3.s);    // undefinied
+    m3.f();   // 会报错,提示找不到方法
+
+</script>
+
+</html>

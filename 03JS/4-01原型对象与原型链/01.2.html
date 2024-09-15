@@ -11,18 +11,18 @@
 
 </body>
 <script>
-    //每一个构造函数都有一个prototype属性,这个属性就是实例对象的原型对象
+    // 每一个构造函数都有一个prototype属性,这个属性就是实例对象的原型对象
     function Cat(name) {
         this.name = name;
         this.f = function() {
             console.log(this.name, this.color, 'miao~miao~miao');
         }
     }
-    //通过构造函数来查看prototype
-    var type1 = Cat.prototype; //Object { … }
+    // 通过构造函数来查看prototype
+    var type1 = Cat.prototype; // Object { … }
     console.log(type1);
-    //给构造函数原型增加属性,所有的对象都会增加这个属性/方法
-    //1 为原型对象添加属性/方法,实现属性/方法共享
+    // 给构造函数原型增加属性,所有的对象都会增加这个属性/方法
+    // 1 为原型对象添加属性/方法,实现属性/方法共享
     Cat.prototype.color = "黑色";
     Cat.prototype.Echo = function() {
         console.log("Echo.....");
@@ -30,27 +30,27 @@
 
 
     var cat1 = new Cat('波斯猫');
-    //2 为原型对象添加属性/方法,实现属性/方法共享
+    // 2 为原型对象添加属性/方法,实现属性/方法共享
     cat1.__proto__.Print = function() {
         console.log('Print...');
     }
 
-    //3 为原型对象添加属性/方法,实现属性/方法共享
+    // 3 为原型对象添加属性/方法,实现属性/方法共享
     Object.getPrototypeOf(cat1).Cout = function() {
         console.log('Cout...');
     }
     var cat2 = new Cat('土家猫');
 
 
-    //cat1接cat2的color属性不是他俩的属性,是Cat.prototype的属性
-    cat1.f(); //波斯猫 黑色 miao~miao~miao    黑色被共享了
-    cat2.f(); //土家猫 黑色 miao~miao~miao
+    // cat1接cat2的color属性不是他俩的属性,是Cat.prototype的属性
+    cat1.f(); // 波斯猫 黑色 miao~miao~miao    黑色被共享了
+    cat2.f(); // 土家猫 黑色 miao~miao~miao
 
     cat2.color = "白色";
-    cat2.f(); //土家猫 白色 miao~miao~miao
-    cat2.Echo(); //Echo.....
-    cat2.Print(); //Print...
-    cat2.Cout(); //Cout...
+    cat2.f(); // 土家猫 白色 miao~miao~miao
+    cat2.Echo(); // Echo.....
+    cat2.Print(); // Print...
+    cat2.Cout(); // Cout...
 </script>
 
 </html>

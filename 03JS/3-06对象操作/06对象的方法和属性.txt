@@ -1,6 +1,6 @@
 1 遍历对象,和遍历数组方式一样,可以获取属性和对象
     for (var key in p) {
-        //当做数组来用
+        // 当做数组来用
         console.log(p[key]);
     }
 
@@ -17,22 +17,22 @@
 
 
     function Woman() {
-        //内部方法
+        // 内部方法
         this.f1 = function() {
             console.log('Woman.f1');
         }
 
-        //内部属性
+        // 内部属性
         this.f2 = 2333;
     }
 
     var s = {
         a: 'sdf',
         'name': 'SSSS',
-        //方法
+        // 方法
         f: function() {
             console.log('哈哈哈');
         },
-        //调用外部方法,不要有括号,不然就是调用了
+        // 调用外部方法,不要有括号,不然就是调用了
         P: Person,
     }

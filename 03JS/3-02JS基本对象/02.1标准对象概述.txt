@@ -6,4 +6,11 @@
     JS中几乎所有对象能被当做对象操作,null undefined除外(没有使用的必要)
 
 2
-    var i1=new Number(4);这样也可以声明,但是没人这样用
+    var num = new Number(4); // 这样也可以声明,但是没人这样用
+
+3 JS原生提供Object对象,所有对象都基于它
+    为其他对象提供模板
+
+    创建Object对象,两种方式
+    var o = new Object();
+    var o2 = {}; // 和上面一行一模一样

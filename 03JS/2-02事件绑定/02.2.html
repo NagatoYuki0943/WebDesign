@@ -16,15 +16,16 @@
 <script>
     var d = document.getElementById("d");
     d.onclick = function() {
-        //动态绑定中,事件处理程序中的this指向当前对象
-        var v = this.innerHTML; //d.innerHTML 获取内部元素 innerText 和 innerHTML 类似
-        alert(v);
+        // 动态绑定中,事件处理程序中的this指向当前对象
+        console.log(this); // div#d
+        var v = this.innerHTML; // d.innerHTML 获取内部元素 innerText 和 innerHTML 类似
+        console.log(v); // dddd
     }
 
-    //行内绑定时,事件处理程序中的this指向window对象(就是html文件)
+    // 行内绑定时,事件处理程序中的this指向window对象(就是html文件)
     function f() {
-        //alert(this.innerHTML); //undefined  对象有,但是对象属性未定义,innerHTML只存在在Element元素对象中,不存在DOM和Window对象中
-        console.log(this); //Window file:///D:/WebDesign/3%20JS/2-02%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/02.2.html  this是文件
+        // alert(this.innerHTML); // undefined  对象有,但是对象属性未定义,innerHTML只存在在Element元素对象中,不存在DOM和Window对象中
+        console.log(this); // Window file:// /D:/WebDesign/3%20JS/2-02%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/02.2.html  this是文件
     }
 </script>
 

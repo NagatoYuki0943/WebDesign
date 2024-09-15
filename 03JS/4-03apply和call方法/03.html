@@ -19,17 +19,17 @@
     }
 
     function f(age) {
-        //函数内部this默认指向window
+        // 函数内部this默认指向window
         console.log(this.name, age);
     }
-    //call方法可以改变函数内部的this指向
-    //f();    //<empty string>
+    // call方法可以改变函数内部的this指向
+    // f();    // <empty string>
 
-    //函数名称.call(obj,arg1,arg2,arg3);    第一个参数是要指向的对象,后面的是参数
-    f.call(man, 45); //kaiqi 45
+    // 函数名称.call(obj,arg1,arg2,arg3);    第一个参数是要指向的对象,后面的是参数
+    f.call(man, 45); // kaiqi 45
 
-    //函数名称.call(obj,[arg1,arg2,arg3]);  第一个参数是要指向的对象,第二个参数是参数数组
-    f.apply(woman, [40]); //zhuli 40
+    // 函数名称.call(obj,[arg1,arg2,arg3]);  第一个参数是要指向的对象,第二个参数是参数数组
+    f.apply(woman, [40]); // zhuli 40
 </script>
 
 </html>

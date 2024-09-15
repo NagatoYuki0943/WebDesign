@@ -15,13 +15,13 @@
         var d = document.getElementById("d");
 
         function f1() {
-            console.log(this.innerHTML); // dddd
+            console.log(this.innerHTML); //  dddd
         }
         d.addEventListener('click', f1);
         d.addEventListener('click', function() {
-            console.log(2); //2
+            console.log(2); // 2
         })
 
-        //第二个参数要写函数的名字,所以要将函数移出来
-        d.removeEventListener('click', f2); //不会打印dddd了
+        // 第二个参数要写函数的名字,所以要将函数移出来
+        d.removeEventListener('click', f2); // 不会打印dddd了
     </script>

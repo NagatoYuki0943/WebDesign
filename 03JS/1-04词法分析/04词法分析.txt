@@ -7,9 +7,9 @@
 4
     <script>
         console.log(1);
-        console.log(s); //只会打印1,第二行的 s 没有定义,报错停止执行
-        console.log(2); //语法错误不会通过编译,全部代码不执行
+        console.log(s); // 只会打印1,第二行的 s 没有定义,报错停止执行
+        console.log(2); // 语法错误不会通过编译,全部代码不执行
     </script>
     <script>
-        console.log(5); //可以输出,因为是不同的代码段中的
+        console.log(5); // 可以输出,因为是不同的代码段中的
     </script>

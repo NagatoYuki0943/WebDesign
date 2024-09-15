@@ -11,14 +11,14 @@
 
 3 修改的方式
     <script>
-        //获取css中的属性之后修改的方式
+        // 获取css中的属性之后修改的方式
 
         var d1 = document.querySelector("#d1");
         d1.addEventListener('click', function() {
-            //parseInt转换成int
+            // parseInt转换成int
             var w = parseInt(getComputedStyle(d1).width);
             var h = parseInt(getComputedStyle(d1).height);
-            //获取css中的属性之后修改的方式
+            // 获取css中的属性之后修改的方式
             d1.style.width = w + 10 + 'px';
             d1.style.height = h + 10 + 'px';
         });

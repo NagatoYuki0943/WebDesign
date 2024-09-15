@@ -48,8 +48,8 @@
 <script>
     var d = document.getElementById('div3');
     d.onclick = function(e) {
-        //事件委托或事件代理,事件绑定到父级元素
-        //target代表具体是哪个元素触发的,通过它可以控制子元素的属性
+        // 事件委托或事件代理,事件绑定到父级元素
+        // target代表具体是哪个元素触发的,通过它可以控制子元素的属性
         e.target.style.background = 'pink';
         console.log(e.target);
         /**

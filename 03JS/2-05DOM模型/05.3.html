@@ -15,26 +15,26 @@
 <script>
     var d = document.querySelector('#d');
 
-    //获取属性,必须指定元素名
-    //获取id
-    console.log(d.id); //d  不是标准方式
-    console.log(d.getAttribute('id')); //d 标准方式
+    // 获取属性,必须指定元素名
+    // 获取id
+    console.log(d.id); // d  不是标准方式
+    console.log(d.getAttribute('id')); // d 标准方式
 
-    //获取class
-    console.log(d.class); //undefined   无法获取
-    console.log(d.getAttribute('class')); //dd
+    // 获取class
+    console.log(d.class); // undefined   无法获取
+    console.log(d.getAttribute('class')); // dd
 
-    //获取hh
-    console.log(d.hh); //undefined   无法获取
-    console.log(d.getAttribute('hh')); //hh
+    // 获取hh
+    console.log(d.hh); // undefined   无法获取
+    console.log(d.getAttribute('hh')); // hh
 
-    //设置属性,必须指定元素名和元素值
+    // 设置属性,必须指定元素名和元素值
     d.setAttribute('class', '00');
 
-    //查看是否有属性,必须指定元素名
-    console.log(d.hasAttribute('id')); //true
+    // 查看是否有属性,必须指定元素名
+    console.log(d.hasAttribute('id')); // true
 
-    //删除元素,必须指定元素名
+    // 删除元素,必须指定元素名
     d.removeAttribute('class');
 </script>
 

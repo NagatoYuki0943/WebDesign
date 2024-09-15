@@ -5,9 +5,9 @@
         }
 
     (2) 表达式声明函数(匿名函数)
-        var f=function(){
+        var f = function(){
             函数体
-        }
+        };
 
 
 2 注意:
@@ -20,7 +20,7 @@
             console.log('eee2');
         }
 
-        e(); //eee2
+        e(); // eee2
 
     (2) 用变量保存的匿名函数的优先级要高于普通函数
         /**
@@ -34,17 +34,17 @@
             console.log('function');
         }
 
-        //调用方式
-        f(); //ffffff  变量优先级高于函数名,所以出现变量和函数同名就会执行变量所指的匿名函数
+        // 调用方式
+        f(); // ffffff  变量优先级高于函数名,所以出现变量和函数同名就会执行变量所指的匿名函数
 
 
 3 递归
     function sum(n) {
-        //递归必须有条件判断什么时候停止递归
+        // 递归必须有条件判断什么时候停止递归
         if (n > 1) {
-            return n + sum(n - 1); //sum100=>100+sum(99)  sum(99)=>99+sum(98), return并不会调用,因为拿不到sum的值,直到拿到1之后才能重复的return
+            return n + sum(n - 1); // sum100=>100+sum(99)  sum(99)=>99+sum(98), return并不会调用,因为拿不到sum的值,直到拿到1之后才能重复的return
         } else {
-            return 1; //当n=1的时候直接返回1就行了,不用 sum(1-1) 了
+            return 1; // 当n=1的时候直接返回1就行了,不用 sum(1-1) 了
         }
     }
-    console.log(sum(100)); //5050
+    console.log(sum(100)); // 5050

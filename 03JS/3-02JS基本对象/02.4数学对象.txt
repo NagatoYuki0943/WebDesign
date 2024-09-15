@@ -31,8 +31,8 @@
 
 
     random() 随机数 0<x<1
-        var i = Math.random();          //获取0~1的对象
-        var i = (Math.random()) * 10;   //获取1~10的对象
+        var i = Math.random();          // 获取0~1的对象
+        var i = (Math.random()) * 10;   // 获取1~10的对象
 
 
     sqrt() 平方根

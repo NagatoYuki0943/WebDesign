@@ -15,37 +15,37 @@
 </body>
 <script>
     console.log(s);
-    //转换成对象
+    // 转换成对象
     var o = JSON.parse(s);
-    //一个数组
+    // 一个数组
     var div_element = document.getElementById('d');
     var a = o.result.data;
     var body = document.getElementsByTagName('body')[0];
     for (var i = 0; i < a.length; i++) {
         a[i].tags;
         var p_element = document.createElement('p');
-        //标题
+        // 标题
         p_element.innerHTML = a[i].title;
-        //图片
+        // 图片
         var cp_img = a[i].albums[0];
         var img_e = document.createElement('img');
         img_e.setAttribute('src', cp_img);
 
-        //做菜步骤
+        // 做菜步骤
         var step = a[i].steps;
         for (var j = 0; j < step.length; j++) {
 
-            //文字步骤
+            // 文字步骤
             var step_t = step[j].step;
             var step_element = document.createElement('p');
             p.innerHTML = step_t;
 
-            //做菜步骤图片
+            // 做菜步骤图片
             var step_img = step[j].img;
             var img_e = document.createElement('img');
             img_e.setAttribute('src', step_img);
 
-            //添加div
+            // 添加div
             var step_div = document.createElement('div');
             step_div.appendChild(step_t);
             step_div.appendChild(step_img);

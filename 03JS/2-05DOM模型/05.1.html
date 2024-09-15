@@ -21,33 +21,37 @@
 
 </body>
 <script>
-    //查找元素
-    //getElement
-    document.getElementById; //通过id属性查找元素元素对象
-    document.getElementsByName; //通过name属性查找元素对象,Elements 通过集合形式返回
-    document.getElementsByClassName; //通过class属性查找元素对象,Elements 通过集合形式返回
-    document.getElementsByTagName; //通过tag标签名属性查找元素对象,Elements 通过集合形式返回
+    // 查找元素
+    // getElement
+    document.getElementById; // 通过id属性查找元素元素对象
+    document.getElementsByName; // 通过name属性查找元素对象,Elements 通过集合形式返回
+    document.getElementsByClassName; // 通过class属性查找元素对象,Elements 通过集合形式返回
+    document.getElementsByTagName; // 通过tag标签名属性查找元素对象,Elements 通过集合形式返回
 
-    //QuerySelector[All],通过css选择器找,参数是css选择器形式  #name  .class  div 会对所有类生效
-    var p = document.querySelector("#p"); //通过id属性查找元素元素对象
+    // QuerySelector[All],通过css选择器找,参数是css选择器形式  #name  .class  div 会对所有类生效
+    var p = document.querySelector("#p"); // 通过id属性查找元素元素对象
     p.onclick = function() {
-        alert("p.onclick");
+        console.log("p.onclick");
     }
-    document.querySelector(".p"); //通过class属性查找元素对象
-    var p2 = document.querySelector('p'); //获取以这个标签名命名所有元素;Selector如果有多个元素符合规则,只获取第一个
+    document.querySelector(".p"); // 通过class属性查找元素对象
+
+    // Selector 获取第一个
+    var p2 = document.querySelector('p'); // 获取以这个标签名命名所有元素;Selector如果有多个元素符合规则,只获取第一个
     p2.onclick = function() {
-        alert("p.onclick");
+        console.log("p.onclick");
     }
 
-    //SelectAll获取全部,Selector获取第一个
+    // SelectAll 获取全部
     var pa = document.querySelectorAll('p');
-    //console.log(pa); //NodeList(4) [ p#p1, p#p2.p1, p, p ] 获取了全部4个
-    //为所有元素绑定事件
+    console.log(pa); // NodeList(4) [ p#p1, p#p2.p1, p, p ] 获取了全部4个
+
+    // 为所有元素绑定事件
+    // for in 遍历 获取下标
     for (var i in pa) {
-        //i 中有下标
+        // i 中有下标
         console.log(i);
         pa[i].onclick = function() {
-            alert(6);
+            console.log(6);
         }
     }
 </script>

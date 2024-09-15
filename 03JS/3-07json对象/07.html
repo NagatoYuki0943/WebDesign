@@ -11,19 +11,19 @@
 
 </body>
 <script>
-    //json字符串
+    // json字符串
     var json = '{"name":"list","age":16}';
 
-    //js专门为json准备了json对象
-    //JSON.stringify(); //将一个js数据转换为json字符串
-    //JSON.parse();     //将一个json字符串转换成js数据
+    // js专门为json准备了json对象
+    // JSON.stringify(); // 将一个js数据转换为json字符串
+    // JSON.parse();     // 将一个json字符串转换成js数据
 
     var j = JSON.parse(json);
-    console.log(json); //{"name":"list","age":16}
-    console.log(j); // Object { name: "list", age: 16 }
+    console.log(json); // {"name":"list","age":16}
+    console.log(j); //  Object { name: "list", age: 16 }
 
-    console.log(json.name); //undefined 访问字符串中的name是找不到的
-    console.log(j.name); //list
+    console.log(json.name); // undefined 访问字符串中的name是找不到的
+    console.log(j.name); // list
 
     var arr = {
         name: '斯塔克',
@@ -31,8 +31,8 @@
         sex: '男'
     };
     var json = JSON.stringify(arr);
-    console.log(arr); //Object { name: "斯塔克", age: 19, sex: "男" }
-    console.log(json); //{"name":"斯塔克","age":19,"sex":"男"}      原来的不是规范格式,不过stringify()给转换成标准格式了
+    console.log(arr); // Object { name: "斯塔克", age: 19, sex: "男" }
+    console.log(json); // {"name":"斯塔克","age":19,"sex":"男"}      原来的不是规范格式,不过stringify()给转换成标准格式了
 </script>
 
 </html>

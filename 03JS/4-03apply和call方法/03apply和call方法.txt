@@ -9,12 +9,12 @@
         }
 
         function f(age) {
-            //函数内部this默认指向window
+            // 函数内部this默认指向window
             console.log(this.name, age);
         }
-        //call方法可以改变函数内部的this指向
-        //f();    //<empty string>
-        f.call(man, 45); //kaiqi 45
+        // call方法可以改变函数内部的this指向
+        // f();    // <empty string>
+        f.call(man, 45); // kaiqi 45
 
 
 2 apply方法

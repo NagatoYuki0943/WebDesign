@@ -34,25 +34,33 @@
 
 
 5.查看变量类型可以使用 typeof 方法
-    //测试字符串变量的类型
-    var srt = "Hello World!";
-    var Type = typeof(srt);
-    alert(Type); //弹出窗口
-    console.log(Type); //在控制台输出: "string"
+<script>
+    // 测试字符串变量的类型
+    var str = "Hello World!";
+    console.log(typeof(str)); // string
+    // typeof 可以不用括号
+    console.log(typeof str); // string
 
-    //测试数字变量的类型
+    // 测试数字变量的类型
     var numValue = 123;
-    var Type = typeof(numValue);
-    alert(Type); //弹出窗口
-    console.log(Type); //在控制台输出: "number"
+    console.log(typeof(numValue)); // number
 
-    //测试boolean变量的类型
+    // 测试boolean变量的类型
     var boolValue = true;
-    var Type = typeof(boolValue);
-    alert(Type); //弹出窗口
-    console.log(Type); //在控制台输出: "boolean"
+    console.log(typeof(boolValue)); // boolean
 
+    // 测试null和undefined变量的类型
+    var n = null;
+    console.log(typeof(n)); // object
+    console.log(typeof n); // object
+    var u = undefined;
+    console.log(typeof(u)); // undefined
+    var res = (null == undefined);
+    console.log(res); // true
+    var res = (null === undefined);
+    console.log(res); // false
+</script>
 
 6.js中单引号字符串
-    var str = '=486aea13\\agr540-/=1,as;-af.;'; //JS中即使是单引号包裹的字符串里面的\也是转义,和php不同
-    alert(str); // =486aea13\agr540-/=1,as;-af.;   \\ -> \ 被转义了
+    var str = '=486aea13\\agr540-/=1,as;-af.;'; // JS中即使是单引号包裹的字符串里面的\也是转义,和php不同
+    alert(str); //  =486aea13\agr540-/=1,as;-af.;   \\ -> \ 被转义了

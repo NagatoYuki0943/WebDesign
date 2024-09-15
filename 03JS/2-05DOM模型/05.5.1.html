@@ -31,17 +31,17 @@
     p2.parentElement.style.background = 'blue';
 
     var d2 = document.querySelector('#d2');
-    //childNodes[下标],空格和回车也算节点
+    // childNodes[下标],空格和回车也算节点
     d2.childNodes[3].style.background = "yellow";
 
-    //这种方式改变行内的style,也能改变css中的样式,不过改的是行内的style,不是css中的样式
-    //document.querySelector("#d1").style.width = "500px";
+    // 这种方式改变行内的style,也能改变css中的样式,不过改的是行内的style,不是css中的样式
+    // document.querySelector("#d1").style.width = "500px";
 
-    //这种方式获取不到css中的样式
+    // 这种方式获取不到css中的样式
     var d1 = document.querySelector("#d1");
-    alert(d1.style.width); //没任何东西
-    //这种方式可以获取到css中的样式
-    alert(getComputedStyle(d1).width); //200px
+    console.log(d1.style.width); // 没任何东西
+    // 这种方式可以获取到css中的样式
+    console.log(getComputedStyle(d1).width); // 200px
 </script>
 
 </html>

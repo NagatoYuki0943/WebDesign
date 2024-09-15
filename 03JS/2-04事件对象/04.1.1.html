@@ -14,16 +14,16 @@
 </body>
 <script>
     var d = document.getElementById("d");
-    //点击之后会给function传递一个对象,下面用e保存了起来
+    // 点击之后会给function传递一个对象,下面用e保存了起来
     d.addEventListener('click', function(e) {
-        //e是形参,可以获取到对象
-        console.log(e); //click { target: div#d, buttons: 0, clientX: 35, clientY: 19, layerX: 35, layerY: 19 }
+        // e是形参,可以获取到对象
+        console.log(e); // click { target: div#d, buttons: 0, clientX: 35, clientY: 19, layerX: 35, layerY: 19 }
     })
 
-    //整个页面添加事件监听,键盘按下就可以传递对象
+    // 整个页面添加事件监听,键盘按下就可以传递对象
     document.addEventListener('keydown', function(e) {
-        console.log(e); //keydown { target: body, key: "s", charCode: 0, keyCode: 83 }
+        console.log(e); // keydown { target: body, key: "s", charCode: 0, keyCode: 83 }
     })
-</script>
+</script>*
 
 </html>

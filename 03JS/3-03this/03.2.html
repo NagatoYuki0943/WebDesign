@@ -15,11 +15,11 @@
         console.log(this.name);
     }
 
-    //创建对象
+    // 创建对象
     var a = {
         'name': '小虾米',
         'age': 23,
-        //添加一个方法
+        // 添加一个方法
         f: Person
     };
     var b = {
@@ -33,25 +33,25 @@
         f: Person
     };
 
-    b.f(); //大虾米
+    b.f(); // 大虾米
 
-    //这样初始化得到完全自己定义对象更好用,不需要构造方法
+    // 这样初始化得到完全自己定义对象更好用,不需要构造方法
     var s = {
         a: 'sdf',
         'name': 'SSSS',
         f: function() {
             console.log('哈哈哈');
         },
-        //调用外部方法,不要有括号,不然就是调用了
+        // 调用外部方法,不要有括号,不然就是调用了
         P: Person,
     }
 
-    s.P(); //SSSS
-    s.f(); //哈哈哈
+    s.P(); // SSSS
+    s.f(); // 哈哈哈
 
-    //在外部使用this指向window
-    console.log(this); //Window file:///D:/WebDesign/3%20JS/3-03this/03.2.html
-    console.log(window); //Window file:///D:/WebDesign/3%20JS/3-03this/03.2.html
+    // 在外部使用this指向window
+    console.log(this); // Window file:// /D:/WebDesign/3%20JS/3-03this/03.2.html
+    console.log(window); // Window file:// /D:/WebDesign/3%20JS/3-03this/03.2.html
 </script>
 
 </html>

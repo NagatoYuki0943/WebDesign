@@ -13,14 +13,14 @@
             f: function() {
                 console.log('哈哈哈');
             },
-            //调用外部方法,不要有括号,不然就是调用了
+            // 调用外部方法,不要有括号,不然就是调用了
             P: Person,
         }
-        s.age = 15; //在外面还可以继续添加属性方法
+        s.age = 15; // 在外面还可以继续添加属性方法
 
 
 2 JS语言的对象体系,不是基于类的,而是基于构造函数(constructor)和原型链(prototype),JS语言使用构造函数作为对象的模板.
-    所谓"构造函数",就是专门用来生成对象的函数,类似于PHP中class的作用,它提供模板,描述对象的基本结构
+    所谓"构造函数",就是专门用来生成对象的函数
 
     一个构造函数可以生成多个对象,这些对象都有相同的结构
 
@@ -35,25 +35,27 @@
 
 5
     <script>
-        //如果函数首字母大写,一般用来作为构造函数
+        // 如果函数首字母大写,一般用来作为构造函数
         function Man() {
 
         }
-        //实例化对象
+        // 实例化对象
         var m = new Man();
-        alert(typeof(m)); //object 是对象
+        console.log(typeof(m)); // object
 
-        //添加属性和方法,具体是属性还是方法,只有是function才是方法,其余的是属性
+        // 添加属性和方法,具体是属性还是方法,只有是function才是方法,其余的是属性
         m.name = '刘德华';
         m.eat = function() {
             console.log('吃红烧肉');
         }
 
-        //调用方法
-        console.log(m.name); //刘德华
-        m.eat(); //吃红烧肉
+        // 调用方法
+        console.log(m.name); // 刘德华
+        m.eat(); // 吃红烧肉
 
         function ff() {}
-        ff(); //普通函数,只能使用new来区分
-        new ff(); //构造函数
+        var result = ff(); // 普通函数,只能使用new来区分
+        console.log(result); // undefined
+        var obj = new ff(); // 构造函数
+        console.log(obj); // Object {  }
     </script>

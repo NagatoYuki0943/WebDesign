@@ -11,45 +11,45 @@
 
 </body>
 <script>
-    //1 先new
+    // 1 先new
     var time = new Date();
 
-    //时间戳
+    // 时间戳
     var i = time.getTime();
-    console.log(i); //1606744248738
+    console.log(i); // 1606744248738
 
-    //小时
+    // 小时
     var i = time.getHours();
-    console.log(i); //21
+    console.log(i); // 21
 
-    //分钟
+    // 分钟
     var i = time.getMinutes()
-    console.log(i); //50
+    console.log(i); // 50
 
-    //秒
+    // 秒
     var i = time.getSeconds();
-    console.log(i); //30
+    console.log(i); // 30
 
-    //毫秒
+    // 毫秒
     var i = time.getMilliseconds();
     console.log(i);
 
-    //年
+    // 年
     var i = time.getYear();
-    console.log(i); //120 代表1900年到现在多少年
+    console.log(i); // 120 代表1900年到现在多少年
     var i = time.getFullYear();
-    console.log(i); //2020   真正的年份
+    console.log(i); // 2020   真正的年份
 
-    //月
+    // 月
     var i = time.getMonth();
-    console.log(i); //10
+    console.log(i); // 10
 
-    //日
+    // 日
     var i = time.getDate();
-    console.log(i); //30
+    console.log(i); // 30
 
 
-    //用户登录时判断时间
+    // 用户登录时判断时间
     var hour = time.getHours();
     if (hour > 6 && hour < 12) {
         alert('GoodMorning');

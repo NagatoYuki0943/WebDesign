@@ -5,15 +5,15 @@
     注意: 传递的参数是引用传递
 
 2
-    //传递对象给函数作为参数
+    // 传递对象给函数作为参数
     function dis(obj) {
         console.log(obj);
         console.log(obj.age);
     }
-    //建立对象
+    // 建立对象
     var o = {
         name: 123,
         age: 15,
         sex: '男'
     };
-    dis(o); //Object { name: 123, age: 15, sex: "男" }  15
+    dis(o); // Object { name: 123, age: 15, sex: "男" }  15

@@ -12,18 +12,30 @@
 </body>
 
 <script>
-    var $a = 5;
-    var a = 6;
-    var 我 = 'firefox';
-    //alert(typeof(我)); //string
+    // 测试字符串变量的类型
+    var str = "Hello World!";
+    console.log(typeof(str)); // string
+    // typeof 可以不用括号
+    console.log(typeof str); // string
 
-    //null和undefined检测
+    // 测试数字变量的类型
+    var numValue = 123;
+    console.log(typeof(numValue)); // number
+
+    // 测试boolean变量的类型
+    var boolValue = true;
+    console.log(typeof(boolValue)); // boolean
+
+    // 测试null和undefined变量的类型
     var n = null;
-    alert(typeof(n)); //object
+    console.log(typeof(n)); // object
+    console.log(typeof n); // object
     var u = undefined;
-    alert(typeof(u)); //undefined
-    var s = (null == undefined);
-    alert(s); //true,说明内容一样,不过如果使用 === 就不行了,因为类型不同
+    console.log(typeof(u)); // undefined
+    var res = (null == undefined);
+    console.log(res); // true
+    var res = (null === undefined);
+    console.log(res); // false
 </script>
 
 </html>

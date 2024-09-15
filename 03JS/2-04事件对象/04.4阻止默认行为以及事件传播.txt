@@ -13,17 +13,17 @@
         var d1 = document.getElementById("div1");
         var d0 = document.getElementById("div0");
 
-        //true代表捕获阶段触发,从外到内
-        //false代表冒泡阶段触发,从内到外 (默认是false)
+        // true代表捕获阶段触发,从外到内
+        // false代表冒泡阶段触发,从内到外 (默认是false)
 
         d3.addEventListener('click', function() {
             alert(3);
         }, true)
 
-        //阻止默认传播
+        // 阻止默认传播
         d2.addEventListener('click', function(e) {
             alert(2);
-            //阻止事件默认传播(包括冒泡和捕获),直接停止传播,后面的不执行
+            // 阻止事件默认传播(包括冒泡和捕获),直接停止传播,后面的不执行
             e.stopPropagation();
         }, true)
 

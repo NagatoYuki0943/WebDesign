@@ -6,15 +6,16 @@
     (1) 匿名函数
         (function() {
             console.log(3);
-        })(); //3   后面加上() 代表自己调用自己
+        })(); // 3   后面加上() 代表自己调用自己
 
 
     (2) 匿名自调用函数递归
-        var a = (function(n) {
+        // 匿名自调用函数递归
+        var res = (function(n) {
             if (n > 1) {
-                return n + arguments.callee(n - 1); //arguments.callee代表这个函数自己,通过它来递归调用自己
+                return n + arguments.callee(n - 1); // arguments.callee 代表这个函数自己,通过它来递归调用自己
             } else {
                 return 1;
             }
         })(100);
-        console.log(a); //5050
+        console.log(res); // 5050

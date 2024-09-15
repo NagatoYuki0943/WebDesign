@@ -12,20 +12,20 @@
     <input type="text" id="t" value="请输入用户名">
 </body>
 <script>
-    //获取元素
+    // 获取元素
     var t = document.getElementById("t");
 
-    //获取焦点事件
+    // 获取焦点事件
     t.onfocus = function() {
         if (t.value == "请输入用户名") {
-            t.value = ""; //当鼠标点击一下文本框,里面的字就没了
+            t.value = ""; // 当鼠标点击一下文本框,里面的字就没了
         }
     }
 
-    //失去焦点事件
+    // 失去焦点事件
     t.onblur = function() {
         if (t.value == "") {
-            t.value = "请输入用户名"; //当鼠标点击文本框外的位置,里面的字出现了
+            t.value = "请输入用户名"; // 当鼠标点击文本框外的位置,里面的字出现了
         }
     }
 </script>

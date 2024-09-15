@@ -14,30 +14,30 @@
 </body>
 <script>
     var d = document.getElementById('d');
-    //onmouseover  onmouseout     鼠标经过时自身触发事件,经过其子元素时也触发该事件
-    //onmouseenter onmouseleave 鼠标经过时自身触发事件, 经过其子元素时不触发该事件.(父亲的东西就是父亲的， 不归儿子所有)
+    // onmouseover  onmouseout     鼠标经过时自身触发事件,经过其子元素时也触发该事件
+    // onmouseenter onmouseleave 鼠标经过时自身触发事件, 经过其子元素时不触发该事件.(父亲的东西就是父亲的， 不归儿子所有)
 
-    //鼠标悬浮 over和enter类似
+    // 鼠标悬浮 over和enter类似
     d.onmouseover = function() {
         console.log("来了,老弟");
     }
 
-    //鼠标离开 out和leave类似
+    // 鼠标离开 out和leave类似
     d.onmouseout = function() {
         console.log("拜拜,老弟");
     }
 
-    //鼠标按下
+    // 鼠标按下
     d.onmousedown = function() {
         console.log("好厉害");
     }
 
-    //鼠标抬起
+    // 鼠标抬起
     d.onmouseup = function() {
         console.log("这就完了???");
     }
 
-    //鼠标移动
+    // 鼠标移动
     d.onmousemove = function() {
         console.log("不要动");
     }

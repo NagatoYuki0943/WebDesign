@@ -18,7 +18,7 @@
 
     (3).通过call或者apply方法继承
 
-        //没有new它,只是普通函数
+        // 没有new它,只是普通函数
         function Run() {
             this.p = function() {
                 console.log('PPPP');
@@ -26,12 +26,12 @@
         }
 
         function Man() {
-            //构造函数内部的this就是实例化的对象,调用call,将Run函数内部的this指向传入的this对象,
-            //就是将Run中this执向下面的m,相当于给m对象添加了p方法
+            // 构造函数内部的this就是实例化的对象,调用call,将Run函数内部的this指向传入的this对象,
+            // 就是将Run中this执向下面的m,相当于给m对象添加了p方法
             Run.call(this);
         }
 
-        //方式3 使用call和apply实现继承
+        // 方式3 使用call和apply实现继承
         var m = new Man();
-        m.p(); //PPPP
-        console.log(Object.getPrototypeOf(m)); //Object { … }
+        m.p(); // PPPP
+        console.log(Object.getPrototypeOf(m)); // Object { … }

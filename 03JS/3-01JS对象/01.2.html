@@ -11,29 +11,35 @@
 
 </body>
 <script>
-    //如果函数首字母大写,一般用来作为构造函数
+    // 如果函数首字母大写,一般用来作为构造函数
     function Person() {
 
     }
-    //实例化对象
+    // 实例化对象
     var p = new Person();
     p.name = "小李子";
     p.age = 27;
-    console.log(p); //Object { name: "小李子", age: 27 }
+    console.log(p); // Object { name: "小李子", age: 27 }
 
-    //p1 和 p 互不影响,是两个对象
+    // p1 和 p 互不影响,是两个对象
     var p1 = new Person();
-    console.log(p1); //Object {  }  没有name和age
+    console.log(p1); // Object {  }
 
-    var p2 = p; //这样不是开辟新的内存空间,是指向同一块内存,和php一样,是引用传值
-    console.log(p2); //Object { name: "小李子", age: 27 }   可以获取到
-    p2.name = "小刘";
-    console.log(p2.name); //小刘
-    console.log(p.name); //小刘
+    var p2 = new Person();
+    p2.name = "Anna";
+    p2.age = 28;
+    console.log(p2); // Object { name: "Anna", age: 28 }
 
-    //赋值为null,变量为null,是指向的地址为空,那里的地址的内容不变
-    p = null;
-    console.log(p2); //Object { name: "小刘", age: 27 }  依然有
+
+    var p3 = p2; // 这样不是开辟新的内存空间,是指向同一块内存
+    console.log(p3); // Object { name: "Anna", age: 28 }
+    p3.name = "John";
+    console.log(p2.name); // John
+    console.log(p3.name); // John
+
+    // 赋值为null,变量为null,是指向的地址为空,那里的地址的内容不变
+    p3 = null;
+    console.log(p2); // Object { name: "John", age: 28 }  依然有
 </script>
 
 </html>

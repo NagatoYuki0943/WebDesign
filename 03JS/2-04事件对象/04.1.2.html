@@ -16,7 +16,7 @@
         y = 50;
 
     document.onkeydown = function(e) {
-        //console.log(e); //keydown { target: body, key: "ArrowUp", charCode: 0, keyCode: 38 }
+        console.log(e); // keydown { target: body, key: "ArrowUp", charCode: 0, keyCode: 38 }
         var code = e.keyCode;
         if (code == 37) {
             x--;
@@ -33,7 +33,7 @@
 
     img.onclick = function() {
         document.onmousemove = function(e) {
-            //console.log(e); //mousemove { target: html, buttons: 0, clientX: 1585, clientY: 98, layerX: 1585, layerY: 98 }
+            // console.log(e); // mousemove { target: html, buttons: 0, clientX: 1585, clientY: 98, layerX: 1585, layerY: 98 }
             img.style.left = e.clientX + 'px';
             img.style.top = e.clientY + 'px';
         }

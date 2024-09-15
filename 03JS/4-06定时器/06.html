@@ -13,18 +13,18 @@
 <script>
     function f() {
         var n = 1;
-        //闭包
+        // 闭包
         return function() {
             console.log(++n);
         }
     }
 
     var s = f();
-    //添加倒计时
-    setTimeout('s()', '1000'); //2
-    //添加定时器
-    var i = setInterval(s, '1000'); //3 4 5 6
-    //清除定时器
+    // 添加倒计时
+    setTimeout('s()', '1000'); // 2
+    // 添加定时器
+    var i = setInterval(s, '1000'); // 3 4 5 6
+    // 清除定时器
     document.querySelector("#stop").onclick = function() {
         clearInterval(i);
     }

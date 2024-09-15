@@ -34,9 +34,8 @@
 </body>
 <script>
     var t = document.getElementById("t");
-    //事件绑定到父元素上,使用子元素触发
+    // 事件绑定到父元素上,使用子元素触发
     t.onmouseover = function(e) {
-
         e.target.parentNode.style.background = 'pink';
         console.log(e.target);
     }

@@ -15,40 +15,40 @@
     <p id="p2">3333</p>
 </body>
 <script>
-    //用来生成网页元素节点,参数为元素的标签名
-    //创建p标签
+    // 用来生成网页元素节点,参数为元素的标签名
+    // 创建p标签
     var p = document.createElement('p');
-    //创建文本
+    // 创建文本
     var t = document.createTextNode('9999');
-    //将t添加到p
+    // 将t添加到p
     p.appendChild(t);
 
     var d = document.querySelector('#d');
-    //将p添加到d中
+    // 将p添加到d中
     d.appendChild(p);
 
-    //参数是要找的标签的名(p,div,span),参数可以没有,返回一个布尔值,表示当前节点是否有子节点
+    // 参数是要找的标签的名(p,div,span),参数可以没有,返回一个布尔值,表示当前节点是否有子节点
     var hasChild = d.hasChildNodes('span');
-    console.log(hasChild); //true
+    console.log(hasChild); // true
 
-    //删除,会影响下面的克隆,删除的不会被克隆
+    // 删除,会影响下面的克隆,删除的不会被克隆
     var s = document.querySelector('span');
     d.removeChild(s);
 
-    //克隆
+    // 克隆
     var cloned = d.cloneNode(true);
     d.appendChild(cloned);
 
 
-    //innerHTML 可读可写
+    // innerHTML 可读可写
     var p1 = document.querySelector('#p1');
-    console.log(p1.innerHTML); //全部内容,只显示d的下一级的内容
-    p1.innerHTML = "www.baidu.com"; //可读可写
+    console.log(p1.innerHTML); // 全部内容,只显示d的下一级的内容
+    p1.innerHTML = "www.baidu.com"; // 可读可写
 
-    //innerText 可读可写
+    // innerText 可读可写
     var p2 = document.querySelector('#p2');
-    console.log(p2.innerText); //只有文本
-    p2.innerText = "www.ithome.com"; //可读可写
+    console.log(p2.innerText); // 只有文本
+    p2.innerText = "www.ithome.com"; // 可读可写
 </script>
 
 </html>

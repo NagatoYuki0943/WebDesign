@@ -23,7 +23,7 @@
     var i = s.substr(1, 2);
 
 
-6 replace(被替换,替换)      //可以接受正则表达式
+6 replace(被替换,替换)      // 可以接受正则表达式
     字符串替换,只匹配第一次
     var i = s.replace('g', 'guage');
 

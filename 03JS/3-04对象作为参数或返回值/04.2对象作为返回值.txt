@@ -3,21 +3,21 @@
 
 2
     function dis(n1, n2) {
-        //新建对象
+        // 新建对象
         var obj = {
             sum: n1 + n2,
         }
 
-        //外面也可以写
+        // 外面也可以写
         obj.sub = n1 - n2;
         obj.mul = n1 * n2;
         obj.div = n1 / n2;
-        //返回对象
+        // 返回对象
         return obj;
     }
 
     var o = dis(5, 2);
-    console.log(o.sum); //7
-    console.log(o.sub); //3
-    console.log(o.mul); //10
-    console.log(o.div); //2.5
+    console.log(o.sum); // 7
+    console.log(o.sub); // 3
+    console.log(o.mul); // 10
+    console.log(o.div); // 2.5

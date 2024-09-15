@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <a href="https://www.baidu.com" target="_bank">baidu</a>
+    <a href="https:// www.baidu.com" target="_bank">baidu</a>
     <!--a标签点击会默认跳转-->
-    <form action="1.php" id="f">
+    <form action="" id="f">
         <!--submit点击会默认提交-->
         <input type="text" name="" value="" id="t">
         <input type="submit" name="" value="提交">
@@ -18,13 +18,13 @@
 </body>
 <script>
     var f = document.getElementById('f');
-    //防止没写内容就提交
+    // 防止没写内容就提交
     f.onsubmit = function(e) {
         var t = document.getElementById('t');
-        //对text内容进行检查,为空不能提交
+        // 对text内容进行检查,为空不能提交
         if (t.value == '') {
             alert("滚犊子");
-            //阻止浏览器的默认行为
+            // 阻止浏览器的默认行为
             e.preventDefault();
         }
     }

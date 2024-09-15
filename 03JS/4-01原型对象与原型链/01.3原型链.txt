@@ -37,9 +37,9 @@
         var a = Cat.prototype;
         var b = cat1.__proto__;
         var c = Object.getPrototypeOf(cat1);
-        console.log(a); //Object { … }
-        console.log(b); //Object { … }
-        console.log(c); //Object { … }
+        console.log(a); // Object { … }
+        console.log(b); // Object { … }
+        console.log(c); // Object { … }
 
     注意: 前两种方式不是很可靠,在最新的es6标准规定中,proto属性只有在浏览器中才能部署,其他环境不部署,
           而 Cat.prototype 在手动改变原型对象时会失败

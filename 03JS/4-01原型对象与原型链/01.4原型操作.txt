@@ -1,13 +1,13 @@
 1 constructor属性
     对象有一个constructor属性,指向原型对象所在的构造函数
 
-    //由对象得到构造函数
+    // 由对象得到构造函数
     var cat1 = new Cat('波斯猫', '黑色');
-    console.log(cat1.constructor);  //function Cat(name, color)
+    console.log(cat1.constructor);  // function Cat(name, color)
     var s = 'string';
-    console.log(s.constructor);     //function String()
+    console.log(s.constructor);     // function String()
     var n = null;
-    //console.log(n.constructor);   //报错
+    // console.log(n.constructor);   // 报错
 
 
 2 设置,获取原型对象
@@ -26,9 +26,9 @@
         var a = Cat.prototype;
         var b = cat1.__proto__;
         var c = Object.getPrototypeOf(cat1);
-        console.log(a); //Object { … }
-        console.log(b); //Object { … }
-        console.log(c); //Object { … }
+        console.log(a); // Object { … }
+        console.log(b); // Object { … }
+        console.log(c); // Object { … }
 
 
 3 如果想要修改一个对象的原型对象,只能通过原型对象本身修改

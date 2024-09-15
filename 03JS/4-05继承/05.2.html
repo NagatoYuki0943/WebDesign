@@ -19,12 +19,12 @@
 
     function Man() {}
 
-    //方式2 使用标准方式Object.setPrototypeOf(对象,原型对象)
+    // 方式2 使用标准方式Object.setPrototypeOf(对象,原型对象)
     var r = new Run();
     var m = new Man();
     Object.setPrototypeOf(m, r);
-    m.p(); //PPPP
-    console.log(Object.getPrototypeOf(m)); //Object { p: p() }
+    m.p(); // PPPP
+    console.log(Object.getPrototypeOf(m)); // Object { p: p() }
 </script>
 
 </html>
