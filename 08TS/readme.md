@@ -1393,6 +1393,20 @@ class Person1 implements PersonInterface2 {
 
 const p2 = new Person1('李四', 20)
 p2.speak() // 你好！我是⽼师: 李四
+
+// 接口和类同名会自动合并
+interface Toy {
+    play(): void
+}
+
+class Toy {
+    play(): void {
+        console.log('正在玩玩具')
+    }
+}
+
+const toy = new Toy()
+toy.play()
 ```
 
 > 总结：何时使⽤接⼝？

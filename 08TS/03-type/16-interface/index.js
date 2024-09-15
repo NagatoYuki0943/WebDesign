@@ -51,3 +51,10 @@ class Person1 {
 }
 const p2 = new Person1('李四', 20);
 p2.speak(); // 你好！我是⽼师: 李四
+class Toy {
+    play() {
+        console.log('正在玩玩具');
+    }
+}
+const toy = new Toy();
+toy.play();
