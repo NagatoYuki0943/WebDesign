@@ -11,16 +11,16 @@
 
 </body>
 <script>
-    function f1() {
+    function funcOut() {
         var n = 99;
         // 这就是闭包
-        function f2() {
+        function funcIn() {
             console.log(n);
         }
-        return f2;
+        return funcIn;
     }
-    f = f1(); // 99
-    f();
+    func = funcOut(); // 99
+    func();
 </script>
 
 </html>

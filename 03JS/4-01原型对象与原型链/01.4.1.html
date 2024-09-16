@@ -11,6 +11,13 @@
 
 </body>
 <script>
+    var s = 'string';
+    console.log(s.constructor); // function String()
+    // var n = undefined;
+    // console.log(n.constructor);   // 报错
+    // var n = null;
+    // console.log(n.constructor);   // 报错
+
     // 每一个构造函数都有一个prototype属性,这个属性就是实例对象的原型对象
     function Cat(name, color) {
         this.name = name;
@@ -19,24 +26,15 @@
             console.log(this.name, this.color, 'miao~miao~miao');
         }
     }
-
-
     var cat1 = new Cat('波斯猫', '黑色');
 
     // 由对象得到构造函数
     console.log(cat1.constructor); // function Cat(name, color)
-    var s = 'string';
-    console.log(s.constructor); // function String()
-    var n = null;
-    // console.log(n.constructor);   // 报错
 
     // 获取原型对象的三种方式
-    var a = Cat.prototype;
-    var b = cat1.__proto__;
-    var c = Object.getPrototypeOf(cat1);
-    console.log(a); // Object { … }
-    console.log(b); // Object { … }
-    console.log(c); // Object { … }
+    console.log(Cat.prototype); // Object { … }
+    console.log(cat1.__proto__); // Object { … }
+    console.log(Object.getPrototypeOf(cat1)); // Object { … }
 </script>
 
 </html>

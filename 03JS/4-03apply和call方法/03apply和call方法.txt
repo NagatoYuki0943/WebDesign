@@ -1,29 +1,41 @@
 1 call方法
-    函数名称.call(obj,arg1,arg2,arg3);
+    funcname.call(obj, arg1, arg2, ...);
     参数说明:
         obj : 函数内this要指向的对象
-        arg1,arg2,arg3 : 参数列表,参数与参数之间使用一个逗号隔开
-
-        var man = {
-        'name': 'kaiqi',
-        }
-
-        function f(age) {
-            // 函数内部this默认指向window
-            console.log(this.name, age);
-        }
-        // call方法可以改变函数内部的this指向
-        // f();    // <empty string>
-        f.call(man, 45); // kaiqi 45
-
+        arg1, arg2, ...: 参数列表,参数与参数之间使用一个逗号隔开
 
 2 apply方法
-    函数名称.apply(obj,[arg1,arg2,arg3]);
+    funcname.apply(obj, [arg1, arg2, ...]);
     参数说明:
-        obj : 函数内this要指向的对象
-        [arg1,arg2,arg3] : 参数列表,格式为数组
+        obj : 函数内 this 要指向的对象
+        [arg1, arg2, ...] : 参数列表,格式为数组
 
 
-3 两者功能完全一致,都是为了改变函数内部this指向,唯一的区别在于参数传递方式不同
-    call方法可能有多个参数,第一个为要指向的对象,其他参数为函数的参数
-    apply方法最多只能有两个参数,第一个为要指向的对象,第二个为数组,数组内容为函数实参
+3 两者功能完全一致,都是为了改变函数内部 this 指向,唯一的区别在于参数传递方式不同
+    call 方法可能有多个参数,第一个为要指向的对象,其他参数为函数的参数
+    apply 方法最多只能有两个参数,第一个为要指向的对象,第二个为数组,数组内容为函数实参
+
+
+4
+<script>
+    var man = {
+        'name': 'Tom',
+    }
+    var woman = {
+        'name': 'Jerry'
+    }
+
+    function func(age, grade) {
+        // 函数内部this默认指向window
+        console.log(`name: ${this.name}, age: ${age}, grade: ${grade}`);
+    }
+
+    // call方法可以改变函数内部的this指向
+    func();    // name: , age: undefined, grade: undefined
+
+    // 函数名称.call(obj,arg1,arg2,arg3);    第一个参数是要指向的对象,后面的是参数
+    func.call(man, 45, 3); // name: Tom, age: 45, grade: 3
+
+    // 函数名称.call(obj,[arg1,arg2,arg3]);  第一个参数是要指向的对象,第二个参数是参数数组
+    func.apply(woman, [40, 2]); // name: Jerry, age: 40, grade: 2
+</script>

@@ -11,7 +11,7 @@
     <input type="button" name="" id="stop" value="停止">
 </body>
 <script>
-    function f() {
+    function func() {
         var n = 1;
         // 闭包
         return function() {
@@ -19,14 +19,19 @@
         }
     }
 
-    var s = f();
-    // 添加倒计时
-    setTimeout('s()', '1000'); // 2
-    // 添加定时器
-    var i = setInterval(s, '1000'); // 3 4 5 6
+    var func1 = func();
+
+    // 设置了一个延时执行。它会在1000毫秒（1秒）后执行func1()函数，打印出数字2.
+    // 下面2种方式都可以实现相同的效果。
+    // setTimeout('func1()', '1000'); // 2
+    setTimeout(func1, '1000'); // 2
+
+    // 设置了一个定时器，每隔1000毫秒（1秒）执行一次func1()函数。它会持续打印递增的数字（3, 4, 5, 6...）.
+    var id = setInterval(func1, '1000'); // 3 4 5 6
     // 清除定时器
     document.querySelector("#stop").onclick = function() {
-        clearInterval(i);
+        // 清除定时器
+        clearInterval(id);
     }
 </script>
 

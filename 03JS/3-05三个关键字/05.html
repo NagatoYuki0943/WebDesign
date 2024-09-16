@@ -11,17 +11,31 @@
 
 </body>
 <script>
-    function Ps() {
+    // typeof和constructor的区别:
+    // - typeof num返回"number",因为它识别原始类型。
+    // - num.constructor返回Number构造函数,因为JavaScript会临时将原始值包装成对象来访问属性。
 
-    }
+    // 自动装箱(Auto-boxing):
+    // 当你调用num.constructor时,JavaScript会临时将num包装成Number对象,这就是为什么你能访问constructor属性。但这个临时对象不会影响instanceof的结果。
 
-    var ps = new Ps();
+    var num = 23;
+    // typeof 判断类型
+    console.log(typeof(num)); // number
     // constructor   返回对象的构造函数
-    console.log(ps.constructor); // function Ps()
-    var s = 23;
-    console.log(s.constructor); // function Number()
-
+    console.log(num.constructor); // function Number()
     // instanceof    判断某个对象是否为某个构造函数的实例
+    console.log(num instanceof Number); // false
+    // num是一个原始数字值,不是Number对象的实例。
+    // instanceof只能用于对象,不能用于原始值。
+    // 原始值没有原型链,所以instanceof总是返回false。
+    // 如果你使用Number构造函数创建一个数字对象,那么instanceof会返回true:
+    console.log((new Number(23)) instanceof Number); // true
+
+
+    function Ps() {}
+    var ps = new Ps();
+    console.log(typeof(ps)); // object
+    console.log(ps.constructor); // function Ps()
     console.log(ps instanceof Ps); // true
     console.log(ps instanceof Object); // true
     console.log(ps instanceof String); // false

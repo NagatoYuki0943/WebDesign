@@ -6,30 +6,55 @@
     console.log(window); // Window file:// /D:/WebDesign/3%20JS/3-03this/03.2.html
 
 2
-    function Person() {
-        console.log(this.name);
+<script>
+    // 在外部使用this指向window
+    console.log(this); // Window file:// /D:/WebDesign/3%20JS/3-03this/03.2.html
+    console.log(window); // Window file:// /D:/WebDesign/3%20JS/3-03this/03.2.html
+
+    // 定义一个普通函数
+    function PrintName() {
+        console.log(`name: ${this.name}, age: ${this.age}`);
     }
 
     // 创建对象
-    var b = {
-        'name': '大虾米',
-        'age': 24,
-        f: Person
+    var a = {
+        'name': '小虾米',
+        'age': 23,
+        // 添加一个方法
+        printName: PrintName
     };
-    b.f(); // 大虾米
+    var b = {
+        name: '大虾米',
+        age: 24,
+        printName: PrintName
+    };
+    var c = {
+        name: 'Cortex',
+        age: 26,
+        printName: PrintName
+    };
 
+    a.printName(); // name: 小虾米, age: 23
+    b.printName(); // name: 大虾米, age: 24
+    c.printName(); // name: Cortex, age: 26
 
-    // 这样初始化得到完全自己定义对象更好用,不需要构造方法        建议使用这样的方式创建自己的对象
+    // 这样初始化得到完全自己定义对象更好用,不需要构造方法
+    // 建议使用这样的方式创建自己的对象
     var s = {
         a: 'sdf',
         'name': 'SSSS',
         f: function() {
+
+    var d = {
+        name: 'SSSS',
+        age: 22,
+        func: function() {
             console.log('哈哈哈');
         },
         // 调用外部方法,不要有括号,不然就是调用了
-        P: Person,
+        printName: PrintName,
     }
 
-    s.P(); // SSSS
-    s.f(); // 哈哈哈
-
+    d.func(); // 哈哈哈
+    d.printName(); // name: SSSS, age: 22
+</script>

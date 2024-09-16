@@ -18,14 +18,25 @@
         name: '波斯'
     };
     var cat1 = new Cat('老虎');
-    console.log(cat1.constructor); // function Cat(name)
-    // 修改cat1的原型为ob
-    var s = Object.setPrototypeOf(cat1, ob); // ob即使是一个普通对象也可以,只要是对象就行
-    var proto1 = Object.getPrototypeOf(cat1);
-    console.log(proto1); // Object { name: "波斯" }
+    console.log(cat1);              // Object { name: "老虎" }
+    console.log(cat1.name);         // 老虎
+    console.log(cat1.constructor);  // function Cat(name)
+    console.log(cat1.__proto__);    // Object { … } constructor: function Cat(name)
+    console.log('*************')
 
+    // 修改cat1的原型为ob
+    var cat2 = Object.setPrototypeOf(cat1, ob); // ob即使是一个普通对象也可以,只要是对象就行
+    console.log(cat1);              // Object { name: "老虎" }
+    console.log(cat1.name);         // 老虎
     // 修改原型之后,构造函数也会被修改
-    console.log(cat1.constructor); // function Object()  和上面的function不一样了
+    console.log(cat1.constructor);  // function Object() 和上面的 function 不一样了
+    console.log(cat1.__proto__);    // Object { name: "波斯" }
+    console.log('*************')
+
+    console.log(cat2);              // Object { name: "老虎" }
+    console.log(cat2.name);         // 老虎
+    console.log(cat2.constructor);  // function Object() 和上面的 function 不一样了
+    console.log(cat2.__proto__);    // Object { name: "波斯" }
 </script>
 
 </html>

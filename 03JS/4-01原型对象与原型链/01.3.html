@@ -19,7 +19,8 @@
             console.log(this.name, this.color, 'miao~miao~miao');
         }
     }
-
+    console.log(Cat.prototype); // Object { … }
+    console.log(Cat.prototype.prototype); // undefined
 
     var cat1 = new Cat('波斯猫', '黑色');
     // 使用 对象.__proto__ 获取对象的原型对象

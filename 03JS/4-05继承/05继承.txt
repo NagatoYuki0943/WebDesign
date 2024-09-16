@@ -11,16 +11,16 @@
         Object.setPrototypeOf(对象,原型对象)
         __proto__也可以
 
-            var r = new Run();
-            var m = new Man();
-            Object.setPrototypeOf(m, r);
+            var run1 = new Run();
+            var man1 = new Man();
+            Object.setPrototypeOf(man1, run1);
 
 
     (3).通过call或者apply方法继承
 
         // 没有new它,只是普通函数
         function Run() {
-            this.p = function() {
+            this.func = function() {
                 console.log('PPPP');
             }
         }
@@ -32,6 +32,6 @@
         }
 
         // 方式3 使用call和apply实现继承
-        var m = new Man();
-        m.p(); // PPPP
-        console.log(Object.getPrototypeOf(m)); // Object { … }
+        var man1 = new Man();
+        man1.func(); // PPPP
+        console.log(Object.getPrototypeOf(man1)); // Object { … }

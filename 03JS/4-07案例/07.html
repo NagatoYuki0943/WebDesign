@@ -31,8 +31,12 @@
             float: left;
         }
 
+        button {
+            margin: 10px;
+        }
+
         .black {
-            background-color: black;
+            background-color: rgb(25, 0, 255);
         }
     </style>
 </head>
@@ -40,6 +44,8 @@
 <body>
     <!--显示分数-->
     <h3 id='score'>0</h3>
+    <button onclick="init()">开始/重新开始</button>
+    <br>
     <div id='cont'>
         <div id='main'></div>
     </div>
@@ -52,10 +58,10 @@
     // 设置全局变量判断是否能点击,防止停止后可以继续点击黑色加分
     var state = true;
     // 移动的速度
-    var sp = 2;
+    var speed = 2;
 
     // 动态创建div
-    function cdiv(className) {
+    function createDiv(className) {
         // 创建div
         var div = document.createElement('div');
         if (className) {
@@ -65,9 +71,9 @@
         return div;
     }
 
-    function crow() {
+    function createRow() {
         // 创建一行
-        var row = cdiv('row');
+        var row = createDiv('row');
 
         // 随机数
         var index = Math.floor(Math.random() * 4);
@@ -76,10 +82,10 @@
         for (var i = 0; i < 4; i++) {
             if (i == index) {
                 // 创建类名为黑色的,就是黑色的方块
-                row.appendChild(cdiv('black'));
+                row.appendChild(createDiv('black'));
             } else {
                 // 创建普通小块
-                row.appendChild(cdiv());
+                row.appendChild(createDiv());
             }
         }
 
@@ -93,57 +99,17 @@
         }
     }
 
-    // 初始化函数
-    function init() {
-        // 循环调用crow创建游戏界面
-        for (var i = 0; i < 4; i++) {
-            crow();
-        }
-
-
-        main.onclick = function(ev) {
-            // 使用事件委托获取内部事件
-            var dj = ev.target;
-            if (state == false) {
-                alert('洗洗睡吧');
-            } else if (dj.className == '') {
-                // 点击白色停止移动
-                clearInterval(clock);
-                state = false;
-                alert('洗洗睡吧');
-            } else {
-                // 点击黑色,先变为白色
-                dj.className = '';
-                // 给这点击黑色的行增加通行证
-                dj.parentNode.pass = true;
-
-                // 再加分
-                var score = document.getElementById('score');
-                var s = parseInt(score.innerHTML) + 1;
-                score.innerHTML = s;
-                // 根据分值实现速度
-                if (s % 5 == 0) {
-                    // 涨了5分
-                    sp += 2;
-                }
-            }
-        }
-
-        // 设置定时器,反复调用move函数
-        clock = setInterval('move()', 50);
-
-    }
-
     // 移动,修改mian的top值向下移动
     function move() {
         // 获取top
         var top = parseInt(getComputedStyle(main).top); // -100px
-        top += sp;
+        console.log(top);
+        top += speed;
         // 送回去
         main.style.top = top + 'px';
-        // 
+        // 判断是否到底部
         if (top >= 0) {
-            crow();
+            createRow();
             // 创建之后立刻将main的top重置为-100px,防止新的蹦出来
             main.style.top = '-100px';
 
@@ -162,8 +128,57 @@
             }
         }
     }
+
+    // 初始化函数
+    function init() {
+        state = true;
+        // 重置分数
+        document.getElementById('score').innerHTML = 0;
+        // 重置速度
+        speed = 2;
+        // 重置游戏界面
+        main.innerHTML = '';
+        // 循环调用createRow创建游戏界面
+        for (var i = 0; i < 4; i++) {
+            createRow();
+        }
+
+        main.onclick = function(event) {
+            // 使用事件委托获取内部事件
+            var dj = event.target;
+
+            if (state == false) {
+                alert('洗洗睡吧');
+            }
+            else if (dj.className == '') {
+                // 点击白色停止移动
+                clearInterval(clock);
+                state = false;
+                alert('洗洗睡吧');
+            } else {
+                // 点击黑色,先变为白色
+                dj.className = '';
+                // 给这点击黑色的行增加通行证
+                dj.parentNode.pass = true;
+
+                // 再加分
+                var score = document.getElementById('score');
+                var s = parseInt(score.innerHTML) + 1;
+                score.innerHTML = s;
+                // 根据分值实现速度
+                if (s % 5 == 0) {
+                    // 涨了5分
+                    speed += 2;
+                }
+            }
+        }
+
+        // 设置定时器,反复调用move函数
+        clock = setInterval(move, 50);
+    }
+
     // 调用init函数初始化
-    init();
+    // init();
 </script>
 
 </html>

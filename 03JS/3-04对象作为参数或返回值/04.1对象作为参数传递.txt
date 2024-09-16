@@ -5,15 +5,21 @@
     注意: 传递的参数是引用传递
 
 2
+<script>
     // 传递对象给函数作为参数
     function dis(obj) {
-        console.log(obj);
-        console.log(obj.age);
+        obj.name = 'Jerry';
     }
+
     // 建立对象
     var o = {
-        name: 123,
+        name: 'Tom',
         age: 15,
         sex: '男'
     };
-    dis(o); // Object { name: 123, age: 15, sex: "男" }  15
+
+    console.log(o.name); // Tom
+
+    dis(o); // 引用传递
+    console.log(o.name); // Jerry 函数里面改了,是引用传递
+</script>

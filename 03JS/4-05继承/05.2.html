@@ -12,19 +12,22 @@
 </body>
 <script>
     function Run() {
-        this.p = function() {
+        this.func = function() {
             console.log('PPPP');
         }
     }
 
     function Man() {}
 
+    var man1 = new Man();
+    // man1.func(); // 报错, man1没有func属性
+    console.log(Object.getPrototypeOf(man1)); // Object { … }
+
     // 方式2 使用标准方式Object.setPrototypeOf(对象,原型对象)
-    var r = new Run();
-    var m = new Man();
-    Object.setPrototypeOf(m, r);
-    m.p(); // PPPP
-    console.log(Object.getPrototypeOf(m)); // Object { p: p() }
+    var run1 = new Run();
+    Object.setPrototypeOf(man1, run1);
+    man1.func(); // PPPP
+    console.log(Object.getPrototypeOf(man1)); // Object { func: func() }
 </script>
 
 </html>

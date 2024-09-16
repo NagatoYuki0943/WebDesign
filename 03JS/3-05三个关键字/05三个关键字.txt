@@ -7,3 +7,11 @@ constructor   返回对象的构造函数
 
 instanceof    判断某个对象是否为某个构造函数的实例,返回 true false
     ps instanceof Ps 判断ps是不是Ps的实例
+
+
+typeof和constructor的区别:
+    - typeof num返回"number",因为它识别原始类型。
+    - num.constructor返回Number构造函数,因为JavaScript会临时将原始值包装成对象来访问属性。
+
+自动装箱(Auto-boxing):
+当你调用num.constructor时,JavaScript会临时将num包装成Number对象,这就是为什么你能访问constructor属性。但这个临时对象不会影响instanceof的结果。

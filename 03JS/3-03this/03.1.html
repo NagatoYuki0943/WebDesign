@@ -11,30 +11,41 @@
 
 </body>
 <script>
+    // this可以在构造函数中将属性和方法定义好
+    // 谁实例化这个构造函数,函数内部的this就指向谁
     function Man() {
         // 使用this可以再构造函数中将属性和方法定义好
         this.sex = '男';
         this.height = 40;
     }
 
-    var zhaosi = new Man();
-    console.log(zhaosi.height); // 40
-    zhaosi.height = 39;
+    var man1 = new Man();
+    console.log(man1.height); // 40
+    man1.height = 39;
+    console.log(man1.height); // 39
 
-    var liuneng = new Man();
-    console.log(liuneng.height); // 40
+    var man2 = new Man();
+    console.log(man2.height); // 40
     console.log('----------------');
 
 
     // 构造函数初始化可以传递值
-    function Woman(a, b) {
-        this.name = a;
-        this.age = b;
-    }
+    function Student(name, age, grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
 
-    var xiaohong = new Woman('小红', 15);
-    console.log(xiaohong.name); // 小红
-    console.log(xiaohong.age); // 15
+        // 定义方法
+        this.study = function() {
+            console.log(this.name + '正在学习...');
+        }
+    }
+    var student1 = new Student('小明', 18, 3);
+    console.log(student1.name); // 小明
+    console.log(student1.age); // 18
+    console.log(student1.grade); // 3
+    student1.study(); // 小明正在学习...
+
 </script>
 
 </html>

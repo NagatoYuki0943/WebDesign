@@ -12,24 +12,25 @@
 </body>
 <script>
     var man = {
-        'name': 'kaiqi',
+        'name': 'Tom',
     }
     var woman = {
-        'name': 'zhuli'
+        'name': 'Jerry'
     }
 
-    function f(age) {
+    function func(age, grade) {
         // 函数内部this默认指向window
-        console.log(this.name, age);
+        console.log(`name: ${this.name}, age: ${age}, grade: ${grade}`);
     }
+
     // call方法可以改变函数内部的this指向
-    // f();    // <empty string>
+    func();    // name: , age: undefined, grade: undefined
 
-    // 函数名称.call(obj,arg1,arg2,arg3);    第一个参数是要指向的对象,后面的是参数
-    f.call(man, 45); // kaiqi 45
+    // funcname.call(obj, arg1, arg2, ...);    第一个参数是要指向的对象,后面的是参数
+    func.call(man, 45, 3); // name: Tom, age: 45, grade: 3
 
-    // 函数名称.call(obj,[arg1,arg2,arg3]);  第一个参数是要指向的对象,第二个参数是参数数组
-    f.apply(woman, [40]); // zhuli 40
+    // funcname.apply(obj, [arg1, arg2, ...]);  第一个参数是要指向的对象,第二个参数是参数数组
+    func.apply(woman, [40, 2]); // name: Jerry, age: 40, grade: 2
 </script>
 
 </html>
