@@ -32,7 +32,6 @@ let as = async() => {
 
 // 调用函数 ES6写法
 as();
-// 2.异步
 
 
 // ES5写法
@@ -41,7 +40,6 @@ async function as1() {
     console.log(result);
 }
 as1();
-// 2.异步
 
 
 // Promise 链式调用
@@ -109,4 +107,16 @@ let as5 = async() => {
 console.log(as5()); // Promise { <state>: "pending" }
 as5().then(value => {
     console.log(value); // 1.异步
+})
+
+// 这样写也需要使用 .then
+let as6 = async() => {
+    let res = await p1;
+    return "as6 " + res
+}
+
+// 会输出状态,里面的内容还是要用.then
+console.log(as6()); // Promise { <state>: "pending" }
+as6().then(value => {
+    console.log(value); // as6 1.异步
 })
