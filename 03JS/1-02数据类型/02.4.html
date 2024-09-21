@@ -69,12 +69,30 @@
     // 1
     console.log("-------------------------------")
 
+    // JavaScript中的forEach和map方法都用于遍历数组，但它们有一些重要的区别:
+    // 返回值
+    //     forEach() 方法没有返回值，返回undefined。
+    //     map() 方法返回一个新数组，包含对原数组每个元素执行回调函数后的结果。
+    // 对原数组的影响
+    //     forEach() 不会直接修改原数组，但回调函数可能会修改原数组元素。
+    //     map() 不会修改原数组，而是返回一个全新的数组。
+    // 使用场景
+    //     forEach() 适合当你只想遍历数组执行某些操作，而不需要返回新数组时使用。
+    //     map() 适合当你需要对数组元素进行转换并得到一个新数组时使用。
+    // 性能
+    //     map() 的执行速度通常比 forEach() 更快。
+    // 链式调用
+    //     map() 返回新数组，可以继续链式调用其他数组方法。
+    //     forEach() 返回 undefined ，无法进行链式调用。
+
     console.log("forEach");
     // forEach只能遍历数组
     // 只有一个参数时,参数是数组元素的值
-    arr4.forEach(item => {
+    let forEachResult1 = arr4.forEach(item => {
         console.log(item);
+        return item;
     })
+    console.log("forEachResult1:", forEachResult1);
     // 8
     // 7
     // 6
@@ -83,11 +101,14 @@
     // 3
     // 2
     // 1
+    // forEachResult1: undefined
 
     // 两个参数时,第一个参数是数组元素的值,第二个参数是数组元素的下标
-    arr4.forEach(function(item, idx) {
+    let forEachResult2 = arr4.forEach((item, idx) => {
         console.log(idx, item);
+        return [idx, item];
     })
+    console.log("forEachResult2:", forEachResult2);
     // 0 8
     // 1 7
     // 2 6
@@ -96,88 +117,135 @@
     // 5 3
     // 6 2
     // 7 1
+    // forEachResult2: undefined
     console.log("-------------------------------");
 
-    // unshift  push    压入,返回总长度
-    // shift    pop     取出,返回取出的值
-    console.log("length / push / unshift / pop / shift");
-    var arr5 = [8, 7, 6, 5, 4, 3, 2, 1];
-    console.log(arr5.length); // 8
-    arr5.push(0);
-    console.log(arr5); // [ 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
-    arr5.unshift(9);
-    console.log(arr5); // [ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
-    var element1 = arr5.pop();
-    console.log(element1); // 0
-    var element2 = arr5.shift();
-    console.log(element2); // 9
-    console.log("-------------------------------")
+    console.log("map");
+    // forEach只能遍历数组
+    // 只有一个参数时,参数是数组元素的值
+    let mapResult1 = arr4.map(item => {
+        console.log(item);
+        return item;
+    })
+    console.log("mapResult1:", mapResult1);
+    // 8
+    // 7
+    // 6
+    // 5
+    // 4
+    // 3
+    // 2
+    // 1
+    // mapResult1: Array(8) [ 8, 7, 6, 5, 4, 3, 2, 1 ]
 
-    console.log("concat 连接两个或者更多的数组,并返回新数组,不会影响原有数组");
-    var arr6 = [1, 2, 3, 4, 5];
-    console.log(arr6); // [ 1, 2, 3, 4, 5 ]
-    var arr7 = arr6.concat(6, 7, 8);
-    console.log(arr7); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
-    var arr8 = arr6.concat([6, 7, 8]);
-    console.log(arr8); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
-    console.log("-------------------------------")
+    // 两个参数时,第一个参数是数组元素的值,第二个参数是数组元素的下标
+    let mapResult2 = arr4.map((item, idx) => {
+        console.log(idx, item);
+        return [idx, item];
+    })
+    console.log("mapResult2:", mapResult2);
+    // 0 8
+    // 1 7
+    // 2 6
+    // 3 5
+    // 4 4
+    // 5 3
+    // 6 2
+    // 7 1
+    // mapResult2:  Array(8) [ (2) […], (2) […], (2) […], (2) […], (2) […], (2) […], (2) […], (2) […] ]
+    //  0: Array [ 0, 8 ]
+    //  1: Array [ 1, 7 ]
+    //  2: Array [ 2, 6 ]
+    //  3: Array [ 3, 5 ]
+    //  4: Array [ 4, 4 ]
+    //  5: Array [ 5, 3 ]
+    //  6: Array [ 6, 2 ]
+    //  7: Array [ 7, 1 ]
+    //  length: 8
+    //  <prototype>: Array []
 
-    console.log("join 把数组的所有元素放入一个字符串.元素通过指定的分隔符进行分割,不会影响原数组");
-    var arr9 = [1, 2, 3, 4, 5];
-    console.log(arr9.join()); // "1,2,3,4,5"
-    console.log(arr9.join(" ")); // "1 2 3 4 5"
-    console.log("-------------------------------")
-
-    console.log("reverse 颠倒数组中元素的顺序,会改变原数组");
-    var arr10 = [1, 2, 3, 4, 5];
-    console.log(arr10.reverse()); // [ 5, 4, 3, 2, 1 ]
     console.log("-------------------------------");
 
-    console.log("sort");
-    var arr11 = [5, 2, 8, 3, 9, 1];
-    // 默认升序
-    console.log(arr11.sort()); // [ 1, 2, 3, 5, 8, 9 ]
-    // 升序
-    console.log(arr11.sort(function(a, b) {
-        return a - b;
-    })) // [ 1, 2, 3, 5, 8, 9 ]
-    // 降序
-    console.log(arr11.sort((a, b) => {
-        return b - a;
-    })) // [ 9, 8, 5, 3, 2, 1 ]
-    console.log("-------------------------------");
+    // // unshift  push    压入,返回总长度
+    // // shift    pop     取出,返回取出的值
+    // console.log("length / push / unshift / pop / shift");
+    // var arr5 = [8, 7, 6, 5, 4, 3, 2, 1];
+    // console.log(arr5.length); // 8
+    // arr5.push(0);
+    // console.log(arr5); // [ 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
+    // arr5.unshift(9);
+    // console.log(arr5); // [ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
+    // var element1 = arr5.pop();
+    // console.log(element1); // 0
+    // var element2 = arr5.shift();
+    // console.log(element2); // 9
+    // console.log("-------------------------------")
 
-    console.log("splice 删除元素,并向数组添加新元素");
-    console.log("splice(指定要删除的元素下标, 要删除之后的几个元素, 要插入的内容)");
-    var arr12 = [1, 2, 3, 4, 5];
-    // splice(1, 2) 删除从下标1开始2个
-    console.log(arr12.splice(1, 2)); // [ 2, 3 ]
-    console.log(arr12); // [ 1, 4, 5 ]
+    // console.log("concat 连接两个或者更多的数组,并返回新数组,不会影响原有数组");
+    // var arr6 = [1, 2, 3, 4, 5];
+    // console.log(arr6); // [ 1, 2, 3, 4, 5 ]
+    // var arr7 = arr6.concat(6, 7, 8);
+    // console.log(arr7); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+    // var arr8 = arr6.concat([6, 7, 8]);
+    // console.log(arr8); // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+    // console.log("-------------------------------")
 
-    var arr12 = [1, 2, 3, 4, 5];
-    // splice(1) 删除从下标1开始所有元素
-    console.log(arr12.splice(1)); // [ 2, 3, 4, 5 ]
-    console.log(arr12); // [ 1 ]
+    // console.log("join 把数组的所有元素放入一个字符串.元素通过指定的分隔符进行分割,不会影响原数组");
+    // var arr9 = [1, 2, 3, 4, 5];
+    // console.log(arr9.join()); // "1,2,3,4,5"
+    // console.log(arr9.join(" ")); // "1 2 3 4 5"
+    // console.log("-------------------------------")
 
-    var arr12 = [1, 2, 3, 4, 5];
-    // splice(0, 0, 9) 在第0个元素之前添加9,第一个数是0,第二个删除数是0
-    console.log(arr12.splice(0, 0, 9)); // []
-    console.log(arr12); // [ 9, 1, 2, 3, 4, 5 ]
+    // console.log("reverse 颠倒数组中元素的顺序,会改变原数组");
+    // var arr10 = [1, 2, 3, 4, 5];
+    // console.log(arr10.reverse()); // [ 5, 4, 3, 2, 1 ]
+    // console.log("-------------------------------");
 
-    var arr12 = [1, 2, 3, 4, 5];
-    // splice(2, 0, 6) 在第2个元素之前添加6,第一个数是2,第二个删除数是0
-    console.log(arr12.splice(2, 0, 6)); // []
-    console.log(arr12); // [ 1, 2, 6, 3, 4, 5 ]
+    // console.log("sort");
+    // var arr11 = [5, 2, 8, 3, 9, 1];
+    // // 默认升序
+    // console.log(arr11.sort()); // [ 1, 2, 3, 5, 8, 9 ]
+    // // 升序
+    // console.log(arr11.sort(function(a, b) {
+    //     return a - b;
+    // })) // [ 1, 2, 3, 5, 8, 9 ]
+    // // 降序
+    // console.log(arr11.sort((a, b) => {
+    //     return b - a;
+    // })) // [ 9, 8, 5, 3, 2, 1 ]
+    // console.log("-------------------------------");
 
-    var arr12 = [1, 2, 3, 4, 5];
-    // splice(1, 1, 5) 第1个元素换成5
-    console.log(arr12.splice(1, 1, 5)); // [ 2 ]
-    console.log(arr12); // [ 1, 5, 3, 4, 5 ]
+    // console.log("splice 删除元素,并向数组添加新元素");
+    // console.log("splice(指定要删除的元素下标, 要删除之后的几个元素, 要插入的内容)");
+    // var arr12 = [1, 2, 3, 4, 5];
+    // // splice(1, 2) 删除从下标1开始2个
+    // console.log(arr12.splice(1, 2)); // [ 2, 3 ]
+    // console.log(arr12); // [ 1, 4, 5 ]
 
-    var arr12 = [1, 2, 3, 4, 5];
-    // splice(0, 0, [9, 9]) 第一个位置替换成一个数组,不会拼接成一个数组
-    console.log(arr12.splice(0, 0, [9, 9])); // []
-    console.log(arr12); // [ [ 9, 9 ], 1, 2, 3, 4, 5 ]
+    // var arr12 = [1, 2, 3, 4, 5];
+    // // splice(1) 删除从下标1开始所有元素
+    // console.log(arr12.splice(1)); // [ 2, 3, 4, 5 ]
+    // console.log(arr12); // [ 1 ]
+
+    // var arr12 = [1, 2, 3, 4, 5];
+    // // splice(0, 0, 9) 在第0个元素之前添加9,第一个数是0,第二个删除数是0
+    // console.log(arr12.splice(0, 0, 9)); // []
+    // console.log(arr12); // [ 9, 1, 2, 3, 4, 5 ]
+
+    // var arr12 = [1, 2, 3, 4, 5];
+    // // splice(2, 0, 6) 在第2个元素之前添加6,第一个数是2,第二个删除数是0
+    // console.log(arr12.splice(2, 0, 6)); // []
+    // console.log(arr12); // [ 1, 2, 6, 3, 4, 5 ]
+
+    // var arr12 = [1, 2, 3, 4, 5];
+    // // splice(1, 1, 5) 第1个元素换成5
+    // console.log(arr12.splice(1, 1, 5)); // [ 2 ]
+    // console.log(arr12); // [ 1, 5, 3, 4, 5 ]
+
+    // var arr12 = [1, 2, 3, 4, 5];
+    // // splice(0, 0, [9, 9]) 第一个位置替换成一个数组,不会拼接成一个数组
+    // console.log(arr12.splice(0, 0, [9, 9])); // []
+    // console.log(arr12); // [ [ 9, 9 ], 1, 2, 3, 4, 5 ]
 </script>
 
 </html>

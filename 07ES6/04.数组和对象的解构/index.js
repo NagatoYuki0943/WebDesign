@@ -121,7 +121,6 @@ let obj13 = {
     }
 };
 let { name13, info: { id, gender } } = obj13;
-console.log();
 // console.log(info); // 这样没法输出info,只能输出id和gender,除非解构的时候只解构info,而不解构里面的值
 console.log(name13, id, gender); // Qt 1 啊
 console.log('===========================');
